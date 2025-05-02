@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +37,7 @@ const Navbar = () => {
             </span>
           </div>
 
+          {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <a href="#producers" className="text-sm font-medium hover:text-primary transition-colors">
               Producers
@@ -52,6 +53,7 @@ const Navbar = () => {
             </a>
           </div>
 
+          {/* Desktop buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="outline" size="sm">
               Sign In
@@ -59,37 +61,38 @@ const Navbar = () => {
             <Button size="sm">Get Started</Button>
           </div>
 
-          <button 
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-
-        {/* Mobile menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden pt-4 pb-3 space-y-3">
-            <a href="#producers" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
-              Producers
-            </a>
-            <a href="#opportunities" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
-              Opportunities
-            </a>
-            <a href="#resources" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
-              Resources
-            </a>
-            <a href="#contact" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
-              Connect
-            </a>
-            <div className="pt-2 flex flex-col space-y-2">
-              <Button variant="outline" size="sm">
-                Sign In
+          {/* Mobile menu button - using Sheet component for better mobile experience */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
               </Button>
-              <Button size="sm">Get Started</Button>
-            </div>
-          </div>
-        )}
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[80%] sm:w-[300px] pt-12">
+              <div className="flex flex-col space-y-4">
+                <a href="#producers" className="text-sm font-medium hover:text-primary transition-colors py-2">
+                  Producers
+                </a>
+                <a href="#opportunities" className="text-sm font-medium hover:text-primary transition-colors py-2">
+                  Opportunities
+                </a>
+                <a href="#resources" className="text-sm font-medium hover:text-primary transition-colors py-2">
+                  Resources
+                </a>
+                <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors py-2">
+                  Connect
+                </a>
+                <div className="pt-4 flex flex-col space-y-3">
+                  <Button variant="outline" size="sm">
+                    Sign In
+                  </Button>
+                  <Button size="sm">Get Started</Button>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );
