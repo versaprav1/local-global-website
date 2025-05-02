@@ -1,5 +1,5 @@
 
-import { MapPin, Globe, Truck, ShieldCheck, MessageCircle, Leaf, Zap, Scale, Palette, Wrench, Microphone, Code, Camera, Gem } from "lucide-react";
+import { MapPin, Globe, Truck, ShieldCheck, MessageCircle, Leaf, Zap, Scale, Palette, Wrench, Mic, Code, Camera, Gem } from "lucide-react";
 
 export interface Producer {
   id: string;
