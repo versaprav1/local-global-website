@@ -1,10 +1,9 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { producers } from "@/data/mockData";
-import { CheckCircle, MapPin, Filter } from "lucide-react";
+import { producers } from "@/data/producers";
+import { CheckCircle, MapPin } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ProducerSection = () => {

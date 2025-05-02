@@ -1,10 +1,10 @@
 
 import { useState } from "react";
-import { resources } from "@/data/mockData";
+import { resources } from "@/data/resources";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Filter } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const ResourcesSection = () => {
