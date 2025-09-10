@@ -13,11 +13,13 @@ const ResourcesSection = () => {
   // Get unique industries from resources
   const allIndustries = ["All Industries"];
   resources.forEach(resource => {
-    resource.industries.forEach(industry => {
-      if (industry !== "All Industries" && !allIndustries.includes(industry)) {
-        allIndustries.push(industry);
-      }
-    });
+    if (resource.industries && Array.isArray(resource.industries)) {
+      resource.industries.forEach(industry => {
+        if (industry !== "All Industries" && !allIndustries.includes(industry)) {
+          allIndustries.push(industry);
+        }
+      });
+    }
   });
   
   // Filter resources based on selected industry
