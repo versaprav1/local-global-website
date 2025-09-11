@@ -4,9 +4,18 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import wellnessImage from "@/assets/wellness-center.jpg";
+import fitnessImage from "@/assets/fitness-center.jpg";
+import heroImage from "@/assets/hero-sports-medicine.jpg";
 
 const VerticalsSection = () => {
   const [selectedVertical, setSelectedVertical] = useState(verticals[0]);
+
+  const verticalImages = {
+    "sports-medicine": heroImage,
+    "health-wellness": wellnessImage,
+    "fitness-performance": fitnessImage
+  };
 
   return (
     <section className="py-20 relative overflow-hidden">
@@ -92,8 +101,28 @@ const VerticalsSection = () => {
             </Button>
           </div>
 
-          {/* Right Content - Stats Cards */}
-          <div className="grid gap-4">
+          {/* Right Content - Image and Stats */}
+          <div className="space-y-6">
+            {/* Featured Image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src={verticalImages[selectedVertical.id as keyof typeof verticalImages]} 
+                alt={selectedVertical.name}
+                className="w-full h-64 lg:h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <Badge className="mb-2 bg-background/90 text-foreground">
+                  Featured Service
+                </Badge>
+                <p className="text-white font-semibold text-lg">
+                  {selectedVertical.name} Excellence
+                </p>
+              </div>
+            </div>
+            
+            {/* Stats Cards */}
+            <div className="grid gap-4">
             {selectedVertical.stats.map((stat, index) => (
               <Card 
                 key={index} 
@@ -108,6 +137,7 @@ const VerticalsSection = () => {
                 </div>
               </Card>
             ))}
+            </div>
           </div>
         </div>
 
