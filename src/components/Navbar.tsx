@@ -39,7 +39,7 @@ const Navbar = () => {
               </div>
             </div>
             <span className="text-xl font-bold font-display">
-              <span className="text-gradient">Local</span>Global
+              <span className="text-gradient">Local</span>Global DE
             </span>
           </Link>
 
@@ -77,7 +77,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button className="tech-button">
-              Get Started
+              Jetzt starten
             </Button>
           </div>
 
@@ -118,7 +118,7 @@ const Navbar = () => {
               ))}
             </div>
             <Button className="tech-button w-full mt-4">
-              Get Started
+              Jetzt starten
             </Button>
           </div>
         )}

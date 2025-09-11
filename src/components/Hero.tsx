@@ -13,10 +13,10 @@ const Hero = () => {
   }, []);
 
   const features = [
-    { icon: MapPin, text: "Local First" },
-    { icon: Globe, text: "Global Reach" },
-    { icon: Shield, text: "Verified Services" },
-    { icon: Users, text: "10M+ Users" },
+    { icon: MapPin, text: "Deutschland" },
+    { icon: Globe, text: "Globale Reichweite" },
+    { icon: Shield, text: "Geprüfte Services" },
+    { icon: Users, text: "10M+ Nutzer" },
   ];
 
   return (
@@ -67,20 +67,20 @@ const Hero = () => {
           {/* Badge */}
           <Badge className="mb-6 px-4 py-2 text-sm font-medium border-primary/20 bg-primary/10 text-primary">
             <Sparkles className="h-3 w-3 mr-2" />
-            AI-Powered Platform
+            KI-gestützte Plattform in Deutschland
           </Badge>
           
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-gradient">Connect Locally,</span>
+            <span className="text-gradient">Lokal verbinden,</span>
             <br />
-            <span className="text-foreground">Reach Globally</span>
+            <span className="text-foreground">Global erreichen</span>
           </h1>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Your gateway to unlimited resources, services, and opportunities. 
-            From your neighborhood to the world.
+            Ihr Zugang zu unbegrenzten Ressourcen, Dienstleistungen und Möglichkeiten. 
+            Von Ihrer Nachbarschaft bis zur ganzen Welt - jetzt in Deutschland verfügbar.
           </p>
           
           {/* CTA Buttons */}
@@ -89,7 +89,7 @@ const Hero = () => {
               size="lg" 
               className="tech-button group text-lg px-8 py-6"
             >
-              Start Exploring
+              Jetzt erkunden
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
@@ -97,7 +97,7 @@ const Hero = () => {
               variant="outline"
               className="glass-card hover:bg-white/20 dark:hover:bg-white/10 text-lg px-8 py-6"
             >
-              Watch Demo
+              Demo ansehen
             </Button>
           </div>
           
