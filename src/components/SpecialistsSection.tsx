@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Globe, Award, MessageCircle, Calendar } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Specialist {
   id: string;
@@ -90,6 +91,7 @@ const specialists: Specialist[] = [
 
 const SpecialistsSection = () => {
   const [selectedVertical, setSelectedVertical] = useState("All");
+  const { t } = useLanguage();
   
   const verticals = ["All", "Sports Medicine", "Health & Wellness", "Fitness & Performance"];
   

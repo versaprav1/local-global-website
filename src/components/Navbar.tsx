@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Sparkles, ChevronDown } from "lucide-react";
+import { Menu, X, Sparkles, ChevronDown, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,19 +13,20 @@ import {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "#services" },
-    { name: "Resources", href: "#resources" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: t('nav.home'), href: "/" },
+    { name: t('nav.services'), href: "#services" },
+    { name: t('nav.resources'), href: "#resources" },
+    { name: t('nav.about'), href: "#about" },
+    { name: t('nav.contact'), href: "#contact" },
   ];
 
   const verticals = [
-    { name: "Sports Medicine", href: "#sports-medicine" },
-    { name: "Health & Wellness", href: "#health-wellness" },
-    { name: "Fitness & Performance", href: "#fitness-performance" },
+    { name: t('vertical.sports'), href: "#sports-medicine" },
+    { name: t('vertical.wellness'), href: "#health-wellness" },
+    { name: t('vertical.fitness'), href: "#fitness-performance" },
   ];
 
   return (
@@ -46,7 +49,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              link.name === "Services" ? (
+              link.name === t('nav.services') ? (
                 <DropdownMenu key={link.name}>
                   <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors font-medium">
                     {link.name}
@@ -74,10 +77,20 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Language Toggle and CTA Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-2 glass-card px-3 py-1.5 rounded-full">
+              <Globe className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">DE</span>
+              <Switch 
+                checked={language === 'en'} 
+                onCheckedChange={toggleLanguage}
+                className="data-[state=checked]:bg-primary"
+              />
+              <span className="text-sm font-medium">EN</span>
+            </div>
             <Button className="tech-button">
-              Jetzt starten
+              {t('nav.cta')}
             </Button>
           </div>
 
@@ -117,8 +130,18 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
+            <div className="flex items-center gap-2 glass-card px-3 py-1.5 rounded-full mt-4 justify-center">
+              <Globe className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">DE</span>
+              <Switch 
+                checked={language === 'en'} 
+                onCheckedChange={toggleLanguage}
+                className="data-[state=checked]:bg-primary"
+              />
+              <span className="text-sm font-medium">EN</span>
+            </div>
             <Button className="tech-button w-full mt-4">
-              Jetzt starten
+              {t('nav.cta')}
             </Button>
           </div>
         )}

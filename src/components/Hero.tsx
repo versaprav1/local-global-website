@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Globe, MapPin, Sparkles, Zap, Shield, Users } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
+  const { t } = useLanguage();
   
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -13,10 +15,10 @@ const Hero = () => {
   }, []);
 
   const features = [
-    { icon: MapPin, text: "Deutschland" },
-    { icon: Globe, text: "Globale Reichweite" },
-    { icon: Shield, text: "Geprüfte Services" },
-    { icon: Users, text: "10M+ Nutzer" },
+    { icon: MapPin, text: t('hero.feature.germany') },
+    { icon: Globe, text: t('hero.feature.global') },
+    { icon: Shield, text: t('hero.feature.verified') },
+    { icon: Users, text: t('hero.feature.users') },
   ];
 
   return (
@@ -67,20 +69,19 @@ const Hero = () => {
           {/* Badge */}
           <Badge className="mb-6 px-4 py-2 text-sm font-medium border-primary/20 bg-primary/10 text-primary">
             <Sparkles className="h-3 w-3 mr-2" />
-            KI-gestützte Plattform in Deutschland
+            {t('hero.badge')}
           </Badge>
           
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-gradient">Lokal verbinden,</span>
+            <span className="text-gradient">{t('hero.title1')}</span>
             <br />
-            <span className="text-foreground">Global erreichen</span>
+            <span className="text-foreground">{t('hero.title2')}</span>
           </h1>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Ihr Zugang zu unbegrenzten Ressourcen, Dienstleistungen und Möglichkeiten. 
-            Von Ihrer Nachbarschaft bis zur ganzen Welt - jetzt in Deutschland verfügbar.
+            {t('hero.subtitle')}
           </p>
           
           {/* CTA Buttons */}
@@ -89,7 +90,7 @@ const Hero = () => {
               size="lg" 
               className="tech-button group text-lg px-8 py-6"
             >
-              Jetzt erkunden
+              {t('hero.cta.explore')}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
@@ -97,7 +98,7 @@ const Hero = () => {
               variant="outline"
               className="glass-card hover:bg-white/20 dark:hover:bg-white/10 text-lg px-8 py-6"
             >
-              Demo ansehen
+              {t('hero.cta.demo')}
             </Button>
           </div>
           

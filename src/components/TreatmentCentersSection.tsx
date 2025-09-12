@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, Star, Clock, Shield, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Center {
   id: string;
@@ -70,6 +71,7 @@ const centers: Center[] = [
 
 const TreatmentCentersSection = () => {
   const [filter, setFilter] = useState<"all" | "local" | "global">("all");
+  const { t } = useLanguage();
 
   const filteredCenters = centers.filter(center => {
     if (filter === "all") return true;
