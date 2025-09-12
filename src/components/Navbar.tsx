@@ -42,7 +42,7 @@ const Navbar = () => {
               </div>
             </div>
             <span className="text-xl font-bold font-display">
-              <span className="text-gradient">Local</span>Global DE
+              <span className="text-gradient">Near</span>&Far
             </span>
           </Link>
 
@@ -77,7 +77,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Language Toggle and CTA Button */}
+          {/* Language Toggle */}
           <div className="hidden md:flex items-center gap-4">
             <div className="flex items-center gap-2 glass-card px-3 py-1.5 rounded-full">
               <Globe className="h-4 w-4 text-muted-foreground" />
@@ -89,9 +89,6 @@ const Navbar = () => {
               />
               <span className="text-sm font-medium">EN</span>
             </div>
-            <Button className="tech-button">
-              {t('nav.cta')}
-            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -140,9 +137,6 @@ const Navbar = () => {
               />
               <span className="text-sm font-medium">EN</span>
             </div>
-            <Button className="tech-button w-full mt-4">
-              {t('nav.cta')}
-            </Button>
           </div>
         )}
       </div>
