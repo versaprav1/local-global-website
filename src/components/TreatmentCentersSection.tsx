@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, Star, Clock, Shield, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { treatmentCenters as centersData } from "@/data/centers";
 
 interface Center {
   id: string;
@@ -16,58 +17,24 @@ interface Center {
   available: boolean;
   verified: boolean;
   image: string;
+  website?: string;
 }
 
-const centers: Center[] = [
-  {
-    id: "1",
-    name: "Elite Sports Performance Center",
-    type: "Sports Medicine",
-    location: "Downtown Medical District",
-    distance: "2.3 miles",
-    rating: 4.9,
-    specialties: ["ACL Recovery", "Biomechanics", "Athletic Training"],
-    available: true,
-    verified: true,
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=400"
-  },
-  {
-    id: "2",
-    name: "Global Health & Wellness Hub",
-    type: "Health & Wellness",
-    location: "Westside Health Campus",
-    distance: "5.1 miles",
-    rating: 4.8,
-    specialties: ["Preventive Care", "Holistic Health", "Telemedicine"],
-    available: true,
-    verified: true,
-    image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=400"
-  },
-  {
-    id: "3",
-    name: "Peak Performance Institute",
-    type: "Fitness & Performance",
-    location: "Athletic Complex East",
-    distance: "3.7 miles",
-    rating: 4.9,
-    specialties: ["Strength Training", "Nutrition", "Recovery"],
-    available: false,
-    verified: true,
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=400"
-  },
-  {
-    id: "4",
-    name: "International Sports Medicine Clinic",
-    type: "Sports Medicine",
-    location: "Global Health Center",
-    distance: "Global Access",
-    rating: 5.0,
-    specialties: ["Remote Consultation", "Second Opinion", "Elite Athletes"],
-    available: true,
-    verified: true,
-    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80&w=400"
-  }
-];
+
+const centers: Center[] = centersData.map((c: any) => ({
+  id: String(c.id),
+  name: c.name,
+  type: c.type,
+  location: c.location,
+  distance: c.distance,
+  rating: c.rating,
+  specialties: c.features,
+  available: /Verfügbar|Sofort|24\/7/i.test(c.availability),
+  verified: true,
+  image: c.image,
+  website: c.website,
+}));
+
 
 const TreatmentCentersSection = () => {
   const [filter, setFilter] = useState<"all" | "local" | "global">("all");
@@ -75,10 +42,11 @@ const TreatmentCentersSection = () => {
 
   const filteredCenters = centers.filter(center => {
     if (filter === "all") return true;
-    if (filter === "local") return center.distance !== "Global Access";
-    if (filter === "global") return center.distance === "Global Access";
+    if (filter === "local") return /Hannover/i.test(center.location);
+    if (filter === "global") return !/Hannover/i.test(center.location);
     return true;
   });
+
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/20">
@@ -194,10 +162,20 @@ const TreatmentCentersSection = () => {
                         {center.available ? "Available Today" : "Next Available Tomorrow"}
                       </span>
                     </div>
-                    <Button size="sm" variant="ghost" className="group/btn">
-                      View Details
-                      <ChevronRight className="ml-1 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
+                    {center.website ? (
+                      <Button size="sm" variant="ghost" className="group/btn" asChild>
+                        <a href={center.website} target="_blank" rel="noopener noreferrer">
+                          Website
+                          <ChevronRight className="ml-1 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button size="sm" variant="ghost" className="group/btn">
+                        View Details
+                        <ChevronRight className="ml-1 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Button>
+                    )}
+
                   </div>
                 </CardContent>
               </div>

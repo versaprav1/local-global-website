@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Globe, Award, MessageCircle, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { specialists as specialistsData } from "@/data/specialists";
 
 interface Specialist {
   id: string;
@@ -20,74 +21,30 @@ interface Specialist {
   nextAvailable: string;
   consultationFee: string;
   image: string;
+  bookingPlatform?: string;
+  bookingUrl?: string;
 }
 
-const specialists: Specialist[] = [
-  {
-    id: "1",
-    name: "Dr. Sarah Mitchell",
-    title: "Sports Medicine Physician",
-    specialty: "Orthopedic Sports Medicine",
-    vertical: "Sports Medicine",
-    location: "New York, USA",
-    isLocal: true,
-    rating: 4.9,
-    reviews: 342,
-    experience: "15+ years",
-    languages: ["English", "Spanish"],
-    nextAvailable: "Today, 3:00 PM",
-    consultationFee: "$250",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=200"
-  },
-  {
-    id: "2",
-    name: "Dr. James Chen",
-    title: "Performance Specialist",
-    specialty: "Athletic Performance",
-    vertical: "Fitness & Performance",
-    location: "Los Angeles, USA",
-    isLocal: true,
-    rating: 4.8,
-    reviews: 256,
-    experience: "12+ years",
-    languages: ["English", "Mandarin"],
-    nextAvailable: "Tomorrow, 10:00 AM",
-    consultationFee: "$200",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=200"
-  },
-  {
-    id: "3",
-    name: "Dr. Elena Volkov",
-    title: "Global Health Expert",
-    specialty: "Preventive Medicine",
-    vertical: "Health & Wellness",
-    location: "London, UK",
-    isLocal: false,
-    rating: 5.0,
-    reviews: 518,
-    experience: "20+ years",
-    languages: ["English", "Russian", "German"],
-    nextAvailable: "Video Consultation Available",
-    consultationFee: "$180",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=200"
-  },
-  {
-    id: "4",
-    name: "Dr. Marcus Johnson",
-    title: "Rehabilitation Specialist",
-    specialty: "Physical Therapy",
-    vertical: "Sports Medicine",
-    location: "Chicago, USA",
-    isLocal: true,
-    rating: 4.7,
-    reviews: 189,
-    experience: "10+ years",
-    languages: ["English", "French"],
-    nextAvailable: "Today, 5:30 PM",
-    consultationFee: "$175",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=200"
-  }
-];
+
+const specialists: Specialist[] = specialistsData.map((s) => ({
+  id: String(s.id),
+  name: s.name,
+  title: s.title,
+  specialty: s.specialty,
+  vertical: "Sports Medicine",
+  location: s.location,
+  isLocal: /Hannover/i.test(s.location),
+  rating: s.rating,
+  reviews: s.reviews,
+  experience: s.experience,
+  languages: s.languages,
+  nextAvailable: (s as any).availability,
+  consultationFee: (s as any).price,
+  image: s.image,
+  bookingPlatform: (s as any).bookingPlatform,
+  bookingUrl: (s as any).bookingUrl,
+}));
+
 
 const SpecialistsSection = () => {
   const [selectedVertical, setSelectedVertical] = useState("All");
@@ -217,10 +174,19 @@ const SpecialistsSection = () => {
                     <MessageCircle className="h-3 w-3 mr-1" />
                     Message
                   </Button>
-                  <Button size="sm" className="text-xs tech-button">
-                    Book Now
-                  </Button>
+                  {specialist.bookingUrl ? (
+                    <Button size="sm" className="text-xs tech-button" asChild>
+                      <a href={specialist.bookingUrl} target="_blank" rel="noopener noreferrer">
+                        {specialist.bookingPlatform ? `Book on ${specialist.bookingPlatform}` : "Book Now"}
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button size="sm" className="text-xs tech-button">
+                      Book Now
+                    </Button>
+                  )}
                 </div>
+
               </CardContent>
             </Card>
           ))}
