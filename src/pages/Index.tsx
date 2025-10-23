@@ -1,6 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import { CommandPalette } from "@/components/CommandPalette";
 import VerticalsSection from "@/components/VerticalsSection";
 import ServicesGrid from "@/components/ServicesGrid";
 import TreatmentCentersSection from "@/components/TreatmentCentersSection";
@@ -13,6 +14,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <CommandPalette />
       <Navbar />
       <Hero />
       <VerticalsSection />

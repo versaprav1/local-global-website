@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { AdvancedFilters } from "@/components/AdvancedFilters";
 import { Star, MapPin, Globe, Award, MessageCircle, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { specialists as specialistsData } from "@/data/specialists";
@@ -48,16 +49,27 @@ const specialists: Specialist[] = specialistsData.map((s) => ({
 
 const SpecialistsSection = () => {
   const [selectedVertical, setSelectedVertical] = useState("All");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 300]);
   const { t } = useLanguage();
   
   const verticals = ["All", "Sports Medicine", "Health & Wellness", "Fitness & Performance"];
+  const categories = ["Orthopädie", "Unfallchirurgie", "Sportmedizin", "Physiotherapie", "Psychologie"];
+  const locations = ["Hannover", "München", "Berlin", "Frankfurt", "Lüdenscheid"];
   
-  const filteredSpecialists = specialists.filter(
-    specialist => selectedVertical === "All" || specialist.vertical === selectedVertical
-  );
+  const filteredSpecialists = specialists.filter(specialist => {
+    const matchesVertical = selectedVertical === "All" || specialist.vertical === selectedVertical;
+    const matchesLocation = selectedLocations.length === 0 || 
+      selectedLocations.some(loc => specialist.location.includes(loc));
+    const price = parseInt(specialist.consultationFee.replace(/[^0-9]/g, ''));
+    const matchesPrice = price >= priceRange[0] && price <= priceRange[1];
+    
+    return matchesVertical && matchesLocation && matchesPrice;
+  });
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="specialists" className="py-20 relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute inset-0 gradient-bg opacity-5" />
       
@@ -75,8 +87,8 @@ const SpecialistsSection = () => {
           </p>
         </div>
 
-        {/* Vertical Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {/* Filters */}
+        <div className="flex flex-wrap justify-center gap-3 mb-6">
           {verticals.map((vertical) => (
             <button
               key={vertical}
@@ -90,6 +102,21 @@ const SpecialistsSection = () => {
               {vertical}
             </button>
           ))}
+        </div>
+
+        {/* Advanced Filters */}
+        <div className="flex justify-center mb-10">
+          <AdvancedFilters
+            categories={categories}
+            selectedCategories={selectedCategories}
+            onCategoriesChange={setSelectedCategories}
+            locations={locations}
+            selectedLocations={selectedLocations}
+            onLocationsChange={setSelectedLocations}
+            priceRange={priceRange}
+            maxPrice={300}
+            onPriceChange={setPriceRange}
+          />
         </div>
 
         {/* Specialists Grid */}
