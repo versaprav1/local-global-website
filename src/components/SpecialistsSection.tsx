@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AdvancedFilters } from "@/components/AdvancedFilters";
+import { BookingFlow } from "@/components/BookingFlow";
 import { Star, MapPin, Globe, Award, MessageCircle, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { specialists as specialistsData } from "@/data/specialists";
@@ -52,6 +53,8 @@ const SpecialistsSection = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 300]);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [selectedSpecialistId, setSelectedSpecialistId] = useState<string>("");
   const { t } = useLanguage();
   
   const verticals = ["All", "Sports Medicine", "Health & Wellness", "Fitness & Performance"];
@@ -68,8 +71,18 @@ const SpecialistsSection = () => {
     return matchesVertical && matchesLocation && matchesPrice;
   });
 
+  const handleBookAppointment = (specialistId: string) => {
+    setSelectedSpecialistId(specialistId);
+    setBookingOpen(true);
+  };
+
   return (
     <section id="specialists" className="py-20 relative overflow-hidden">
+      <BookingFlow 
+        open={bookingOpen} 
+        onOpenChange={setBookingOpen}
+        preselectedSpecialist={selectedSpecialistId}
+      />
       {/* Background Decoration */}
       <div className="absolute inset-0 gradient-bg opacity-5" />
       
@@ -208,7 +221,11 @@ const SpecialistsSection = () => {
                       </a>
                     </Button>
                   ) : (
-                    <Button size="sm" className="text-xs tech-button">
+                    <Button 
+                      size="sm" 
+                      className="text-xs tech-button"
+                      onClick={() => handleBookAppointment(specialist.id)}
+                    >
                       Book Now
                     </Button>
                   )}
