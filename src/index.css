@@ -275,4 +275,75 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-primary;
   }
+
+  /* Enhanced Focus Styles for Accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Skip to Content Link */
+  .skip-to-content {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1rem 1.5rem;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    text-decoration: none;
+    border-radius: 0 0 0.5rem 0;
+  }
+
+  .skip-to-content:focus {
+    left: 0;
+    top: 0;
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Ripple Effect */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  /* Magnetic Effect */
+  .magnetic-hover {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Image Loading Effect */
+  img {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  img[loading="lazy"] {
+    opacity: 0;
+  }
+
+  img[loading="lazy"].loaded {
+    opacity: 1;
+  }
 }

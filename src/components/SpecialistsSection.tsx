@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AdvancedFilters } from "@/components/AdvancedFilters";
 import { BookingFlow } from "@/components/BookingFlow";
+import { SpecialistSkeleton } from "@/components/SkeletonCard";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { Star, MapPin, Globe, Award, MessageCircle, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { specialists as specialistsData } from "@/data/specialists";
@@ -55,7 +57,13 @@ const SpecialistsSection = () => {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 300]);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [selectedSpecialistId, setSelectedSpecialistId] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(true);
   const { t } = useLanguage();
+
+  // Simulate loading
+  useState(() => {
+    setTimeout(() => setIsLoading(false), 1000);
+  });
   
   const verticals = ["All", "Sports Medicine", "Health & Wellness", "Fitness & Performance"];
   const categories = ["Orthopädie", "Unfallchirurgie", "Sportmedizin", "Physiotherapie", "Psychologie"];
@@ -134,8 +142,16 @@ const SpecialistsSection = () => {
 
         {/* Specialists Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredSpecialists.map((specialist) => (
-            <Card key={specialist.id} className="glass-container card-hover">
+          {isLoading ? (
+            <>
+              {[...Array(8)].map((_, i) => (
+                <SpecialistSkeleton key={i} />
+              ))}
+            </>
+          ) : (
+            filteredSpecialists.map((specialist, index) => (
+            <ScrollReveal key={specialist.id} delay={index * 50}>
+              <Card className="glass-container card-hover">
               <CardContent className="p-6">
                 {/* Profile Header */}
                 <div className="text-center mb-4">
@@ -233,7 +249,9 @@ const SpecialistsSection = () => {
 
               </CardContent>
             </Card>
-          ))}
+            </ScrollReveal>
+          ))
+          )}
         </div>
 
         {/* CTA Section */}

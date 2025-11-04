@@ -16,9 +16,14 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      {/* Skip to main content for accessibility */}
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
       <CommandPalette />
       <Navbar />
       <Hero />
+      <main id="main-content">
       <VerticalsSection />
       <ServicesGrid />
       <TreatmentCentersSection />
@@ -28,6 +33,7 @@ const Index = () => {
       <AboutSection />
       <ResourcesSection />
       <ContactSection />
+      </main>
       <Footer />
     </div>
   );

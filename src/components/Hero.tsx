@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/MagneticButton";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles, Activity, Users, TrendingUp, Star, Play, MapPin, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -100,14 +101,14 @@ const Hero = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="tech-button group">
+                <MagneticButton size="lg" className="tech-button group">
                   {t('hero.cta.explore')}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline" className="glass-card hover:bg-white/20 dark:hover:bg-white/10">
+                </MagneticButton>
+                <MagneticButton size="lg" variant="outline" className="glass-card hover:bg-white/20 dark:hover:bg-white/10">
                   <Play className="mr-2 h-5 w-5" />
                   {t('hero.cta.demo')}
-                </Button>
+                </MagneticButton>
               </div>
             </div>
             

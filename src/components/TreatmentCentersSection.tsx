@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { CenterSkeleton } from "@/components/SkeletonCard";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { MapPin, Star, Clock, Shield, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { treatmentCenters as centersData } from "@/data/centers";
@@ -38,7 +40,12 @@ const centers: Center[] = centersData.map((c: any) => ({
 
 const TreatmentCentersSection = () => {
   const [filter, setFilter] = useState<"all" | "local" | "global">("all");
+  const [isLoading, setIsLoading] = useState(true);
   const { t } = useLanguage();
+
+  useState(() => {
+    setTimeout(() => setIsLoading(false), 800);
+  });
 
   const filteredCenters = centers.filter(center => {
     if (filter === "all") return true;
@@ -103,8 +110,16 @@ const TreatmentCentersSection = () => {
 
         {/* Centers Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {filteredCenters.map((center) => (
-            <Card key={center.id} className="glass-container overflow-hidden card-hover group">
+          {isLoading ? (
+            <>
+              {[...Array(4)].map((_, i) => (
+                <CenterSkeleton key={i} />
+              ))}
+            </>
+          ) : (
+            filteredCenters.map((center, index) => (
+            <ScrollReveal key={center.id} delay={index * 100}>
+              <Card className="glass-container overflow-hidden card-hover group">
               <div className="flex flex-col md:flex-row">
                 {/* Image */}
                 <div className="md:w-1/3 h-48 md:h-auto relative overflow-hidden">
@@ -180,7 +195,9 @@ const TreatmentCentersSection = () => {
                 </CardContent>
               </div>
             </Card>
-          ))}
+            </ScrollReveal>
+          ))
+          )}
         </div>
 
         {/* CTA */}
