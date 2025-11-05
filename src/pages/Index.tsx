@@ -8,8 +8,6 @@ import TreatmentCentersSection from "@/components/TreatmentCentersSection";
 import SpecialistsSection from "@/components/SpecialistsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import MapView from "@/components/MapView";
-import AboutSection from "@/components/AboutSection";
-import ResourcesSection from "@/components/ResourcesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -30,8 +28,6 @@ const Index = () => {
       <SpecialistsSection />
       <TestimonialsSection />
       <MapView />
-      <AboutSection />
-      <ResourcesSection />
       <ContactSection />
       </main>
       <Footer />

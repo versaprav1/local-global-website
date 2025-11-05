@@ -17,16 +17,16 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t('nav.home'), href: "/" },
-    { name: t('nav.services'), href: "#services" },
-    { name: t('nav.resources'), href: "#resources" },
-    { name: t('nav.about'), href: "#about" },
-    { name: t('nav.contact'), href: "#contact" },
+    { name: t('nav.services'), href: "/#services" },
+    { name: t('nav.resources'), href: "/resources" },
+    { name: t('nav.about'), href: "/about" },
+    { name: t('nav.contact'), href: "/#contact" },
   ];
 
   const verticals = [
-    { name: t('vertical.sports'), href: "#sports-medicine" },
-    { name: t('vertical.wellness'), href: "#health-wellness" },
-    { name: t('vertical.fitness'), href: "#fitness-performance" },
+    { name: t('vertical.sports'), href: "/#sports-medicine" },
+    { name: t('vertical.wellness'), href: "/#health-wellness" },
+    { name: t('vertical.fitness'), href: "/#fitness-performance" },
   ];
 
   return (
@@ -65,6 +65,14 @@ const Navbar = () => {
                     ))}
                   </DropdownMenuContent>
                 </DropdownMenu>
+              ) : link.href.startsWith('/') ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  {link.name}
+                </Link>
               ) : (
                 <a
                   key={link.name}
@@ -104,14 +112,25 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-white/10">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block py-2 text-muted-foreground hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </a>
+              link.href.startsWith('/') ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="block py-2 text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="block py-2 text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </a>
+              )
             ))}
             {/* Mobile Verticals */}
             <div className="mt-2 pt-2 border-t border-white/10">
