@@ -19,6 +19,11 @@ const VerticalsSection = () => {
 
   return (
     <section className="py-20 relative overflow-hidden">
+      {/* Scroll anchors for navigation */}
+      <div id="sports-medicine" className="absolute -top-20" />
+      <div id="health-wellness" className="absolute -top-20" />
+      <div id="fitness-performance" className="absolute -top-20" />
+      
       {/* Background Effects */}
       <div className="absolute inset-0 gradient-bg opacity-5" />
       
