@@ -10,44 +10,44 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const ResourcesSection = () => {
   const [industryFilter, setIndustryFilter] = useState("All Industries");
   
-  // Get unique industries from resources
-  const allIndustries = ["All Industries"];
+  // Get unique categories from resources
+  const allCategories = ["All Services"];
   resources.forEach(resource => {
     if (resource.industries && Array.isArray(resource.industries)) {
-      resource.industries.forEach(industry => {
-        if (industry !== "All Industries" && !allIndustries.includes(industry)) {
-          allIndustries.push(industry);
+      resource.industries.forEach(category => {
+        if (category !== "All Services" && !allCategories.includes(category)) {
+          allCategories.push(category);
         }
       });
     }
   });
   
-  // Filter resources based on selected industry
+  // Filter resources based on selected category
   const filteredResources = resources.filter(resource =>
-    industryFilter === "All Industries" || 
+    industryFilter === "All Services" || 
     resource.industries.includes(industryFilter) || 
-    resource.industries.includes("All Industries")
+    resource.industries.includes("All Services")
   );
 
   return (
     <section id="resources" className="py-16 md:py-24 bg-gradient-to-b from-background to-earth-50/70 dark:from-background dark:to-earth-950/20">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <Badge variant="outline" className="mb-4">Producer Resources</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Tools for Your Growth Journey</h2>
+          <Badge variant="outline" className="mb-4">Service Ecosystem</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Comprehensive Healthcare Platform</h2>
           <p className="text-muted-foreground text-lg">
-            Access guides, tools, and support to help you expand from local to global markets, regardless of your industry.
+            Access integrated services, tools, and support for seamless healthcare delivery from booking to recovery.
           </p>
         </div>
         
         <div className="max-w-xs mx-auto mb-8">
           <Select value={industryFilter} onValueChange={setIndustryFilter}>
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="Filter by Industry" />
+              <SelectValue placeholder="Filter by Category" />
             </SelectTrigger>
             <SelectContent>
-              {allIndustries.map(industry => (
-                <SelectItem key={industry} value={industry}>{industry}</SelectItem>
+              {allCategories.map(category => (
+                <SelectItem key={category} value={category}>{category}</SelectItem>
               ))}
             </SelectContent>
           </Select>
@@ -65,9 +65,9 @@ const ResourcesSection = () => {
                   <h3 className="text-xl font-bold mb-2">{resource.title}</h3>
                   <p className="text-muted-foreground mb-4 flex-grow">{resource.description}</p>
                   <div className="mb-4">
-                    {resource.industries.map(industry => 
-                      industry !== "All Industries" && (
-                        <Badge key={industry} variant="outline" className="mr-2 mb-2">{industry}</Badge>
+                    {resource.industries.map(category => 
+                      category !== "All Services" && (
+                        <Badge key={category} variant="outline" className="mr-2 mb-2">{category}</Badge>
                       )
                     )}
                   </div>
@@ -83,11 +83,11 @@ const ResourcesSection = () => {
         </div>
         
         <div className="max-w-2xl mx-auto bg-card shadow-lg rounded-xl p-8 text-center border">
-          <h3 className="text-2xl font-bold mb-4">Not finding what you need?</h3>
+          <h3 className="text-2xl font-bold mb-4">Need a Custom Integration?</h3>
           <p className="text-muted-foreground mb-6">
-            Our team of experts is ready to provide personalized guidance for your specific industry needs.
+            Our platform supports custom API integrations and tailored solutions for your specific healthcare needs.
           </p>
-          <Button>Schedule a Consultation</Button>
+          <Button>Contact Integration Team</Button>
         </div>
       </div>
     </section>
