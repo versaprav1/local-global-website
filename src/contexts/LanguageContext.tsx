@@ -13,6 +13,7 @@ const translations = {
     // Navbar
     'nav.home': 'Startseite',
     'nav.services': 'Services',
+    'nav.blog': 'Gesundheitsthemen',
     'nav.resources': 'Service-Ökosystem',
     'nav.about': 'Über uns',
     'nav.contact': 'Kontakt',
@@ -61,6 +62,7 @@ const translations = {
     // Navbar
     'nav.home': 'Home',
     'nav.services': 'Services',
+    'nav.blog': 'Health Topics',
     'nav.resources': 'Service Ecosystem',
     'nav.about': 'About',
     'nav.contact': 'Contact',
