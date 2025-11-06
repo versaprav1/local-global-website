@@ -1,56 +1,7 @@
-import { useState, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/MagneticButton";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Sparkles, Activity, Users, TrendingUp, Star, Play, MapPin, Globe } from "lucide-react";
+import { ArrowRight, Sparkles, Activity, Star, Play, MapPin, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
-  const [count, setCount] = useState(0);
-  const countRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !isVisible) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (countRef.current) {
-      observer.observe(countRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [isVisible]);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    
-    const startTime = Date.now();
-    const timer = setInterval(() => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      setCount(Math.floor(easeOutQuart * end));
-
-      if (progress === 1) {
-        clearInterval(timer);
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [end, duration, isVisible]);
-
-  return (
-    <div ref={countRef} className="text-4xl md:text-5xl font-bold text-gradient">
-      {count.toLocaleString()}{suffix}
-    </div>
-  );
-};
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -82,7 +33,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 max-w-7xl mx-auto">
           
           {/* Main Feature Card - Large */}
-          <div className="md:col-span-7 md:row-span-2 glass-container rounded-3xl p-8 md:p-12 relative overflow-hidden group">
+          <div className="md:col-span-12 md:row-span-2 glass-container rounded-3xl p-8 md:p-12 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 opacity-50 group-hover:opacity-70 transition-opacity duration-500" />
             <div className="relative z-10">
               <Badge className="mb-4 px-4 py-2 text-sm font-medium border-primary/20 bg-primary/10 text-primary">
@@ -115,30 +66,6 @@ const Hero = () => {
             {/* Animated Elements */}
             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl floating" />
             <div className="absolute -top-10 -left-10 w-48 h-48 bg-secondary/20 rounded-full blur-3xl floating" style={{ animationDelay: '1s' }} />
-          </div>
-
-          {/* Stats Card 1 */}
-          <div className="md:col-span-5 glass-card rounded-2xl p-6 hover:bg-white/15 dark:hover:bg-white/10 transition-all duration-300 card-hover">
-            <div className="flex items-start justify-between mb-4">
-              <div className="p-3 rounded-xl bg-primary/10">
-                <Users className="h-6 w-6 text-primary" />
-              </div>
-              <TrendingUp className="h-5 w-5 text-accent" />
-            </div>
-            <AnimatedCounter end={25000} suffix="+" />
-            <p className="text-muted-foreground mt-2">Active Users Worldwide</p>
-          </div>
-
-          {/* Stats Card 2 */}
-          <div className="md:col-span-5 glass-card rounded-2xl p-6 hover:bg-white/15 dark:hover:bg-white/10 transition-all duration-300 card-hover">
-            <div className="flex items-start justify-between mb-4">
-              <div className="p-3 rounded-xl bg-secondary/10">
-                <Activity className="h-6 w-6 text-secondary" />
-              </div>
-              <TrendingUp className="h-5 w-5 text-accent" />
-            </div>
-            <AnimatedCounter end={15000} suffix="+" />
-            <p className="text-muted-foreground mt-2">Healthcare Specialists</p>
           </div>
 
           {/* Testimonial Card */}
