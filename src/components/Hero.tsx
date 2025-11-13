@@ -33,7 +33,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 max-w-7xl mx-auto">
           
           {/* Main Feature Card - Large */}
-          <div className="md:col-span-12 md:row-span-2 glass-container rounded-3xl p-8 md:p-12 relative overflow-hidden group">
+          <div className="md:col-span-12 md:row-span-2 glass-container rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 opacity-50 group-hover:opacity-70 transition-opacity duration-500" />
             <div className="relative z-10">
               <Badge className="mb-4 px-4 py-2 text-sm font-medium border-primary/20 bg-primary/10 text-primary">
@@ -69,7 +69,7 @@ const Hero = () => {
           </div>
 
           {/* Testimonial Card */}
-          <div className="md:col-span-7 glass-container rounded-2xl p-6 md:p-8 relative overflow-hidden">
+          <div className="md:col-span-7 glass-container rounded-xl sm:rounded-2xl p-6 md:p-8 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent" />
             <div className="relative z-10">
               <div className="flex items-center gap-1 mb-4">
@@ -92,8 +92,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Quick Actions Card */}
-          <div className="md:col-span-5 glass-card rounded-2xl p-6 space-y-3">
+          {/* Quick Access Card */}
+          <div className="md:col-span-5 glass-container rounded-xl sm:rounded-2xl p-6 md:p-8 relative overflow-hidden">
             <h3 className="font-semibold text-foreground mb-4">Quick Access</h3>
             <div className="space-y-2">
               <button className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-white/5 transition-colors text-left group">

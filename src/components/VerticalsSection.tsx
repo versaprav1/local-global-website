@@ -42,14 +42,14 @@ const VerticalsSection = () => {
         </div>
 
         {/* Vertical Selector Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-12">
           {verticals.map((vertical) => {
             const Icon = vertical.icon;
             return (
               <button
                 key={vertical.id}
                 onClick={() => setSelectedVertical(vertical)}
-                className={`group relative px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                className={`group relative w-full sm:w-auto px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                   selectedVertical.id === vertical.id
                     ? "text-white"
                     : "text-foreground hover:scale-105"
@@ -76,7 +76,7 @@ const VerticalsSection = () => {
         </div>
 
         {/* Selected Vertical Details */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
             <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${selectedVertical.gradient} shadow-glow`}>

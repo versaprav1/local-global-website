@@ -109,12 +109,12 @@ const SpecialistsSection = () => {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-6">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 mb-6">
           {verticals.map((vertical) => (
             <button
               key={vertical}
               onClick={() => setSelectedVertical(vertical)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              className={`w-full sm:w-auto px-4 py-2 rounded-lg font-medium transition-all ${
                 selectedVertical === vertical
                   ? "bg-primary text-white"
                   : "glass-card hover:bg-white/20"
@@ -141,7 +141,7 @@ const SpecialistsSection = () => {
         </div>
 
         {/* Specialists Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {isLoading ? (
             <>
               {[...Array(8)].map((_, i) => (
