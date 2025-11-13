@@ -23,7 +23,7 @@ export default function MapView() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Map Area */}
           <div className="lg:col-span-2">
             <Card className="glass-card overflow-hidden h-[600px]">

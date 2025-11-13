@@ -61,7 +61,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <Card className="border shadow-lg overflow-hidden">
             <CardContent className="p-0">
               <div className="bg-gradient-to-br from-ocean-600 to-primary h-48 relative">
