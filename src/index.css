@@ -4,22 +4,22 @@
 
 @layer base {
   :root {
-    /* Modern Tech Color Palette */
+    /* Athletic Performance Color Palette */
     --background: 0 0% 100%;
     --foreground: 222 84% 4%;
     
-    /* Primary - Electric Blue */
-    --primary: 217 91% 60%;
+    /* Primary - Energy Orange */
+    --primary: 14 90% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 217 100% 70%;
+    --primary-glow: 14 100% 63%;
     
-    /* Secondary - Deep Purple */
-    --secondary: 271 81% 56%;
+    /* Secondary - Electric Blue */
+    --secondary: 221 83% 53%;
     --secondary-foreground: 0 0% 100%;
     
-    /* Accent - Neon Cyan */
-    --accent: 184 100% 50%;
-    --accent-foreground: 222 84% 4%;
+    /* Accent - Performance Green */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
     
     /* UI States */
     --muted: 210 40% 96%;
@@ -38,24 +38,24 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(271 81% 56%));
-    --gradient-secondary: linear-gradient(135deg, hsl(184 100% 50%), hsl(217 91% 60%));
+    /* Athletic Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(14 90% 53%), hsl(14 100% 63%));
+    --gradient-secondary: linear-gradient(135deg, hsl(221 83% 53%), hsl(142 76% 36%));
     --gradient-dark: linear-gradient(135deg, hsl(222 47% 11%), hsl(217 33% 17%));
     --gradient-light: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 96%));
-    --gradient-mesh: radial-gradient(at 40% 20%, hsl(217 91% 60%) 0px, transparent 50%),
-                     radial-gradient(at 80% 0%, hsl(271 81% 56%) 0px, transparent 50%),
-                     radial-gradient(at 0% 50%, hsl(184 100% 50%) 0px, transparent 50%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(14 90% 53% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(221 83% 53% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(142 76% 36% / 0.3) 0px, transparent 50%);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+    --shadow-glow: 0 0 40px hsl(14 90% 53% / 0.3);
     --shadow-elegant: 0 10px 40px -10px hsl(222 47% 11% / 0.3);
-    --shadow-neon: 0 0 20px hsl(184 100% 50% / 0.5), 0 0 40px hsl(184 100% 50% / 0.3);
+    --shadow-neon: 0 0 20px hsl(142 76% 36% / 0.5), 0 0 40px hsl(142 76% 36% / 0.3);
     
     /* Chart colors */
-    --chart-1: 217 91% 60%;
-    --chart-2: 271 81% 56%;
-    --chart-3: 184 100% 50%;
+    --chart-1: 14 90% 53%;
+    --chart-2: 221 83% 53%;
+    --chart-3: 142 76% 36%;
     --chart-4: 43 100% 50%;
     --chart-5: 0 84% 60%;
     
@@ -72,19 +72,19 @@
   }
   
   .dark {
-    /* Dark Mode - Tech Noir Theme */
+    /* Dark Mode - Athletic Performance Theme */
     --background: 222 84% 4%;
     --foreground: 210 40% 98%;
     
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 84% 4%;
-    --primary-glow: 217 100% 70%;
+    --primary: 14 90% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 14 100% 63%;
     
-    --secondary: 271 81% 56%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 221 83% 53%;
+    --secondary-foreground: 0 0% 100%;
     
-    --accent: 184 100% 50%;
-    --accent-foreground: 222 84% 4%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
     
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
@@ -102,13 +102,13 @@
     --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
     
-    /* Dark Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(271 81% 56%));
-    --gradient-secondary: linear-gradient(135deg, hsl(184 100% 50%), hsl(217 91% 60%));
+    /* Dark Athletic Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(14 90% 53%), hsl(14 100% 63%));
+    --gradient-secondary: linear-gradient(135deg, hsl(221 83% 53%), hsl(142 76% 36%));
     --gradient-dark: linear-gradient(135deg, hsl(222 84% 4%), hsl(217 33% 17%));
-    --gradient-mesh: radial-gradient(at 40% 20%, hsl(217 91% 60% / 0.3) 0px, transparent 50%),
-                     radial-gradient(at 80% 0%, hsl(271 81% 56% / 0.3) 0px, transparent 50%),
-                     radial-gradient(at 0% 50%, hsl(184 100% 50% / 0.3) 0px, transparent 50%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(14 90% 53% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(221 83% 53% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(142 76% 36% / 0.3) 0px, transparent 50%);
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;

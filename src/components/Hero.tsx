@@ -38,17 +38,17 @@ const Hero = () => {
             <div className="relative z-10">
               <Badge className="mb-4 px-4 py-2 text-sm font-medium border-primary/20 bg-primary/10 text-primary">
                 <Sparkles className="h-3 w-3 mr-2" />
-                {t('hero.badge')}
+                Performance & Recovery Excellence
               </Badge>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                <span className="text-gradient">{t('hero.title1')}</span>
+                <span className="text-gradient">LocalGlobal</span>
                 <br />
-                <span className="text-foreground">{t('hero.title2')}</span>
+                <span className="text-foreground">Performance & Recovery for Athletes</span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
-                {t('hero.subtitle')}
+                From local innovation to global impact. Science-backed solutions empowering athletes to achieve peak performance through advanced recovery and training optimization.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -78,7 +78,7 @@ const Hero = () => {
                 ))}
               </div>
               <p className="text-foreground mb-4 italic">
-                "This platform revolutionized how I connect with healthcare professionals. The global reach combined with local expertise is unmatched."
+                "LocalGlobal's recovery protocols cut my comeback time in half. The combination of cutting-edge science and personalized local support is game-changing for elite performance."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
