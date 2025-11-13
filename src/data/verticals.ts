@@ -17,56 +17,56 @@ export interface Vertical {
 export const verticals: Vertical[] = [
   {
     id: "sports-medicine",
-    name: "Sports Medicine",
-    description: "Advanced treatment and recovery for athletes at all levels",
+    name: "Performance Medicine",
+    description: "Elite sports medicine and injury recovery for peak athletic performance",
     icon: Activity,
     gradient: "from-primary to-secondary",
     features: [
-      "Injury Prevention & Treatment",
-      "Performance Optimization",
-      "Recovery Programs",
-      "Sports Rehabilitation"
+      "Advanced Injury Recovery",
+      "Performance Optimization Protocols",
+      "Science-Backed Treatment Plans",
+      "Return-to-Sport Programs"
     ],
     stats: [
-      { label: "Treatment Centers", value: "2,500+" },
-      { label: "Specialists", value: "10,000+" },
-      { label: "Recovery Rate", value: "94%" }
+      { label: "Elite Athletes Served", value: "50,000+" },
+      { label: "Performance Specialists", value: "10,000+" },
+      { label: "Recovery Success", value: "96%" }
     ]
   },
   {
     id: "health-wellness",
-    name: "Health & Wellness",
-    description: "Comprehensive healthcare services from local to global providers",
+    name: "Recovery & Wellness",
+    description: "Comprehensive recovery systems and wellness optimization for athletes",
     icon: Heart,
     gradient: "from-secondary to-accent",
     features: [
-      "Primary Care",
-      "Specialist Consultations",
-      "Telemedicine Services",
-      "Health Screening"
+      "Active Recovery Programs",
+      "Sleep & Nutrition Optimization",
+      "Mental Performance Coaching",
+      "Longevity & Prevention"
     ],
     stats: [
-      { label: "Healthcare Providers", value: "15,000+" },
-      { label: "Clinics", value: "5,000+" },
-      { label: "Patient Satisfaction", value: "96%" }
+      { label: "Recovery Centers", value: "15,000+" },
+      { label: "Wellness Experts", value: "5,000+" },
+      { label: "Performance Gain", value: "43%" }
     ]
   },
   {
     id: "fitness-performance",
-    name: "Fitness & Performance",
-    description: "Elite training and performance optimization resources",
+    name: "Training & Performance",
+    description: "Elite training systems and data-driven performance enhancement",
     icon: Dumbbell,
     gradient: "from-accent to-primary",
     features: [
-      "Personal Training",
-      "Nutrition Coaching",
-      "Performance Analytics",
-      "Recovery & Wellness"
+      "Personalized Training Plans",
+      "Performance Data Analytics",
+      "Strength & Conditioning",
+      "Movement Optimization"
     ],
     stats: [
-      { label: "Fitness Centers", value: "8,000+" },
-      { label: "Certified Trainers", value: "20,000+" },
-      { label: "Success Rate", value: "89%" }
+      { label: "Training Facilities", value: "8,000+" },
+      { label: "Elite Coaches", value: "20,000+" },
+      { label: "Performance Improvement", value: "38%" }
     ]
   }
 ];
