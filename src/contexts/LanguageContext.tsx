@@ -25,16 +25,17 @@ const translations = {
     'vertical.fitness': 'Fitness & Performance',
     
     // Hero
-    'hero.badge': 'KI-gestützte Plattform in Deutschland',
-    'hero.title1': 'Lokal verbinden,',
-    'hero.title2': 'Global erreichen',
-    'hero.subtitle': 'Ihr Zugang zu unbegrenzten Ressourcen, Dienstleistungen und Möglichkeiten. Von Ihrer Nachbarschaft bis zur ganzen Welt - jetzt in Deutschland verfügbar.',
+    'hero.badge': 'Performance & Recovery Exzellenz',
+    'hero.title': 'Performance & Erholung für Athleten',
+    'hero.subtitle': 'Von lokaler Innovation zu globaler Wirkung. Wissenschaftlich fundierte Lösungen, die Athleten zu Höchstleistungen verhelfen durch fortschrittliche Erholung und Trainingsoptimierung.',
     'hero.cta.explore': 'Jetzt erkunden',
     'hero.cta.demo': 'Demo ansehen',
-    'hero.feature.germany': 'Deutschland',
-    'hero.feature.global': 'Globale Reichweite',
-    'hero.feature.verified': 'Geprüfte Services',
-    'hero.feature.users': '10M+ Nutzer',
+    'hero.testimonial': 'LocalGlobal hat unser Erholungsprogramm mit modernsten Lösungen und fachkundiger Beratung transformiert. Sehr empfehlenswert!',
+    'hero.testimonial.role': 'Olympische Team-Physiotherapeutin',
+    'hero.quick': 'Schnellzugriff',
+    'hero.centers': 'Behandlungszentren',
+    'hero.specialists': 'Elite-Spezialisten',
+    'hero.resources': 'Erholungsressourcen',
     
     // Treatment Centers
     'centers.title': 'Behandlungszentren in Ihrer Nähe',
@@ -74,16 +75,17 @@ const translations = {
     'vertical.fitness': 'Fitness & Performance',
     
     // Hero
-    'hero.badge': 'AI-powered Platform in Germany',
-    'hero.title1': 'Connect Locally,',
-    'hero.title2': 'Reach Globally',
-    'hero.subtitle': 'Your gateway to unlimited resources, services, and opportunities. From your neighborhood to the entire world - now available in Germany.',
+    'hero.badge': 'Performance & Recovery Excellence',
+    'hero.title': 'Performance & Recovery for Athletes',
+    'hero.subtitle': 'From local innovation to global impact. Science-backed solutions empowering athletes to achieve peak performance through advanced recovery and training optimization.',
     'hero.cta.explore': 'Explore Now',
     'hero.cta.demo': 'View Demo',
-    'hero.feature.germany': 'Germany',
-    'hero.feature.global': 'Global Reach',
-    'hero.feature.verified': 'Verified Services',
-    'hero.feature.users': '10M+ Users',
+    'hero.testimonial': 'LocalGlobal transformed our recovery program with cutting-edge solutions and expert guidance. Highly recommended!',
+    'hero.testimonial.role': 'Olympic Team Physiotherapist',
+    'hero.quick': 'Quick Access',
+    'hero.centers': 'Treatment Centers',
+    'hero.specialists': 'Elite Specialists',
+    'hero.resources': 'Recovery Resources',
     
     // Treatment Centers
     'centers.title': 'Treatment Centers Near You',
@@ -112,10 +114,17 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('de');
+  const [language, setLanguage] = useState<Language>(() => {
+    const saved = localStorage.getItem('language');
+    return (saved === 'de' || saved === 'en') ? saved : 'de';
+  });
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'de' ? 'en' : 'de');
+    setLanguage(prev => {
+      const newLang = prev === 'de' ? 'en' : 'de';
+      localStorage.setItem('language', newLang);
+      return newLang;
+    });
   };
 
   const t = (key: string): string => {

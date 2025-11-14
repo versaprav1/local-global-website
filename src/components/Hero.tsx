@@ -38,17 +38,17 @@ const Hero = () => {
             <div className="relative z-10">
               <Badge className="mb-4 px-4 py-2 text-sm font-medium border-primary/20 bg-primary/10 text-primary">
                 <Sparkles className="h-3 w-3 mr-2" />
-                Performance & Recovery Excellence
+                {t('hero.badge')}
               </Badge>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 <span className="text-gradient">LocalGlobal</span>
                 <br />
-                <span className="text-foreground">Performance & Recovery for Athletes</span>
+                <span className="text-foreground">{t('hero.title')}</span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
-                From local innovation to global impact. Science-backed solutions empowering athletes to achieve peak performance through advanced recovery and training optimization.
+                {t('hero.subtitle')}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -78,15 +78,15 @@ const Hero = () => {
                 ))}
               </div>
               <p className="text-foreground mb-4 italic">
-                "LocalGlobal's recovery protocols cut my comeback time in half. The combination of cutting-edge science and personalized local support is game-changing for elite performance."
+                "{t('hero.testimonial')}"
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
-                  JD
+                  SK
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">John Doe</p>
-                  <p className="text-sm text-muted-foreground">Professional Athlete</p>
+                  <p className="font-semibold text-foreground">Dr. Sarah König</p>
+                  <p className="text-sm text-muted-foreground">{t('hero.testimonial.role')}</p>
                 </div>
               </div>
             </div>
@@ -94,19 +94,19 @@ const Hero = () => {
 
           {/* Quick Access Card */}
           <div className="md:col-span-5 glass-container rounded-xl sm:rounded-2xl p-6 md:p-8 relative overflow-hidden">
-            <h3 className="font-semibold text-foreground mb-4">Quick Access</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t('hero.quick')}</h3>
             <div className="space-y-2">
               <button className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-white/5 transition-colors text-left group">
                 <MapPin className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium">Find Local Centers</span>
+                <span className="text-sm font-medium">{t('hero.centers')}</span>
               </button>
               <button className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-white/5 transition-colors text-left group">
                 <Globe className="h-5 w-5 text-secondary group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium">Global Network</span>
+                <span className="text-sm font-medium">{t('hero.specialists')}</span>
               </button>
               <button className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-white/5 transition-colors text-left group">
                 <Activity className="h-5 w-5 text-accent group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium">Book Consultation</span>
+                <span className="text-sm font-medium">{t('hero.resources')}</span>
               </button>
             </div>
           </div>
