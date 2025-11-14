@@ -26,16 +26,15 @@ const translations = {
     
     // Hero
     'hero.badge': 'Performance & Recovery Exzellenz',
-    'hero.title': 'Performance & Erholung für Athleten',
-    'hero.subtitle': 'Von lokaler Innovation zu globaler Wirkung. Wissenschaftlich fundierte Lösungen, die Athleten zu Höchstleistungen verhelfen durch fortschrittliche Erholung und Trainingsoptimierung.',
-    'hero.cta.explore': 'Jetzt erkunden',
-    'hero.cta.demo': 'Demo ansehen',
-    'hero.testimonial': 'LocalGlobal hat unser Erholungsprogramm mit modernsten Lösungen und fachkundiger Beratung transformiert. Sehr empfehlenswert!',
-    'hero.testimonial.role': 'Olympische Team-Physiotherapeutin',
-    'hero.quick': 'Schnellzugriff',
-    'hero.centers': 'Behandlungszentren',
-    'hero.specialists': 'Elite-Spezialisten',
-    'hero.resources': 'Erholungsressourcen',
+    'hero.main.title': 'Zurück zur Höchstleistung',
+    'hero.main.subtitle': 'Schneller als je zuvor',
+    'hero.benefit': 'Wissenschaftlich fundierte Erholungslösungen verbinden Sie mit Elite-Spezialisten und hochmodernen Behandlungszentren weltweit.',
+    'hero.cta.primary': 'Kostenlose Beratung buchen',
+    'hero.cta.secondary': 'Erholungsprogramme ansehen',
+    'hero.stats.specialists': 'Elite-Spezialisten',
+    'hero.stats.centers': 'Behandlungszentren',
+    'hero.stats.athletes': 'Athleten erholt',
+    'hero.stats.rating': 'Bewertung',
     
     // Treatment Centers
     'centers.title': 'Behandlungszentren in Ihrer Nähe',
@@ -76,16 +75,15 @@ const translations = {
     
     // Hero
     'hero.badge': 'Performance & Recovery Excellence',
-    'hero.title': 'Performance & Recovery for Athletes',
-    'hero.subtitle': 'From local innovation to global impact. Science-backed solutions empowering athletes to achieve peak performance through advanced recovery and training optimization.',
-    'hero.cta.explore': 'Explore Now',
-    'hero.cta.demo': 'View Demo',
-    'hero.testimonial': 'LocalGlobal transformed our recovery program with cutting-edge solutions and expert guidance. Highly recommended!',
-    'hero.testimonial.role': 'Olympic Team Physiotherapist',
-    'hero.quick': 'Quick Access',
-    'hero.centers': 'Treatment Centers',
-    'hero.specialists': 'Elite Specialists',
-    'hero.resources': 'Recovery Resources',
+    'hero.main.title': 'Get Back to Peak Performance',
+    'hero.main.subtitle': 'Faster Than Ever',
+    'hero.benefit': 'Science-backed recovery solutions connecting you with elite specialists and cutting-edge treatment centers worldwide.',
+    'hero.cta.primary': 'Book Free Consultation',
+    'hero.cta.secondary': 'View Recovery Programs',
+    'hero.stats.specialists': 'Elite Specialists',
+    'hero.stats.centers': 'Treatment Centers',
+    'hero.stats.athletes': 'Athletes Recovered',
+    'hero.stats.rating': 'Rating',
     
     // Treatment Centers
     'centers.title': 'Treatment Centers Near You',
