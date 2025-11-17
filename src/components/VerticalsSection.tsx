@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { verticals } from "@/data/verticals";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,12 @@ const VerticalsSection = () => {
     "sports-medicine": heroImage,
     "health-wellness": wellnessImage,
     "fitness-performance": fitnessImage
+  };
+
+  const verticalRoutes = {
+    "sports-medicine": "/services/performance-medicine",
+    "health-wellness": "/services/recovery-wellness",
+    "fitness-performance": "/services/training-performance"
   };
 
   return (
@@ -100,10 +107,12 @@ const VerticalsSection = () => {
             </ul>
             
             {/* CTA Button */}
-            <Button className="tech-button group">
-              Explore {selectedVertical.name}
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link to={verticalRoutes[selectedVertical.id as keyof typeof verticalRoutes]}>
+              <Button className="tech-button group">
+                Explore {selectedVertical.name}
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
 
           {/* Right Content - Image and Stats */}
