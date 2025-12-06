@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Services",
+    "blog": "Gesundheitsthemen",
+    "resources": "Service-Ökosystem",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "cta": "Jetzt starten"
+  },
+  "footer": {
+    "description": "Ihr Partner für sportmedizinische Exzellenz, Erholung und Leistungsoptimierung.",
+    "quickLinks": "Schnelllinks",
+    "resources": "Ressourcen",
+    "newsletter": "Newsletter",
+    "newsletterText": "Erhalten Sie die neuesten Updates zu Gesundheit und Performance.",
+    "subscribe": "Abonnieren",
+    "emailPlaceholder": "Ihre E-Mail",
+    "copyright": "© 2024 MedPro. Alle Rechte vorbehalten.",
+    "terms": "AGB",
+    "privacy": "Datenschutz",
+    "cookies": "Cookies",
+    "faq": "FAQ",
+    "support": "Support",
+    "partners": "Partner",
+    "careers": "Karriere"
+  },
+  "buttons": {
+    "bookConsultation": "Beratung buchen",
+    "learnMore": "Mehr erfahren",
+    "viewProfile": "Profil ansehen",
+    "bookAppointment": "Termin buchen",
+    "showMore": "Mehr anzeigen",
+    "getStarted": "Jetzt starten",
+    "contact": "Kontakt"
+  },
+  "labels": {
+    "available": "Verfügbar",
+    "verified": "Verifiziert",
+    "rating": "Bewertung",
+    "experience": "Erfahrung",
+    "patients": "Patienten",
+    "years": "Jahre"
+  }
+}

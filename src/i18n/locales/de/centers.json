@@ -1,0 +1,20 @@
+{
+  "section": {
+    "title": "Behandlungszentren in Ihrer Nähe",
+    "subtitle": "Finden Sie erstklassige medizinische Einrichtungen und Wellness-Zentren in Deutschland"
+  },
+  "filters": {
+    "all": "Alle Zentren",
+    "local": "Lokal (Hannover)",
+    "global": "Deutschlandweit"
+  },
+  "card": {
+    "rating": "Bewertung",
+    "specialties": "Spezialisierungen",
+    "available": "Verfügbar",
+    "verified": "Verifiziert",
+    "book": "Termin buchen",
+    "details": "Details ansehen"
+  },
+  "cta": "Alle Zentren anzeigen"
+}

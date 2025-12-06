@@ -1,10 +1,12 @@
-
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-earth-950 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -13,11 +15,11 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-6">
               <div className="h-8 w-8 rounded-full bg-gradient-to-br from-earth-500 to-ocean-600"></div>
               <span className="text-xl font-display font-bold">
-                Local<span className="text-ocean-500">Global</span>
+                Med<span className="text-ocean-500">Pro</span>
               </span>
             </div>
             <p className="text-earth-300 mb-6">
-              Connecting local producers with global markets through sustainable growth pathways.
+              {t('common.footer.description')}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-earth-300 hover:text-white transition-colors">
@@ -36,35 +38,33 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-6">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-6">{t('common.footer.quickLinks')}</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#producers" className="text-earth-300 hover:text-white transition-colors">Featured Producers</a></li>
-              <li><a href="#opportunities" className="text-earth-300 hover:text-white transition-colors">Opportunities</a></li>
-              <li><a href="#resources" className="text-earth-300 hover:text-white transition-colors">Resources</a></li>
-              <li><a href="#contact" className="text-earth-300 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">{t('common.nav.about')}</a></li>
+              <li><a href="#centers" className="text-earth-300 hover:text-white transition-colors">{t('common.nav.services')}</a></li>
+              <li><a href="#specialists" className="text-earth-300 hover:text-white transition-colors">{t('common.nav.blog')}</a></li>
+              <li><a href="#contact" className="text-earth-300 hover:text-white transition-colors">{t('common.nav.contact')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-6">Resources</h3>
+            <h3 className="text-lg font-bold mb-6">{t('common.footer.resources')}</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">Market Reports</a></li>
-              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">Certification Guide</a></li>
-              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">Producer Community</a></li>
-              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">FAQ</a></li>
+              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">{t('common.footer.faq')}</a></li>
+              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">{t('common.footer.support')}</a></li>
+              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">{t('common.footer.partners')}</a></li>
+              <li><a href="#" className="text-earth-300 hover:text-white transition-colors">{t('common.footer.careers')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-6">Subscribe</h3>
+            <h3 className="text-lg font-bold mb-6">{t('common.footer.newsletter')}</h3>
             <p className="text-earth-300 mb-4">
-              Stay updated with the latest opportunities and resources.
+              {t('common.footer.newsletterText')}
             </p>
             <div className="flex space-x-2">
               <Input 
-                placeholder="Your email" 
+                placeholder={t('common.footer.emailPlaceholder')} 
                 className="bg-earth-900 border-earth-800 text-white placeholder:text-earth-500"
               />
               <Button type="submit" size="icon">
@@ -77,11 +77,11 @@ const Footer = () => {
         <Separator className="bg-earth-800 mb-8" />
         
         <div className="text-center text-earth-400 text-sm">
-          <p>© 2025 LocalGlobal. All rights reserved.</p>
+          <p>{t('common.footer.copyright')}</p>
           <div className="mt-2 flex justify-center space-x-8">
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Cookies</a>
+            <a href="#" className="hover:text-white transition-colors">{t('common.footer.terms')}</a>
+            <a href="#" className="hover:text-white transition-colors">{t('common.footer.privacy')}</a>
+            <a href="#" className="hover:text-white transition-colors">{t('common.footer.cookies')}</a>
           </div>
         </div>
       </div>

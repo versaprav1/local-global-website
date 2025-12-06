@@ -1,0 +1,52 @@
+{
+  "section": {
+    "badge": "Unsere Expertise",
+    "title": "Spezialisierte Leistungsbereiche",
+    "subtitle": "Entdecken Sie unser umfassendes Angebot an medizinischen und Performance-Dienstleistungen"
+  },
+  "items": {
+    "performance-medicine": {
+      "name": "Performance Medicine",
+      "description": "Sportmedizinische Exzellenz mit modernster Diagnostik und evidenzbasierter Behandlung für Athleten und aktive Menschen.",
+      "features": [
+        "Leistungsdiagnostik",
+        "Sportmedizinische Betreuung",
+        "Präventionsmedizin",
+        "Rehabilitation"
+      ],
+      "stats": {
+        "value": "500+",
+        "label": "Athleten betreut"
+      }
+    },
+    "recovery-wellness": {
+      "name": "Recovery & Wellness",
+      "description": "Ganzheitliche Regenerationsprogramme, die Körper und Geist in Einklang bringen für optimale Erholung.",
+      "features": [
+        "Regenerationstherapie",
+        "Stressmanagement",
+        "Schlafoptimierung",
+        "Wellness-Programme"
+      ],
+      "stats": {
+        "value": "98%",
+        "label": "Zufriedenheit"
+      }
+    },
+    "training-performance": {
+      "name": "Training & Performance",
+      "description": "Datengestützte Trainingsplanung und Leistungsanalyse für messbare Ergebnisse und kontinuierliche Verbesserung.",
+      "features": [
+        "Trainingsplanung",
+        "Leistungsanalyse",
+        "Athletenbetreuung",
+        "Team-Programme"
+      ],
+      "stats": {
+        "value": "25%",
+        "label": "Ø Leistungssteigerung"
+      }
+    }
+  },
+  "cta": "Mehr erfahren"
+}

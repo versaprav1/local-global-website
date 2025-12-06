@@ -1,0 +1,52 @@
+{
+  "section": {
+    "badge": "Our Expertise",
+    "title": "Specialized Service Areas",
+    "subtitle": "Discover our comprehensive range of medical and performance services"
+  },
+  "items": {
+    "performance-medicine": {
+      "name": "Performance Medicine",
+      "description": "Sports medicine excellence with state-of-the-art diagnostics and evidence-based treatment for athletes and active individuals.",
+      "features": [
+        "Performance Diagnostics",
+        "Sports Medical Care",
+        "Preventive Medicine",
+        "Rehabilitation"
+      ],
+      "stats": {
+        "value": "500+",
+        "label": "Athletes Treated"
+      }
+    },
+    "recovery-wellness": {
+      "name": "Recovery & Wellness",
+      "description": "Holistic regeneration programs that harmonize body and mind for optimal recovery.",
+      "features": [
+        "Regeneration Therapy",
+        "Stress Management",
+        "Sleep Optimization",
+        "Wellness Programs"
+      ],
+      "stats": {
+        "value": "98%",
+        "label": "Satisfaction"
+      }
+    },
+    "training-performance": {
+      "name": "Training & Performance",
+      "description": "Data-driven training planning and performance analysis for measurable results and continuous improvement.",
+      "features": [
+        "Training Planning",
+        "Performance Analysis",
+        "Athlete Support",
+        "Team Programs"
+      ],
+      "stats": {
+        "value": "25%",
+        "label": "Avg Performance Increase"
+      }
+    }
+  },
+  "cta": "Learn More"
+}

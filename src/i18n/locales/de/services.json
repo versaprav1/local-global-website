@@ -1,0 +1,395 @@
+{
+  "performance": {
+    "hero": {
+      "badge": "Sportmedizinische Exzellenz",
+      "title": "Performance Medicine",
+      "subtitle": "Wissenschaftlich fundierte Diagnostik und Behandlung für Athleten und aktive Menschen, die ihre Leistungsfähigkeit maximieren wollen.",
+      "cta": "Kostenlose Beratung buchen"
+    },
+    "audience": {
+      "title": "Für wen ist das?",
+      "items": [
+        {
+          "title": "Profisportler",
+          "description": "Elite-Athleten, die ihre Karriere durch präzise medizinische Betreuung verlängern möchten."
+        },
+        {
+          "title": "Ambitionierte Amateure",
+          "description": "Hobbysportler mit dem Anspruch, ihre persönlichen Bestleistungen sicher zu erreichen."
+        },
+        {
+          "title": "Fitness-Enthusiasten",
+          "description": "Menschen, die einen aktiven Lebensstil pflegen und präventiv handeln möchten."
+        },
+        {
+          "title": "Rehabilitanden",
+          "description": "Personen nach Verletzungen, die sicher und effektiv zurück zur Aktivität finden wollen."
+        }
+      ]
+    },
+    "outcomes": {
+      "title": "Was Sie erwarten können",
+      "items": [
+        {
+          "title": "Präzise Diagnostik",
+          "description": "Modernste Untersuchungsmethoden für exakte Befunde"
+        },
+        {
+          "title": "Individuelle Therapie",
+          "description": "Auf Sie zugeschnittene Behandlungspläne"
+        },
+        {
+          "title": "Schnelle Erholung",
+          "description": "Optimierte Regenerationszeiten durch evidenzbasierte Methoden"
+        },
+        {
+          "title": "Langfristige Gesundheit",
+          "description": "Nachhaltige Strategien für dauerhafte Leistungsfähigkeit"
+        }
+      ]
+    },
+    "process": {
+      "title": "So funktioniert es",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Erstgespräch",
+          "description": "Kostenlose 15-minütige Beratung zur Bedarfsanalyse"
+        },
+        {
+          "step": "2",
+          "title": "Diagnostik",
+          "description": "Umfassende Untersuchung mit modernsten Methoden"
+        },
+        {
+          "step": "3",
+          "title": "Therapieplan",
+          "description": "Individueller Behandlungsplan basierend auf Ihren Zielen"
+        },
+        {
+          "step": "4",
+          "title": "Begleitung",
+          "description": "Kontinuierliche Betreuung und Anpassung des Plans"
+        }
+      ]
+    },
+    "cases": {
+      "title": "Erfolgsgeschichten",
+      "items": [
+        {
+          "title": "Marathonläufer zurück auf der Strecke",
+          "description": "Nach chronischer Achillessehnenproblematik in 8 Wochen wieder wettkampffähig.",
+          "metric": "8 Wochen",
+          "metricLabel": "bis zur Rückkehr"
+        },
+        {
+          "title": "Fußballprofi nach Kreuzbandriss",
+          "description": "Vollständige Rehabilitation und Rückkehr zum Profisport in Rekordzeit.",
+          "metric": "6 Monate",
+          "metricLabel": "Rehabilitationszeit"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Was unsere Patienten sagen",
+      "items": [
+        {
+          "name": "Thomas M.",
+          "role": "Triathlet",
+          "text": "Die Betreuung war erstklassig. Ich konnte schneller als erwartet wieder trainieren.",
+          "rating": 5
+        },
+        {
+          "name": "Sarah K.",
+          "role": "Fitness-Trainerin",
+          "text": "Endlich ein Team, das meine sportlichen Ziele versteht und unterstützt.",
+          "rating": 5
+        }
+      ]
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "items": [
+        {
+          "question": "Wie lange dauert eine typische Behandlung?",
+          "answer": "Die Behandlungsdauer variiert je nach Diagnose. Nach der Erstuntersuchung erstellen wir einen individuellen Zeitplan für Sie."
+        },
+        {
+          "question": "Werden die Kosten von der Krankenkasse übernommen?",
+          "answer": "Viele unserer Leistungen werden von privaten und gesetzlichen Krankenkassen übernommen. Wir beraten Sie gerne individuell."
+        },
+        {
+          "question": "Brauche ich eine Überweisung?",
+          "answer": "Nein, Sie können direkt einen Termin bei uns vereinbaren."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Bereit für den nächsten Schritt?",
+      "subtitle": "Vereinbaren Sie jetzt Ihre kostenlose Erstberatung.",
+      "button": "Beratung buchen"
+    }
+  },
+  "recovery": {
+    "hero": {
+      "badge": "Ganzheitliche Regeneration",
+      "title": "Recovery & Wellness",
+      "subtitle": "Umfassende Erholungsprogramme, die Körper und Geist in Einklang bringen für optimale Regeneration.",
+      "cta": "Programm entdecken"
+    },
+    "audience": {
+      "title": "Für wen ist das?",
+      "items": [
+        {
+          "title": "Gestresste Berufstätige",
+          "description": "Menschen mit hoher beruflicher Belastung, die aktive Erholung suchen."
+        },
+        {
+          "title": "Sportler in Regeneration",
+          "description": "Athleten, die ihre Erholungszeiten optimieren möchten."
+        },
+        {
+          "title": "Burnout-Gefährdete",
+          "description": "Personen, die präventiv gegen Erschöpfung handeln wollen."
+        },
+        {
+          "title": "Wellness-Bewusste",
+          "description": "Menschen, die ganzheitliches Wohlbefinden priorisieren."
+        }
+      ]
+    },
+    "outcomes": {
+      "title": "Was Sie erwarten können",
+      "items": [
+        {
+          "title": "Tiefe Entspannung",
+          "description": "Wissenschaftlich fundierte Entspannungstechniken"
+        },
+        {
+          "title": "Besserer Schlaf",
+          "description": "Optimierung Ihrer Schlafqualität"
+        },
+        {
+          "title": "Mehr Energie",
+          "description": "Nachhaltige Steigerung Ihres Energielevels"
+        },
+        {
+          "title": "Mentale Klarheit",
+          "description": "Verbesserte Konzentration und Fokus"
+        }
+      ]
+    },
+    "process": {
+      "title": "Unser Ansatz",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Wellness-Check",
+          "description": "Analyse Ihres aktuellen Stress- und Energielevels"
+        },
+        {
+          "step": "2",
+          "title": "Programm-Design",
+          "description": "Individuelles Erholungsprogramm für Ihre Bedürfnisse"
+        },
+        {
+          "step": "3",
+          "title": "Behandlungen",
+          "description": "Professionelle Anwendungen und Therapien"
+        },
+        {
+          "step": "4",
+          "title": "Nachhaltigkeit",
+          "description": "Strategien für dauerhafte Balance im Alltag"
+        }
+      ]
+    },
+    "cases": {
+      "title": "Erfolgsgeschichten",
+      "items": [
+        {
+          "title": "Manager findet Balance",
+          "description": "Von chronischer Erschöpfung zu nachhaltigem Energiemanagement in 12 Wochen.",
+          "metric": "85%",
+          "metricLabel": "weniger Stress"
+        },
+        {
+          "title": "Athletin optimiert Regeneration",
+          "description": "30% schnellere Erholung zwischen Wettkämpfen durch unser Programm.",
+          "metric": "30%",
+          "metricLabel": "schnellere Erholung"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Erfahrungen unserer Klienten",
+      "items": [
+        {
+          "name": "Julia S.",
+          "role": "Unternehmerin",
+          "text": "Das Programm hat mein Leben verändert. Ich schlafe besser und habe mehr Energie.",
+          "rating": 5
+        },
+        {
+          "name": "Michael B.",
+          "role": "Profigolfer",
+          "text": "Die Regenerationszeiten zwischen Turnieren haben sich deutlich verkürzt.",
+          "rating": 5
+        }
+      ]
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "items": [
+        {
+          "question": "Wie oft sollte ich die Behandlungen durchführen?",
+          "answer": "Wir empfehlen zunächst wöchentliche Sitzungen, die nach Fortschritt angepasst werden."
+        },
+        {
+          "question": "Kann ich das Programm mit meinem Sport kombinieren?",
+          "answer": "Absolut! Unsere Programme sind so konzipiert, dass sie Ihr Training optimal ergänzen."
+        },
+        {
+          "question": "Gibt es Kontraindikationen?",
+          "answer": "In der Erstberatung klären wir alle gesundheitlichen Aspekte und passen das Programm entsprechend an."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Starten Sie Ihre Erholungsreise",
+      "subtitle": "Vereinbaren Sie jetzt Ihren Wellness-Check.",
+      "button": "Termin vereinbaren"
+    }
+  },
+  "training": {
+    "hero": {
+      "badge": "Leistungsoptimierung",
+      "title": "Training & Performance",
+      "subtitle": "Datengestützte Trainingsplanung und Leistungsanalyse für messbare Ergebnisse.",
+      "cta": "Potenzial entdecken"
+    },
+    "audience": {
+      "title": "Für wen ist das?",
+      "items": [
+        {
+          "title": "Leistungssportler",
+          "description": "Athleten, die ihre Performance auf das nächste Level bringen wollen."
+        },
+        {
+          "title": "Fitness-Fortgeschrittene",
+          "description": "Erfahrene Sportler, die Plateaus überwinden möchten."
+        },
+        {
+          "title": "Trainer & Coaches",
+          "description": "Profis, die evidenzbasierte Methoden in ihre Arbeit integrieren wollen."
+        },
+        {
+          "title": "Teams & Vereine",
+          "description": "Sportorganisationen, die ihre Mannschaftsleistung optimieren möchten."
+        }
+      ]
+    },
+    "outcomes": {
+      "title": "Was Sie erwarten können",
+      "items": [
+        {
+          "title": "Leistungssteigerung",
+          "description": "Messbare Verbesserung Ihrer sportlichen Leistung"
+        },
+        {
+          "title": "Datenbasierte Insights",
+          "description": "Präzise Analyse Ihrer Stärken und Potenziale"
+        },
+        {
+          "title": "Optimierte Trainingsplanung",
+          "description": "Wissenschaftlich fundierte Periodisierung"
+        },
+        {
+          "title": "Verletzungsprävention",
+          "description": "Proaktive Maßnahmen zur Vermeidung von Überlastungen"
+        }
+      ]
+    },
+    "process": {
+      "title": "Unser System",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Performance-Test",
+          "description": "Umfassende Leistungsdiagnostik"
+        },
+        {
+          "step": "2",
+          "title": "Analyse",
+          "description": "Datenauswertung und Potenzialidentifikation"
+        },
+        {
+          "step": "3",
+          "title": "Trainingsplan",
+          "description": "Individualisiertes Programm für Ihre Ziele"
+        },
+        {
+          "step": "4",
+          "title": "Monitoring",
+          "description": "Kontinuierliche Anpassung basierend auf Fortschritt"
+        }
+      ]
+    },
+    "cases": {
+      "title": "Erfolgsgeschichten",
+      "items": [
+        {
+          "title": "Triathlet verbessert Zeiten",
+          "description": "15% Verbesserung der Wettkampfzeiten in einer Saison.",
+          "metric": "15%",
+          "metricLabel": "schneller"
+        },
+        {
+          "title": "Fußballteam steigert Ausdauer",
+          "description": "Deutliche Verbesserung der Laufleistung im gesamten Team.",
+          "metric": "22%",
+          "metricLabel": "mehr Ausdauer"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Stimmen unserer Athleten",
+      "items": [
+        {
+          "name": "Lars P.",
+          "role": "Triathlet",
+          "text": "Die Datenanalyse hat mir gezeigt, wo ich Zeit verschenke. Jetzt trainiere ich effizienter.",
+          "rating": 5
+        },
+        {
+          "name": "Anna H.",
+          "role": "Leichtathletin",
+          "text": "Endlich verstehe ich, warum bestimmte Trainingseinheiten wichtig sind.",
+          "rating": 5
+        }
+      ]
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "items": [
+        {
+          "question": "Welche Tests werden durchgeführt?",
+          "answer": "Je nach Sportart führen wir Laktatstufentests, Kraftdiagnostik, Bewegungsanalysen und weitere spezifische Tests durch."
+        },
+        {
+          "question": "Wie oft sollte ich getestet werden?",
+          "answer": "Wir empfehlen alle 8-12 Wochen einen Re-Test, um Fortschritte zu messen und den Plan anzupassen."
+        },
+        {
+          "question": "Arbeitet ihr auch mit Teams?",
+          "answer": "Ja, wir bieten spezielle Programme für Mannschaften und Vereine an."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Maximieren Sie Ihr Potenzial",
+      "subtitle": "Starten Sie mit Ihrem Performance-Test.",
+      "button": "Test buchen"
+    }
+  }
+}

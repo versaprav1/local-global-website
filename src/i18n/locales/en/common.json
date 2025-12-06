@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "blog": "Health Topics",
+    "resources": "Service Ecosystem",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Get Started"
+  },
+  "footer": {
+    "description": "Your partner for sports medicine excellence, recovery and performance optimization.",
+    "quickLinks": "Quick Links",
+    "resources": "Resources",
+    "newsletter": "Newsletter",
+    "newsletterText": "Get the latest updates on health and performance.",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "Your email",
+    "copyright": "© 2024 MedPro. All rights reserved.",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "faq": "FAQ",
+    "support": "Support",
+    "partners": "Partners",
+    "careers": "Careers"
+  },
+  "buttons": {
+    "bookConsultation": "Book Consultation",
+    "learnMore": "Learn More",
+    "viewProfile": "View Profile",
+    "bookAppointment": "Book Appointment",
+    "showMore": "Show More",
+    "getStarted": "Get Started",
+    "contact": "Contact"
+  },
+  "labels": {
+    "available": "Available",
+    "verified": "Verified",
+    "rating": "Rating",
+    "experience": "Experience",
+    "patients": "Patients",
+    "years": "Years"
+  }
+}

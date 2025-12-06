@@ -1,6 +1,6 @@
 import { MagneticButton } from "@/components/MagneticButton";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Sparkles, Activity, Star, Play, MapPin, Globe } from "lucide-react";
+import { ArrowRight, Sparkles, Star } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
@@ -22,8 +22,8 @@ const Hero = () => {
           
           {/* Main Headline - Clear Value Proposition */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-gradient block mb-2">{t('hero.main.title')}</span>
-            <span className="text-foreground text-3xl md:text-5xl">{t('hero.main.subtitle')}</span>
+            <span className="text-gradient block mb-2">{t('hero.title')}</span>
+            <span className="text-foreground text-3xl md:text-5xl">{t('hero.subtitle')}</span>
           </h1>
           
           {/* Clear Benefit Statement */}
