@@ -22,7 +22,6 @@ interface Center {
   website?: string;
 }
 
-
 const centers: Center[] = centersData.map((c: any) => ({
   id: String(c.id),
   name: c.name,
@@ -36,7 +35,6 @@ const centers: Center[] = centersData.map((c: any) => ({
   image: c.image,
   website: c.website,
 }));
-
 
 const TreatmentCentersSection = () => {
   const [filter, setFilter] = useState<"all" | "local" | "global">("all");
@@ -54,20 +52,19 @@ const TreatmentCentersSection = () => {
     return true;
   });
 
-
   return (
     <section id="centers" className="py-20 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <Badge className="mb-4 px-4 py-2 border-primary/20 bg-primary/10 text-primary">
-            Treatment Centers
+            {t('centers.section.title')}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            World-Class <span className="text-gradient">Facilities</span>
+            {t('centers.section.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From neighborhood clinics to global medical centers
+            {t('centers.section.subtitle')}
           </p>
         </div>
 
@@ -82,7 +79,7 @@ const TreatmentCentersSection = () => {
                   : "hover:bg-white/10"
               }`}
             >
-              All Centers
+              {t('centers.filters.all')}
             </button>
             <button
               onClick={() => setFilter("local")}
@@ -93,7 +90,7 @@ const TreatmentCentersSection = () => {
               }`}
             >
               <MapPin className="h-4 w-4" />
-              Near Me
+              {t('centers.filters.local')}
             </button>
             <button
               onClick={() => setFilter("global")}
@@ -103,7 +100,7 @@ const TreatmentCentersSection = () => {
                   : "hover:bg-white/10"
               }`}
             >
-              Global
+              {t('centers.filters.global')}
             </button>
           </div>
         </div>
@@ -131,7 +128,7 @@ const TreatmentCentersSection = () => {
                   {center.verified && (
                     <div className="absolute top-2 left-2 glass-card px-2 py-1 rounded-lg flex items-center gap-1">
                       <Shield className="h-3 w-3 text-primary" />
-                      <span className="text-xs font-medium">Verified</span>
+                      <span className="text-xs font-medium">{t('centers.card.verified')}</span>
                     </div>
                   )}
                 </div>
@@ -174,23 +171,22 @@ const TreatmentCentersSection = () => {
                       <span className={`text-sm font-medium ${
                         center.available ? "text-green-600" : "text-orange-600"
                       }`}>
-                        {center.available ? "Available Today" : "Next Available Tomorrow"}
+                        {center.available ? t('centers.card.available') : t('common.labels.available')}
                       </span>
                     </div>
                     {center.website ? (
                       <Button size="sm" variant="ghost" className="group/btn" asChild>
                         <a href={center.website} target="_blank" rel="noopener noreferrer">
-                          Website
+                          {t('centers.card.details')}
                           <ChevronRight className="ml-1 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </a>
                       </Button>
                     ) : (
                       <Button size="sm" variant="ghost" className="group/btn">
-                        View Details
+                        {t('centers.card.details')}
                         <ChevronRight className="ml-1 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
                     )}
-
                   </div>
                 </CardContent>
               </div>
@@ -203,7 +199,7 @@ const TreatmentCentersSection = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <Button className="tech-button">
-            Explore All Centers
+            {t('centers.cta')}
           </Button>
         </div>
       </div>

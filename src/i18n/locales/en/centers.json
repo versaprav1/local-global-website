@@ -1,0 +1,20 @@
+{
+  "section": {
+    "title": "Treatment Centers Near You",
+    "subtitle": "Find top-tier medical facilities and wellness centers in Germany"
+  },
+  "filters": {
+    "all": "All Centers",
+    "local": "Local (Hannover)",
+    "global": "Nationwide"
+  },
+  "card": {
+    "rating": "Rating",
+    "specialties": "Specialties",
+    "available": "Available",
+    "verified": "Verified",
+    "book": "Book Appointment",
+    "details": "View Details"
+  },
+  "cta": "View All Centers"
+}
