@@ -1,4 +1,4 @@
-import { Activity, Heart, Dumbbell } from "lucide-react";
+import { Sprout, Repeat, Briefcase, Store, TrendingUp } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 export interface Vertical {
@@ -16,57 +16,93 @@ export interface Vertical {
 
 export const verticals: Vertical[] = [
   {
-    id: "sports-medicine",
-    name: "Performance Medicine",
-    description: "Elite sports medicine and injury recovery for peak athletic performance",
-    icon: Activity,
+    id: "farm-to-home",
+    name: "Farm to Home",
+    description: "Direct farm produce delivery reducing environmental pollution and supporting local farmers",
+    icon: Store,
     gradient: "from-primary to-secondary",
     features: [
-      "Advanced Injury Recovery",
-      "Performance Optimization Protocols",
-      "Science-Backed Treatment Plans",
-      "Return-to-Sport Programs"
+      "Fresh Local Produce",
+      "Zero Waste Packaging",
+      "Carbon Footprint Reduction",
+      "Fair Farmer Prices"
     ],
     stats: [
-      { label: "Elite Athletes Served", value: "50,000+" },
-      { label: "Performance Specialists", value: "10,000+" },
-      { label: "Recovery Success", value: "96%" }
+      { label: "Local Farms", value: "2,500+" },
+      { label: "Families Served", value: "50,000+" },
+      { label: "CO2 Saved", value: "40%" }
     ]
   },
   {
-    id: "health-wellness",
-    name: "Recovery & Wellness",
-    description: "Comprehensive recovery systems and wellness optimization for athletes",
-    icon: Heart,
+    id: "urban-gardening",
+    name: "Urban Gardening",
+    description: "Transform any balcony or small space into a thriving garden ecosystem",
+    icon: Sprout,
     gradient: "from-secondary to-accent",
     features: [
-      "Active Recovery Programs",
-      "Sleep & Nutrition Optimization",
-      "Mental Performance Coaching",
-      "Longevity & Prevention"
+      "Balcony Garden Kits",
+      "Vertical Farming Systems",
+      "Flower & Vegetable Seeds",
+      "Expert Growing Guides"
     ],
     stats: [
-      { label: "Recovery Centers", value: "15,000+" },
-      { label: "Wellness Experts", value: "5,000+" },
-      { label: "Performance Gain", value: "43%" }
+      { label: "Urban Gardens", value: "15,000+" },
+      { label: "Plant Varieties", value: "500+" },
+      { label: "Success Rate", value: "94%" }
     ]
   },
   {
-    id: "fitness-performance",
-    name: "Training & Performance",
-    description: "Elite training systems and data-driven performance enhancement",
-    icon: Dumbbell,
+    id: "barter-exchange",
+    name: "Barter & Exchange",
+    description: "Trade goods and services without money, building community and reducing waste",
+    icon: Repeat,
     gradient: "from-accent to-primary",
     features: [
-      "Personalized Training Plans",
-      "Performance Data Analytics",
-      "Strength & Conditioning",
-      "Movement Optimization"
+      "Skill Exchange Network",
+      "Goods Trading Platform",
+      "Community Building",
+      "Zero Cash Transactions"
     ],
     stats: [
-      { label: "Training Facilities", value: "8,000+" },
-      { label: "Elite Coaches", value: "20,000+" },
-      { label: "Performance Improvement", value: "38%" }
+      { label: "Active Traders", value: "25,000+" },
+      { label: "Successful Trades", value: "100,000+" },
+      { label: "Resources Saved", value: "65%" }
+    ]
+  },
+  {
+    id: "youth-freelancing",
+    name: "Youth Freelancing",
+    description: "Empowering students and young people to freelance locally and globally",
+    icon: Briefcase,
+    gradient: "from-primary to-accent",
+    features: [
+      "Student Gig Marketplace",
+      "Skill Development",
+      "Safe Payment System",
+      "Mentorship Programs"
+    ],
+    stats: [
+      { label: "Young Freelancers", value: "30,000+" },
+      { label: "Projects Completed", value: "75,000+" },
+      { label: "Avg Earnings", value: "€500/mo" }
+    ]
+  },
+  {
+    id: "merger-acquisitions",
+    name: "M&A Ecosystem",
+    description: "Connecting local businesses with global opportunities for sustainable growth",
+    icon: TrendingUp,
+    gradient: "from-secondary to-primary",
+    features: [
+      "Business Matching",
+      "Due Diligence Support",
+      "Local-to-Global Expansion",
+      "Sustainable Partnerships"
+    ],
+    stats: [
+      { label: "Businesses Listed", value: "5,000+" },
+      { label: "Deals Facilitated", value: "1,200+" },
+      { label: "Growth Rate", value: "120%" }
     ]
   }
 ];

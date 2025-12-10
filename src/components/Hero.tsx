@@ -45,16 +45,16 @@ const Hero = () => {
           {/* Trust Indicators - Simple & Clean */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto glass-container rounded-2xl p-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient mb-1">500+</div>
-              <div className="text-sm text-muted-foreground">{t('hero.stats.specialists')}</div>
+              <div className="text-3xl font-bold text-gradient mb-1">2,500+</div>
+              <div className="text-sm text-muted-foreground">{t('hero.stats.farmers')}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient mb-1">50+</div>
-              <div className="text-sm text-muted-foreground">{t('hero.stats.centers')}</div>
+              <div className="text-3xl font-bold text-gradient mb-1">150+</div>
+              <div className="text-sm text-muted-foreground">{t('hero.stats.communities')}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient mb-1">10K+</div>
-              <div className="text-sm text-muted-foreground">{t('hero.stats.athletes')}</div>
+              <div className="text-3xl font-bold text-gradient mb-1">100K+</div>
+              <div className="text-sm text-muted-foreground">{t('hero.stats.exchanges')}</div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-1 mb-1">

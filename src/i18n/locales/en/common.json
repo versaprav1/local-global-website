@@ -1,22 +1,22 @@
 {
   "nav": {
     "home": "Home",
-    "services": "Services",
-    "blog": "Health Topics",
-    "resources": "Service Ecosystem",
+    "services": "Verticals",
+    "blog": "Resources",
+    "resources": "Community",
     "about": "About",
     "contact": "Contact",
     "cta": "Get Started"
   },
   "footer": {
-    "description": "Your partner for sports medicine excellence, recovery and performance optimization.",
+    "description": "Building sustainable ecosystems connecting local communities with global opportunities.",
     "quickLinks": "Quick Links",
     "resources": "Resources",
     "newsletter": "Newsletter",
-    "newsletterText": "Get the latest updates on health and performance.",
+    "newsletterText": "Get updates on sustainable living and community opportunities.",
     "subscribe": "Subscribe",
     "emailPlaceholder": "Your email",
-    "copyright": "© 2024 MedPro. All rights reserved.",
+    "copyright": "© 2024 Near&Far. All rights reserved.",
     "terms": "Terms",
     "privacy": "Privacy",
     "cookies": "Cookies",
@@ -26,10 +26,10 @@
     "careers": "Careers"
   },
   "buttons": {
-    "bookConsultation": "Book Consultation",
+    "bookConsultation": "Get Started",
     "learnMore": "Learn More",
     "viewProfile": "View Profile",
-    "bookAppointment": "Book Appointment",
+    "bookAppointment": "Connect",
     "showMore": "Show More",
     "getStarted": "Get Started",
     "contact": "Contact"
@@ -39,7 +39,7 @@
     "verified": "Verified",
     "rating": "Rating",
     "experience": "Experience",
-    "patients": "Patients",
+    "patients": "Members",
     "years": "Years"
   }
 }

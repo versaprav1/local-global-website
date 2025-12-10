@@ -1,20 +1,20 @@
 {
   "section": {
-    "title": "Behandlungszentren in Ihrer Nähe",
-    "subtitle": "Finden Sie erstklassige medizinische Einrichtungen und Wellness-Zentren in Deutschland"
+    "title": "Community-Hubs in Ihrer Nähe",
+    "subtitle": "Finden Sie lokale Höfe, Stadtgärten und Tauschpunkte in Deutschland"
   },
   "filters": {
-    "all": "Alle Zentren",
+    "all": "Alle Hubs",
     "local": "Lokal (Hannover)",
     "global": "Deutschlandweit"
   },
   "card": {
     "rating": "Bewertung",
-    "specialties": "Spezialisierungen",
+    "specialties": "Dienste",
     "available": "Verfügbar",
     "verified": "Verifiziert",
-    "book": "Termin buchen",
+    "book": "Jetzt verbinden",
     "details": "Details ansehen"
   },
-  "cta": "Alle Zentren anzeigen"
+  "cta": "Alle Hubs anzeigen"
 }

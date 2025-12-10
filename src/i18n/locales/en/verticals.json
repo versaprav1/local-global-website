@@ -1,50 +1,78 @@
 {
   "section": {
-    "badge": "Our Expertise",
-    "title": "Specialized Service Areas",
-    "subtitle": "Discover our comprehensive range of medical and performance services"
+    "badge": "Our Ecosystem",
+    "title": "Sustainable Verticals",
+    "subtitle": "Discover our interconnected platforms for sustainable living and community growth"
   },
   "items": {
-    "performance-medicine": {
-      "name": "Performance Medicine",
-      "description": "Sports medicine excellence with state-of-the-art diagnostics and evidence-based treatment for athletes and active individuals.",
+    "farm-to-home": {
+      "name": "Farm to Home",
+      "description": "Direct farm produce delivery reducing environmental pollution and supporting local farmers with zero-waste practices.",
       "features": [
-        "Performance Diagnostics",
-        "Sports Medical Care",
-        "Preventive Medicine",
-        "Rehabilitation"
+        "Fresh Local Produce",
+        "Zero Waste Packaging",
+        "Carbon Footprint Reduction",
+        "Fair Farmer Prices"
       ],
       "stats": {
-        "value": "500+",
-        "label": "Athletes Treated"
+        "value": "2,500+",
+        "label": "Local Farms"
       }
     },
-    "recovery-wellness": {
-      "name": "Recovery & Wellness",
-      "description": "Holistic regeneration programs that harmonize body and mind for optimal recovery.",
+    "urban-gardening": {
+      "name": "Urban Gardening",
+      "description": "Transform any balcony or small space into a thriving garden ecosystem for flowers, fruits, and vegetables.",
       "features": [
-        "Regeneration Therapy",
-        "Stress Management",
-        "Sleep Optimization",
-        "Wellness Programs"
+        "Balcony Garden Kits",
+        "Vertical Farming Systems",
+        "Flower & Vegetable Seeds",
+        "Expert Growing Guides"
       ],
       "stats": {
-        "value": "98%",
-        "label": "Satisfaction"
+        "value": "15,000+",
+        "label": "Urban Gardens"
       }
     },
-    "training-performance": {
-      "name": "Training & Performance",
-      "description": "Data-driven training planning and performance analysis for measurable results and continuous improvement.",
+    "barter-exchange": {
+      "name": "Barter & Exchange",
+      "description": "Trade goods and services without money, building community connections and reducing resource waste.",
       "features": [
-        "Training Planning",
-        "Performance Analysis",
-        "Athlete Support",
-        "Team Programs"
+        "Skill Exchange Network",
+        "Goods Trading Platform",
+        "Community Building",
+        "Zero Cash Transactions"
       ],
       "stats": {
-        "value": "25%",
-        "label": "Avg Performance Increase"
+        "value": "100K+",
+        "label": "Successful Trades"
+      }
+    },
+    "youth-freelancing": {
+      "name": "Youth Freelancing",
+      "description": "Empowering students and young people to offer their skills locally and globally in a safe environment.",
+      "features": [
+        "Student Gig Marketplace",
+        "Skill Development",
+        "Safe Payment System",
+        "Mentorship Programs"
+      ],
+      "stats": {
+        "value": "30,000+",
+        "label": "Young Freelancers"
+      }
+    },
+    "merger-acquisitions": {
+      "name": "M&A Ecosystem",
+      "description": "Connecting local businesses with global opportunities for sustainable growth and expansion.",
+      "features": [
+        "Business Matching",
+        "Due Diligence Support",
+        "Local-to-Global Expansion",
+        "Sustainable Partnerships"
+      ],
+      "stats": {
+        "value": "1,200+",
+        "label": "Deals Facilitated"
       }
     }
   },

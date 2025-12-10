@@ -1,50 +1,78 @@
 {
   "section": {
-    "badge": "Unsere Expertise",
-    "title": "Spezialisierte Leistungsbereiche",
-    "subtitle": "Entdecken Sie unser umfassendes Angebot an medizinischen und Performance-Dienstleistungen"
+    "badge": "Unser Ökosystem",
+    "title": "Nachhaltige Bereiche",
+    "subtitle": "Entdecken Sie unsere vernetzten Plattformen für nachhaltiges Leben und Gemeinschaftswachstum"
   },
   "items": {
-    "performance-medicine": {
-      "name": "Performance Medicine",
-      "description": "Sportmedizinische Exzellenz mit modernster Diagnostik und evidenzbasierter Behandlung für Athleten und aktive Menschen.",
+    "farm-to-home": {
+      "name": "Vom Hof nach Hause",
+      "description": "Direktlieferung von Hofprodukten zur Reduzierung der Umweltverschmutzung und Unterstützung lokaler Bauern mit Zero-Waste-Praktiken.",
       "features": [
-        "Leistungsdiagnostik",
-        "Sportmedizinische Betreuung",
-        "Präventionsmedizin",
-        "Rehabilitation"
+        "Frische lokale Produkte",
+        "Null-Abfall-Verpackung",
+        "CO2-Fußabdruck-Reduzierung",
+        "Faire Bauernpreise"
       ],
       "stats": {
-        "value": "500+",
-        "label": "Athleten betreut"
+        "value": "2.500+",
+        "label": "Lokale Höfe"
       }
     },
-    "recovery-wellness": {
-      "name": "Recovery & Wellness",
-      "description": "Ganzheitliche Regenerationsprogramme, die Körper und Geist in Einklang bringen für optimale Erholung.",
+    "urban-gardening": {
+      "name": "Urbanes Gärtnern",
+      "description": "Verwandeln Sie jeden Balkon oder kleinen Raum in ein blühendes Gartenökosystem für Blumen, Obst und Gemüse.",
       "features": [
-        "Regenerationstherapie",
-        "Stressmanagement",
-        "Schlafoptimierung",
-        "Wellness-Programme"
+        "Balkon-Garten-Sets",
+        "Vertikale Anbausysteme",
+        "Blumen- & Gemüsesamen",
+        "Experten-Anbauanleitungen"
       ],
       "stats": {
-        "value": "98%",
-        "label": "Zufriedenheit"
+        "value": "15.000+",
+        "label": "Stadtgärten"
       }
     },
-    "training-performance": {
-      "name": "Training & Performance",
-      "description": "Datengestützte Trainingsplanung und Leistungsanalyse für messbare Ergebnisse und kontinuierliche Verbesserung.",
+    "barter-exchange": {
+      "name": "Tausch & Austausch",
+      "description": "Tauschen Sie Waren und Dienstleistungen ohne Geld, bauen Sie Gemeinschaftsverbindungen auf und reduzieren Sie Ressourcenverschwendung.",
       "features": [
-        "Trainingsplanung",
-        "Leistungsanalyse",
-        "Athletenbetreuung",
-        "Team-Programme"
+        "Fähigkeiten-Tausch-Netzwerk",
+        "Waren-Handelsplattform",
+        "Gemeinschaftsaufbau",
+        "Bargeldlose Transaktionen"
       ],
       "stats": {
-        "value": "25%",
-        "label": "Ø Leistungssteigerung"
+        "value": "100K+",
+        "label": "Erfolgreiche Tausche"
+      }
+    },
+    "youth-freelancing": {
+      "name": "Jugend-Freelancing",
+      "description": "Befähigung von Schülern und jungen Menschen, ihre Fähigkeiten lokal und global in einer sicheren Umgebung anzubieten.",
+      "features": [
+        "Studenten-Gig-Marktplatz",
+        "Fähigkeitsentwicklung",
+        "Sicheres Zahlungssystem",
+        "Mentoring-Programme"
+      ],
+      "stats": {
+        "value": "30.000+",
+        "label": "Junge Freelancer"
+      }
+    },
+    "merger-acquisitions": {
+      "name": "M&A-Ökosystem",
+      "description": "Verbindung lokaler Unternehmen mit globalen Möglichkeiten für nachhaltiges Wachstum und Expansion.",
+      "features": [
+        "Business-Matching",
+        "Due-Diligence-Unterstützung",
+        "Lokal-zu-Global-Expansion",
+        "Nachhaltige Partnerschaften"
+      ],
+      "stats": {
+        "value": "1.200+",
+        "label": "Vermittelte Deals"
       }
     }
   },
