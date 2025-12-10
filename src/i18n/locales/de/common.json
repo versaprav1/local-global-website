@@ -1,22 +1,22 @@
 {
   "nav": {
     "home": "Startseite",
-    "services": "Services",
-    "blog": "Gesundheitsthemen",
-    "resources": "Service-Ökosystem",
+    "services": "Bereiche",
+    "blog": "Ressourcen",
+    "resources": "Community",
     "about": "Über uns",
     "contact": "Kontakt",
     "cta": "Jetzt starten"
   },
   "footer": {
-    "description": "Ihr Partner für sportmedizinische Exzellenz, Erholung und Leistungsoptimierung.",
+    "description": "Aufbau nachhaltiger Ökosysteme, die lokale Gemeinschaften mit globalen Möglichkeiten verbinden.",
     "quickLinks": "Schnelllinks",
     "resources": "Ressourcen",
     "newsletter": "Newsletter",
-    "newsletterText": "Erhalten Sie die neuesten Updates zu Gesundheit und Performance.",
+    "newsletterText": "Erhalten Sie Updates zu nachhaltigem Leben und Gemeinschaftsmöglichkeiten.",
     "subscribe": "Abonnieren",
     "emailPlaceholder": "Ihre E-Mail",
-    "copyright": "© 2024 MedPro. Alle Rechte vorbehalten.",
+    "copyright": "© 2024 Near&Far. Alle Rechte vorbehalten.",
     "terms": "AGB",
     "privacy": "Datenschutz",
     "cookies": "Cookies",
@@ -26,10 +26,10 @@
     "careers": "Karriere"
   },
   "buttons": {
-    "bookConsultation": "Beratung buchen",
+    "bookConsultation": "Jetzt starten",
     "learnMore": "Mehr erfahren",
     "viewProfile": "Profil ansehen",
-    "bookAppointment": "Termin buchen",
+    "bookAppointment": "Verbinden",
     "showMore": "Mehr anzeigen",
     "getStarted": "Jetzt starten",
     "contact": "Kontakt"
@@ -39,7 +39,7 @@
     "verified": "Verifiziert",
     "rating": "Bewertung",
     "experience": "Erfahrung",
-    "patients": "Patienten",
+    "patients": "Mitglieder",
     "years": "Jahre"
   }
 }

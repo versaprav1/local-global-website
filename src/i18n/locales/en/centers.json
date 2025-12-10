@@ -1,20 +1,20 @@
 {
   "section": {
-    "title": "Treatment Centers Near You",
-    "subtitle": "Find top-tier medical facilities and wellness centers in Germany"
+    "title": "Community Hubs Near You",
+    "subtitle": "Find local farms, urban gardens, and exchange points in Germany"
   },
   "filters": {
-    "all": "All Centers",
+    "all": "All Hubs",
     "local": "Local (Hannover)",
     "global": "Nationwide"
   },
   "card": {
     "rating": "Rating",
-    "specialties": "Specialties",
+    "specialties": "Services",
     "available": "Available",
     "verified": "Verified",
-    "book": "Book Appointment",
+    "book": "Connect Now",
     "details": "View Details"
   },
-  "cta": "View All Centers"
+  "cta": "View All Hubs"
 }

@@ -1,16 +1,16 @@
 {
-  "badge": "Performance & Recovery Excellence",
-  "title": "Get Back to Peak Performance",
-  "subtitle": "Faster Than Ever",
-  "benefit": "Science-backed recovery solutions connecting you with elite specialists and cutting-edge treatment centers worldwide.",
+  "badge": "Sustainable Ecosystem Platform",
+  "title": "Local to Global",
+  "subtitle": "Sustainable Living Made Simple",
+  "benefit": "Connect with local farmers, trade resources, grow your own food, and build a sustainable future for communities worldwide.",
   "cta": {
-    "primary": "Book Free Consultation",
-    "secondary": "View Recovery Programs"
+    "primary": "Join the Ecosystem",
+    "secondary": "Explore Verticals"
   },
   "stats": {
-    "specialists": "Elite Specialists",
-    "centers": "Treatment Centers",
-    "athletes": "Athletes Recovered",
+    "farmers": "Local Farmers",
+    "communities": "Communities",
+    "exchanges": "Successful Exchanges",
     "rating": "Rating"
   }
 }

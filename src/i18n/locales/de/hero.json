@@ -1,16 +1,16 @@
 {
-  "badge": "Performance & Recovery Exzellenz",
-  "title": "Zurück zur Höchstleistung",
-  "subtitle": "Schneller als je zuvor",
-  "benefit": "Wissenschaftlich fundierte Erholungslösungen verbinden Sie mit Elite-Spezialisten und hochmodernen Behandlungszentren weltweit.",
+  "badge": "Nachhaltige Ökosystem-Plattform",
+  "title": "Lokal zu Global",
+  "subtitle": "Nachhaltiges Leben leicht gemacht",
+  "benefit": "Verbinden Sie sich mit lokalen Bauern, tauschen Sie Ressourcen, bauen Sie Ihr eigenes Essen an und gestalten Sie eine nachhaltige Zukunft für Gemeinschaften weltweit.",
   "cta": {
-    "primary": "Kostenlose Beratung buchen",
-    "secondary": "Erholungsprogramme ansehen"
+    "primary": "Ökosystem beitreten",
+    "secondary": "Bereiche erkunden"
   },
   "stats": {
-    "specialists": "Elite-Spezialisten",
-    "centers": "Behandlungszentren",
-    "athletes": "Athleten erholt",
+    "farmers": "Lokale Bauern",
+    "communities": "Gemeinschaften",
+    "exchanges": "Erfolgreiche Tausche",
     "rating": "Bewertung"
   }
 }

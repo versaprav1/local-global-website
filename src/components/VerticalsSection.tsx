@@ -6,47 +6,33 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import wellnessImage from "@/assets/wellness-center.jpg";
-import fitnessImage from "@/assets/fitness-center.jpg";
-import heroImage from "@/assets/hero-sports-medicine.jpg";
 
 const VerticalsSection = () => {
   const [selectedVertical, setSelectedVertical] = useState(verticals[0]);
   const { t, getTranslation } = useLanguage();
 
-  const verticalImages = {
-    "sports-medicine": heroImage,
-    "health-wellness": wellnessImage,
-    "fitness-performance": fitnessImage
-  };
-
-  const verticalRoutes = {
-    "sports-medicine": "/services/performance-medicine",
-    "health-wellness": "/services/recovery-wellness",
-    "fitness-performance": "/services/training-performance"
-  };
-
-  const verticalTranslationKeys = {
-    "sports-medicine": "performance-medicine",
-    "health-wellness": "recovery-wellness",
-    "fitness-performance": "training-performance"
+  const verticalRoutes: Record<string, string> = {
+    "farm-to-home": "/services/farm-to-home",
+    "urban-gardening": "/services/urban-gardening",
+    "barter-exchange": "/services/barter-exchange",
+    "youth-freelancing": "/services/youth-freelancing",
+    "merger-acquisitions": "/services/merger-acquisitions"
   };
 
   const getVerticalTranslation = (verticalId: string) => {
-    const key = verticalTranslationKeys[verticalId as keyof typeof verticalTranslationKeys];
     return {
-      name: t(`verticals.items.${key}.name`),
-      description: t(`verticals.items.${key}.description`),
-      features: getTranslation<string[]>(`verticals.items.${key}.features`),
-      stats: getTranslation<{ value: string; label: string }>(`verticals.items.${key}.stats`)
+      name: t(`verticals.items.${verticalId}.name`),
+      description: t(`verticals.items.${verticalId}.description`),
+      features: getTranslation<string[]>(`verticals.items.${verticalId}.features`),
+      stats: getTranslation<{ value: string; label: string }>(`verticals.items.${verticalId}.stats`)
     };
   };
 
   return (
     <section className="py-20 relative overflow-hidden">
-      <div id="sports-medicine" className="absolute -top-20" />
-      <div id="health-wellness" className="absolute -top-20" />
-      <div id="fitness-performance" className="absolute -top-20" />
+      {verticals.map((v) => (
+        <div key={v.id} id={v.id} className="absolute -top-20" />
+      ))}
       
       <div className="absolute inset-0 gradient-bg opacity-5" />
       
@@ -110,7 +96,7 @@ const VerticalsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to={verticalRoutes[selectedVertical.id as keyof typeof verticalRoutes]}>
+                  <Link to={verticalRoutes[selectedVertical.id] || "#"}>
                     <Button className="tech-button group">
                       {t('verticals.cta')}
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -124,18 +110,15 @@ const VerticalsSection = () => {
           <div className="space-y-6">
             {(() => {
               const trans = getVerticalTranslation(selectedVertical.id);
+              const Icon = selectedVertical.icon;
               return (
                 <>
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <img 
-                      src={verticalImages[selectedVertical.id as keyof typeof verticalImages]} 
-                      alt={trans.name}
-                      className="w-full h-64 lg:h-80 object-cover"
-                    />
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 to-secondary/20 p-12 flex items-center justify-center min-h-[320px]">
+                    <Icon className="h-32 w-32 text-primary/60" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
                       <Badge className="mb-2 bg-background/90 text-foreground">Featured</Badge>
-                      <p className="text-white font-semibold text-lg">{trans.name}</p>
+                      <p className="text-foreground font-semibold text-lg">{trans.name}</p>
                     </div>
                   </div>
                   {trans.stats && (
@@ -155,7 +138,7 @@ const VerticalsSection = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-16">
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mt-16">
           {verticals.map((vertical) => {
             const Icon = vertical.icon;
             const trans = getVerticalTranslation(vertical.id);
@@ -168,8 +151,8 @@ const VerticalsSection = () => {
                 <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${vertical.gradient} mb-4`}>
                   <Icon className="h-6 w-6 text-white" />
                 </div>
-                <h4 className="text-xl font-bold mb-2">{trans.name}</h4>
-                <p className="text-muted-foreground text-sm">{trans.description}</p>
+                <h4 className="text-lg font-bold mb-2">{trans.name}</h4>
+                <p className="text-muted-foreground text-sm line-clamp-2">{trans.description}</p>
               </Card>
             );
           })}
