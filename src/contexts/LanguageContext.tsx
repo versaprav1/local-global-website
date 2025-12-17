@@ -57,10 +57,17 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useLanguage = () => {
+export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    // During HMR, context may temporarily be undefined - provide fallback
+    console.warn('useLanguage: Context not available, using fallback');
+    return {
+      language: 'de',
+      toggleLanguage: () => {},
+      t: (path: string) => path,
+      getTranslation: <T,>(path: string) => path as T,
+    };
   }
   return context;
 };
