@@ -30,13 +30,13 @@ const ResourcesSection = () => {
   );
 
   return (
-    <section id="resources" className="py-16 md:py-24 bg-gradient-to-b from-background to-earth-50/70 dark:from-background dark:to-earth-950/20">
+    <section id="resources" className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <Badge variant="outline" className="mb-4">Service Ecosystem</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Comprehensive Healthcare Platform</h2>
+          <Badge variant="outline" className="mb-4">Community Resources</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Sustainable Living Toolkit</h2>
           <p className="text-muted-foreground text-lg">
-            Access integrated services, tools, and support for seamless healthcare delivery from booking to recovery.
+            Access integrated tools, guides, and community support for sustainable living, local trading, and eco-conscious growth.
           </p>
         </div>
         
@@ -83,11 +83,11 @@ const ResourcesSection = () => {
         </div>
         
         <div className="max-w-2xl mx-auto bg-card shadow-lg rounded-xl p-8 text-center border">
-          <h3 className="text-2xl font-bold mb-4">Need a Custom Integration?</h3>
+          <h3 className="text-2xl font-bold mb-4">Need Custom Support?</h3>
           <p className="text-muted-foreground mb-6">
-            Our platform supports custom API integrations and tailored solutions for your specific healthcare needs.
+            Our platform supports custom integrations and tailored solutions for your sustainable living needs.
           </p>
-          <Button>Contact Integration Team</Button>
+          <Button>Contact Our Team</Button>
         </div>
       </div>
     </section>
