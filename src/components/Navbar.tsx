@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { 
-  Menu, X, Sparkles, ChevronDown, Globe, ArrowRight,
+  Menu, X, ChevronDown, Globe, ArrowRight,
   Store, Sprout, Repeat, Briefcase, TrendingUp,
-  Home, BookOpen, Users, Info, MessageCircle
+  Home, BookOpen, Users, Info, MessageCircle, Leaf
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -17,7 +17,6 @@ const Navbar = () => {
   const { language, toggleLanguage, t } = useLanguage();
   const location = useLocation();
 
-  // Track scroll for navbar styling
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -26,7 +25,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
     setActiveDropdown(null);
@@ -39,7 +37,6 @@ const Navbar = () => {
       description: t('verticals.items.farm-to-home.description'),
       icon: Store,
       href: "/services/farm-to-home",
-      gradient: "from-primary to-secondary"
     },
     { 
       id: "urban-gardening",
@@ -47,7 +44,6 @@ const Navbar = () => {
       description: t('verticals.items.urban-gardening.description'),
       icon: Sprout,
       href: "/services/urban-gardening",
-      gradient: "from-secondary to-accent"
     },
     { 
       id: "barter-exchange",
@@ -55,7 +51,6 @@ const Navbar = () => {
       description: t('verticals.items.barter-exchange.description'),
       icon: Repeat,
       href: "/services/barter-exchange",
-      gradient: "from-accent to-primary"
     },
     { 
       id: "youth-freelancing",
@@ -63,7 +58,6 @@ const Navbar = () => {
       description: t('verticals.items.youth-freelancing.description'),
       icon: Briefcase,
       href: "/services/youth-freelancing",
-      gradient: "from-primary to-accent"
     },
     { 
       id: "merger-acquisitions",
@@ -71,17 +65,16 @@ const Navbar = () => {
       description: t('verticals.items.merger-acquisitions.description'),
       icon: TrendingUp,
       href: "/services/merger-acquisitions",
-      gradient: "from-secondary to-primary"
     },
   ];
 
   const navLinks = [
-    { name: t('nav.home'), href: "/", icon: Home },
-    { name: t('nav.services'), href: "#", icon: Store, hasDropdown: true },
-    { name: t('nav.blog'), href: "/blog", icon: BookOpen },
-    { name: t('nav.resources'), href: "/resources", icon: Users },
-    { name: t('nav.about'), href: "/about", icon: Info },
-    { name: t('nav.contact'), href: "/#contact", icon: MessageCircle },
+    { name: t('common.nav.home'), href: "/", icon: Home },
+    { name: t('common.nav.services'), href: "#", icon: Store, hasDropdown: true },
+    { name: t('common.nav.blog'), href: "/blog", icon: BookOpen },
+    { name: t('common.nav.resources'), href: "/resources", icon: Users },
+    { name: t('common.nav.about'), href: "/about", icon: Info },
+    { name: t('common.nav.contact'), href: "/#contact", icon: MessageCircle },
   ];
 
   const handleDropdownEnter = (name: string) => {
@@ -96,25 +89,23 @@ const Navbar = () => {
     <>
       <nav 
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled 
-            ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-lg" 
+            ? "bg-background/95 backdrop-blur-xl border-b border-border" 
             : "bg-transparent"
         )}
+        style={{ boxShadow: isScrolled ? 'var(--shadow-soft)' : 'none' }}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl blur-md opacity-70 group-hover:opacity-100 transition-opacity" />
-                <div className="relative bg-gradient-to-r from-primary to-secondary rounded-xl p-2">
-                  <Sparkles className="h-6 w-6 text-white" />
-                </div>
+            <Link to="/" className="flex items-center space-x-3 group">
+              <div className="relative w-10 h-10 rounded-xl bg-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                <Leaf className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold font-display">
-                <span className="text-gradient">Near</span>
-                <span className="text-foreground">&</span>
+              <span className="text-xl font-display font-semibold tracking-tight">
+                <span className="text-foreground">Near</span>
+                <span className="text-primary">&</span>
                 <span className="text-foreground">Far</span>
               </span>
             </Link>
@@ -133,8 +124,8 @@ const Navbar = () => {
                       className={cn(
                         "flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                         activeDropdown === link.name 
-                          ? "text-primary bg-primary/10" 
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                          ? "text-foreground" 
+                          : "text-muted-foreground hover:text-foreground"
                       )}
                     >
                       {link.name}
@@ -149,16 +140,19 @@ const Navbar = () => {
                       className={cn(
                         "flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                         location.pathname === link.href
-                          ? "text-primary bg-primary/10"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                          ? "text-foreground"
+                          : "text-muted-foreground hover:text-foreground"
                       )}
                     >
                       {link.name}
+                      {location.pathname === link.href && (
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
+                      )}
                     </Link>
                   ) : (
                     <a
                       href={link.href}
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200"
+                      className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200"
                     >
                       {link.name}
                     </a>
@@ -167,12 +161,12 @@ const Navbar = () => {
                   {/* Mega Menu Dropdown */}
                   {link.hasDropdown && activeDropdown === link.name && (
                     <div 
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[600px]"
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[560px]"
                       onMouseEnter={() => handleDropdownEnter(link.name)}
                       onMouseLeave={handleDropdownLeave}
                     >
-                      <div className="bg-card border border-border rounded-2xl shadow-2xl p-6 animate-in fade-in slide-in-from-top-2 duration-200">
-                        <div className="grid grid-cols-2 gap-2">
+                      <div className="bg-card border border-border rounded-2xl p-6 animate-fade-up" style={{ boxShadow: 'var(--shadow-elevated)' }}>
+                        <div className="grid grid-cols-2 gap-1">
                           {verticals.map((vertical) => {
                             const Icon = vertical.icon;
                             return (
@@ -181,14 +175,11 @@ const Navbar = () => {
                                 to={vertical.href}
                                 className="group flex items-start gap-4 p-4 rounded-xl hover:bg-muted/50 transition-all duration-200"
                               >
-                                <div className={cn(
-                                  "flex-shrink-0 p-3 rounded-xl bg-gradient-to-r text-white transition-transform duration-200 group-hover:scale-110",
-                                  vertical.gradient
-                                )}>
+                                <div className="flex-shrink-0 p-2.5 rounded-xl bg-primary/10 text-primary transition-all duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
                                   <Icon className="h-5 w-5" />
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                  <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                                  <p className="font-medium text-foreground text-sm">
                                     {vertical.name}
                                   </p>
                                   <p className="text-xs text-muted-foreground line-clamp-2 mt-0.5">
@@ -202,7 +193,7 @@ const Navbar = () => {
                         <div className="mt-4 pt-4 border-t border-border">
                           <Link 
                             to="/#verticals" 
-                            className="flex items-center justify-center gap-2 text-sm font-medium text-primary hover:underline"
+                            className="flex items-center justify-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                           >
                             {t('verticals.cta')}
                             <ArrowRight className="h-4 w-4" />
@@ -215,30 +206,30 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Right Side - Language + CTA */}
-            <div className="hidden lg:flex items-center gap-4">
+            {/* Right Side */}
+            <div className="hidden lg:flex items-center gap-3">
               {/* Language Toggle */}
-              <div className="flex items-center gap-2 bg-muted/50 px-3 py-1.5 rounded-full border border-border">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-muted/30">
                 <Globe className="h-4 w-4 text-muted-foreground" />
                 <span className={cn(
-                  "text-sm font-medium transition-colors",
-                  language === 'de' ? "text-primary" : "text-muted-foreground"
+                  "text-xs font-medium transition-colors",
+                  language === 'de' ? "text-foreground" : "text-muted-foreground"
                 )}>DE</span>
                 <Switch 
                   checked={language === 'en'} 
                   onCheckedChange={toggleLanguage}
-                  className="data-[state=checked]:bg-primary"
+                  className="data-[state=checked]:bg-primary scale-75"
                 />
                 <span className={cn(
-                  "text-sm font-medium transition-colors",
-                  language === 'en' ? "text-primary" : "text-muted-foreground"
+                  "text-xs font-medium transition-colors",
+                  language === 'en' ? "text-foreground" : "text-muted-foreground"
                 )}>EN</span>
               </div>
 
               {/* CTA Button */}
-              <Button className="tech-button group">
-                {t('nav.cta')}
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <Button className="btn-primary rounded-xl text-sm px-5">
+                {t('common.nav.cta')}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
 
@@ -261,21 +252,19 @@ const Navbar = () => {
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
-        {/* Backdrop */}
         <div 
-          className="absolute inset-0 bg-background/80 backdrop-blur-md"
+          className="absolute inset-0 bg-background/90 backdrop-blur-md"
           onClick={() => setIsOpen(false)}
         />
         
-        {/* Menu Panel */}
         <div 
           className={cn(
-            "absolute top-16 left-0 right-0 max-h-[calc(100vh-4rem)] overflow-y-auto bg-card border-b border-border shadow-xl transition-all duration-300",
+            "absolute top-16 left-0 right-0 max-h-[calc(100vh-4rem)] overflow-y-auto bg-card border-b border-border transition-all duration-300",
             isOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
           )}
+          style={{ boxShadow: 'var(--shadow-medium)' }}
         >
           <div className="container mx-auto px-4 py-6">
-            {/* Mobile Nav Links */}
             <div className="space-y-1">
               {navLinks.map((link) => {
                 const Icon = link.icon;
@@ -297,7 +286,6 @@ const Navbar = () => {
                           )} />
                         </button>
                         
-                        {/* Mobile Dropdown */}
                         <div className={cn(
                           "overflow-hidden transition-all duration-300",
                           activeDropdown === link.name ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
@@ -312,10 +300,7 @@ const Navbar = () => {
                                   className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted/50 transition-colors"
                                   onClick={() => setIsOpen(false)}
                                 >
-                                  <div className={cn(
-                                    "p-2 rounded-lg bg-gradient-to-r text-white",
-                                    vertical.gradient
-                                  )}>
+                                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
                                     <VIcon className="h-4 w-4" />
                                   </div>
                                   <span className="text-sm font-medium text-muted-foreground">
@@ -356,7 +341,6 @@ const Navbar = () => {
               })}
             </div>
 
-            {/* Mobile Language Toggle */}
             <div className="mt-6 pt-6 border-t border-border">
               <div className="flex items-center justify-between px-4">
                 <div className="flex items-center gap-2">
@@ -366,7 +350,7 @@ const Navbar = () => {
                 <div className="flex items-center gap-2 bg-muted/50 px-3 py-1.5 rounded-full">
                   <span className={cn(
                     "text-sm font-medium",
-                    language === 'de' ? "text-primary" : "text-muted-foreground"
+                    language === 'de' ? "text-foreground" : "text-muted-foreground"
                   )}>DE</span>
                   <Switch 
                     checked={language === 'en'} 
@@ -375,17 +359,16 @@ const Navbar = () => {
                   />
                   <span className={cn(
                     "text-sm font-medium",
-                    language === 'en' ? "text-primary" : "text-muted-foreground"
+                    language === 'en' ? "text-foreground" : "text-muted-foreground"
                   )}>EN</span>
                 </div>
               </div>
             </div>
 
-            {/* Mobile CTA */}
             <div className="mt-6 px-4">
-              <Button className="w-full tech-button group">
-                {t('nav.cta')}
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <Button className="w-full btn-primary rounded-xl">
+                {t('common.nav.cta')}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>

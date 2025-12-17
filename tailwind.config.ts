@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,7 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+				display: ['Sora', 'Space Grotesk', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -68,46 +67,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Local Global Harvest
-				earth: {
-					50: '#f5f8f2',
-					100: '#e6efe0',
-					200: '#d0e0c7',
-					300: '#adc9a0',
-					400: '#84ab73',
-					500: '#659055',
-					600: '#4c7341',
-					700: '#3c5b35',
-					800: '#33492e',
-					900: '#2c3f29',
-					950: '#152113',
-				},
-				ocean: {
-					50: '#effaff',
-					100: '#def4ff',
-					200: '#b6e9ff',
-					300: '#75daff',
-					400: '#36c7ff',
-					500: '#0eacff',
-					600: '#008eff',
-					700: '#006eff',
-					800: '#005bce',
-					900: '#0051a7',
-					950: '#00316d',
-				},
-				soil: {
-					50: '#fbf7f0',
-					100: '#f6ece0',
-					200: '#edd5b9',
-					300: '#e2ba8c',
-					400: '#d59758',
-					500: '#cb7c36',
-					600: '#bb6329',
-					700: '#9c4c24',
-					800: '#7e3e23',
-					900: '#68341f',
-					950: '#391a10',
-				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -116,24 +75,28 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-up': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'scale-in': {
+					'0%': { opacity: '0', transform: 'scale(0.95)' },
+					'100%': { opacity: '1', transform: 'scale(1)' }
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' },
+					'50%': { transform: 'translateY(-12px)' },
 				},
 				'pulse-soft': {
 					'0%, 100%': { opacity: '1' },
@@ -143,17 +106,11 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-up': 'fade-up 0.6s ease-out forwards',
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+				'scale-in': 'scale-in 0.4s ease-out forwards',
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-soft': 'pulse-soft 3s ease-in-out infinite'
-			},
-			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['Montserrat', 'sans-serif'],
-			},
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'hero-pattern': "url('/images/hero-pattern.svg')",
 			},
 		}
 	},

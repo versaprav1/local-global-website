@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { verticals } from "@/data/verticals";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -29,46 +28,47 @@ const VerticalsSection = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="verticals" className="py-24 relative overflow-hidden editorial-section">
       {verticals.map((v) => (
         <div key={v.id} id={v.id} className="absolute -top-20" />
       ))}
       
-      <div className="absolute inset-0 gradient-bg opacity-5" />
+      <div className="absolute inset-0 gradient-bg" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 px-4 py-2 border-primary/20 bg-primary/10 text-primary">
+        {/* Section Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="tag-primary mb-6">
             {t('verticals.section.badge')}
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">{t('verticals.section.title')}</span>
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6">
+            {t('verticals.section.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             {t('verticals.section.subtitle')}
           </p>
+          <div className="editorial-divider mt-8" />
         </div>
 
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-12">
+        {/* Tab Navigation */}
+        <div className="flex flex-wrap justify-center gap-2 mb-16">
           {verticals.map((vertical) => {
             const Icon = vertical.icon;
             const trans = getVerticalTranslation(vertical.id);
+            const isSelected = selectedVertical.id === vertical.id;
             return (
               <button
                 key={vertical.id}
                 onClick={() => setSelectedVertical(vertical)}
-                className={`group relative w-full sm:w-auto px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                  selectedVertical.id === vertical.id ? "text-white" : "text-foreground hover:scale-105"
+                className={`group relative px-5 py-3 rounded-xl font-medium text-sm transition-all duration-300 ${
+                  isSelected 
+                    ? "bg-primary text-primary-foreground" 
+                    : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
+                style={{ boxShadow: isSelected ? 'var(--shadow-glow)' : 'none' }}
               >
-                {selectedVertical.id === vertical.id && (
-                  <div className={`absolute inset-0 bg-gradient-to-r ${vertical.gradient} rounded-xl`} />
-                )}
-                {selectedVertical.id !== vertical.id && (
-                  <div className="absolute inset-0 glass-card rounded-xl" />
-                )}
-                <div className="relative flex items-center gap-2">
-                  <Icon className="h-5 w-5" />
+                <div className="flex items-center gap-2">
+                  <Icon className="h-4 w-4" />
                   <span>{trans.name}</span>
                 </div>
               </button>
@@ -76,30 +76,34 @@ const VerticalsSection = () => {
           })}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="space-y-6">
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left: Details */}
+          <div className="space-y-8">
             {(() => {
               const trans = getVerticalTranslation(selectedVertical.id);
               const Icon = selectedVertical.icon;
               return (
                 <>
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${selectedVertical.gradient} shadow-glow`}>
-                    <Icon className="h-12 w-12 text-white" />
+                  <div className="inline-flex p-4 rounded-2xl bg-primary/10 text-primary">
+                    <Icon className="h-10 w-10" />
                   </div>
-                  <h3 className="text-3xl font-bold">{trans.name}</h3>
-                  <p className="text-lg text-muted-foreground">{trans.description}</p>
-                  <ul className="space-y-3">
+                  <div className="space-y-4">
+                    <h3 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">{trans.name}</h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed">{trans.description}</p>
+                  </div>
+                  <ul className="space-y-4">
                     {trans.features?.map((feature, index) => (
-                      <li key={index} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-muted-foreground">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Link to={verticalRoutes[selectedVertical.id] || "#"}>
-                    <Button className="tech-button group">
+                    <Button className="btn-primary rounded-xl text-base px-6 py-3 h-auto">
                       {t('verticals.cta')}
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>
                 </>
@@ -107,28 +111,31 @@ const VerticalsSection = () => {
             })()}
           </div>
 
+          {/* Right: Visual */}
           <div className="space-y-6">
             {(() => {
               const trans = getVerticalTranslation(selectedVertical.id);
               const Icon = selectedVertical.icon;
               return (
                 <>
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 to-secondary/20 p-12 flex items-center justify-center min-h-[320px]">
-                    <Icon className="h-32 w-32 text-primary/60" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <Badge className="mb-2 bg-background/90 text-foreground">Featured</Badge>
-                      <p className="text-foreground font-semibold text-lg">{trans.name}</p>
+                  <div className="relative rounded-2xl overflow-hidden bg-muted/30 border border-border/50 p-12 flex items-center justify-center min-h-[360px]" style={{ boxShadow: 'var(--shadow-medium)' }}>
+                    <div className="absolute inset-0 gradient-bg opacity-50" />
+                    <Icon className="h-32 w-32 text-primary/30 relative z-10" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background to-transparent">
+                      <div className="tag-accent mb-2">Featured</div>
+                      <p className="text-foreground font-display font-semibold text-xl">{trans.name}</p>
                     </div>
                   </div>
                   {trans.stats && (
-                    <Card className="glass-container p-6 card-hover">
+                    <Card className="feature-card">
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="text-sm text-muted-foreground mb-1">{trans.stats.label}</p>
-                          <p className="text-3xl font-bold text-gradient">{trans.stats.value}</p>
+                          <p className="text-4xl font-display font-bold text-foreground">{trans.stats.value}</p>
                         </div>
-                        <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${selectedVertical.gradient} opacity-20`} />
+                        <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                          <Icon className="h-8 w-8 text-primary" />
+                        </div>
                       </div>
                     </Card>
                   )}
@@ -138,20 +145,22 @@ const VerticalsSection = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mt-16">
+        {/* Bottom Cards Grid */}
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 mt-20">
           {verticals.map((vertical) => {
             const Icon = vertical.icon;
             const trans = getVerticalTranslation(vertical.id);
+            const isSelected = selectedVertical.id === vertical.id;
             return (
               <Card 
                 key={vertical.id}
-                className="glass-container p-6 card-hover cursor-pointer"
+                className={`feature-card cursor-pointer transition-all duration-300 ${isSelected ? 'border-primary/30 bg-primary/5' : ''}`}
                 onClick={() => setSelectedVertical(vertical)}
               >
-                <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${vertical.gradient} mb-4`}>
-                  <Icon className="h-6 w-6 text-white" />
+                <div className={`inline-flex p-3 rounded-xl mb-4 transition-colors ${isSelected ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>
+                  <Icon className="h-5 w-5" />
                 </div>
-                <h4 className="text-lg font-bold mb-2">{trans.name}</h4>
+                <h4 className="font-display font-semibold mb-2">{trans.name}</h4>
                 <p className="text-muted-foreground text-sm line-clamp-2">{trans.description}</p>
               </Card>
             );
