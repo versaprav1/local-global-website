@@ -74,7 +74,7 @@ const Navbar = () => {
     { name: t('common.nav.blog'), href: "/blog", icon: BookOpen },
     { name: t('common.nav.resources'), href: "/resources", icon: Users },
     { name: t('common.nav.about'), href: "/about", icon: Info },
-    { name: t('common.nav.contact'), href: "/#contact", icon: MessageCircle },
+    { name: t('common.nav.contact'), href: "/contact", icon: MessageCircle },
   ];
 
   const handleDropdownEnter = (name: string) => {
