@@ -99,15 +99,21 @@ const Navbar = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="relative w-10 h-10 rounded-xl bg-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                <Leaf className="h-5 w-5 text-primary-foreground" />
+            <Link to="/" className="flex items-center space-x-2.5 group">
+              <div className="relative flex items-center justify-center">
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg">
+                  <span className="text-primary-foreground font-display font-bold text-lg">L</span>
+                </div>
+                <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-secondary border-2 border-background" />
               </div>
-              <span className="text-xl font-display font-semibold tracking-tight">
-                <span className="text-foreground">Near</span>
-                <span className="text-primary">&</span>
-                <span className="text-foreground">Far</span>
-              </span>
+              <div className="flex flex-col -space-y-1">
+                <span className="text-lg font-display font-bold tracking-tight text-foreground">
+                  Local<span className="text-primary">Global</span>
+                </span>
+                <span className="text-[10px] font-medium text-muted-foreground tracking-wider uppercase">
+                  Sustainable Ecosystem
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
