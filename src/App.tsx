@@ -10,9 +10,6 @@ import Resources from "./pages/Resources";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
-import PerformanceMedicine from "./pages/services/PerformanceMedicine";
-import RecoveryWellness from "./pages/services/RecoveryWellness";
-import TrainingPerformance from "./pages/services/TrainingPerformance";
 
 const queryClient = new QueryClient();
 
@@ -29,9 +26,8 @@ const App = () => (
             <Route path="/resources" element={<Resources />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
-            <Route path="/services/performance-medicine" element={<PerformanceMedicine />} />
-            <Route path="/services/recovery-wellness" element={<RecoveryWellness />} />
-            <Route path="/services/training-performance" element={<TrainingPerformance />} />
+            {/* Vertical service pages - to be created */}
+            <Route path="/services/*" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

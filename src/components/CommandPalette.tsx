@@ -8,11 +8,11 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { Search, User, Building2, Briefcase, FileText, MapPin } from "lucide-react";
-import { specialists as specialistsData } from "@/data/specialists";
+import { Search, Building2, Briefcase, FileText, MapPin, Leaf } from "lucide-react";
 import { treatmentCenters as centersData } from "@/data/centers";
 import { opportunities } from "@/data/opportunities";
 import { resources } from "@/data/resources";
+import { verticals } from "@/data/verticals";
 
 interface CommandPaletteProps {
   onNavigate?: (section: string, id?: string) => void;
@@ -59,29 +59,32 @@ export const CommandPalette = ({ onNavigate }: CommandPaletteProps) => {
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search specialists, centers, services..." />
+        <CommandInput placeholder="Search verticals, communities, opportunities..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           
-          <CommandGroup heading="Specialists">
-            {specialistsData.slice(0, 5).map((specialist) => (
-              <CommandItem
-                key={specialist.id}
-                onSelect={() => handleSelect("specialists", String(specialist.id))}
-                className="flex items-center gap-3 cursor-pointer"
-              >
-                <User className="w-4 h-4 text-muted-foreground" />
-                <div>
-                  <div className="font-medium">{specialist.name}</div>
-                  <div className="text-xs text-muted-foreground">{specialist.specialty}</div>
-                </div>
-              </CommandItem>
-            ))}
+          <CommandGroup heading="Ecosystem Verticals">
+            {verticals.map((vertical) => {
+              const Icon = vertical.icon;
+              return (
+                <CommandItem
+                  key={vertical.id}
+                  onSelect={() => handleSelect("verticals", vertical.id)}
+                  className="flex items-center gap-3 cursor-pointer"
+                >
+                  <Icon className="w-4 h-4 text-muted-foreground" />
+                  <div>
+                    <div className="font-medium">{vertical.name}</div>
+                    <div className="text-xs text-muted-foreground">{vertical.description}</div>
+                  </div>
+                </CommandItem>
+              );
+            })}
           </CommandGroup>
 
           <CommandSeparator />
 
-          <CommandGroup heading="Treatment Centers">
+          <CommandGroup heading="Community Hubs">
             {centersData.slice(0, 5).map((center) => (
               <CommandItem
                 key={center.id}

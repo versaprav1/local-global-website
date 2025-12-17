@@ -7,47 +7,47 @@ const testimonials = [
   {
     id: 1,
     name: "Michael Schmidt",
-    role: "Professional Athlete",
-    roleDe: "Profisportler",
+    role: "Urban Gardener",
+    roleDe: "Stadtgärtner",
     image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150&h=150&fit=crop",
     rating: 5,
-    text: "The treatment I received was exceptional. The team's expertise in sports medicine helped me recover faster than expected and get back to my training routine.",
-    textDe: "Die Behandlung, die ich erhielt, war außergewöhnlich. Die Expertise des Teams in Sportmedizin half mir, schneller als erwartet zu genesen und zu meinem Trainingsplan zurückzukehren.",
+    text: "This platform transformed how I connect with local farmers. Fresh produce delivered weekly, and I've learned so much about sustainable living.",
+    textDe: "Diese Plattform hat verändert, wie ich mich mit lokalen Bauern verbinde. Frische Produkte werden wöchentlich geliefert, und ich habe so viel über nachhaltiges Leben gelernt.",
     videoUrl: "#",
     verified: true
   },
   {
     id: 2,
     name: "Sarah Wagner",
-    role: "Marathon Runner",
-    roleDe: "Marathonläuferin",
+    role: "Community Leader",
+    roleDe: "Gemeinschaftsleiterin",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
     rating: 5,
-    text: "Outstanding care and professionalism. The specialists took time to understand my specific needs and created a personalized recovery plan that worked perfectly.",
-    textDe: "Hervorragende Betreuung und Professionalität. Die Spezialisten nahmen sich Zeit, meine spezifischen Bedürfnisse zu verstehen und erstellten einen personalisierten Genesungsplan, der perfekt funktionierte.",
+    text: "The barter exchange feature is amazing. I've traded my homemade preserves for gardening help, and built wonderful community connections.",
+    textDe: "Die Tauschbörsen-Funktion ist fantastisch. Ich habe meine selbstgemachten Einmachprodukte gegen Gartenhilfe getauscht und wunderbare Gemeinschaftsverbindungen aufgebaut.",
     verified: true
   },
   {
     id: 3,
     name: "Thomas Müller",
-    role: "Fitness Enthusiast",
-    roleDe: "Fitness-Enthusiast",
+    role: "Local Farmer",
+    roleDe: "Lokaler Bauer",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
     rating: 5,
-    text: "I've been to several sports medicine centers, but this one stands out. The modern facilities and experienced staff made all the difference in my rehabilitation.",
-    textDe: "Ich war in mehreren Sportmedizin-Zentren, aber dieses sticht heraus. Die modernen Einrichtungen und das erfahrene Personal machten den ganzen Unterschied in meiner Rehabilitation.",
+    text: "As a small-scale farmer, this platform has been a game-changer. I can now reach customers directly and get fair prices for my organic produce.",
+    textDe: "Als Kleinbauer war diese Plattform ein Gamechanger. Ich kann jetzt Kunden direkt erreichen und faire Preise für meine Bio-Produkte bekommen.",
     videoUrl: "#",
     verified: true
   },
   {
     id: 4,
     name: "Anna Fischer",
-    role: "Yoga Instructor",
-    roleDe: "Yogalehrerin",
+    role: "Youth Mentor",
+    roleDe: "Jugendmentorin",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop",
     rating: 5,
-    text: "The holistic approach to treatment here is remarkable. They don't just treat symptoms but focus on overall wellness and long-term health.",
-    textDe: "Der ganzheitliche Behandlungsansatz hier ist bemerkenswert. Sie behandeln nicht nur Symptome, sondern konzentrieren sich auf allgemeines Wohlbefinden und langfristige Gesundheit.",
+    text: "The youth freelancing program has helped so many young people in our community gain skills and earn income while still in school.",
+    textDe: "Das Jugend-Freelancing-Programm hat so vielen jungen Menschen in unserer Gemeinschaft geholfen, Fähigkeiten zu erwerben und Einkommen zu erzielen, während sie noch zur Schule gehen.",
     verified: true
   }
 ];
@@ -57,24 +57,28 @@ export default function TestimonialsSection() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+    <section className="py-24 px-4 relative overflow-hidden editorial-section">
+      <div className="absolute inset-0 gradient-bg" />
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {language === "de" ? "Was unsere Patienten sagen" : "What Our Patients Say"}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="tag-primary mb-6">
+            {language === "de" ? "Gemeinschaftsstimmen" : "Community Voices"}
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+            {language === "de" ? "Was unsere Community sagt" : "What Our Community Says"}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             {language === "de" 
-              ? "Echte Geschichten von echten Menschen, die ihre Gesundheitsziele mit uns erreicht haben"
-              : "Real stories from real people who achieved their health goals with us"}
+              ? "Echte Geschichten von echten Menschen, die nachhaltiger leben"
+              : "Real stories from real people living more sustainably"}
           </p>
+          <div className="editorial-divider mt-8" />
         </div>
 
         {/* Featured Testimonial */}
         <div className="max-w-4xl mx-auto mb-12">
-          <Card className="glass-card overflow-hidden">
+          <Card className="glass-container overflow-hidden">
             <CardContent className="p-8 md:p-12">
               <Quote className="h-12 w-12 text-primary mb-6 opacity-50" />
               
@@ -86,11 +90,11 @@ export default function TestimonialsSection() {
                 />
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-2xl font-semibold">
+                    <h3 className="text-2xl font-display font-semibold">
                       {testimonials[activeTestimonial].name}
                     </h3>
                     {testimonials[activeTestimonial].verified && (
-                      <span className="inline-flex items-center gap-1 text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                      <span className="tag-primary">
                         ✓ {language === "de" ? "Verifiziert" : "Verified"}
                       </span>
                     )}
@@ -102,7 +106,7 @@ export default function TestimonialsSection() {
                   </p>
                   <div className="flex gap-1 mt-2">
                     {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                      <Star key={i} className="h-5 w-5 fill-accent text-accent" />
                     ))}
                   </div>
                 </div>
@@ -129,7 +133,7 @@ export default function TestimonialsSection() {
             <button
               key={testimonial.id}
               onClick={() => setActiveTestimonial(index)}
-              className={`group relative overflow-hidden rounded-lg transition-all ${
+              className={`group relative overflow-hidden rounded-xl transition-all ${
                 activeTestimonial === index 
                   ? "ring-4 ring-primary scale-105" 
                   : "opacity-60 hover:opacity-100"
@@ -140,12 +144,12 @@ export default function TestimonialsSection() {
                 alt={testimonial.name}
                 className="w-full aspect-square object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4">
-                <div className="text-white text-left">
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent flex items-end p-4">
+                <div className="text-background text-left">
                   <p className="font-semibold text-sm">{testimonial.name}</p>
                   <div className="flex gap-0.5 mt-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-3 w-3 fill-white text-white" />
+                      <Star key={i} className="h-3 w-3 fill-background text-background" />
                     ))}
                   </div>
                 </div>
@@ -156,28 +160,28 @@ export default function TestimonialsSection() {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mt-16">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">5.0</div>
+          <div className="stat-card">
+            <div className="text-4xl font-display font-bold text-foreground mb-2">4.9</div>
             <p className="text-sm text-muted-foreground">
               {language === "de" ? "Durchschnittliche Bewertung" : "Average Rating"}
             </p>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">1,200+</div>
+          <div className="stat-card">
+            <div className="text-4xl font-display font-bold text-foreground mb-2">2,500+</div>
             <p className="text-sm text-muted-foreground">
-              {language === "de" ? "Zufriedene Patienten" : "Happy Patients"}
+              {language === "de" ? "Community-Mitglieder" : "Community Members"}
             </p>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">98%</div>
+          <div className="stat-card">
+            <div className="text-4xl font-display font-bold text-foreground mb-2">150+</div>
             <p className="text-sm text-muted-foreground">
-              {language === "de" ? "Erfolgsrate" : "Success Rate"}
+              {language === "de" ? "Lokale Partner" : "Local Partners"}
             </p>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">15+</div>
+          <div className="stat-card">
+            <div className="text-4xl font-display font-bold text-foreground mb-2">100K+</div>
             <p className="text-sm text-muted-foreground">
-              {language === "de" ? "Jahre Erfahrung" : "Years Experience"}
+              {language === "de" ? "Erfolgreiche Tausche" : "Successful Exchanges"}
             </p>
           </div>
         </div>
