@@ -1,50 +1,50 @@
 {
-  "performance": {
+  "farm-to-home": {
     "hero": {
-      "badge": "Sports Medicine Excellence",
-      "title": "Performance Medicine",
-      "subtitle": "Science-based diagnostics and treatment for athletes and active individuals who want to maximize their performance.",
-      "cta": "Book Free Consultation"
+      "badge": "Direct from Farmers",
+      "title": "Farm-to-Home Marketplace",
+      "subtitle": "Fresh, local produce delivered directly from farms to your table. Support local farmers while enjoying the freshest seasonal foods.",
+      "cta": "Browse Products"
     },
     "audience": {
       "title": "Who is this for?",
       "items": [
         {
-          "title": "Professional Athletes",
-          "description": "Elite athletes looking to extend their careers through precise medical care."
+          "title": "Eco-Conscious Families",
+          "description": "Families wanting fresh, chemical-free produce for healthy meals."
         },
         {
-          "title": "Ambitious Amateurs",
-          "description": "Recreational athletes aiming to safely achieve their personal best."
+          "title": "Urban Professionals",
+          "description": "Busy individuals seeking convenient access to quality local food."
         },
         {
-          "title": "Fitness Enthusiasts",
-          "description": "People who maintain an active lifestyle and want to act preventively."
+          "title": "Small Restaurants",
+          "description": "Local eateries wanting to source fresh ingredients directly."
         },
         {
-          "title": "Rehabilitation Patients",
-          "description": "Individuals after injuries who want to safely and effectively return to activity."
+          "title": "Community Groups",
+          "description": "Organizations looking to support local agriculture."
         }
       ]
     },
     "outcomes": {
-      "title": "What You Can Expect",
+      "title": "What You Get",
       "items": [
         {
-          "title": "Precise Diagnostics",
-          "description": "State-of-the-art examination methods for accurate findings"
+          "title": "Fresh Produce",
+          "description": "Farm-fresh fruits, vegetables, and artisan products"
         },
         {
-          "title": "Individual Therapy",
-          "description": "Treatment plans tailored to you"
+          "title": "Local Connection",
+          "description": "Direct relationship with farmers in your region"
         },
         {
-          "title": "Fast Recovery",
-          "description": "Optimized recovery times through evidence-based methods"
+          "title": "Sustainability",
+          "description": "Reduced carbon footprint through local sourcing"
         },
         {
-          "title": "Long-term Health",
-          "description": "Sustainable strategies for lasting performance"
+          "title": "Fair Prices",
+          "description": "Better prices for you and fair pay for farmers"
         }
       ]
     },
@@ -53,57 +53,23 @@
       "steps": [
         {
           "step": "1",
-          "title": "Initial Consultation",
-          "description": "Free 15-minute consultation for needs assessment"
+          "title": "Browse Local Farms",
+          "description": "Discover farmers and producers near you"
         },
         {
           "step": "2",
-          "title": "Diagnostics",
-          "description": "Comprehensive examination with state-of-the-art methods"
+          "title": "Select Products",
+          "description": "Choose from seasonal, fresh offerings"
         },
         {
           "step": "3",
-          "title": "Treatment Plan",
-          "description": "Individual treatment plan based on your goals"
+          "title": "Schedule Delivery",
+          "description": "Pick your preferred delivery time"
         },
         {
           "step": "4",
-          "title": "Support",
-          "description": "Continuous care and plan adjustments"
-        }
-      ]
-    },
-    "cases": {
-      "title": "Success Stories",
-      "items": [
-        {
-          "title": "Marathon Runner Back on Track",
-          "description": "Competition-ready again in 8 weeks after chronic Achilles tendon problems.",
-          "metric": "8 Weeks",
-          "metricLabel": "to return"
-        },
-        {
-          "title": "Pro Footballer After ACL Tear",
-          "description": "Complete rehabilitation and return to professional sport in record time.",
-          "metric": "6 Months",
-          "metricLabel": "rehabilitation time"
-        }
-      ]
-    },
-    "testimonials": {
-      "title": "What Our Patients Say",
-      "items": [
-        {
-          "name": "Thomas M.",
-          "role": "Triathlete",
-          "text": "The care was first-class. I was able to return to training faster than expected.",
-          "rating": 5
-        },
-        {
-          "name": "Sarah K.",
-          "role": "Fitness Trainer",
-          "text": "Finally a team that understands and supports my athletic goals.",
-          "rating": 5
+          "title": "Enjoy Fresh Food",
+          "description": "Receive quality produce at your doorstep"
         }
       ]
     },
@@ -111,130 +77,50 @@
       "title": "Frequently Asked Questions",
       "items": [
         {
-          "question": "How long does a typical treatment last?",
-          "answer": "Treatment duration varies depending on the diagnosis. After the initial examination, we create an individual schedule for you."
+          "question": "How fresh are the products?",
+          "answer": "Products are harvested within 24-48 hours of delivery, ensuring maximum freshness."
         },
         {
-          "question": "Are costs covered by insurance?",
-          "answer": "Many of our services are covered by private and public health insurance. We are happy to advise you individually."
+          "question": "Can I visit the farms?",
+          "answer": "Yes! Many of our partner farms offer visits and tours for customers."
         },
         {
-          "question": "Do I need a referral?",
-          "answer": "No, you can make an appointment directly with us."
+          "question": "What payment methods are accepted?",
+          "answer": "We accept all major credit cards, PayPal, and bank transfers."
         }
       ]
     },
     "cta": {
-      "title": "Ready for the Next Step?",
-      "subtitle": "Schedule your free initial consultation now.",
-      "button": "Book Consultation"
+      "title": "Start Eating Fresh Today",
+      "subtitle": "Join thousands of families enjoying farm-fresh produce.",
+      "button": "Get Started"
     }
   },
-  "recovery": {
+  "urban-gardening": {
     "hero": {
-      "badge": "Holistic Regeneration",
-      "title": "Recovery & Wellness",
-      "subtitle": "Comprehensive recovery programs that harmonize body and mind for optimal regeneration.",
-      "cta": "Discover Program"
+      "badge": "Grow Your Own",
+      "title": "Urban Gardening Ecosystem",
+      "subtitle": "Transform your balcony or small space into a thriving garden with our starter kits, guides, and community support.",
+      "cta": "Start Growing"
     },
     "audience": {
       "title": "Who is this for?",
       "items": [
         {
-          "title": "Stressed Professionals",
-          "description": "People with high work demands seeking active recovery."
+          "title": "Apartment Dwellers",
+          "description": "City residents wanting to grow food on balconies or windowsills."
         },
         {
-          "title": "Athletes in Recovery",
-          "description": "Athletes who want to optimize their recovery times."
+          "title": "Beginners",
+          "description": "First-time gardeners looking for easy-to-follow guidance."
         },
         {
-          "title": "Burnout Prevention",
-          "description": "People who want to act preventively against exhaustion."
+          "title": "Families with Kids",
+          "description": "Parents teaching children about nature and food production."
         },
         {
-          "title": "Wellness-Conscious",
-          "description": "People who prioritize holistic well-being."
-        }
-      ]
-    },
-    "outcomes": {
-      "title": "What You Can Expect",
-      "items": [
-        {
-          "title": "Deep Relaxation",
-          "description": "Scientifically-based relaxation techniques"
-        },
-        {
-          "title": "Better Sleep",
-          "description": "Optimization of your sleep quality"
-        },
-        {
-          "title": "More Energy",
-          "description": "Sustainable increase in your energy levels"
-        },
-        {
-          "title": "Mental Clarity",
-          "description": "Improved concentration and focus"
-        }
-      ]
-    },
-    "process": {
-      "title": "Our Approach",
-      "steps": [
-        {
-          "step": "1",
-          "title": "Wellness Check",
-          "description": "Analysis of your current stress and energy levels"
-        },
-        {
-          "step": "2",
-          "title": "Program Design",
-          "description": "Individual recovery program for your needs"
-        },
-        {
-          "step": "3",
-          "title": "Treatments",
-          "description": "Professional applications and therapies"
-        },
-        {
-          "step": "4",
-          "title": "Sustainability",
-          "description": "Strategies for lasting balance in everyday life"
-        }
-      ]
-    },
-    "cases": {
-      "title": "Success Stories",
-      "items": [
-        {
-          "title": "Manager Finds Balance",
-          "description": "From chronic exhaustion to sustainable energy management in 12 weeks.",
-          "metric": "85%",
-          "metricLabel": "less stress"
-        },
-        {
-          "title": "Athlete Optimizes Recovery",
-          "description": "30% faster recovery between competitions through our program.",
-          "metric": "30%",
-          "metricLabel": "faster recovery"
-        }
-      ]
-    },
-    "testimonials": {
-      "title": "Client Experiences",
-      "items": [
-        {
-          "name": "Julia S.",
-          "role": "Entrepreneur",
-          "text": "The program changed my life. I sleep better and have more energy.",
-          "rating": 5
-        },
-        {
-          "name": "Michael B.",
-          "role": "Professional Golfer",
-          "text": "Recovery times between tournaments have significantly shortened.",
-          "rating": 5
+          "title": "Sustainability Advocates",
+          "description": "Eco-conscious individuals reducing their food miles."
         }
       ]
     },
@@ -242,130 +128,50 @@
       "title": "Frequently Asked Questions",
       "items": [
         {
-          "question": "How often should I do the treatments?",
-          "answer": "We recommend weekly sessions initially, which are adjusted as you progress."
+          "question": "How much space do I need?",
+          "answer": "You can start with just a windowsill! Our micro-garden kits are designed for spaces as small as 2 square feet."
         },
         {
-          "question": "Can I combine the program with my sport?",
-          "answer": "Absolutely! Our programs are designed to optimally complement your training."
+          "question": "What can I grow in an apartment?",
+          "answer": "Herbs, leafy greens, tomatoes, peppers, and even strawberries thrive in urban settings with proper care."
         },
         {
-          "question": "Are there contraindications?",
-          "answer": "During the initial consultation, we clarify all health aspects and adjust the program accordingly."
+          "question": "Do you provide ongoing support?",
+          "answer": "Yes! Our community forum and expert gardeners are available to help you succeed."
         }
       ]
     },
     "cta": {
-      "title": "Start Your Recovery Journey",
-      "subtitle": "Schedule your wellness check now.",
-      "button": "Book Appointment"
+      "title": "Start Your Garden Today",
+      "subtitle": "Everything you need to grow fresh food at home.",
+      "button": "Shop Starter Kits"
     }
   },
-  "training": {
+  "barter-exchange": {
     "hero": {
-      "badge": "Performance Optimization",
-      "title": "Training & Performance",
-      "subtitle": "Data-driven training planning and performance analysis for measurable results.",
-      "cta": "Discover Potential"
+      "badge": "Community Exchange",
+      "title": "Barter & Exchange Platform",
+      "subtitle": "Trade goods, skills, and services with your community. Reduce waste and build connections without cash.",
+      "cta": "Join Exchange"
     },
     "audience": {
       "title": "Who is this for?",
       "items": [
         {
-          "title": "Competitive Athletes",
-          "description": "Athletes who want to take their performance to the next level."
+          "title": "Community Members",
+          "description": "Anyone wanting to trade goods and services locally."
         },
         {
-          "title": "Advanced Fitness",
-          "description": "Experienced athletes who want to overcome plateaus."
+          "title": "Skilled Craftspeople",
+          "description": "Artisans looking to exchange their creations for other goods."
         },
         {
-          "title": "Trainers & Coaches",
-          "description": "Professionals who want to integrate evidence-based methods into their work."
+          "title": "Budget-Conscious",
+          "description": "People wanting to access goods without spending cash."
         },
         {
-          "title": "Teams & Clubs",
-          "description": "Sports organizations that want to optimize their team performance."
-        }
-      ]
-    },
-    "outcomes": {
-      "title": "What You Can Expect",
-      "items": [
-        {
-          "title": "Performance Improvement",
-          "description": "Measurable improvement in your athletic performance"
-        },
-        {
-          "title": "Data-Based Insights",
-          "description": "Precise analysis of your strengths and potential"
-        },
-        {
-          "title": "Optimized Training",
-          "description": "Scientifically-based periodization"
-        },
-        {
-          "title": "Injury Prevention",
-          "description": "Proactive measures to prevent overload"
-        }
-      ]
-    },
-    "process": {
-      "title": "Our System",
-      "steps": [
-        {
-          "step": "1",
-          "title": "Performance Test",
-          "description": "Comprehensive performance diagnostics"
-        },
-        {
-          "step": "2",
-          "title": "Analysis",
-          "description": "Data evaluation and potential identification"
-        },
-        {
-          "step": "3",
-          "title": "Training Plan",
-          "description": "Individualized program for your goals"
-        },
-        {
-          "step": "4",
-          "title": "Monitoring",
-          "description": "Continuous adjustment based on progress"
-        }
-      ]
-    },
-    "cases": {
-      "title": "Success Stories",
-      "items": [
-        {
-          "title": "Triathlete Improves Times",
-          "description": "15% improvement in competition times in one season.",
-          "metric": "15%",
-          "metricLabel": "faster"
-        },
-        {
-          "title": "Football Team Increases Endurance",
-          "description": "Significant improvement in running performance across the entire team.",
-          "metric": "22%",
-          "metricLabel": "more endurance"
-        }
-      ]
-    },
-    "testimonials": {
-      "title": "Athlete Voices",
-      "items": [
-        {
-          "name": "Lars P.",
-          "role": "Triathlete",
-          "text": "The data analysis showed me where I was wasting time. Now I train more efficiently.",
-          "rating": 5
-        },
-        {
-          "name": "Anna H.",
-          "role": "Track Athlete",
-          "text": "I finally understand why certain training sessions are important.",
-          "rating": 5
+          "title": "Sustainability Minded",
+          "description": "Those wanting to reduce consumption and waste."
         }
       ]
     },
@@ -373,23 +179,125 @@
       "title": "Frequently Asked Questions",
       "items": [
         {
-          "question": "What tests are performed?",
-          "answer": "Depending on the sport, we perform lactate threshold tests, strength diagnostics, movement analyses, and other specific tests."
+          "question": "How does the exchange work?",
+          "answer": "List what you have to offer, browse what others are offering, and propose trades directly through our platform."
         },
         {
-          "question": "How often should I be tested?",
-          "answer": "We recommend re-testing every 8-12 weeks to measure progress and adjust the plan."
+          "question": "Is there a fee to join?",
+          "answer": "Basic membership is free! Premium features are available for active traders."
         },
         {
-          "question": "Do you work with teams?",
-          "answer": "Yes, we offer special programs for teams and clubs."
+          "question": "How do I ensure fair trades?",
+          "answer": "Our community rating system and suggested value guides help ensure fair exchanges."
         }
       ]
     },
     "cta": {
-      "title": "Maximize Your Potential",
-      "subtitle": "Start with your performance test.",
-      "button": "Book Test"
+      "title": "Start Trading Today",
+      "subtitle": "Join a community of exchangers in your area.",
+      "button": "Create Account"
+    }
+  },
+  "youth-freelancing": {
+    "hero": {
+      "badge": "Youth Opportunities",
+      "title": "Student & Youth Freelancing",
+      "subtitle": "Empowering young people to develop skills, build portfolios, and earn while learning through local and global opportunities.",
+      "cta": "Get Started"
+    },
+    "audience": {
+      "title": "Who is this for?",
+      "items": [
+        {
+          "title": "Students",
+          "description": "School and university students wanting to earn while studying."
+        },
+        {
+          "title": "Young Creatives",
+          "description": "Aspiring designers, writers, and artists building portfolios."
+        },
+        {
+          "title": "Tech-Savvy Teens",
+          "description": "Young people with digital skills to offer."
+        },
+        {
+          "title": "Career Starters",
+          "description": "Recent graduates gaining real-world experience."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What age can I join?",
+          "answer": "Young people aged 14+ can join with parental consent. Full access is available at 16+."
+        },
+        {
+          "question": "What skills are in demand?",
+          "answer": "Tutoring, design, content creation, tech support, and local services are popular categories."
+        },
+        {
+          "question": "How do payments work?",
+          "answer": "Secure payments through our platform with options for bank transfer or parent-managed accounts."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Launch Your Freelance Journey",
+      "subtitle": "Build skills and earn while you learn.",
+      "button": "Join Now"
+    }
+  },
+  "merger-acquisitions": {
+    "hero": {
+      "badge": "Business Growth",
+      "title": "Local-to-Global Commerce",
+      "subtitle": "Scale your sustainable business from local markets to global reach with our network and expertise.",
+      "cta": "Learn More"
+    },
+    "audience": {
+      "title": "Who is this for?",
+      "items": [
+        {
+          "title": "Small Producers",
+          "description": "Local businesses ready to expand their reach."
+        },
+        {
+          "title": "Sustainable Brands",
+          "description": "Eco-friendly companies seeking growth opportunities."
+        },
+        {
+          "title": "Investors",
+          "description": "Impact investors looking for sustainable ventures."
+        },
+        {
+          "title": "Cooperatives",
+          "description": "Producer groups wanting to scale collectively."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What support do you provide?",
+          "answer": "Business consulting, market analysis, partnership facilitation, and funding connections."
+        },
+        {
+          "question": "Is this only for large businesses?",
+          "answer": "No! We specialize in helping small sustainable businesses scale thoughtfully."
+        },
+        {
+          "question": "How long does the process take?",
+          "answer": "Timelines vary based on goals. Initial consultations help establish realistic expectations."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Scale Your Impact",
+      "subtitle": "Take your sustainable business to the next level.",
+      "button": "Schedule Consultation"
     }
   }
 }

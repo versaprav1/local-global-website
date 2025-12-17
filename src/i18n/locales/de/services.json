@@ -1,50 +1,50 @@
 {
-  "performance": {
+  "farm-to-home": {
     "hero": {
-      "badge": "Sportmedizinische Exzellenz",
-      "title": "Performance Medicine",
-      "subtitle": "Wissenschaftlich fundierte Diagnostik und Behandlung für Athleten und aktive Menschen, die ihre Leistungsfähigkeit maximieren wollen.",
-      "cta": "Kostenlose Beratung buchen"
+      "badge": "Direkt vom Bauern",
+      "title": "Bauernhof-zu-Haus Marktplatz",
+      "subtitle": "Frische, lokale Produkte direkt vom Bauernhof auf Ihren Tisch. Unterstützen Sie lokale Bauern und genießen Sie die frischesten saisonalen Lebensmittel.",
+      "cta": "Produkte entdecken"
     },
     "audience": {
       "title": "Für wen ist das?",
       "items": [
         {
-          "title": "Profisportler",
-          "description": "Elite-Athleten, die ihre Karriere durch präzise medizinische Betreuung verlängern möchten."
+          "title": "Umweltbewusste Familien",
+          "description": "Familien, die frische, chemiefreie Produkte für gesunde Mahlzeiten wünschen."
         },
         {
-          "title": "Ambitionierte Amateure",
-          "description": "Hobbysportler mit dem Anspruch, ihre persönlichen Bestleistungen sicher zu erreichen."
+          "title": "Berufstätige in der Stadt",
+          "description": "Vielbeschäftigte Menschen, die bequemen Zugang zu lokalen Qualitätsprodukten suchen."
         },
         {
-          "title": "Fitness-Enthusiasten",
-          "description": "Menschen, die einen aktiven Lebensstil pflegen und präventiv handeln möchten."
+          "title": "Kleine Restaurants",
+          "description": "Lokale Gaststätten, die frische Zutaten direkt beziehen möchten."
         },
         {
-          "title": "Rehabilitanden",
-          "description": "Personen nach Verletzungen, die sicher und effektiv zurück zur Aktivität finden wollen."
+          "title": "Gemeinschaftsgruppen",
+          "description": "Organisationen, die lokale Landwirtschaft unterstützen möchten."
         }
       ]
     },
     "outcomes": {
-      "title": "Was Sie erwarten können",
+      "title": "Was Sie bekommen",
       "items": [
         {
-          "title": "Präzise Diagnostik",
-          "description": "Modernste Untersuchungsmethoden für exakte Befunde"
+          "title": "Frische Produkte",
+          "description": "Erntefrisches Obst, Gemüse und handwerkliche Produkte"
         },
         {
-          "title": "Individuelle Therapie",
-          "description": "Auf Sie zugeschnittene Behandlungspläne"
+          "title": "Lokale Verbindung",
+          "description": "Direkter Kontakt zu Bauern in Ihrer Region"
         },
         {
-          "title": "Schnelle Erholung",
-          "description": "Optimierte Regenerationszeiten durch evidenzbasierte Methoden"
+          "title": "Nachhaltigkeit",
+          "description": "Reduzierter CO2-Fußabdruck durch lokale Beschaffung"
         },
         {
-          "title": "Langfristige Gesundheit",
-          "description": "Nachhaltige Strategien für dauerhafte Leistungsfähigkeit"
+          "title": "Faire Preise",
+          "description": "Bessere Preise für Sie und faire Bezahlung für Bauern"
         }
       ]
     },
@@ -53,343 +53,251 @@
       "steps": [
         {
           "step": "1",
-          "title": "Erstgespräch",
-          "description": "Kostenlose 15-minütige Beratung zur Bedarfsanalyse"
+          "title": "Lokale Höfe entdecken",
+          "description": "Finden Sie Bauern und Produzenten in Ihrer Nähe"
         },
         {
           "step": "2",
-          "title": "Diagnostik",
-          "description": "Umfassende Untersuchung mit modernsten Methoden"
+          "title": "Produkte auswählen",
+          "description": "Wählen Sie aus saisonalen, frischen Angeboten"
         },
         {
           "step": "3",
-          "title": "Therapieplan",
-          "description": "Individueller Behandlungsplan basierend auf Ihren Zielen"
+          "title": "Lieferung planen",
+          "description": "Wählen Sie Ihre bevorzugte Lieferzeit"
         },
         {
           "step": "4",
-          "title": "Begleitung",
-          "description": "Kontinuierliche Betreuung und Anpassung des Plans"
-        }
-      ]
-    },
-    "cases": {
-      "title": "Erfolgsgeschichten",
-      "items": [
-        {
-          "title": "Marathonläufer zurück auf der Strecke",
-          "description": "Nach chronischer Achillessehnenproblematik in 8 Wochen wieder wettkampffähig.",
-          "metric": "8 Wochen",
-          "metricLabel": "bis zur Rückkehr"
-        },
-        {
-          "title": "Fußballprofi nach Kreuzbandriss",
-          "description": "Vollständige Rehabilitation und Rückkehr zum Profisport in Rekordzeit.",
-          "metric": "6 Monate",
-          "metricLabel": "Rehabilitationszeit"
-        }
-      ]
-    },
-    "testimonials": {
-      "title": "Was unsere Patienten sagen",
-      "items": [
-        {
-          "name": "Thomas M.",
-          "role": "Triathlet",
-          "text": "Die Betreuung war erstklassig. Ich konnte schneller als erwartet wieder trainieren.",
-          "rating": 5
-        },
-        {
-          "name": "Sarah K.",
-          "role": "Fitness-Trainerin",
-          "text": "Endlich ein Team, das meine sportlichen Ziele versteht und unterstützt.",
-          "rating": 5
+          "title": "Frisch genießen",
+          "description": "Erhalten Sie Qualitätsprodukte an Ihrer Haustür"
         }
       ]
     },
     "faq": {
-      "title": "Häufige Fragen",
+      "title": "Häufig gestellte Fragen",
       "items": [
         {
-          "question": "Wie lange dauert eine typische Behandlung?",
-          "answer": "Die Behandlungsdauer variiert je nach Diagnose. Nach der Erstuntersuchung erstellen wir einen individuellen Zeitplan für Sie."
+          "question": "Wie frisch sind die Produkte?",
+          "answer": "Produkte werden innerhalb von 24-48 Stunden vor der Lieferung geerntet."
         },
         {
-          "question": "Werden die Kosten von der Krankenkasse übernommen?",
-          "answer": "Viele unserer Leistungen werden von privaten und gesetzlichen Krankenkassen übernommen. Wir beraten Sie gerne individuell."
+          "question": "Kann ich die Höfe besuchen?",
+          "answer": "Ja! Viele unserer Partnerbauernhöfe bieten Besuche und Führungen an."
         },
         {
-          "question": "Brauche ich eine Überweisung?",
-          "answer": "Nein, Sie können direkt einen Termin bei uns vereinbaren."
+          "question": "Welche Zahlungsmethoden werden akzeptiert?",
+          "answer": "Wir akzeptieren alle gängigen Kreditkarten, PayPal und Banküberweisungen."
         }
       ]
     },
     "cta": {
-      "title": "Bereit für den nächsten Schritt?",
-      "subtitle": "Vereinbaren Sie jetzt Ihre kostenlose Erstberatung.",
-      "button": "Beratung buchen"
+      "title": "Heute frisch essen",
+      "subtitle": "Schließen Sie sich Tausenden von Familien an, die frische Produkte vom Bauernhof genießen.",
+      "button": "Jetzt starten"
     }
   },
-  "recovery": {
+  "urban-gardening": {
     "hero": {
-      "badge": "Ganzheitliche Regeneration",
-      "title": "Recovery & Wellness",
-      "subtitle": "Umfassende Erholungsprogramme, die Körper und Geist in Einklang bringen für optimale Regeneration.",
-      "cta": "Programm entdecken"
+      "badge": "Selbst anbauen",
+      "title": "Urban Gardening Ökosystem",
+      "subtitle": "Verwandeln Sie Ihren Balkon oder kleinen Raum in einen blühenden Garten mit unseren Starter-Kits, Anleitungen und Community-Support.",
+      "cta": "Mit dem Anbau beginnen"
     },
     "audience": {
       "title": "Für wen ist das?",
       "items": [
         {
-          "title": "Gestresste Berufstätige",
-          "description": "Menschen mit hoher beruflicher Belastung, die aktive Erholung suchen."
+          "title": "Wohnungsbewohner",
+          "description": "Stadtbewohner, die auf Balkonen oder Fensterbänken Lebensmittel anbauen möchten."
         },
         {
-          "title": "Sportler in Regeneration",
-          "description": "Athleten, die ihre Erholungszeiten optimieren möchten."
+          "title": "Anfänger",
+          "description": "Erstgärtner, die leicht verständliche Anleitungen suchen."
         },
         {
-          "title": "Burnout-Gefährdete",
-          "description": "Personen, die präventiv gegen Erschöpfung handeln wollen."
+          "title": "Familien mit Kindern",
+          "description": "Eltern, die Kindern Natur und Lebensmittelproduktion beibringen."
         },
         {
-          "title": "Wellness-Bewusste",
-          "description": "Menschen, die ganzheitliches Wohlbefinden priorisieren."
-        }
-      ]
-    },
-    "outcomes": {
-      "title": "Was Sie erwarten können",
-      "items": [
-        {
-          "title": "Tiefe Entspannung",
-          "description": "Wissenschaftlich fundierte Entspannungstechniken"
-        },
-        {
-          "title": "Besserer Schlaf",
-          "description": "Optimierung Ihrer Schlafqualität"
-        },
-        {
-          "title": "Mehr Energie",
-          "description": "Nachhaltige Steigerung Ihres Energielevels"
-        },
-        {
-          "title": "Mentale Klarheit",
-          "description": "Verbesserte Konzentration und Fokus"
-        }
-      ]
-    },
-    "process": {
-      "title": "Unser Ansatz",
-      "steps": [
-        {
-          "step": "1",
-          "title": "Wellness-Check",
-          "description": "Analyse Ihres aktuellen Stress- und Energielevels"
-        },
-        {
-          "step": "2",
-          "title": "Programm-Design",
-          "description": "Individuelles Erholungsprogramm für Ihre Bedürfnisse"
-        },
-        {
-          "step": "3",
-          "title": "Behandlungen",
-          "description": "Professionelle Anwendungen und Therapien"
-        },
-        {
-          "step": "4",
-          "title": "Nachhaltigkeit",
-          "description": "Strategien für dauerhafte Balance im Alltag"
-        }
-      ]
-    },
-    "cases": {
-      "title": "Erfolgsgeschichten",
-      "items": [
-        {
-          "title": "Manager findet Balance",
-          "description": "Von chronischer Erschöpfung zu nachhaltigem Energiemanagement in 12 Wochen.",
-          "metric": "85%",
-          "metricLabel": "weniger Stress"
-        },
-        {
-          "title": "Athletin optimiert Regeneration",
-          "description": "30% schnellere Erholung zwischen Wettkämpfen durch unser Programm.",
-          "metric": "30%",
-          "metricLabel": "schnellere Erholung"
-        }
-      ]
-    },
-    "testimonials": {
-      "title": "Erfahrungen unserer Klienten",
-      "items": [
-        {
-          "name": "Julia S.",
-          "role": "Unternehmerin",
-          "text": "Das Programm hat mein Leben verändert. Ich schlafe besser und habe mehr Energie.",
-          "rating": 5
-        },
-        {
-          "name": "Michael B.",
-          "role": "Profigolfer",
-          "text": "Die Regenerationszeiten zwischen Turnieren haben sich deutlich verkürzt.",
-          "rating": 5
+          "title": "Nachhaltigkeits-Verfechter",
+          "description": "Umweltbewusste Menschen, die ihre Lebensmittelkilometer reduzieren."
         }
       ]
     },
     "faq": {
-      "title": "Häufige Fragen",
+      "title": "Häufig gestellte Fragen",
       "items": [
         {
-          "question": "Wie oft sollte ich die Behandlungen durchführen?",
-          "answer": "Wir empfehlen zunächst wöchentliche Sitzungen, die nach Fortschritt angepasst werden."
+          "question": "Wie viel Platz brauche ich?",
+          "answer": "Sie können mit nur einer Fensterbank beginnen! Unsere Micro-Garden-Kits sind für Räume ab 0,2 m² konzipiert."
         },
         {
-          "question": "Kann ich das Programm mit meinem Sport kombinieren?",
-          "answer": "Absolut! Unsere Programme sind so konzipiert, dass sie Ihr Training optimal ergänzen."
+          "question": "Was kann ich in einer Wohnung anbauen?",
+          "answer": "Kräuter, Blattgemüse, Tomaten, Paprika und sogar Erdbeeren gedeihen bei richtiger Pflege in städtischen Umgebungen."
         },
         {
-          "question": "Gibt es Kontraindikationen?",
-          "answer": "In der Erstberatung klären wir alle gesundheitlichen Aspekte und passen das Programm entsprechend an."
+          "question": "Bieten Sie laufende Unterstützung?",
+          "answer": "Ja! Unser Community-Forum und erfahrene Gärtner stehen Ihnen zur Verfügung."
         }
       ]
     },
     "cta": {
-      "title": "Starten Sie Ihre Erholungsreise",
-      "subtitle": "Vereinbaren Sie jetzt Ihren Wellness-Check.",
-      "button": "Termin vereinbaren"
+      "title": "Starten Sie heute Ihren Garten",
+      "subtitle": "Alles, was Sie brauchen, um frische Lebensmittel zu Hause anzubauen.",
+      "button": "Starter-Kits kaufen"
     }
   },
-  "training": {
+  "barter-exchange": {
     "hero": {
-      "badge": "Leistungsoptimierung",
-      "title": "Training & Performance",
-      "subtitle": "Datengestützte Trainingsplanung und Leistungsanalyse für messbare Ergebnisse.",
-      "cta": "Potenzial entdecken"
+      "badge": "Gemeinschafts-Tausch",
+      "title": "Tausch- & Austauschplattform",
+      "subtitle": "Tauschen Sie Waren, Fähigkeiten und Dienstleistungen mit Ihrer Gemeinschaft. Reduzieren Sie Abfall und bauen Sie Verbindungen ohne Bargeld auf.",
+      "cta": "Tauschbörse beitreten"
     },
     "audience": {
       "title": "Für wen ist das?",
       "items": [
         {
-          "title": "Leistungssportler",
-          "description": "Athleten, die ihre Performance auf das nächste Level bringen wollen."
+          "title": "Gemeinschaftsmitglieder",
+          "description": "Jeder, der lokal Waren und Dienstleistungen tauschen möchte."
         },
         {
-          "title": "Fitness-Fortgeschrittene",
-          "description": "Erfahrene Sportler, die Plateaus überwinden möchten."
+          "title": "Geschickte Handwerker",
+          "description": "Kunsthandwerker, die ihre Kreationen gegen andere Waren tauschen möchten."
         },
         {
-          "title": "Trainer & Coaches",
-          "description": "Profis, die evidenzbasierte Methoden in ihre Arbeit integrieren wollen."
+          "title": "Budgetbewusste",
+          "description": "Menschen, die Zugang zu Waren ohne Bargeld erhalten möchten."
         },
         {
-          "title": "Teams & Vereine",
-          "description": "Sportorganisationen, die ihre Mannschaftsleistung optimieren möchten."
-        }
-      ]
-    },
-    "outcomes": {
-      "title": "Was Sie erwarten können",
-      "items": [
-        {
-          "title": "Leistungssteigerung",
-          "description": "Messbare Verbesserung Ihrer sportlichen Leistung"
-        },
-        {
-          "title": "Datenbasierte Insights",
-          "description": "Präzise Analyse Ihrer Stärken und Potenziale"
-        },
-        {
-          "title": "Optimierte Trainingsplanung",
-          "description": "Wissenschaftlich fundierte Periodisierung"
-        },
-        {
-          "title": "Verletzungsprävention",
-          "description": "Proaktive Maßnahmen zur Vermeidung von Überlastungen"
-        }
-      ]
-    },
-    "process": {
-      "title": "Unser System",
-      "steps": [
-        {
-          "step": "1",
-          "title": "Performance-Test",
-          "description": "Umfassende Leistungsdiagnostik"
-        },
-        {
-          "step": "2",
-          "title": "Analyse",
-          "description": "Datenauswertung und Potenzialidentifikation"
-        },
-        {
-          "step": "3",
-          "title": "Trainingsplan",
-          "description": "Individualisiertes Programm für Ihre Ziele"
-        },
-        {
-          "step": "4",
-          "title": "Monitoring",
-          "description": "Kontinuierliche Anpassung basierend auf Fortschritt"
-        }
-      ]
-    },
-    "cases": {
-      "title": "Erfolgsgeschichten",
-      "items": [
-        {
-          "title": "Triathlet verbessert Zeiten",
-          "description": "15% Verbesserung der Wettkampfzeiten in einer Saison.",
-          "metric": "15%",
-          "metricLabel": "schneller"
-        },
-        {
-          "title": "Fußballteam steigert Ausdauer",
-          "description": "Deutliche Verbesserung der Laufleistung im gesamten Team.",
-          "metric": "22%",
-          "metricLabel": "mehr Ausdauer"
-        }
-      ]
-    },
-    "testimonials": {
-      "title": "Stimmen unserer Athleten",
-      "items": [
-        {
-          "name": "Lars P.",
-          "role": "Triathlet",
-          "text": "Die Datenanalyse hat mir gezeigt, wo ich Zeit verschenke. Jetzt trainiere ich effizienter.",
-          "rating": 5
-        },
-        {
-          "name": "Anna H.",
-          "role": "Leichtathletin",
-          "text": "Endlich verstehe ich, warum bestimmte Trainingseinheiten wichtig sind.",
-          "rating": 5
+          "title": "Nachhaltigkeitsorientierte",
+          "description": "Diejenigen, die Konsum und Abfall reduzieren möchten."
         }
       ]
     },
     "faq": {
-      "title": "Häufige Fragen",
+      "title": "Häufig gestellte Fragen",
       "items": [
         {
-          "question": "Welche Tests werden durchgeführt?",
-          "answer": "Je nach Sportart führen wir Laktatstufentests, Kraftdiagnostik, Bewegungsanalysen und weitere spezifische Tests durch."
+          "question": "Wie funktioniert der Austausch?",
+          "answer": "Listen Sie, was Sie anzubieten haben, durchsuchen Sie Angebote anderer und schlagen Sie Tauschgeschäfte direkt über unsere Plattform vor."
         },
         {
-          "question": "Wie oft sollte ich getestet werden?",
-          "answer": "Wir empfehlen alle 8-12 Wochen einen Re-Test, um Fortschritte zu messen und den Plan anzupassen."
+          "question": "Gibt es eine Beitrittsgebühr?",
+          "answer": "Die Basis-Mitgliedschaft ist kostenlos! Premium-Funktionen sind für aktive Händler verfügbar."
         },
         {
-          "question": "Arbeitet ihr auch mit Teams?",
-          "answer": "Ja, wir bieten spezielle Programme für Mannschaften und Vereine an."
+          "question": "Wie stelle ich faire Tauschgeschäfte sicher?",
+          "answer": "Unser Community-Bewertungssystem und vorgeschlagene Wertrichtlinien helfen, faire Austausche zu gewährleisten."
         }
       ]
     },
     "cta": {
-      "title": "Maximieren Sie Ihr Potenzial",
-      "subtitle": "Starten Sie mit Ihrem Performance-Test.",
-      "button": "Test buchen"
+      "title": "Heute mit dem Tauschen beginnen",
+      "subtitle": "Treten Sie einer Gemeinschaft von Tauschern in Ihrer Nähe bei.",
+      "button": "Konto erstellen"
+    }
+  },
+  "youth-freelancing": {
+    "hero": {
+      "badge": "Jugend-Chancen",
+      "title": "Studenten & Jugend Freelancing",
+      "subtitle": "Junge Menschen befähigen, Fähigkeiten zu entwickeln, Portfolios aufzubauen und durch lokale und globale Möglichkeiten zu verdienen.",
+      "cta": "Jetzt starten"
+    },
+    "audience": {
+      "title": "Für wen ist das?",
+      "items": [
+        {
+          "title": "Studenten",
+          "description": "Schüler und Universitätsstudenten, die während des Studiums verdienen möchten."
+        },
+        {
+          "title": "Junge Kreative",
+          "description": "Angehende Designer, Autoren und Künstler, die Portfolios aufbauen."
+        },
+        {
+          "title": "Technikaffine Jugendliche",
+          "description": "Junge Menschen mit digitalen Fähigkeiten anzubieten."
+        },
+        {
+          "title": "Berufseinsteiger",
+          "description": "Frischgebackene Absolventen, die praktische Erfahrungen sammeln."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "items": [
+        {
+          "question": "Ab welchem Alter kann ich beitreten?",
+          "answer": "Junge Menschen ab 14 Jahren können mit elterlicher Zustimmung beitreten. Voller Zugang ist ab 16 verfügbar."
+        },
+        {
+          "question": "Welche Fähigkeiten sind gefragt?",
+          "answer": "Nachhilfe, Design, Content-Erstellung, Tech-Support und lokale Dienste sind beliebte Kategorien."
+        },
+        {
+          "question": "Wie funktionieren Zahlungen?",
+          "answer": "Sichere Zahlungen über unsere Plattform mit Optionen für Banküberweisung oder elternverwaltete Konten."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Starten Sie Ihre Freelance-Reise",
+      "subtitle": "Fähigkeiten aufbauen und verdienen während Sie lernen.",
+      "button": "Jetzt beitreten"
+    }
+  },
+  "merger-acquisitions": {
+    "hero": {
+      "badge": "Geschäftswachstum",
+      "title": "Lokal-zu-Global Handel",
+      "subtitle": "Skalieren Sie Ihr nachhaltiges Unternehmen von lokalen Märkten zu globaler Reichweite mit unserem Netzwerk und unserer Expertise.",
+      "cta": "Mehr erfahren"
+    },
+    "audience": {
+      "title": "Für wen ist das?",
+      "items": [
+        {
+          "title": "Kleine Produzenten",
+          "description": "Lokale Unternehmen, die bereit sind, ihre Reichweite zu erweitern."
+        },
+        {
+          "title": "Nachhaltige Marken",
+          "description": "Umweltfreundliche Unternehmen, die Wachstumsmöglichkeiten suchen."
+        },
+        {
+          "title": "Investoren",
+          "description": "Impact-Investoren auf der Suche nach nachhaltigen Unternehmungen."
+        },
+        {
+          "title": "Genossenschaften",
+          "description": "Produzentengruppen, die gemeinsam skalieren möchten."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "items": [
+        {
+          "question": "Welche Unterstützung bieten Sie?",
+          "answer": "Unternehmensberatung, Marktanalyse, Partnerschaftsvermittlung und Finanzierungsverbindungen."
+        },
+        {
+          "question": "Ist das nur für große Unternehmen?",
+          "answer": "Nein! Wir sind darauf spezialisiert, kleinen nachhaltigen Unternehmen beim durchdachten Wachstum zu helfen."
+        },
+        {
+          "question": "Wie lange dauert der Prozess?",
+          "answer": "Zeitpläne variieren je nach Zielen. Erstberatungen helfen, realistische Erwartungen festzulegen."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Skalieren Sie Ihren Impact",
+      "subtitle": "Bringen Sie Ihr nachhaltiges Unternehmen auf die nächste Stufe.",
+      "button": "Beratung vereinbaren"
     }
   }
 }
