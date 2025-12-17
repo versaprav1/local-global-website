@@ -10,6 +10,9 @@ import Resources from "./pages/Resources";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
+import HowItWorks from "./pages/HowItWorks";
+import FAQ from "./pages/FAQ";
+import Partners from "./pages/Partners";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +31,9 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/partners" element={<Partners />} />
             {/* Vertical service pages - to be created */}
             <Route path="/services/*" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
