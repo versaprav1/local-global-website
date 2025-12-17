@@ -35,8 +35,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-6">{t('common.footer.quickLinks')}</h3>
             <ul className="space-y-4">
+              <li><a href="/how-it-works" className="text-muted hover:text-background transition-colors">How It Works</a></li>
               <li><a href="/about" className="text-muted hover:text-background transition-colors">{t('common.nav.about')}</a></li>
-              <li><a href="/#verticals" className="text-muted hover:text-background transition-colors">{t('common.nav.services')}</a></li>
               <li><a href="/blog" className="text-muted hover:text-background transition-colors">{t('common.nav.blog')}</a></li>
               <li><a href="/contact" className="text-muted hover:text-background transition-colors">{t('common.nav.contact')}</a></li>
             </ul>
@@ -45,10 +45,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-6">{t('common.footer.resources')}</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="text-muted hover:text-background transition-colors">{t('common.footer.faq')}</a></li>
-              <li><a href="#" className="text-muted hover:text-background transition-colors">{t('common.footer.support')}</a></li>
-              <li><a href="#" className="text-muted hover:text-background transition-colors">{t('common.footer.partners')}</a></li>
-              <li><a href="#" className="text-muted hover:text-background transition-colors">{t('common.footer.careers')}</a></li>
+              <li><a href="/faq" className="text-muted hover:text-background transition-colors">{t('common.footer.faq')}</a></li>
+              <li><a href="/partners" className="text-muted hover:text-background transition-colors">{t('common.footer.partners')}</a></li>
+              <li><a href="/resources" className="text-muted hover:text-background transition-colors">{t('common.nav.resources')}</a></li>
             </ul>
           </div>
           

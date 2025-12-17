@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { 
   Menu, X, ChevronDown, Globe, ArrowRight,
   Store, Sprout, Repeat, Briefcase, TrendingUp,
-  Home, BookOpen, Users, Info, MessageCircle, Leaf
+  Home, BookOpen, Users, Info, MessageCircle, HelpCircle, Lightbulb
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -71,8 +71,8 @@ const Navbar = () => {
   const navLinks = [
     { name: t('common.nav.home'), href: "/", icon: Home },
     { name: t('common.nav.services'), href: "#", icon: Store, hasDropdown: true },
+    { name: "How It Works", href: "/how-it-works", icon: Lightbulb },
     { name: t('common.nav.blog'), href: "/blog", icon: BookOpen },
-    { name: t('common.nav.resources'), href: "/resources", icon: Users },
     { name: t('common.nav.about'), href: "/about", icon: Info },
     { name: t('common.nav.contact'), href: "/contact", icon: MessageCircle },
   ];
