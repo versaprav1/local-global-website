@@ -1,119 +1,118 @@
-
 import { Resource } from "./types";
 import { 
   Calendar, Video, FileText, Shield, Users, MessageSquare,
-  Activity, TrendingUp, Apple, Brain, Stethoscope, CreditCard,
-  BookOpen, Wifi, FlaskConical, ShoppingCart, Database, Layers
+  Leaf, TrendingUp, Apple, Recycle, Store, CreditCard,
+  BookOpen, Wifi, Sprout, ShoppingCart, Database, Layers
 } from "lucide-react";
 
 export const resources: Resource[] = [
-  // Provider & Patient Services
+  // Marketplace Services
   {
     id: "1",
-    title: "Appointment Booking System",
-    description: "Integrated scheduling platform across all healthcare providers with real-time availability.",
+    title: "Farm-to-Table Ordering",
+    description: "Order fresh produce directly from local farms with convenient delivery options.",
     icon: Calendar,
     link: "#",
-    industries: ["All Services"]
+    industries: ["Farm to Home"]
   },
   {
     id: "2",
-    title: "Telehealth Platform",
-    description: "Virtual consultations and follow-ups with secure video conferencing for remote care.",
+    title: "Virtual Farm Tours",
+    description: "Connect with farmers through live video tours and Q&A sessions.",
     icon: Video,
     link: "#",
-    industries: ["All Services"]
+    industries: ["Farm to Home", "Urban Gardening"]
   },
   {
     id: "3",
-    title: "Patient Records Portal",
-    description: "Secure health data management system with instant access to medical history and records.",
+    title: "Produce Tracking",
+    description: "Track your orders from farm to doorstep with real-time updates.",
     icon: FileText,
     link: "#",
-    industries: ["All Services"]
+    industries: ["Farm to Home"]
   },
   {
     id: "4",
-    title: "Insurance Verification",
-    description: "Real-time eligibility checks and automated insurance benefit verification.",
+    title: "Quality Certification",
+    description: "Verified organic and sustainability certifications for all products.",
     icon: Shield,
     link: "#",
     industries: ["All Services"]
   },
 
-  // Care Coordination
+  // Community Services
   {
     id: "5",
-    title: "Referral Network",
-    description: "Seamless specialist referrals with integrated provider network and care transitions.",
+    title: "Community Network",
+    description: "Connect with local gardeners, farmers, and sustainability enthusiasts.",
     icon: Users,
     link: "#",
     industries: ["All Services"]
   },
   {
     id: "6",
-    title: "Care Team Collaboration",
-    description: "Multi-provider coordination tools for comprehensive patient care management.",
+    title: "Discussion Forums",
+    description: "Share tips, ask questions, and learn from the community.",
     icon: MessageSquare,
     link: "#",
     industries: ["All Services"]
   },
   {
     id: "7",
-    title: "Treatment Plan Management",
-    description: "Shared care protocols and treatment tracking across multiple healthcare providers.",
-    icon: Stethoscope,
+    title: "Barter Exchange",
+    description: "Trade goods and services with community members without money.",
+    icon: Recycle,
     link: "#",
-    industries: ["All Services"]
+    industries: ["Barter & Exchange"]
   },
 
-  // Wellness & Performance
+  // Gardening Resources
   {
     id: "8",
-    title: "Wearable Data Integration",
-    description: "Connect fitness trackers and health devices for comprehensive wellness monitoring.",
-    icon: Activity,
+    title: "Garden Planning Tools",
+    description: "Design and plan your urban garden with our interactive tools.",
+    icon: Sprout,
     link: "#",
-    industries: ["Fitness & Performance"]
+    industries: ["Urban Gardening"]
   },
   {
     id: "9",
-    title: "Performance Analytics",
-    description: "AI-powered health insights and performance tracking with actionable recommendations.",
+    title: "Growth Tracking",
+    description: "Monitor your plants and track harvests with detailed analytics.",
     icon: TrendingUp,
     link: "#",
-    industries: ["Sports Medicine", "Fitness & Performance"]
+    industries: ["Urban Gardening", "Farm to Home"]
   },
   {
     id: "10",
-    title: "Nutrition Coaching",
-    description: "Personalized meal planning and dietary guidance from certified nutritionists.",
+    title: "Seasonal Guides",
+    description: "Expert guides for what to plant and harvest each season.",
     icon: Apple,
     link: "#",
-    industries: ["Health & Wellness", "Fitness & Performance"]
+    industries: ["Urban Gardening", "Farm to Home"]
   },
   {
     id: "11",
-    title: "Mental Health Support",
-    description: "Professional therapy and counseling services with flexible scheduling options.",
-    icon: Brain,
+    title: "Sustainability Tips",
+    description: "Learn eco-friendly practices for home and garden.",
+    icon: Leaf,
     link: "#",
-    industries: ["Health & Wellness"]
+    industries: ["All Services"]
   },
 
   // Business Services
   {
     id: "12",
-    title: "Practice Management",
-    description: "Complete scheduling, billing, and EMR integration tools for healthcare providers.",
+    title: "Seller Dashboard",
+    description: "Manage your products, orders, and customer relationships.",
     icon: Database,
     link: "#",
-    industries: ["All Services"]
+    industries: ["Farm to Home", "M&A Ecosystem"]
   },
   {
     id: "13",
     title: "Payment Processing",
-    description: "Streamlined insurance claims processing and patient payment collection.",
+    description: "Secure payments for buyers and fair compensation for sellers.",
     icon: CreditCard,
     link: "#",
     industries: ["All Services"]
@@ -122,44 +121,44 @@ export const resources: Resource[] = [
   // Educational & Community
   {
     id: "14",
-    title: "Knowledge Library",
-    description: "Evidence-based health resources and educational materials for patients and providers.",
+    title: "Learning Library",
+    description: "Courses and tutorials on sustainable living, gardening, and more.",
     icon: BookOpen,
     link: "#",
     industries: ["All Services"]
   },
   {
     id: "15",
-    title: "Community Forums",
-    description: "Peer support groups and community discussions for patients with similar conditions.",
+    title: "Youth Programs",
+    description: "Skill-building programs and opportunities for young people.",
     icon: Wifi,
     link: "#",
-    industries: ["All Services"]
+    industries: ["Youth Freelancing"]
   },
 
-  // Technology Integrations
+  // Marketplace Features
   {
     id: "16",
-    title: "Lab Results Integration",
-    description: "Direct delivery of laboratory test results with automated notifications.",
-    icon: FlaskConical,
+    title: "Local Marketplace",
+    description: "Browse and buy from local producers in your area.",
+    icon: Store,
     link: "#",
-    industries: ["All Services"]
+    industries: ["Farm to Home", "Barter & Exchange"]
   },
   {
     id: "17",
-    title: "Medical Equipment Marketplace",
-    description: "Rental and purchase platform for medical devices and healthcare equipment.",
+    title: "Equipment Sharing",
+    description: "Borrow and share gardening tools and equipment with neighbors.",
     icon: ShoppingCart,
     link: "#",
-    industries: ["All Services"]
+    industries: ["Urban Gardening", "Barter & Exchange"]
   },
   {
     id: "18",
-    title: "API Integration Platform",
-    description: "Third-party app connections and custom integrations for seamless workflows.",
+    title: "API Integrations",
+    description: "Connect with other platforms and tools for seamless workflows.",
     icon: Layers,
     link: "#",
-    industries: ["All Services"]
+    industries: ["M&A Ecosystem"]
   },
 ];

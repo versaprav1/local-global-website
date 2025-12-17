@@ -1,7 +1,7 @@
 import { 
-  Activity, Heart, Dumbbell, Brain, Leaf, Sparkles,
-  Wind, Droplets, Sun, Moon, Flame, Waves, HandMetal,
-  Eye, Zap, Target, Shield, Flower2, Users, BookOpen
+  Leaf, Sprout, Store, Users, Briefcase, TrendingUp,
+  Recycle, Heart, Apple, Sun, Droplets, Home, Flower2,
+  Globe, Lightbulb, BookOpen, Handshake, Target, Shield
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
@@ -21,300 +21,277 @@ export interface BlogTopic {
 
 export const blogCategories = [
   "All Topics",
-  "Movement & Body Mechanics",
-  "Manual & Bodywork Therapies",
-  "Eastern & Alternative Medicine",
-  "Mind-Body Practices",
-  "Athletic & Performance",
-  "Therapeutic Modalities"
+  "Sustainable Living",
+  "Urban Gardening",
+  "Local Food Systems",
+  "Community Building",
+  "Youth & Education",
+  "Business & Economy"
 ];
 
 export const blogTopics: BlogTopic[] = [
-  // Movement & Body Mechanics
+  // Sustainable Living
   {
-    id: "pain-management",
-    title: "Pain Management",
-    description: "Natural approaches to managing chronic and acute pain without invasive procedures",
-    icon: Shield,
-    category: "Movement & Body Mechanics",
-    gradient: "from-red-500 to-orange-500",
-    content: {
-      overview: "Pain management encompasses various natural and holistic approaches to reduce discomfort and improve quality of life. Understanding the root causes of pain and addressing them through multiple modalities can lead to lasting relief.",
-      benefits: [
-        "Reduced reliance on medications",
-        "Improved mobility and function",
-        "Better quality of life",
-        "Long-term pain relief",
-        "Enhanced body awareness"
-      ],
-      approaches: [
-        "Physical therapy and movement",
-        "Mind-body techniques",
-        "Manual therapy",
-        "Lifestyle modifications",
-        "Natural supplements"
-      ]
-    }
-  },
-  {
-    id: "chiropractice",
-    title: "Chiropractic Care",
-    description: "Spinal alignment and adjustment techniques for optimal nervous system function",
-    icon: Activity,
-    category: "Movement & Body Mechanics",
-    gradient: "from-blue-500 to-cyan-500",
-    content: {
-      overview: "Chiropractic care focuses on the diagnosis and treatment of musculoskeletal disorders, particularly those affecting the spine. Through manual adjustments and manipulations, chiropractors help restore proper alignment and function.",
-      benefits: [
-        "Improved spinal alignment",
-        "Reduced back and neck pain",
-        "Enhanced nervous system function",
-        "Better posture",
-        "Increased range of motion"
-      ],
-      approaches: [
-        "Spinal adjustments",
-        "Soft tissue therapy",
-        "Rehabilitative exercises",
-        "Postural training",
-        "Lifestyle counseling"
-      ]
-    }
-  },
-  {
-    id: "fascia-health",
-    title: "Fascia Health",
-    description: "Understanding and treating the connective tissue network throughout the body",
-    icon: Waves,
-    category: "Movement & Body Mechanics",
-    gradient: "from-purple-500 to-pink-500",
-    content: {
-      overview: "Fascia is the web-like connective tissue that surrounds muscles, bones, and organs. Healthy fascia is essential for pain-free movement, flexibility, and overall body function.",
-      benefits: [
-        "Improved flexibility and mobility",
-        "Reduced muscle tension",
-        "Better posture and alignment",
-        "Enhanced athletic performance",
-        "Decreased pain and stiffness"
-      ],
-      approaches: [
-        "Myofascial release",
-        "Foam rolling and self-massage",
-        "Stretching and mobility work",
-        "Hydration and nutrition",
-        "Movement practices"
-      ]
-    }
-  },
-  {
-    id: "knee-health",
-    title: "Knee Health & Joint Care",
-    description: "Comprehensive approaches to maintaining healthy knees and preventing injury",
-    icon: Target,
-    category: "Movement & Body Mechanics",
+    id: "zero-waste-lifestyle",
+    title: "Zero Waste Lifestyle",
+    description: "Practical tips for reducing waste and living more sustainably",
+    icon: Recycle,
+    category: "Sustainable Living",
     gradient: "from-green-500 to-emerald-500",
     content: {
-      overview: "Knee health is crucial for maintaining an active lifestyle. Through proper strengthening, mobility work, and preventive care, you can keep your knees healthy and pain-free for years to come.",
+      overview: "Zero waste living is about reducing what we consume, reusing what we can, and recycling the rest. It's a journey toward a more sustainable lifestyle.",
       benefits: [
-        "Reduced knee pain",
-        "Improved stability and balance",
-        "Enhanced athletic performance",
-        "Injury prevention",
-        "Better quality of life"
+        "Reduced environmental impact",
+        "Save money on unnecessary purchases",
+        "Healthier living environment",
+        "Support sustainable businesses",
+        "Create positive community change"
       ],
       approaches: [
-        "Strengthening exercises",
-        "Mobility and flexibility training",
-        "Proper biomechanics",
-        "Weight management",
-        "Anti-inflammatory nutrition"
+        "Start with one room or area",
+        "Replace disposables with reusables",
+        "Shop at bulk stores",
+        "Compost food scraps",
+        "Choose package-free products"
       ]
     }
   },
   {
-    id: "postural-alignment",
-    title: "Postural Alignment",
-    description: "Correcting posture for better health, reduced pain, and improved function",
-    icon: Users,
-    category: "Movement & Body Mechanics",
-    gradient: "from-indigo-500 to-purple-500",
+    id: "sustainable-home",
+    title: "Sustainable Home",
+    description: "Create an eco-friendly home with simple, effective changes",
+    icon: Home,
+    category: "Sustainable Living",
+    gradient: "from-amber-500 to-orange-500",
+    content: {
+      overview: "Making your home more sustainable doesn't require major renovations. Small changes in daily habits and product choices can make a big difference.",
+      benefits: [
+        "Lower energy bills",
+        "Healthier indoor air quality",
+        "Reduced carbon footprint",
+        "Increased home value",
+        "Better for family health"
+      ],
+      approaches: [
+        "Switch to LED lighting",
+        "Use natural cleaning products",
+        "Improve insulation",
+        "Install water-saving fixtures",
+        "Choose sustainable materials"
+      ]
+    }
   },
   {
-    id: "biomechanics",
-    title: "Biomechanics & Movement",
-    description: "Understanding how the body moves for optimal performance and injury prevention",
-    icon: Zap,
-    category: "Movement & Body Mechanics",
-    gradient: "from-yellow-500 to-orange-500",
-  },
-
-  // Manual & Bodywork Therapies
-  {
-    id: "massage-therapy",
-    title: "Massage Therapy",
-    description: "Therapeutic touch techniques for relaxation, pain relief, and healing",
-    icon: HandMetal,
-    category: "Manual & Bodywork Therapies",
+    id: "conscious-consumption",
+    title: "Conscious Consumption",
+    description: "Make mindful choices about what you buy and why",
+    icon: Heart,
+    category: "Sustainable Living",
     gradient: "from-pink-500 to-rose-500",
   },
   {
-    id: "myofascial-release",
-    title: "Myofascial Release",
-    description: "Gentle sustained pressure to release fascial restrictions and restore motion",
-    icon: Waves,
-    category: "Manual & Bodywork Therapies",
-    gradient: "from-cyan-500 to-blue-500",
-  },
-  {
-    id: "trigger-point-therapy",
-    title: "Trigger Point Therapy",
-    description: "Targeted treatment of muscle knots and tender points for pain relief",
-    icon: Target,
-    category: "Manual & Bodywork Therapies",
-    gradient: "from-red-500 to-pink-500",
-  },
-  {
-    id: "reflexology",
-    title: "Reflexology",
-    description: "Pressure point therapy on feet, hands, and ears for whole-body wellness",
-    icon: Sparkles,
-    category: "Manual & Bodywork Therapies",
-    gradient: "from-purple-500 to-indigo-500",
+    id: "renewable-energy",
+    title: "Renewable Energy",
+    description: "Understanding and adopting clean energy solutions",
+    icon: Sun,
+    category: "Sustainable Living",
+    gradient: "from-yellow-500 to-amber-500",
   },
 
-  // Eastern & Alternative Medicine
+  // Urban Gardening
   {
-    id: "acupuncture",
-    title: "Acupuncture & TCM",
-    description: "Traditional Chinese Medicine approaches to balance energy and promote healing",
-    icon: Zap,
-    category: "Eastern & Alternative Medicine",
-    gradient: "from-amber-500 to-red-500",
-  },
-  {
-    id: "herbal-medicine",
-    title: "Herbal Medicine",
-    description: "Plant-based remedies and natural supplements for health and wellness",
-    icon: Leaf,
-    category: "Eastern & Alternative Medicine",
+    id: "balcony-gardening",
+    title: "Balcony Gardening",
+    description: "Grow food and flowers in small spaces",
+    icon: Sprout,
+    category: "Urban Gardening",
     gradient: "from-green-500 to-lime-500",
+    content: {
+      overview: "You don't need a big yard to grow your own food. Balconies, windowsills, and small patios can become productive gardens.",
+      benefits: [
+        "Fresh herbs and vegetables at home",
+        "Reduce grocery bills",
+        "Therapeutic gardening experience",
+        "Improve air quality",
+        "Connect with nature in the city"
+      ],
+      approaches: [
+        "Start with herbs and greens",
+        "Use vertical space wisely",
+        "Choose appropriate containers",
+        "Ensure proper drainage",
+        "Consider sunlight requirements"
+      ]
+    }
   },
   {
-    id: "ayurveda",
-    title: "Ayurveda",
-    description: "Ancient Indian medicine system focusing on balance and natural healing",
-    icon: Flower2,
-    category: "Eastern & Alternative Medicine",
-    gradient: "from-orange-500 to-yellow-500",
-  },
-  {
-    id: "energy-healing",
-    title: "Energy Healing & Reiki",
-    description: "Subtle energy work to promote balance, relaxation, and healing",
-    icon: Sparkles,
-    category: "Eastern & Alternative Medicine",
-    gradient: "from-violet-500 to-purple-500",
-  },
-
-  // Mind-Body Practices
-  {
-    id: "yoga-therapy",
-    title: "Yoga Therapy",
-    description: "Therapeutic application of yoga practices for physical and mental health",
-    icon: Heart,
-    category: "Mind-Body Practices",
-    gradient: "from-pink-500 to-purple-500",
-  },
-  {
-    id: "meditation",
-    title: "Meditation & Mindfulness",
-    description: "Mental training practices for stress reduction and enhanced well-being",
-    icon: Brain,
-    category: "Mind-Body Practices",
-    gradient: "from-indigo-500 to-blue-500",
-  },
-  {
-    id: "breathwork",
-    title: "Breathing & Breathwork",
-    description: "Conscious breathing techniques for stress relief and vitality",
-    icon: Wind,
-    category: "Mind-Body Practices",
-    gradient: "from-cyan-500 to-teal-500",
-  },
-  {
-    id: "pilates",
-    title: "Pilates",
-    description: "Low-impact exercises focusing on core strength, flexibility, and alignment",
-    icon: Dumbbell,
-    category: "Mind-Body Practices",
-    gradient: "from-purple-500 to-pink-500",
-  },
-
-  // Athletic & Performance
-  {
-    id: "sports-wellness",
-    title: "Natural Wellness in Sports",
-    description: "Holistic approaches to athletic performance and recovery",
-    icon: Activity,
-    category: "Athletic & Performance",
-    gradient: "from-green-500 to-blue-500",
-  },
-  {
-    id: "sports-rehab",
-    title: "Sports Rehabilitation",
-    description: "Natural recovery protocols for athletic injuries and performance enhancement",
-    icon: Shield,
-    category: "Athletic & Performance",
-    gradient: "from-blue-500 to-indigo-500",
-  },
-  {
-    id: "injury-prevention",
-    title: "Injury Prevention",
-    description: "Proactive strategies to reduce injury risk and maintain peak performance",
-    icon: Target,
-    category: "Athletic & Performance",
+    id: "composting-basics",
+    title: "Composting Basics",
+    description: "Turn kitchen scraps into garden gold",
+    icon: Leaf,
+    category: "Urban Gardening",
     gradient: "from-emerald-500 to-green-500",
   },
   {
-    id: "recovery-protocols",
-    title: "Recovery Protocols",
-    description: "Natural methods for faster recovery and optimal performance",
-    icon: Moon,
-    category: "Athletic & Performance",
-    gradient: "from-indigo-500 to-purple-500",
+    id: "seasonal-planting",
+    title: "Seasonal Planting Guide",
+    description: "What to plant and when for best results",
+    icon: Flower2,
+    category: "Urban Gardening",
+    gradient: "from-purple-500 to-pink-500",
   },
-
-  // Therapeutic Modalities
   {
-    id: "cold-therapy",
-    title: "Cold Therapy",
-    description: "Cryotherapy and cold exposure for recovery, inflammation reduction, and vitality",
+    id: "water-conservation",
+    title: "Water Conservation",
+    description: "Smart watering techniques and water-wise gardening",
     icon: Droplets,
-    category: "Therapeutic Modalities",
+    category: "Urban Gardening",
     gradient: "from-blue-500 to-cyan-500",
   },
+
+  // Local Food Systems
   {
-    id: "heat-therapy",
-    title: "Heat & Hydrotherapy",
-    description: "Therapeutic use of heat and water for healing and relaxation",
-    icon: Flame,
-    category: "Therapeutic Modalities",
+    id: "farm-to-table",
+    title: "Farm to Table Movement",
+    description: "Support local farmers and eat fresher food",
+    icon: Store,
+    category: "Local Food Systems",
+    gradient: "from-orange-500 to-red-500",
+    content: {
+      overview: "The farm-to-table movement connects consumers directly with local food producers, creating a more sustainable and transparent food system.",
+      benefits: [
+        "Fresher, more nutritious food",
+        "Support local economy",
+        "Reduce food miles",
+        "Know where food comes from",
+        "Seasonal eating variety"
+      ],
+      approaches: [
+        "Shop at farmers markets",
+        "Join a CSA program",
+        "Visit local farms",
+        "Choose seasonal produce",
+        "Build relationships with farmers"
+      ]
+    }
+  },
+  {
+    id: "food-preservation",
+    title: "Food Preservation",
+    description: "Traditional methods to reduce food waste",
+    icon: Apple,
+    category: "Local Food Systems",
     gradient: "from-red-500 to-orange-500",
   },
   {
-    id: "light-therapy",
-    title: "Light Therapy",
-    description: "Photobiomodulation and light exposure for health optimization",
-    icon: Sun,
-    category: "Therapeutic Modalities",
-    gradient: "from-yellow-500 to-amber-500",
+    id: "local-sourcing",
+    title: "Local Sourcing Guide",
+    description: "Find and support local food producers",
+    icon: Target,
+    category: "Local Food Systems",
+    gradient: "from-teal-500 to-cyan-500",
+  },
+
+  // Community Building
+  {
+    id: "community-gardens",
+    title: "Community Gardens",
+    description: "Growing food and friendships together",
+    icon: Users,
+    category: "Community Building",
+    gradient: "from-indigo-500 to-purple-500",
+    content: {
+      overview: "Community gardens bring neighbors together to grow food, share knowledge, and build stronger local communities.",
+      benefits: [
+        "Access to gardening space",
+        "Learn from experienced gardeners",
+        "Build community connections",
+        "Fresh food for families",
+        "Green spaces in urban areas"
+      ],
+      approaches: [
+        "Find local garden organizations",
+        "Join waiting lists early",
+        "Participate in work days",
+        "Share your harvest",
+        "Teach what you know"
+      ]
+    }
   },
   {
-    id: "sound-therapy",
-    title: "Sound Therapy",
-    description: "Vibrational healing through sound frequencies and music",
-    icon: Waves,
-    category: "Therapeutic Modalities",
+    id: "barter-exchange",
+    title: "Barter & Exchange",
+    description: "Trade goods and services without money",
+    icon: Handshake,
+    category: "Community Building",
+    gradient: "from-cyan-500 to-blue-500",
+  },
+  {
+    id: "skill-sharing",
+    title: "Skill Sharing Networks",
+    description: "Teach what you know, learn what you don't",
+    icon: Lightbulb,
+    category: "Community Building",
+    gradient: "from-yellow-500 to-orange-500",
+  },
+
+  // Youth & Education
+  {
+    id: "youth-entrepreneurship",
+    title: "Youth Entrepreneurship",
+    description: "Helping young people start sustainable businesses",
+    icon: Briefcase,
+    category: "Youth & Education",
+    gradient: "from-blue-500 to-indigo-500",
+  },
+  {
+    id: "environmental-education",
+    title: "Environmental Education",
+    description: "Teaching the next generation about sustainability",
+    icon: BookOpen,
+    category: "Youth & Education",
+    gradient: "from-green-500 to-teal-500",
+  },
+  {
+    id: "student-programs",
+    title: "Student Programs",
+    description: "Opportunities for students to get involved",
+    icon: Users,
+    category: "Youth & Education",
     gradient: "from-purple-500 to-pink-500",
+  },
+
+  // Business & Economy
+  {
+    id: "sustainable-business",
+    title: "Sustainable Business",
+    description: "Building businesses that benefit people and planet",
+    icon: TrendingUp,
+    category: "Business & Economy",
+    gradient: "from-emerald-500 to-green-500",
+  },
+  {
+    id: "circular-economy",
+    title: "Circular Economy",
+    description: "Design out waste and keep materials in use",
+    icon: Recycle,
+    category: "Business & Economy",
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: "local-economy",
+    title: "Local Economy",
+    description: "Supporting and strengthening local businesses",
+    icon: Globe,
+    category: "Business & Economy",
+    gradient: "from-orange-500 to-amber-500",
+  },
+  {
+    id: "impact-investing",
+    title: "Impact Investing",
+    description: "Investing in businesses that create positive change",
+    icon: Shield,
+    category: "Business & Economy",
+    gradient: "from-indigo-500 to-purple-500",
   },
 ];
