@@ -26,12 +26,12 @@ const BlogSection = () => {
       <div className="container mx-auto relative z-10 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <Badge className="mb-4 px-4 py-2">Health & Wellness Knowledge</Badge>
+          <Badge className="mb-4 px-4 py-2">Sustainability & Community</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-gradient">Natural Health</span> Topics
+            <span className="text-gradient">Sustainable Living</span> Topics
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore comprehensive guides on holistic health approaches, natural therapies, and wellness practices for optimal living.
+            Explore guides on sustainable living, urban gardening, local food systems, and building stronger communities.
           </p>
         </div>
 
@@ -40,7 +40,7 @@ const BlogSection = () => {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search health topics..."
+              placeholder="Search topics..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10"
@@ -113,7 +113,7 @@ const BlogSection = () => {
             Can&apos;t Find What You&apos;re Looking For?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            We&apos;re constantly adding new content. Send us your topic suggestions or questions about natural health approaches.
+            We&apos;re constantly adding new content. Send us your topic suggestions or questions about sustainable living.
           </p>
           <Button size="lg" className="tech-button">
             Contact Us
