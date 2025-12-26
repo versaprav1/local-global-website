@@ -86,10 +86,10 @@ const BlogPost = () => {
                 </CardContent>
               </Card>
 
-              {/* Approaches */}
+              {/* How To / Approaches */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Treatment Approaches</CardTitle>
+                  <CardTitle className="text-2xl">How To Get Started</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
@@ -154,7 +154,7 @@ const BlogPost = () => {
               Ready to Explore More?
             </h2>
             <p className="text-muted-foreground mb-6">
-              Discover our complete library of natural health and wellness topics.
+              Discover our complete library of sustainability and community topics.
             </p>
             <Link to="/blog">
               <Button size="lg" className="tech-button">
