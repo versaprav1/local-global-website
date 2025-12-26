@@ -3,14 +3,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { 
   Target, 
-  Heart, 
+  Leaf, 
   Globe2, 
   Users, 
   Shield, 
   Zap, 
   Award,
   TrendingUp,
-  Brain,
+  Recycle,
   Sparkles,
   CheckCircle,
   ArrowRight
@@ -21,71 +21,71 @@ const AboutSection = () => {
   const { language } = useLanguage();
   
   const stats = [
-    { number: "10M+", label: language === 'de' ? "Aktive Nutzer" : "Active Users", icon: Users },
-    { number: "500+", label: language === 'de' ? "Partnerzentren" : "Partner Centers", icon: Heart },
-    { number: "50+", label: language === 'de' ? "Länder" : "Countries", icon: Globe2 },
+    { number: "10K+", label: language === 'de' ? "Aktive Nutzer" : "Active Users", icon: Users },
+    { number: "500+", label: language === 'de' ? "Lokale Partner" : "Local Partners", icon: Leaf },
+    { number: "50+", label: language === 'de' ? "Städte" : "Cities", icon: Globe2 },
     { number: "98%", label: language === 'de' ? "Zufriedenheit" : "Satisfaction", icon: Award },
   ];
 
   const values = [
     {
       icon: Shield,
-      title: language === 'de' ? "Vertrauen & Sicherheit" : "Trust & Security",
+      title: language === 'de' ? "Vertrauen & Transparenz" : "Trust & Transparency",
       description: language === 'de' 
-        ? "Alle unsere Partner sind vollständig verifiziert und zertifiziert. Ihre Gesundheitsdaten sind bei uns sicher."
-        : "Every partner is fully verified and certified. Your health data is protected with enterprise-grade security."
+        ? "Alle unsere Partner sind verifiziert. Wissen Sie genau, woher Ihre Produkte kommen."
+        : "All our partners are verified. Know exactly where your products come from."
     },
     {
       icon: Zap,
-      title: language === 'de' ? "Schneller Zugang" : "Instant Access",
+      title: language === 'de' ? "Einfacher Zugang" : "Easy Access",
       description: language === 'de'
-        ? "Von der Buchung bis zur Behandlung - alles in wenigen Klicks. Keine langen Wartezeiten mehr."
-        : "From booking to treatment - everything in just a few clicks. No more endless waiting times."
+        ? "Von der Suche bis zur Lieferung - alles in wenigen Klicks. Nachhaltig leben leicht gemacht."
+        : "From search to delivery - everything in just a few clicks. Sustainable living made easy."
     },
     {
-      icon: Brain,
-      title: language === 'de' ? "KI-gestützte Vermittlung" : "AI-Powered Matching",
+      icon: Recycle,
+      title: language === 'de' ? "Kreislaufwirtschaft" : "Circular Economy",
       description: language === 'de'
-        ? "Unsere intelligente Plattform findet genau den richtigen Spezialisten für Ihre individuellen Bedürfnisse."
-        : "Our intelligent platform finds exactly the right specialist for your unique needs."
+        ? "Unsere Plattform fördert Tausch, Wiederverwendung und lokale Produktion für weniger Abfall."
+        : "Our platform promotes exchange, reuse, and local production for less waste."
     },
     {
       icon: TrendingUp,
-      title: language === 'de' ? "Kontinuierliche Innovation" : "Continuous Innovation",
+      title: language === 'de' ? "Gemeinschaftswachstum" : "Community Growth",
       description: language === 'de'
-        ? "Wir entwickeln ständig neue Features und Services, um Ihre Gesundheitsversorgung zu verbessern."
-        : "We're constantly developing new features and services to improve your healthcare experience."
+        ? "Wir stärken lokale Produzenten und schaffen neue Möglichkeiten für Jugendliche."
+        : "We empower local producers and create new opportunities for young people."
     }
   ];
 
   const journey = [
     { 
-      year: "2020", 
+      year: "2022", 
       title: language === 'de' ? "Die Idee" : "The Idea",
       description: language === 'de' 
-        ? "Geboren aus der Vision, Gesundheitsversorgung weltweit zugänglich zu machen"
-        : "Born from a vision to make healthcare accessible globally"
-    },
-    { 
-      year: "2021", 
-      title: language === 'de' ? "Erste Partner" : "First Partners",
-      description: language === 'de'
-        ? "100 führende Gesundheitszentren schließen sich unserer Mission an"
-        : "100 leading health centers join our mission"
+        ? "Geboren aus der Vision, nachhaltige Gemeinschaften zu verbinden"
+        : "Born from a vision to connect sustainable communities"
     },
     { 
       year: "2023", 
-      title: language === 'de' ? "Globale Expansion" : "Global Expansion",
+      title: language === 'de' ? "Erste Partner" : "First Partners",
       description: language === 'de'
-        ? "Expansion in 50+ Länder mit lokalen und globalen Partnerschaften"
-        : "Expansion to 50+ countries with local and global partnerships"
+        ? "100 lokale Bauern und Gärtner schließen sich unserer Mission an"
+        : "100 local farmers and gardeners join our mission"
     },
     { 
       year: "2024", 
-      title: language === 'de' ? "KI-Integration" : "AI Integration",
+      title: language === 'de' ? "Community Wachstum" : "Community Growth",
       description: language === 'de'
-        ? "Einführung fortschrittlicher KI für personalisierte Gesundheitslösungen"
-        : "Launch of advanced AI for personalized health solutions"
+        ? "Expansion in 50+ Städte mit Tauschbörsen und Jugendprogrammen"
+        : "Expansion to 50+ cities with barter exchanges and youth programs"
+    },
+    { 
+      year: "2025", 
+      title: language === 'de' ? "M&A Ökosystem" : "M&A Ecosystem",
+      description: language === 'de'
+        ? "Start des Lokal-zu-Global Handelsnetzwerks für kleine Unternehmen"
+        : "Launch of local-to-global trade network for small businesses"
     }
   ];
 
@@ -108,20 +108,20 @@ const AboutSection = () => {
               <>
                 <span className="text-gradient">Verbindung schaffen</span> zwischen
                 <br />
-                lokaler Expertise und globaler Innovation
+                lokalen Produzenten und bewussten Konsumenten
               </>
             ) : (
               <>
-                <span className="text-gradient">Bridging the gap</span> between
+                <span className="text-gradient">Connecting</span> local producers
                 <br />
-                local expertise and global innovation
+                with conscious consumers
               </>
             )}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {language === 'de' 
-              ? "Near&Far revolutioniert die Gesundheitsversorgung durch die nahtlose Verbindung von Patienten mit erstklassigen medizinischen Dienstleistungen - von Ihrer Nachbarschaft bis zur ganzen Welt."
-              : "Near&Far is revolutionizing healthcare by seamlessly connecting patients with world-class medical services - from your neighborhood to the entire globe."
+              ? "Near&Far baut Brücken zwischen nachhaltigen Gemeinschaften - von lokalen Bauernmärkten bis zum globalen Handel, von Stadtgärten bis zur Jugendförderung."
+              : "Near&Far bridges sustainable communities - from local farmers' markets to global trade, from urban gardens to youth empowerment."
             }
           </p>
         </div>
@@ -135,8 +135,8 @@ const AboutSection = () => {
             </h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {language === 'de'
-                ? "Wir glauben, dass jeder Mensch Zugang zu erstklassiger Gesundheitsversorgung verdient - unabhängig von seinem Standort. Durch die Kombination lokaler Präsenz mit globaler Reichweite machen wir spezialisierte medizinische Expertise für alle zugänglich."
-                : "We believe everyone deserves access to world-class healthcare, regardless of their location. By combining local presence with global reach, we're making specialized medical expertise accessible to all."
+                ? "Wir glauben, dass jeder Zugang zu lokalen, nachhaltigen Produkten verdient. Durch die Kombination von Technologie mit Gemeinschaftswerten schaffen wir ein Ökosystem für bewusstes Leben und faire Wirtschaft."
+                : "We believe everyone deserves access to local, sustainable products. By combining technology with community values, we create an ecosystem for conscious living and fair economy."
               }
             </p>
           </CardContent>
@@ -221,48 +221,48 @@ const AboutSection = () => {
               <div>
                 <h4 className="font-semibold mb-4 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  {language === 'de' ? 'Lokale Präsenz' : 'Local Presence'}
+                  {language === 'de' ? 'Lokale Produkte' : 'Local Products'}
                 </h4>
                 <p className="text-muted-foreground mb-6">
                   {language === 'de'
-                    ? "Zugang zu vertrauenswürdigen Gesundheitsdienstleistern in Ihrer Nähe mit persönlicher Betreuung und lokaler Expertise."
-                    : "Access trusted healthcare providers in your area with personalized care and local expertise."
+                    ? "Direkt von verifizierten lokalen Bauern und Produzenten - frisch, fair und nachhaltig."
+                    : "Direct from verified local farmers and producers - fresh, fair, and sustainable."
                   }
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold mb-4 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  {language === 'de' ? 'Globale Reichweite' : 'Global Reach'}
+                  {language === 'de' ? 'Community Tausch' : 'Community Exchange'}
                 </h4>
                 <p className="text-muted-foreground mb-6">
                   {language === 'de'
-                    ? "Verbindung zu weltführenden Spezialisten und modernsten Behandlungsmethoden, egal wo Sie sich befinden."
-                    : "Connect with world-leading specialists and cutting-edge treatments, no matter where you are."
+                    ? "Tauschen Sie Waren und Dienstleistungen mit Nachbarn - sparen Sie Geld und reduzieren Sie Abfall."
+                    : "Trade goods and services with neighbors - save money and reduce waste."
                   }
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold mb-4 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  {language === 'de' ? 'Nahtlose Integration' : 'Seamless Integration'}
+                  {language === 'de' ? 'Jugendförderung' : 'Youth Empowerment'}
                 </h4>
                 <p className="text-muted-foreground mb-6">
                   {language === 'de'
-                    ? "Eine einzige Plattform für alle Ihre Gesundheitsbedürfnisse - von der Buchung bis zur Nachsorge."
-                    : "One platform for all your healthcare needs - from booking to follow-up care."
+                    ? "Wir schaffen Möglichkeiten für junge Menschen, Fähigkeiten zu entwickeln und zu verdienen."
+                    : "We create opportunities for young people to develop skills and earn income."
                   }
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold mb-4 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  {language === 'de' ? 'Transparente Preise' : 'Transparent Pricing'}
+                  {language === 'de' ? 'Nachhaltiges Wachstum' : 'Sustainable Growth'}
                 </h4>
                 <p className="text-muted-foreground">
                   {language === 'de'
-                    ? "Klare, vorab festgelegte Preise ohne versteckte Gebühren. Wissen Sie genau, was Sie bezahlen."
-                    : "Clear, upfront pricing with no hidden fees. Know exactly what you're paying for."
+                    ? "Von lokal zu global - wir helfen kleinen Unternehmen zu wachsen und gleichzeitig nachhaltig zu bleiben."
+                    : "From local to global - we help small businesses grow while staying sustainable."
                   }
                 </p>
               </div>
@@ -276,19 +276,19 @@ const AboutSection = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">
                 {language === 'de' 
-                  ? 'Bereit, Ihre Gesundheitsreise zu beginnen?'
-                  : 'Ready to start your health journey?'
+                  ? 'Bereit, Teil unserer Community zu werden?'
+                  : 'Ready to join our community?'
                 }
               </h3>
               <p className="text-muted-foreground mb-6 max-w-md">
                 {language === 'de'
-                  ? 'Treten Sie Millionen bei, die bereits die Zukunft der Gesundheitsversorgung erleben.'
-                  : 'Join millions who are already experiencing the future of healthcare.'
+                  ? 'Schließen Sie sich Tausenden an, die bereits nachhaltiger leben und lokale Gemeinschaften stärken.'
+                  : 'Join thousands who are already living more sustainably and strengthening local communities.'
                 }
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="tech-button group">
-                  {language === 'de' ? 'Jetzt registrieren' : 'Sign Up Now'}
+                  {language === 'de' ? 'Jetzt beitreten' : 'Join Now'}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button variant="outline" className="glass-card hover:bg-white/20 dark:hover:bg-white/10">
