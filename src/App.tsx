@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import HowItWorks from "./pages/HowItWorks";
 import FAQ from "./pages/FAQ";
 import Partners from "./pages/Partners";
+import ServicePage from "./pages/ServicePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,8 +35,7 @@ const App = () => (
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/partners" element={<Partners />} />
-            {/* Vertical service pages - to be created */}
-            <Route path="/services/*" element={<NotFound />} />
+            <Route path="/services/:serviceId" element={<ServicePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
