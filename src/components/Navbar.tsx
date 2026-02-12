@@ -73,6 +73,7 @@ const Navbar = () => {
     { name: t('common.nav.services'), href: "#", icon: Store, hasDropdown: true },
     { name: "How It Works", href: "/how-it-works", icon: Lightbulb },
     { name: t('common.nav.blog'), href: "/blog", icon: BookOpen },
+    { name: t('common.nav.resources'), href: "/resources", icon: Users },
     { name: t('common.nav.about'), href: "/about", icon: Info },
     { name: t('common.nav.contact'), href: "/contact", icon: MessageCircle },
   ];
