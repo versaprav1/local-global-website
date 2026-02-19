@@ -19,11 +19,13 @@ const VerticalsSection = () => {
   };
 
   const getVerticalTranslation = (verticalId: string) => {
+    const features = getTranslation<string[]>(`verticals.items.${verticalId}.features`);
+    const stats = getTranslation<{ value: string; label: string }>(`verticals.items.${verticalId}.stats`);
     return {
       name: t(`verticals.items.${verticalId}.name`),
       description: t(`verticals.items.${verticalId}.description`),
-      features: getTranslation<string[]>(`verticals.items.${verticalId}.features`),
-      stats: getTranslation<{ value: string; label: string }>(`verticals.items.${verticalId}.stats`)
+      features: Array.isArray(features) ? features : [],
+      stats: stats && typeof stats === 'object' ? stats : undefined
     };
   };
 
