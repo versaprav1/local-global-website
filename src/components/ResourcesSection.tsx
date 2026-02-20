@@ -1,17 +1,19 @@
 
 import { useState } from "react";
 import { resources } from "@/data/resources";
-import { latestNews, newsCategories } from "@/data/latestNews";
+import { useNews, newsCategories } from "@/hooks/useNews";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink, Newspaper, Clock } from "lucide-react";
+import { ArrowRight, ExternalLink, Newspaper, Clock, Loader2 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const ResourcesSection = () => {
   const [industryFilter, setIndustryFilter] = useState("All Services");
   const [newsFilter, setNewsFilter] = useState("All");
+  const { data: newsArticles = [], isLoading: newsLoading } = useNews(newsFilter);
   
   // Get unique categories from resources
   const allCategories = ["All Services"];
@@ -30,11 +32,6 @@ const ResourcesSection = () => {
     industryFilter === "All Services" || 
     resource.industries.includes(industryFilter) || 
     resource.industries.includes("All Services")
-  );
-
-  // Filter news based on selected category
-  const filteredNews = latestNews.filter(news =>
-    newsFilter === "All" || news.category === newsFilter
   );
 
   const formatDate = (dateStr: string) => {
@@ -121,37 +118,59 @@ const ResourcesSection = () => {
               </Select>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
-              {filteredNews.map((news) => (
-                <Card key={news.id} className="border card-hover h-full group">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="flex items-center justify-between mb-3">
-                      <Badge variant="secondary" className="text-xs">{news.category}</Badge>
-                      <span className="text-xs text-muted-foreground flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        {formatDate(news.date)}
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                      {news.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm mb-4 flex-grow line-clamp-3">
-                      {news.summary}
-                    </p>
-                    <div className="flex items-center justify-between mt-auto pt-3 border-t border-border">
-                      <span className="text-xs text-muted-foreground font-medium">{news.source}</span>
-                      <Button variant="ghost" size="sm" className="p-0 h-auto" asChild>
-                        <a href={news.sourceUrl} target="_blank" rel="noopener noreferrer">
-                          Read More <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            {newsLoading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
+                {[1, 2, 3].map((i) => (
+                  <Card key={i} className="border h-full">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="flex items-center justify-between mb-3">
+                        <Skeleton className="h-5 w-24" />
+                        <Skeleton className="h-4 w-20" />
+                      </div>
+                      <Skeleton className="h-5 w-full mb-2" />
+                      <Skeleton className="h-4 w-full mb-1" />
+                      <Skeleton className="h-4 w-3/4 mb-4" />
+                      <div className="flex items-center justify-between mt-auto pt-3 border-t border-border">
+                        <Skeleton className="h-4 w-16" />
+                        <Skeleton className="h-4 w-20" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
+                {newsArticles.map((news) => (
+                  <Card key={news.id} className="border card-hover h-full group">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="flex items-center justify-between mb-3">
+                        <Badge variant="secondary" className="text-xs">{news.category}</Badge>
+                        <span className="text-xs text-muted-foreground flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
+                          {formatDate(news.date || news.published_at || "")}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                        {news.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm mb-4 flex-grow line-clamp-3">
+                        {news.summary}
+                      </p>
+                      <div className="flex items-center justify-between mt-auto pt-3 border-t border-border">
+                        <span className="text-xs text-muted-foreground font-medium">{news.source}</span>
+                        <Button variant="ghost" size="sm" className="p-0 h-auto" asChild>
+                          <a href={news.source_url || news.sourceUrl} target="_blank" rel="noopener noreferrer">
+                            Read More <ExternalLink className="ml-1 h-3 w-3" />
+                          </a>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
 
-            {filteredNews.length === 0 && (
+            {!newsLoading && newsArticles.length === 0 && (
               <div className="text-center py-12 text-muted-foreground">
                 <Newspaper className="h-12 w-12 mx-auto mb-4 opacity-50" />
                 <p>No news articles found for this category.</p>
