@@ -14,6 +14,7 @@ import HowItWorks from "./pages/HowItWorks";
 import FAQ from "./pages/FAQ";
 import Partners from "./pages/Partners";
 import ServicePage from "./pages/ServicePage";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/faq" element={<FAQ />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/services/:serviceId" element={<ServicePage />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
