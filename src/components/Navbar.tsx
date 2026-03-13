@@ -16,6 +16,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { language, toggleLanguage, t } = useLanguage();
+  const { user, signOut } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
