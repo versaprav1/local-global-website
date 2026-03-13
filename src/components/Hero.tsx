@@ -47,7 +47,7 @@ const Hero = () => {
               
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <MagneticButton size="lg" className="btn-primary group text-base px-8 py-4 rounded-xl">
+                <MagneticButton size="lg" className="btn-primary group text-base px-8 py-4 rounded-xl" onClick={() => navigate('/partners')}>
                   {t('hero.cta.primary')}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </MagneticButton>
@@ -55,6 +55,7 @@ const Hero = () => {
                   size="lg" 
                   variant="outline" 
                   className="text-base px-8 py-4 rounded-xl border-2 border-border hover:bg-muted/50 hover:border-primary/30 transition-all"
+                  onClick={() => document.getElementById('main-content')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   {t('hero.cta.secondary')}
                 </MagneticButton>

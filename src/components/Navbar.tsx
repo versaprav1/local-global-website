@@ -373,7 +373,7 @@ const Navbar = () => {
             </div>
 
             <div className="mt-6 px-4">
-              <Button className="w-full btn-primary rounded-xl">
+              <Button className="w-full btn-primary rounded-xl" onClick={() => { setIsOpen(false); navigate('/partners'); }}>
                 {t('common.nav.cta')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
