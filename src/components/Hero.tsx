@@ -2,6 +2,7 @@ import { MagneticButton } from "@/components/MagneticButton";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles, Star, Leaf, Users, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const { t } = useLanguage();
