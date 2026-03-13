@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { 
-  Menu, X, ChevronDown, Globe, ArrowRight,
+  Menu, X, ChevronDown, Globe, ArrowRight, LogIn, LogOut,
   Store, Sprout, Repeat, Briefcase, TrendingUp,
   Home, BookOpen, Users, Info, MessageCircle, HelpCircle, Lightbulb
 } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -15,6 +16,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { language, toggleLanguage, t } = useLanguage();
+  const { user, signOut } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -234,6 +236,19 @@ const Navbar = () => {
                 )}>EN</span>
               </div>
 
+              {/* Auth Button */}
+              {user ? (
+                <Button variant="ghost" size="sm" className="text-sm" onClick={() => signOut()}>
+                  <LogOut className="h-4 w-4 mr-1" />
+                  {language === 'de' ? 'Abmelden' : 'Logout'}
+                </Button>
+              ) : (
+                <Button variant="ghost" size="sm" className="text-sm" onClick={() => navigate('/login')}>
+                  <LogIn className="h-4 w-4 mr-1" />
+                  {language === 'de' ? 'Anmelden' : 'Login'}
+                </Button>
+              )}
+
               {/* CTA Button */}
               <Button className="btn-primary rounded-xl text-sm px-5" onClick={() => navigate('/partners')}>
                 {t('common.nav.cta')}
@@ -373,7 +388,18 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="mt-6 px-4">
+            <div className="mt-4 px-4 space-y-3">
+              {user ? (
+                <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); signOut(); }}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  {language === 'de' ? 'Abmelden' : 'Logout'}
+                </Button>
+              ) : (
+                <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); navigate('/login'); }}>
+                  <LogIn className="mr-2 h-4 w-4" />
+                  {language === 'de' ? 'Anmelden' : 'Login / Sign Up'}
+                </Button>
+              )}
               <Button className="w-full btn-primary rounded-xl" onClick={() => { setIsOpen(false); navigate('/partners'); }}>
                 {t('common.nav.cta')}
                 <ArrowRight className="ml-2 h-4 w-4" />
