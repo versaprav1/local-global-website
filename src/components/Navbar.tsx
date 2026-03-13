@@ -234,7 +234,7 @@ const Navbar = () => {
               </div>
 
               {/* CTA Button */}
-              <Button className="btn-primary rounded-xl text-sm px-5">
+              <Button className="btn-primary rounded-xl text-sm px-5" onClick={() => navigate('/partners')}>
                 {t('common.nav.cta')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
