@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { 
   Menu, X, ChevronDown, Globe, ArrowRight,
   Store, Sprout, Repeat, Briefcase, TrendingUp,
@@ -16,6 +16,7 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { language, toggleLanguage, t } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -234,7 +235,7 @@ const Navbar = () => {
               </div>
 
               {/* CTA Button */}
-              <Button className="btn-primary rounded-xl text-sm px-5">
+              <Button className="btn-primary rounded-xl text-sm px-5" onClick={() => navigate('/partners')}>
                 {t('common.nav.cta')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -373,7 +374,7 @@ const Navbar = () => {
             </div>
 
             <div className="mt-6 px-4">
-              <Button className="w-full btn-primary rounded-xl">
+              <Button className="w-full btn-primary rounded-xl" onClick={() => { setIsOpen(false); navigate('/partners'); }}>
                 {t('common.nav.cta')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
