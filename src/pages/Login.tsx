@@ -94,27 +94,7 @@ const Login = () => {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {!resetMode && (
-              <>
-                <div className="grid grid-cols-3 gap-2">
-                  <Button variant="outline" onClick={() => handleOAuth("google")} className="w-full">
-                    Google
-                  </Button>
-                  <Button variant="outline" onClick={() => handleOAuth("github")} className="w-full">
-                    GitHub
-                  </Button>
-                  <Button variant="outline" onClick={() => handleOAuth("discord")} className="w-full">
-                    Discord
-                  </Button>
-                </div>
-                <div className="relative">
-                  <Separator />
-                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-card px-2 text-xs text-muted-foreground">
-                    or
-                  </span>
-                </div>
-              </>
-            )}
+            {/* Social logins will be added later */}
 
             <form onSubmit={handleEmailAuth} className="space-y-3">
               <div>
