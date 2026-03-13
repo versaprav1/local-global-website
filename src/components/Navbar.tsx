@@ -388,7 +388,18 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="mt-6 px-4">
+            <div className="mt-4 px-4 space-y-3">
+              {user ? (
+                <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); signOut(); }}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  {language === 'de' ? 'Abmelden' : 'Logout'}
+                </Button>
+              ) : (
+                <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); navigate('/login'); }}>
+                  <LogIn className="mr-2 h-4 w-4" />
+                  {language === 'de' ? 'Anmelden' : 'Login / Sign Up'}
+                </Button>
+              )}
               <Button className="w-full btn-primary rounded-xl" onClick={() => { setIsOpen(false); navigate('/partners'); }}>
                 {t('common.nav.cta')}
                 <ArrowRight className="ml-2 h-4 w-4" />
