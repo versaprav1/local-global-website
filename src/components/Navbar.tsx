@@ -236,6 +236,19 @@ const Navbar = () => {
                 )}>EN</span>
               </div>
 
+              {/* Auth Button */}
+              {user ? (
+                <Button variant="ghost" size="sm" className="text-sm" onClick={() => signOut()}>
+                  <LogOut className="h-4 w-4 mr-1" />
+                  {language === 'de' ? 'Abmelden' : 'Logout'}
+                </Button>
+              ) : (
+                <Button variant="ghost" size="sm" className="text-sm" onClick={() => navigate('/login')}>
+                  <LogIn className="h-4 w-4 mr-1" />
+                  {language === 'de' ? 'Anmelden' : 'Login'}
+                </Button>
+              )}
+
               {/* CTA Button */}
               <Button className="btn-primary rounded-xl text-sm px-5" onClick={() => navigate('/partners')}>
                 {t('common.nav.cta')}
