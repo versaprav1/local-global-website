@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { 
   Menu, X, ChevronDown, Globe, ArrowRight,
   Store, Sprout, Repeat, Briefcase, TrendingUp,
