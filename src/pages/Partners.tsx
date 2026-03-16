@@ -173,10 +173,13 @@ const Partners = () => {
         {/* Header */}
         <section className="container mx-auto px-4 mb-16">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <button 
+              onClick={() => document.getElementById('partner-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 hover:bg-primary/20 transition-colors cursor-pointer"
+            >
               <Users className="h-4 w-4" />
               {t.badge}
-            </div>
+            </button>
             <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
               {t.title}
             </h1>
