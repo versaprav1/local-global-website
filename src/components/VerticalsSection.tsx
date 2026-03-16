@@ -102,12 +102,12 @@ const VerticalsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to={verticalRoutes[selectedVertical.id] || "#"}>
-                    <Button className="btn-primary rounded-xl text-base px-6 py-3 h-auto">
+                  <Button asChild className="btn-primary rounded-xl text-base px-6 py-3 h-auto">
+                    <Link to={verticalRoutes[selectedVertical.id] || "#"}>
                       {t('verticals.cta')}
                       <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </>
               );
             })()}
