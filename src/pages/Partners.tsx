@@ -257,7 +257,7 @@ const Partners = () => {
               <h2 className="text-2xl font-bold text-foreground mb-6">
                 {t.form.title}
               </h2>
-              <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-6 space-y-5">
+              <form id="partner-form" onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-6 space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground">{t.form.name}</label>
