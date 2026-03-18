@@ -106,6 +106,17 @@
 - [ ] German translations for service pages
 - [ ] Partner form submission to Supabase
 - [ ] SEO enhancements (JSON-LD, OG images)
+- [ ] Blog automation pipeline (planned in plan.md — n8n → Supabase → website)
+- [ ] Resources page real content (placeholder sections built for all 5 tabs)
+
+---
+
+## Recently Completed
+
+- [x] Resources page restructured with 5 tabs: Tools & Links, Guides, Partners, Videos, News
+- [x] Blog + Resources architecture documented in plan.md
+- [x] n8n setup guide and pipeline architecture documented
+- [x] must_do.md workflow protocol established
 
 ---
 
@@ -123,10 +134,11 @@
 ## Pending Decisions
 
 - Partner form: what fields to collect?
-- Blog: static data or Supabase CMS?
+- Blog: n8n instance setup (self-hosted vs cloud)
 - Marketplace features: scope and timeline?
 - Payment integration: which provider?
 - Additional languages beyond EN/DE?
+- Resources: which real external links/tools to curate first?
 
 ---
 
