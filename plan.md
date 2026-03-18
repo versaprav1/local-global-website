@@ -100,18 +100,17 @@ Build an interconnected ecosystem of 5 sustainable verticals that empower local 
 - [ ] Complete German translations for service pages
 - [ ] Add trust badges / social proof to Hero
 - [ ] Partner application form → Supabase database
-- [ ] Fix navigation issues (Learn More button, cross-page links)
+- [x] Fix navigation issues (Learn More button — fixed)
 - [ ] SEO optimization (JSON-LD, canonical tags, OG images)
+- [ ] Blog automation pipeline (see below)
+- [ ] Resources page rework (see below)
 
 ### Medium Priority
-- [ ] Blog content management (Supabase-backed)
 - [ ] Newsletter signup integration
-- [ ] Downloadable resources (guides, PDFs)
-- [ ] Video testimonials section
 - [ ] Before/after metric sliders
+- [ ] Dark mode toggle
 
 ### Low Priority
-- [ ] Dark mode toggle
 - [ ] A/B testing for CTAs
 - [ ] PWA support
 - [ ] Analytics dashboard (admin)
@@ -123,6 +122,116 @@ Build an interconnected ecosystem of 5 sustainable verticals that empower local 
 - [ ] Marketplace functionality (listings, payments)
 - [ ] Community forums
 - [ ] Mobile app (React Native)
+
+---
+
+## Blog Automation Architecture
+
+### Vision
+Automated blog content pipeline: n8n cron → AI content generation → Supabase → website.
+
+### Pipeline Flow
+```
+[n8n Cron Trigger] → [AI Content Generation] → [Supabase Edge Function] → [blog_posts table] → [Website renders from DB]
+    (daily/biweekly)     (Perplexity/OpenAI)      (news-webhook pattern)      (public read)         (React + TanStack Query)
+```
+
+### Step 1: Supabase `blog_posts` Table
+```sql
+CREATE TABLE public.blog_posts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  slug TEXT UNIQUE NOT NULL,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  content JSONB NOT NULL,  -- structured: { overview, benefits[], approaches[], sections[] }
+  category TEXT NOT NULL,
+  icon_name TEXT,          -- lucide icon name for display
+  gradient TEXT,           -- tailwind gradient classes
+  image_url TEXT,
+  author TEXT DEFAULT 'LocalGlobal Team',
+  is_published BOOLEAN DEFAULT false,
+  published_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+-- RLS: public read for published, authenticated write
+```
+
+### Step 2: Supabase Edge Function (Webhook)
+- Reuse the `news-webhook` pattern
+- Endpoint: `/functions/v1/blog-webhook`
+- Accepts batch blog post creation/updates
+- Optional secret-based auth for n8n
+
+### Step 3: n8n Workflow Setup
+```
+Trigger: Cron (daily or biweekly)
+  ↓
+Node 1: HTTP Request to AI API (Perplexity/OpenAI)
+  - Prompt: Generate blog content for [topic/category]
+  - Output: structured JSON matching blog_posts schema
+  ↓
+Node 2: HTTP Request to Supabase Edge Function
+  - POST to blog-webhook with generated content
+  ↓
+Node 3: (Optional) Slack/Telegram notification on success
+```
+
+### Step 4: n8n Setup Guide
+1. Self-host n8n (Docker) or use n8n Cloud
+2. Create workflow with Schedule Trigger node
+3. Add HTTP Request node → AI API (store API key in n8n credentials)
+4. Add HTTP Request node → Supabase edge function URL
+5. Set cron schedule (e.g., `0 8 * * 1` for Monday 8am)
+6. Optional: Connect n8n MCP to Lovable for direct workflow management
+
+### Step 5: Frontend Updates
+- Replace `blogTopics.ts` static data with Supabase query
+- `useBlogPosts()` hook with TanStack Query
+- Keep existing BlogSection UI, swap data source
+- BlogPost page reads from DB instead of static array
+- Fallback: show static data if DB is empty (migration period)
+
+### Implementation Order
+1. ☐ Create `blog_posts` table + RLS policies
+2. ☐ Create `blog-webhook` edge function
+3. ☐ Migrate static `blogTopics.ts` data → Supabase
+4. ☐ Update Blog page to read from Supabase
+5. ☐ Set up n8n instance + workflow
+6. ☐ Test end-to-end pipeline
+7. ☐ Add German translation support to blog posts
+
+---
+
+## Resources Page Architecture
+
+### Vision
+A comprehensive resource hub with 4 content types, each growing over time.
+
+### Content Types
+
+| Tab | Description | Data Source | Status |
+|-----|-------------|-------------|--------|
+| Tools & Links | Curated external tools, apps, websites per vertical | Static → Supabase | 🔄 Placeholder |
+| Guides & Downloads | PDFs, how-to documents, checklists | Supabase Storage | 🔄 Placeholder |
+| Partner Directory | Local farms, gardens, exchange platforms | Supabase table | 🔄 Placeholder |
+| Video Library | YouTube embeds, tutorials, webinars | Static → Supabase | 🔄 Placeholder |
+| Latest News | Auto-updated sustainability news | Supabase + n8n cron | ✅ Working |
+
+### News Automation (Existing + Enhancement)
+```
+[n8n Cron] → [News API / Web Scraping] → [news-webhook Edge Function] → [news_articles table] → [Website]
+```
+- Already have: `news_articles` table, `news-webhook` edge function, `fetch-news` function
+- Need: n8n workflow with cron trigger to automate the fetching
+
+### Implementation Order
+1. ☐ Restructure Resources page with 5 tabs (placeholder sections)
+2. ☐ Populate Tools & Links with real curated resources
+3. ☐ Set up Supabase Storage for downloadable guides
+4. ☐ Create `partners` table for Partner Directory
+5. ☐ Add video embed support
+6. ☐ Set up n8n cron for automated news updates
 
 ---
 
