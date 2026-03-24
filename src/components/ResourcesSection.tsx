@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { resources } from "@/data/resources";
 import { useNews, newsCategories } from "@/hooks/useNews";
 import { Card, CardContent } from "@/components/ui/card";
