@@ -88,6 +88,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Heart,
     category: "Sustainable Living",
     gradient: "from-pink-500 to-rose-500",
+    content: {
+      overview: "Conscious consumption is about being intentional with your purchases — considering the social, environmental, and economic impact of every buying decision.",
+      benefits: [
+        "Reduced environmental footprint",
+        "Support ethical businesses",
+        "Less clutter, more intentional living",
+        "Save money by buying less but better",
+        "Drive positive market change through demand"
+      ],
+      approaches: [
+        "Research brands before buying",
+        "Adopt a 'one in, one out' rule",
+        "Prioritize quality over quantity",
+        "Support local and fair-trade products",
+        "Practice the 30-day rule for non-essential purchases"
+      ]
+    }
   },
   {
     id: "renewable-energy",
@@ -96,6 +113,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Sun,
     category: "Sustainable Living",
     gradient: "from-yellow-500 to-amber-500",
+    content: {
+      overview: "Renewable energy sources like solar, wind, and hydro power are becoming more accessible for households. Understanding your options is the first step to reducing your carbon footprint.",
+      benefits: [
+        "Lower electricity costs long-term",
+        "Energy independence",
+        "Reduce carbon emissions",
+        "Increase property value",
+        "Government incentives available"
+      ],
+      approaches: [
+        "Evaluate your energy usage patterns",
+        "Research solar panel options for your home",
+        "Switch to a green energy provider",
+        "Consider community solar programs",
+        "Invest in energy-efficient appliances"
+      ]
+    }
   },
 
   // Urban Gardening
