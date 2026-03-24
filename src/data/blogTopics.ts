@@ -165,6 +165,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Leaf,
     category: "Urban Gardening",
     gradient: "from-emerald-500 to-green-500",
+    content: {
+      overview: "Composting transforms organic waste into nutrient-rich soil amendment. Whether you have a backyard or just a kitchen counter, there's a composting method for you.",
+      benefits: [
+        "Reduce household waste by up to 30%",
+        "Create free, nutrient-rich fertilizer",
+        "Improve soil health and water retention",
+        "Reduce methane from landfills",
+        "Complete the food cycle naturally"
+      ],
+      approaches: [
+        "Start with a simple kitchen compost bin",
+        "Try vermicomposting (worm composting) for apartments",
+        "Learn the green-to-brown ratio (nitrogen vs carbon)",
+        "Use bokashi for meat and dairy scraps",
+        "Join a community composting program"
+      ]
+    }
   },
   {
     id: "seasonal-planting",
@@ -173,6 +190,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Flower2,
     category: "Urban Gardening",
     gradient: "from-purple-500 to-pink-500",
+    content: {
+      overview: "Knowing when to plant is just as important as knowing what to plant. A seasonal approach ensures higher yields and healthier plants.",
+      benefits: [
+        "Higher success rate for crops",
+        "Year-round fresh produce",
+        "Better pest and disease management",
+        "Optimal use of growing conditions",
+        "More diverse diet throughout the year"
+      ],
+      approaches: [
+        "Learn your local frost dates",
+        "Start seeds indoors 6-8 weeks early",
+        "Use succession planting for continuous harvests",
+        "Plant cool-season crops in spring and fall",
+        "Extend the season with cold frames or row covers"
+      ]
+    }
   },
   {
     id: "water-conservation",
@@ -181,6 +215,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Droplets,
     category: "Urban Gardening",
     gradient: "from-blue-500 to-cyan-500",
+    content: {
+      overview: "Water is a precious resource. Smart watering techniques can dramatically reduce water usage while keeping your garden thriving.",
+      benefits: [
+        "Lower water bills",
+        "Healthier, more drought-resistant plants",
+        "Reduced environmental impact",
+        "Less time spent watering",
+        "Better soil structure over time"
+      ],
+      approaches: [
+        "Install drip irrigation systems",
+        "Mulch garden beds to retain moisture",
+        "Collect rainwater in barrels",
+        "Water early morning or late evening",
+        "Choose drought-tolerant plant varieties"
+      ]
+    }
   },
 
   // Local Food Systems
