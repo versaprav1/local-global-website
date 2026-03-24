@@ -344,6 +344,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Handshake,
     category: "Community Building",
     gradient: "from-cyan-500 to-blue-500",
+    content: {
+      overview: "Barter and exchange systems are making a comeback as communities seek alternatives to traditional commerce. Trading skills, goods, and time builds stronger local networks.",
+      benefits: [
+        "Access goods without spending money",
+        "Build community trust and connections",
+        "Reduce consumption and waste",
+        "Value skills and time equally",
+        "Create resilient local economies"
+      ],
+      approaches: [
+        "Join local barter groups or apps",
+        "Offer your skills in time banks",
+        "Organize neighborhood swap events",
+        "Start a tool or equipment sharing library",
+        "Create a community skills directory"
+      ]
+    }
   },
   {
     id: "skill-sharing",
@@ -352,6 +369,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Lightbulb,
     category: "Community Building",
     gradient: "from-yellow-500 to-orange-500",
+    content: {
+      overview: "Skill sharing networks connect people who want to learn with those who can teach. From cooking to coding, gardening to guitar — everyone has something valuable to share.",
+      benefits: [
+        "Learn new skills for free",
+        "Meet people with shared interests",
+        "Build confidence through teaching",
+        "Strengthen community bonds",
+        "Reduce reliance on paid services"
+      ],
+      approaches: [
+        "Host a workshop at your local community center",
+        "Join online skill-swap platforms",
+        "Start a neighborhood learning circle",
+        "Partner with local libraries for space",
+        "Create a skills map of your community"
+      ]
+    }
   },
 
   // Youth & Education
