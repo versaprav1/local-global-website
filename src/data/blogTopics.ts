@@ -396,6 +396,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Briefcase,
     category: "Youth & Education",
     gradient: "from-blue-500 to-indigo-500",
+    content: {
+      overview: "Young entrepreneurs are driving innovation in sustainability. From eco-friendly products to community services, youth-led businesses are creating real impact.",
+      benefits: [
+        "Develop business and life skills early",
+        "Create solutions for local problems",
+        "Build financial independence",
+        "Gain confidence and resilience",
+        "Contribute to community sustainability"
+      ],
+      approaches: [
+        "Start with a problem you care about",
+        "Join youth entrepreneurship programs",
+        "Find a mentor in your field",
+        "Start small — test ideas at local markets",
+        "Use social media to build your brand"
+      ]
+    }
   },
   {
     id: "environmental-education",
@@ -404,6 +421,23 @@ export const blogTopics: BlogTopic[] = [
     icon: BookOpen,
     category: "Youth & Education",
     gradient: "from-green-500 to-teal-500",
+    content: {
+      overview: "Environmental education empowers young people to understand ecological systems and make informed decisions that protect our planet for future generations.",
+      benefits: [
+        "Build environmental awareness early",
+        "Develop critical thinking skills",
+        "Inspire lifelong sustainable habits",
+        "Create informed community advocates",
+        "Bridge classroom learning with real-world action"
+      ],
+      approaches: [
+        "Organize nature walks and outdoor learning",
+        "Start school garden programs",
+        "Use hands-on experiments and projects",
+        "Connect with environmental NGOs",
+        "Participate in citizen science projects"
+      ]
+    }
   },
   {
     id: "student-programs",
@@ -412,6 +446,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Users,
     category: "Youth & Education",
     gradient: "from-purple-500 to-pink-500",
+    content: {
+      overview: "Student programs offer hands-on experience in sustainability, from internships with green businesses to volunteer opportunities with community organizations.",
+      benefits: [
+        "Real-world experience for resumes",
+        "Network with sustainability professionals",
+        "Earn school credit for community work",
+        "Develop leadership skills",
+        "Make a tangible local impact"
+      ],
+      approaches: [
+        "Look for sustainability internships",
+        "Join campus environmental clubs",
+        "Volunteer with local food banks or gardens",
+        "Participate in hackathons for social good",
+        "Apply for sustainability fellowships and grants"
+      ]
+    }
   },
 
   // Business & Economy
@@ -422,6 +473,23 @@ export const blogTopics: BlogTopic[] = [
     icon: TrendingUp,
     category: "Business & Economy",
     gradient: "from-emerald-500 to-green-500",
+    content: {
+      overview: "Sustainable businesses integrate social and environmental responsibility into their core operations, proving that profit and purpose can coexist.",
+      benefits: [
+        "Attract conscious consumers",
+        "Reduce operational costs through efficiency",
+        "Build brand loyalty and trust",
+        "Access green financing and grants",
+        "Future-proof against regulations"
+      ],
+      approaches: [
+        "Conduct a sustainability audit",
+        "Set measurable environmental goals",
+        "Adopt circular business models",
+        "Obtain relevant certifications (B Corp, etc.)",
+        "Report transparently on impact"
+      ]
+    }
   },
   {
     id: "circular-economy",
@@ -430,6 +498,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Recycle,
     category: "Business & Economy",
     gradient: "from-blue-500 to-cyan-500",
+    content: {
+      overview: "The circular economy reimagines production and consumption. Instead of 'take, make, dispose', it emphasizes reuse, repair, refurbishment, and recycling.",
+      benefits: [
+        "Dramatically reduce waste",
+        "Create new revenue streams from 'waste'",
+        "Lower raw material costs",
+        "Drive innovation in product design",
+        "Build more resilient supply chains"
+      ],
+      approaches: [
+        "Design products for longevity and repair",
+        "Implement take-back programs",
+        "Use recycled and renewable materials",
+        "Explore product-as-a-service models",
+        "Partner with other businesses for material loops"
+      ]
+    }
   },
   {
     id: "local-economy",
@@ -438,6 +523,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Globe,
     category: "Business & Economy",
     gradient: "from-orange-500 to-amber-500",
+    content: {
+      overview: "Strong local economies keep money circulating within communities, create jobs, and build resilience against global economic shocks.",
+      benefits: [
+        "Keep money in the community",
+        "Create local employment",
+        "Reduce environmental transport impact",
+        "Preserve community character",
+        "Build economic resilience"
+      ],
+      approaches: [
+        "Shop local first",
+        "Support independent businesses over chains",
+        "Use local banking and credit unions",
+        "Advocate for buy-local policies",
+        "Start or join a local business alliance"
+      ]
+    }
   },
   {
     id: "impact-investing",
@@ -446,5 +548,22 @@ export const blogTopics: BlogTopic[] = [
     icon: Shield,
     category: "Business & Economy",
     gradient: "from-indigo-500 to-purple-500",
+    content: {
+      overview: "Impact investing directs capital toward companies and projects that generate measurable social and environmental benefits alongside financial returns.",
+      benefits: [
+        "Financial returns with purpose",
+        "Drive capital toward sustainability",
+        "Support innovative solutions",
+        "Diversify investment portfolio",
+        "Align investments with values"
+      ],
+      approaches: [
+        "Research ESG and impact funds",
+        "Start with community investment opportunities",
+        "Use robo-advisors with impact portfolios",
+        "Invest in local green bonds",
+        "Join an impact investing network or club"
+      ]
+    }
   },
 ];
