@@ -305,7 +305,9 @@ const ResourcesSection = () => {
           <p className="text-muted-foreground mb-6">
             Our platform supports custom integrations and tailored solutions for your sustainable living needs.
           </p>
-          <Button>Contact Our Team</Button>
+          <Link to="/contact">
+            <Button>Contact Our Team</Button>
+          </Link>
         </div>
       </div>
     </section>
