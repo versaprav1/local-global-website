@@ -267,6 +267,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Apple,
     category: "Local Food Systems",
     gradient: "from-red-500 to-orange-500",
+    content: {
+      overview: "Food preservation techniques have been used for centuries. Learning these methods helps reduce waste and enjoy seasonal produce year-round.",
+      benefits: [
+        "Reduce food waste significantly",
+        "Enjoy seasonal produce all year",
+        "Save money on groceries",
+        "Preserve nutritional value",
+        "Connect with traditional food culture"
+      ],
+      approaches: [
+        "Learn basic canning and jarring",
+        "Try fermentation (sauerkraut, kimchi)",
+        "Use dehydration for fruits and herbs",
+        "Freeze produce at peak freshness",
+        "Explore pickling and brining techniques"
+      ]
+    }
   },
   {
     id: "local-sourcing",
@@ -275,6 +292,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Target,
     category: "Local Food Systems",
     gradient: "from-teal-500 to-cyan-500",
+    content: {
+      overview: "Sourcing food locally strengthens your community's economy and reduces the environmental impact of transportation while giving you access to fresher products.",
+      benefits: [
+        "Fresher, better-tasting food",
+        "Support local jobs and economy",
+        "Lower carbon footprint from transport",
+        "Build relationships with producers",
+        "Greater food transparency"
+      ],
+      approaches: [
+        "Map out farmers markets near you",
+        "Join a local food co-op",
+        "Subscribe to CSA (Community Supported Agriculture)",
+        "Use apps that connect you with local producers",
+        "Visit farms and attend open days"
+      ]
+    }
   },
 
   // Community Building
