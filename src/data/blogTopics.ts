@@ -88,6 +88,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Heart,
     category: "Sustainable Living",
     gradient: "from-pink-500 to-rose-500",
+    content: {
+      overview: "Conscious consumption is about being intentional with your purchases — considering the social, environmental, and economic impact of every buying decision.",
+      benefits: [
+        "Reduced environmental footprint",
+        "Support ethical businesses",
+        "Less clutter, more intentional living",
+        "Save money by buying less but better",
+        "Drive positive market change through demand"
+      ],
+      approaches: [
+        "Research brands before buying",
+        "Adopt a 'one in, one out' rule",
+        "Prioritize quality over quantity",
+        "Support local and fair-trade products",
+        "Practice the 30-day rule for non-essential purchases"
+      ]
+    }
   },
   {
     id: "renewable-energy",
@@ -96,6 +113,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Sun,
     category: "Sustainable Living",
     gradient: "from-yellow-500 to-amber-500",
+    content: {
+      overview: "Renewable energy sources like solar, wind, and hydro power are becoming more accessible for households. Understanding your options is the first step to reducing your carbon footprint.",
+      benefits: [
+        "Lower electricity costs long-term",
+        "Energy independence",
+        "Reduce carbon emissions",
+        "Increase property value",
+        "Government incentives available"
+      ],
+      approaches: [
+        "Evaluate your energy usage patterns",
+        "Research solar panel options for your home",
+        "Switch to a green energy provider",
+        "Consider community solar programs",
+        "Invest in energy-efficient appliances"
+      ]
+    }
   },
 
   // Urban Gardening
@@ -131,6 +165,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Leaf,
     category: "Urban Gardening",
     gradient: "from-emerald-500 to-green-500",
+    content: {
+      overview: "Composting transforms organic waste into nutrient-rich soil amendment. Whether you have a backyard or just a kitchen counter, there's a composting method for you.",
+      benefits: [
+        "Reduce household waste by up to 30%",
+        "Create free, nutrient-rich fertilizer",
+        "Improve soil health and water retention",
+        "Reduce methane from landfills",
+        "Complete the food cycle naturally"
+      ],
+      approaches: [
+        "Start with a simple kitchen compost bin",
+        "Try vermicomposting (worm composting) for apartments",
+        "Learn the green-to-brown ratio (nitrogen vs carbon)",
+        "Use bokashi for meat and dairy scraps",
+        "Join a community composting program"
+      ]
+    }
   },
   {
     id: "seasonal-planting",
@@ -139,6 +190,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Flower2,
     category: "Urban Gardening",
     gradient: "from-purple-500 to-pink-500",
+    content: {
+      overview: "Knowing when to plant is just as important as knowing what to plant. A seasonal approach ensures higher yields and healthier plants.",
+      benefits: [
+        "Higher success rate for crops",
+        "Year-round fresh produce",
+        "Better pest and disease management",
+        "Optimal use of growing conditions",
+        "More diverse diet throughout the year"
+      ],
+      approaches: [
+        "Learn your local frost dates",
+        "Start seeds indoors 6-8 weeks early",
+        "Use succession planting for continuous harvests",
+        "Plant cool-season crops in spring and fall",
+        "Extend the season with cold frames or row covers"
+      ]
+    }
   },
   {
     id: "water-conservation",
@@ -147,6 +215,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Droplets,
     category: "Urban Gardening",
     gradient: "from-blue-500 to-cyan-500",
+    content: {
+      overview: "Water is a precious resource. Smart watering techniques can dramatically reduce water usage while keeping your garden thriving.",
+      benefits: [
+        "Lower water bills",
+        "Healthier, more drought-resistant plants",
+        "Reduced environmental impact",
+        "Less time spent watering",
+        "Better soil structure over time"
+      ],
+      approaches: [
+        "Install drip irrigation systems",
+        "Mulch garden beds to retain moisture",
+        "Collect rainwater in barrels",
+        "Water early morning or late evening",
+        "Choose drought-tolerant plant varieties"
+      ]
+    }
   },
 
   // Local Food Systems
@@ -182,6 +267,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Apple,
     category: "Local Food Systems",
     gradient: "from-red-500 to-orange-500",
+    content: {
+      overview: "Food preservation techniques have been used for centuries. Learning these methods helps reduce waste and enjoy seasonal produce year-round.",
+      benefits: [
+        "Reduce food waste significantly",
+        "Enjoy seasonal produce all year",
+        "Save money on groceries",
+        "Preserve nutritional value",
+        "Connect with traditional food culture"
+      ],
+      approaches: [
+        "Learn basic canning and jarring",
+        "Try fermentation (sauerkraut, kimchi)",
+        "Use dehydration for fruits and herbs",
+        "Freeze produce at peak freshness",
+        "Explore pickling and brining techniques"
+      ]
+    }
   },
   {
     id: "local-sourcing",
@@ -190,6 +292,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Target,
     category: "Local Food Systems",
     gradient: "from-teal-500 to-cyan-500",
+    content: {
+      overview: "Sourcing food locally strengthens your community's economy and reduces the environmental impact of transportation while giving you access to fresher products.",
+      benefits: [
+        "Fresher, better-tasting food",
+        "Support local jobs and economy",
+        "Lower carbon footprint from transport",
+        "Build relationships with producers",
+        "Greater food transparency"
+      ],
+      approaches: [
+        "Map out farmers markets near you",
+        "Join a local food co-op",
+        "Subscribe to CSA (Community Supported Agriculture)",
+        "Use apps that connect you with local producers",
+        "Visit farms and attend open days"
+      ]
+    }
   },
 
   // Community Building
@@ -225,6 +344,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Handshake,
     category: "Community Building",
     gradient: "from-cyan-500 to-blue-500",
+    content: {
+      overview: "Barter and exchange systems are making a comeback as communities seek alternatives to traditional commerce. Trading skills, goods, and time builds stronger local networks.",
+      benefits: [
+        "Access goods without spending money",
+        "Build community trust and connections",
+        "Reduce consumption and waste",
+        "Value skills and time equally",
+        "Create resilient local economies"
+      ],
+      approaches: [
+        "Join local barter groups or apps",
+        "Offer your skills in time banks",
+        "Organize neighborhood swap events",
+        "Start a tool or equipment sharing library",
+        "Create a community skills directory"
+      ]
+    }
   },
   {
     id: "skill-sharing",
@@ -233,6 +369,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Lightbulb,
     category: "Community Building",
     gradient: "from-yellow-500 to-orange-500",
+    content: {
+      overview: "Skill sharing networks connect people who want to learn with those who can teach. From cooking to coding, gardening to guitar — everyone has something valuable to share.",
+      benefits: [
+        "Learn new skills for free",
+        "Meet people with shared interests",
+        "Build confidence through teaching",
+        "Strengthen community bonds",
+        "Reduce reliance on paid services"
+      ],
+      approaches: [
+        "Host a workshop at your local community center",
+        "Join online skill-swap platforms",
+        "Start a neighborhood learning circle",
+        "Partner with local libraries for space",
+        "Create a skills map of your community"
+      ]
+    }
   },
 
   // Youth & Education
@@ -243,6 +396,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Briefcase,
     category: "Youth & Education",
     gradient: "from-blue-500 to-indigo-500",
+    content: {
+      overview: "Young entrepreneurs are driving innovation in sustainability. From eco-friendly products to community services, youth-led businesses are creating real impact.",
+      benefits: [
+        "Develop business and life skills early",
+        "Create solutions for local problems",
+        "Build financial independence",
+        "Gain confidence and resilience",
+        "Contribute to community sustainability"
+      ],
+      approaches: [
+        "Start with a problem you care about",
+        "Join youth entrepreneurship programs",
+        "Find a mentor in your field",
+        "Start small — test ideas at local markets",
+        "Use social media to build your brand"
+      ]
+    }
   },
   {
     id: "environmental-education",
@@ -251,6 +421,23 @@ export const blogTopics: BlogTopic[] = [
     icon: BookOpen,
     category: "Youth & Education",
     gradient: "from-green-500 to-teal-500",
+    content: {
+      overview: "Environmental education empowers young people to understand ecological systems and make informed decisions that protect our planet for future generations.",
+      benefits: [
+        "Build environmental awareness early",
+        "Develop critical thinking skills",
+        "Inspire lifelong sustainable habits",
+        "Create informed community advocates",
+        "Bridge classroom learning with real-world action"
+      ],
+      approaches: [
+        "Organize nature walks and outdoor learning",
+        "Start school garden programs",
+        "Use hands-on experiments and projects",
+        "Connect with environmental NGOs",
+        "Participate in citizen science projects"
+      ]
+    }
   },
   {
     id: "student-programs",
@@ -259,6 +446,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Users,
     category: "Youth & Education",
     gradient: "from-purple-500 to-pink-500",
+    content: {
+      overview: "Student programs offer hands-on experience in sustainability, from internships with green businesses to volunteer opportunities with community organizations.",
+      benefits: [
+        "Real-world experience for resumes",
+        "Network with sustainability professionals",
+        "Earn school credit for community work",
+        "Develop leadership skills",
+        "Make a tangible local impact"
+      ],
+      approaches: [
+        "Look for sustainability internships",
+        "Join campus environmental clubs",
+        "Volunteer with local food banks or gardens",
+        "Participate in hackathons for social good",
+        "Apply for sustainability fellowships and grants"
+      ]
+    }
   },
 
   // Business & Economy
@@ -269,6 +473,23 @@ export const blogTopics: BlogTopic[] = [
     icon: TrendingUp,
     category: "Business & Economy",
     gradient: "from-emerald-500 to-green-500",
+    content: {
+      overview: "Sustainable businesses integrate social and environmental responsibility into their core operations, proving that profit and purpose can coexist.",
+      benefits: [
+        "Attract conscious consumers",
+        "Reduce operational costs through efficiency",
+        "Build brand loyalty and trust",
+        "Access green financing and grants",
+        "Future-proof against regulations"
+      ],
+      approaches: [
+        "Conduct a sustainability audit",
+        "Set measurable environmental goals",
+        "Adopt circular business models",
+        "Obtain relevant certifications (B Corp, etc.)",
+        "Report transparently on impact"
+      ]
+    }
   },
   {
     id: "circular-economy",
@@ -277,6 +498,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Recycle,
     category: "Business & Economy",
     gradient: "from-blue-500 to-cyan-500",
+    content: {
+      overview: "The circular economy reimagines production and consumption. Instead of 'take, make, dispose', it emphasizes reuse, repair, refurbishment, and recycling.",
+      benefits: [
+        "Dramatically reduce waste",
+        "Create new revenue streams from 'waste'",
+        "Lower raw material costs",
+        "Drive innovation in product design",
+        "Build more resilient supply chains"
+      ],
+      approaches: [
+        "Design products for longevity and repair",
+        "Implement take-back programs",
+        "Use recycled and renewable materials",
+        "Explore product-as-a-service models",
+        "Partner with other businesses for material loops"
+      ]
+    }
   },
   {
     id: "local-economy",
@@ -285,6 +523,23 @@ export const blogTopics: BlogTopic[] = [
     icon: Globe,
     category: "Business & Economy",
     gradient: "from-orange-500 to-amber-500",
+    content: {
+      overview: "Strong local economies keep money circulating within communities, create jobs, and build resilience against global economic shocks.",
+      benefits: [
+        "Keep money in the community",
+        "Create local employment",
+        "Reduce environmental transport impact",
+        "Preserve community character",
+        "Build economic resilience"
+      ],
+      approaches: [
+        "Shop local first",
+        "Support independent businesses over chains",
+        "Use local banking and credit unions",
+        "Advocate for buy-local policies",
+        "Start or join a local business alliance"
+      ]
+    }
   },
   {
     id: "impact-investing",
@@ -293,5 +548,22 @@ export const blogTopics: BlogTopic[] = [
     icon: Shield,
     category: "Business & Economy",
     gradient: "from-indigo-500 to-purple-500",
+    content: {
+      overview: "Impact investing directs capital toward companies and projects that generate measurable social and environmental benefits alongside financial returns.",
+      benefits: [
+        "Financial returns with purpose",
+        "Drive capital toward sustainability",
+        "Support innovative solutions",
+        "Diversify investment portfolio",
+        "Align investments with values"
+      ],
+      approaches: [
+        "Research ESG and impact funds",
+        "Start with community investment opportunities",
+        "Use robo-advisors with impact portfolios",
+        "Invest in local green bonds",
+        "Join an impact investing network or club"
+      ]
+    }
   },
 ];

@@ -113,6 +113,11 @@
 
 ## Recently Completed
 
+- [x] Contact section modernized: clean card-based design, X + Telegram social links, removed outdated Facebook/Instagram/LinkedIn
+- [x] About/Mission expanded: headline covers all 5 verticals, mission text includes Farm-to-Home, Urban Gardening, Barter, Youth Freelancing, M&A
+- [x] All blog topics now have full content (overview, benefits, approaches) — no more "coming soon" placeholders
+- [x] Resources "Contact Our Team" button now navigates to /contact
+- [x] Contact page social links updated to X + Telegram
 - [x] Resources page restructured with 5 tabs: Tools & Links, Guides, Partners, Videos, News
 - [x] Blog + Resources architecture documented in plan.md
 - [x] n8n setup guide and pipeline architecture documented

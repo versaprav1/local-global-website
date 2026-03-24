@@ -106,15 +106,15 @@ const AboutSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             {language === 'de' ? (
               <>
-                <span className="text-gradient">Verbindung schaffen</span> zwischen
+                <span className="text-gradient">Gemeinschaften stärken</span> durch
                 <br />
-                lokalen Produzenten und bewussten Konsumenten
+                nachhaltige und lokale Lösungen
               </>
             ) : (
               <>
-                <span className="text-gradient">Connecting</span> local producers
+                <span className="text-gradient">Empowering Communities</span> through
                 <br />
-                with conscious consumers
+                Sustainable & Local Solutions
               </>
             )}
           </h2>
@@ -133,12 +133,25 @@ const AboutSection = () => {
             <h3 className="text-2xl font-bold mb-4">
               {language === 'de' ? 'Unsere Mission' : 'Our Mission'}
             </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               {language === 'de'
-                ? "Wir glauben, dass jeder Zugang zu lokalen, nachhaltigen Produkten verdient. Durch die Kombination von Technologie mit Gemeinschaftswerten schaffen wir ein Ökosystem für bewusstes Leben und faire Wirtschaft."
-                : "We believe everyone deserves access to local, sustainable products. By combining technology with community values, we create an ecosystem for conscious living and fair economy."
+                ? "Wir verbinden lokale Bauernhöfe mit Verbrauchern, fördern urbanes Gärtnern, ermöglichen Tausch und Wiederverwendung, stärken junge Freiberufler und begleiten Unternehmen beim Wachstum – alles auf einer Plattform."
+                : "We connect local farms to consumers, enable urban gardening, promote barter and reuse, empower youth freelancers, and help businesses scale — all on one platform."
               }
             </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                language === 'de' ? "Farm-to-Home" : "Farm-to-Home",
+                language === 'de' ? "Stadtgärtnern" : "Urban Gardening",
+                language === 'de' ? "Tausch & Austausch" : "Barter & Exchange",
+                language === 'de' ? "Jugend-Freelancing" : "Youth Freelancing",
+                language === 'de' ? "M&A / Handel" : "M&A / Commerce",
+              ].map((vertical) => (
+                <Badge key={vertical} variant="outline" className="px-3 py-1 text-xs border-primary/30 text-primary">
+                  {vertical}
+                </Badge>
+              ))}
+            </div>
           </CardContent>
         </Card>
 
