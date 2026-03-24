@@ -106,15 +106,15 @@ const AboutSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             {language === 'de' ? (
               <>
-                <span className="text-gradient">Verbindung schaffen</span> zwischen
+                <span className="text-gradient">Gemeinschaften stärken</span> durch
                 <br />
-                lokalen Produzenten und bewussten Konsumenten
+                nachhaltige und lokale Lösungen
               </>
             ) : (
               <>
-                <span className="text-gradient">Connecting</span> local producers
+                <span className="text-gradient">Empowering Communities</span> through
                 <br />
-                with conscious consumers
+                Sustainable & Local Solutions
               </>
             )}
           </h2>
