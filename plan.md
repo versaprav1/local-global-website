@@ -38,59 +38,109 @@ Build an interconnected ecosystem of 5 sustainable verticals that empower local 
 
 ---
 
+## Decision Log
+
+This section captures every key discussion, options considered, and rationale for decisions made during development.
+
+### Decision 1: Learn More Button Fix
+**Issue**: "Learn More" buttons under verticals on the homepage did nothing when clicked.  
+**Root Cause**: Invalid HTML nesting — `<Link>` was inside `<Button>`, preventing click events from propagating.  
+**Options Discussed**:
+1. Only navigate to service pages (`/services/:serviceId`)
+2. Only scroll to additional content on the homepage
+3. Both — navigate to service pages AND scroll to content  
+**Decision**: **Option 3 — Both**. User wanted the buttons to navigate to the dedicated service page for that vertical, while keeping smooth scroll for in-page content exploration.  
+**Rationale**: Provides maximum flexibility — users who want detail go to the service page, while the homepage content flow remains intact.
+
+### Decision 2: Documentation Structure
+**Issue**: Project had no centralized plan or progress tracking files.  
+**Options Discussed**:
+1. Create new plan.md and progress.md from scratch
+2. Update existing doc files and rename them to plan.md and progress.md  
+**Decision**: **Option 2 — Update existing and rename**. The project already had `doc.md` and other documentation files with useful content.  
+**Rationale**: Preserves existing knowledge while establishing a cleaner naming convention that's easier to reference.
+
+### Decision 3: Agent Workflow Protocol (must_do.md)
+**Issue**: User wanted a consistent working pattern — understand first, ask questions, get confirmation, then implement.  
+**Options Discussed**:
+1. Informal agreement to follow the pattern
+2. Create a dedicated `must_do.md` file with formal protocol  
+**Decision**: **Option 2 — Dedicated file**. Created `must_do.md` with the 4-step protocol: Understand → Ask → Confirm → Implement.  
+**Rationale**: Codifying the protocol in a file ensures all future AI agent interactions follow the same pattern, reducing miscommunication and wasted effort.
+
+### Decision 4: Blog vs Resources — Purpose Distinction
+**Issue**: Both Blog and Resources pages seemed to serve similar informational purposes. Needed clarity on their distinct roles.  
+**Analysis**: After reviewing the codebase:
+- **Blog** (`blogTopics.ts`): 21 thought-leadership topics organized by category, each with structured content (overview, benefits, approaches). Purpose: establish expertise, SEO, evergreen content.
+- **Resources** (`ResourcesSection.tsx`): Community tools hub with tabs for Tools, Guides, Partners, Videos, News. Purpose: practical utility, curated links, actionable resources.  
+**Decision**: Keep them separate with clear roles:
+- Blog = "Learn & Discover" (thought leadership, industry insights)
+- Resources = "Use & Connect" (practical tools, directories, downloads)  
+**Rationale**: Different user intents — someone reading a blog wants to learn; someone visiting resources wants to find a tool, download a guide, or contact a partner.
+
+### Decision 5: Blog Content Strategy
+**Options Discussed**:
+1. Add static content now for all blog posts
+2. Keep topics as placeholders, plan dynamic content for later
+3. Fetch external content via APIs
+4. Mix: static content now + dynamic content pipeline for future  
+**Decision**: **Option 4 — Mix: static + dynamic**. Populated all 21 blog topics with full content immediately, while planning an n8n automation pipeline for future dynamic content.  
+**Rationale**: Having real content now improves SEO and user experience, while the automation pipeline (n8n → AI → Supabase → website) will keep content fresh long-term without manual effort.
+
+### Decision 6: Blog Automation Architecture (n8n Pipeline)
+**Context**: User wanted automated blog updates via cron jobs.  
+**Architecture Designed**:
+```
+[n8n Cron Trigger] → [AI Content Generation (Perplexity/OpenAI)] → [Supabase Edge Function] → [blog_posts table] → [Website renders from DB]
+```
+**Decision**: Plan now, implement later. User is not using n8n yet.  
+**Rationale**: Full architecture documented so implementation can proceed step-by-step when ready. The pipeline allows daily/biweekly automated content without manual intervention.
+
+### Decision 7: Resources Page Structure
+**Options Discussed**:
+1. Build out one section fully first
+2. Create all sections with real content
+3. Create all sections as placeholders for future development  
+4. Have all sections — mix of real and placeholder  
+**Decision**: **Option 3 — All sections as placeholders**. Created 5 tabs: Tools & Links, Guides & Downloads, Partner Directory, Video Library, Latest News.  
+**Rationale**: Establishes the full information architecture upfront so each section can be independently developed and populated over time without restructuring.
+
+### Decision 8: Contact Section Social Media Platforms
+**Options Discussed**:
+1. X (Twitter) — modern, professional reach
+2. WhatsApp — direct messaging, popular in Germany
+3. Telegram — privacy-focused, community channels
+4. Discord — community building, younger audience
+5. LinkedIn — B2B networking
+6. Facebook/Instagram — legacy platforms  
+**Decision**: **X (Twitter) + Telegram** only.  
+**Rationale**: User specifically chose these two. X for public-facing communication and thought leadership; Telegram for privacy-conscious community engagement. Dropped legacy platforms (Facebook, Instagram, LinkedIn) that were previously hardcoded.
+
+### Decision 9: Resources "Contact Our Team" Button
+**Options Discussed**:
+1. Navigate to `/contact` page
+2. Scroll to homepage contact section
+3. Open a contact modal  
+**Decision**: **Option 1 — Navigate to `/contact` page**.  
+**Rationale**: Consistent with the dedicated contact page that already exists. Simpler UX than modals, and the contact page has full form + social links.
+
+### Decision 10: About/Mission Section Scope
+**Issue**: The About section headline and mission text only mentioned "sustainable products" — too narrow for a platform with 5 distinct verticals.  
+**Decision**: Expanded headline to "Empowering Communities Through Sustainable Innovation" and added visible badges for all 5 verticals (Farm-to-Home, Urban Gardening, Barter & Exchange, Youth Freelancing, M&A Ecosystem).  
+**Rationale**: The platform's value proposition spans multiple domains. The mission statement should reflect the full scope so visitors immediately understand the breadth of the ecosystem.
+
+### Decision 11: Website Type — Static vs Dynamic
+**Context**: User asked whether the site is static or dynamic.  
+**Analysis**: Currently a **static single-page application (SPA)** — React renders client-side, all data is in static `.ts` files, no real-time database reads for main content. Supabase is integrated but only used for auth and news articles.  
+**Decision**: Acknowledged current state and planned transition toward dynamic content (blog posts from Supabase, resources from DB) while keeping the SPA architecture.  
+**Rationale**: Static is fine for the current scale. Dynamic content will be added incrementally as the n8n automation pipeline and Supabase tables are built out.
+
+---
+
 ## Roadmap
 
-### Phase 1: Foundation ✅ COMPLETED
-- Project setup (React, Vite, Tailwind, shadcn/ui)
-- Core pages: Home, About, Blog, Resources, Contact, FAQ, Partners
-- Navbar with responsive design + language toggle
-- Footer
-- Supabase integration
-
-### Phase 2: Design System ✅ COMPLETED
-- HSL color tokens in index.css
-- Custom font pairing (Inter + Sora)
-- Glass/gradient effects, scroll animations
-- MagneticButton, ScrollReveal components
-- Skeleton loading states
-
-### Phase 3: Interactive Features ✅ COMPLETED
-- Command Palette (⌘K)
-- Advanced filtering system
-- Interactive Map View
-- Testimonials carousel
-
-### Phase 4: Content & Sections ✅ COMPLETED
-- Homepage: Hero, VerticalsSection, ServicesGrid, Testimonials, Map, Contact
-- Data files: centers, verticals, opportunities, producers, resources, blog topics
-
-### Phase 5: Internationalization ✅ COMPLETED
-- LanguageContext with localStorage persistence
-- EN/DE translation files for all sections
-- Dynamic translation with `t()` and `getTranslation()`
-
-### Phase 6: Service Pages ✅ COMPLETED
-- Dynamic ServicePage template (`/services/:serviceId`)
-- Full EN translation content for all 5 verticals
-- Sections: Hero, Audience, Outcomes, Process, FAQ, CTA
-
-### Phase 7: Navigation & UX ✅ COMPLETED
-- Mega-menu with verticals dropdown
-- Scroll-aware navbar transitions
-- Mobile responsive slide-down navigation
-- Auth-aware login/logout buttons
-
-### Phase 8: Auth & Admin ✅ COMPLETED
-- Supabase auth integration
-- Login page with email/password
-- Password reset flow
-- Protected admin route
-- Auth provider context
-
-### Phase 9: Deployment ✅ COMPLETED
-- GitHub Actions CI/CD workflow
-- FTP deployment to Hostinger
-- .htaccess for SPA routing (client-side routes)
+### Phase 1–9: ✅ COMPLETED
+See progress.md for detailed completion history.
 
 ---
 
@@ -102,8 +152,8 @@ Build an interconnected ecosystem of 5 sustainable verticals that empower local 
 - [ ] Partner application form → Supabase database
 - [x] Fix navigation issues (Learn More button — fixed)
 - [ ] SEO optimization (JSON-LD, canonical tags, OG images)
-- [ ] Blog automation pipeline (see below)
-- [ ] Resources page rework (see below)
+- [ ] Blog automation pipeline (see Blog Automation Architecture below)
+- [ ] Resources page rework (see Resources Page Architecture below)
 
 ### Medium Priority
 - [ ] Newsletter signup integration
@@ -136,67 +186,11 @@ Automated blog content pipeline: n8n cron → AI content generation → Supabase
     (daily/biweekly)     (Perplexity/OpenAI)      (news-webhook pattern)      (public read)         (React + TanStack Query)
 ```
 
-### Step 1: Supabase `blog_posts` Table
-```sql
-CREATE TABLE public.blog_posts (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  slug TEXT UNIQUE NOT NULL,
-  title TEXT NOT NULL,
-  description TEXT NOT NULL,
-  content JSONB NOT NULL,  -- structured: { overview, benefits[], approaches[], sections[] }
-  category TEXT NOT NULL,
-  icon_name TEXT,          -- lucide icon name for display
-  gradient TEXT,           -- tailwind gradient classes
-  image_url TEXT,
-  author TEXT DEFAULT 'LocalGlobal Team',
-  is_published BOOLEAN DEFAULT false,
-  published_at TIMESTAMPTZ,
-  created_at TIMESTAMPTZ DEFAULT now(),
-  updated_at TIMESTAMPTZ DEFAULT now()
-);
--- RLS: public read for published, authenticated write
-```
-
-### Step 2: Supabase Edge Function (Webhook)
-- Reuse the `news-webhook` pattern
-- Endpoint: `/functions/v1/blog-webhook`
-- Accepts batch blog post creation/updates
-- Optional secret-based auth for n8n
-
-### Step 3: n8n Workflow Setup
-```
-Trigger: Cron (daily or biweekly)
-  ↓
-Node 1: HTTP Request to AI API (Perplexity/OpenAI)
-  - Prompt: Generate blog content for [topic/category]
-  - Output: structured JSON matching blog_posts schema
-  ↓
-Node 2: HTTP Request to Supabase Edge Function
-  - POST to blog-webhook with generated content
-  ↓
-Node 3: (Optional) Slack/Telegram notification on success
-```
-
-### Step 4: n8n Setup Guide
-1. Self-host n8n (Docker) or use n8n Cloud
-2. Create workflow with Schedule Trigger node
-3. Add HTTP Request node → AI API (store API key in n8n credentials)
-4. Add HTTP Request node → Supabase edge function URL
-5. Set cron schedule (e.g., `0 8 * * 1` for Monday 8am)
-6. Optional: Connect n8n MCP to Lovable for direct workflow management
-
-### Step 5: Frontend Updates
-- Replace `blogTopics.ts` static data with Supabase query
-- `useBlogPosts()` hook with TanStack Query
-- Keep existing BlogSection UI, swap data source
-- BlogPost page reads from DB instead of static array
-- Fallback: show static data if DB is empty (migration period)
-
-### Implementation Order
-1. ☐ Create `blog_posts` table + RLS policies
+### Implementation Steps
+1. ☐ Create `blog_posts` table + RLS policies in Supabase
 2. ☐ Create `blog-webhook` edge function
 3. ☐ Migrate static `blogTopics.ts` data → Supabase
-4. ☐ Update Blog page to read from Supabase
+4. ☐ Update Blog page to read from Supabase (with static fallback)
 5. ☐ Set up n8n instance + workflow
 6. ☐ Test end-to-end pipeline
 7. ☐ Add German translation support to blog posts
@@ -204,9 +198,6 @@ Node 3: (Optional) Slack/Telegram notification on success
 ---
 
 ## Resources Page Architecture
-
-### Vision
-A comprehensive resource hub with 4 content types, each growing over time.
 
 ### Content Types
 
@@ -218,20 +209,12 @@ A comprehensive resource hub with 4 content types, each growing over time.
 | Video Library | YouTube embeds, tutorials, webinars | Static → Supabase | 🔄 Placeholder |
 | Latest News | Auto-updated sustainability news | Supabase + n8n cron | ✅ Working |
 
-### News Automation (Existing + Enhancement)
-```
-[n8n Cron] → [News API / Web Scraping] → [news-webhook Edge Function] → [news_articles table] → [Website]
-```
-- Already have: `news_articles` table, `news-webhook` edge function, `fetch-news` function
-- Need: n8n workflow with cron trigger to automate the fetching
-
-### Implementation Order
-1. ☐ Restructure Resources page with 5 tabs (placeholder sections)
-2. ☐ Populate Tools & Links with real curated resources
-3. ☐ Set up Supabase Storage for downloadable guides
-4. ☐ Create `partners` table for Partner Directory
-5. ☐ Add video embed support
-6. ☐ Set up n8n cron for automated news updates
+### Implementation Steps
+1. ☐ Populate Tools & Links with real curated resources
+2. ☐ Set up Supabase Storage for downloadable guides
+3. ☐ Create `partners` table for Partner Directory
+4. ☐ Add video embed support
+5. ☐ Set up n8n cron for automated news updates
 
 ---
 
