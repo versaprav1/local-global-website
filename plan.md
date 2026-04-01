@@ -210,11 +210,14 @@ Automated blog content pipeline: n8n cron → AI content generation → Supabase
 | Latest News | Auto-updated sustainability news | Supabase + n8n cron | ✅ Working |
 
 ### Implementation Steps
-1. ☐ Populate Tools & Links with real curated resources
-2. ☐ Set up Supabase Storage for downloadable guides
-3. ☐ Create `partners` table for Partner Directory
-4. ☐ Add video embed support
-5. ☐ Set up n8n cron for automated news updates
+1. ✅ Create Supabase tables: `blog_posts`, `guides`, `videos`, `partners` (with RLS, indexes, triggers)
+2. ☐ Create separate admin pages for each content type (CRUD)
+3. ☐ Create frontend hooks to fetch from Supabase (hybrid: DB + static fallback)
+4. ☐ Populate Tools & Links with real curated resources
+5. ☐ Set up Supabase Storage bucket for downloadable guide files
+6. ☐ Add video embed support (YouTube/Vimeo URLs)
+7. ☐ Set up n8n cron workflows for automated news + blog updates
+8. ☐ Create Edge Functions for content webhooks (blog, guides, videos)
 
 ---
 
