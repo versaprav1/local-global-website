@@ -16,10 +16,15 @@ import HowItWorks from "./pages/HowItWorks";
 import FAQ from "./pages/FAQ";
 import Partners from "./pages/Partners";
 import ServicePage from "./pages/ServicePage";
-import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import ResetPassword from "./pages/ResetPassword";
 import NotFound from "./pages/NotFound";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminNews from "./pages/admin/AdminNews";
+import AdminBlog from "./pages/admin/AdminBlog";
+import AdminGuides from "./pages/admin/AdminGuides";
+import AdminVideos from "./pages/admin/AdminVideos";
+import AdminPartners from "./pages/admin/AdminPartners";
 
 const queryClient = new QueryClient();
 
@@ -44,7 +49,12 @@ const App = () => (
               <Route path="/services/:serviceId" element={<ServicePage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/reset-password" element={<ResetPassword />} />
-              <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
+              <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+              <Route path="/admin/news" element={<ProtectedRoute><AdminNews /></ProtectedRoute>} />
+              <Route path="/admin/blog" element={<ProtectedRoute><AdminBlog /></ProtectedRoute>} />
+              <Route path="/admin/guides" element={<ProtectedRoute><AdminGuides /></ProtectedRoute>} />
+              <Route path="/admin/videos" element={<ProtectedRoute><AdminVideos /></ProtectedRoute>} />
+              <Route path="/admin/partners" element={<ProtectedRoute><AdminPartners /></ProtectedRoute>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
