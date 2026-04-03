@@ -135,6 +135,36 @@ This section captures every key discussion, options considered, and rationale fo
 **Decision**: Acknowledged current state and planned transition toward dynamic content (blog posts from Supabase, resources from DB) while keeping the SPA architecture.  
 **Rationale**: Static is fine for the current scale. Dynamic content will be added incrementally as the n8n automation pipeline and Supabase tables are built out.
 
+### Decision 12: Backend Tables for Content Management
+**Context**: User wanted to build out the backend for resources, blogs, guides, videos, and news.  
+**Options Discussed**:
+1. Create one table at a time, test, then move to the next
+2. Create all 4 tables (blog_posts, guides, videos, partners) at once  
+**Decision**: **Option 2 — All 4 tables now**. Created all tables in a single migration with RLS policies, indexes, and auto-update triggers.  
+**Rationale**: The table schemas were well-defined from planning. Creating them together ensures consistent patterns and allows parallel admin UI development.
+
+### Decision 13: Admin UI Structure
+**Options Discussed**:
+1. Single admin page with tabs for all content types
+2. Separate dedicated pages per content type  
+**Decision**: **Option 2 — Separate pages**. Created individual CRUD pages for News, Blog, Guides, Videos, and Partners.  
+**Rationale**: Each content type has different fields and workflows. Separate pages provide cleaner UX and are easier to maintain and extend independently.
+
+### Decision 14: Admin Dashboard Implementation
+**Context**: User requested a full admin dashboard for content management.  
+**Implementation**:
+- Created `AdminLayout.tsx` with `AdminSidebar.tsx` for consistent navigation
+- Built 6 admin routes: dashboard overview + 5 content management pages
+- Each page features searchable lists, Dialog-based forms, and CRUD operations
+- Dashboard shows content count statistics from Supabase
+- All routes protected with `ProtectedRoute` component  
+**Rationale**: Provides a professional content management interface that enables the user to manage all platform content without direct database access.
+
+### Decision 15: Admin Role Assignment
+**Context**: User needed admin access to manage content via the dashboard.  
+**Action**: Assigned admin role to `versaprav@gmail.com` (ID: `0611d7d8-a694-4376-a1c6-15b52ba29ecc`) via migration insert into `user_roles` table.  
+**Note**: Admin routes currently use auth-only protection (any authenticated user). Role-based guard to be added as a future enhancement.
+
 ---
 
 ## Roadmap
@@ -147,8 +177,9 @@ See progress.md for detailed completion history.
 ## Upcoming Work
 
 ### High Priority
+- [ ] Role-based access guard on admin routes (not just auth)
 - [ ] Complete German translations for service pages
-- [ ] Add trust badges / social proof to Hero
+- [ ] Connect frontend Blog/Resources pages to Supabase data
 - [ ] Partner application form → Supabase database
 - [x] Fix navigation issues (Learn More button — fixed)
 - [ ] SEO optimization (JSON-LD, canonical tags, OG images)
@@ -187,7 +218,7 @@ Automated blog content pipeline: n8n cron → AI content generation → Supabase
 ```
 
 ### Implementation Steps
-1. ☐ Create `blog_posts` table + RLS policies in Supabase
+1. ✅ Create `blog_posts` table + RLS policies in Supabase
 2. ☐ Create `blog-webhook` edge function
 3. ☐ Migrate static `blogTopics.ts` data → Supabase
 4. ☐ Update Blog page to read from Supabase (with static fallback)
@@ -211,13 +242,32 @@ Automated blog content pipeline: n8n cron → AI content generation → Supabase
 
 ### Implementation Steps
 1. ✅ Create Supabase tables: `blog_posts`, `guides`, `videos`, `partners` (with RLS, indexes, triggers)
-2. ☐ Create separate admin pages for each content type (CRUD)
+2. ✅ Create admin CRUD pages for each content type
 3. ☐ Create frontend hooks to fetch from Supabase (hybrid: DB + static fallback)
 4. ☐ Populate Tools & Links with real curated resources
 5. ☐ Set up Supabase Storage bucket for downloadable guide files
 6. ☐ Add video embed support (YouTube/Vimeo URLs)
 7. ☐ Set up n8n cron workflows for automated news + blog updates
 8. ☐ Create Edge Functions for content webhooks (blog, guides, videos)
+
+---
+
+## Admin Dashboard
+
+### Routes
+
+| Route | Page | Function |
+|-------|------|----------|
+| `/admin` | Dashboard | Content count statistics |
+| `/admin/news` | News Manager | CRUD for news articles |
+| `/admin/blog` | Blog Manager | CRUD for blog posts |
+| `/admin/guides` | Guides Manager | CRUD for guides |
+| `/admin/videos` | Videos Manager | CRUD for videos |
+| `/admin/partners` | Partners Manager | CRUD for partners |
+
+### Components
+- `AdminLayout.tsx` — sidebar + header wrapper
+- `AdminSidebar.tsx` — navigation with icons, back-to-site link, sign out
 
 ---
 
@@ -237,8 +287,13 @@ Automated blog content pipeline: n8n cron → AI content generation → Supabase
 | Service Pages | `/services/:serviceId` | ✅ |
 | Login | `/login` | ✅ |
 | Reset Password | `/reset-password` | ✅ |
-| Admin | `/admin` | ✅ (protected) |
+| Admin Dashboard | `/admin` | ✅ (protected) |
+| Admin News | `/admin/news` | ✅ (protected) |
+| Admin Blog | `/admin/blog` | ✅ (protected) |
+| Admin Guides | `/admin/guides` | ✅ (protected) |
+| Admin Videos | `/admin/videos` | ✅ (protected) |
+| Admin Partners | `/admin/partners` | ✅ (protected) |
 
 ---
 
-*Last Updated*: March 2026
+*Last Updated*: April 2026
