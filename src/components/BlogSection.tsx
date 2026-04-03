@@ -1,18 +1,56 @@
 import { useState } from "react";
-import { blogTopics, blogCategories } from "@/data/blogTopics";
+import { useBlogPosts, blogCategories } from "@/hooks/useBlogPosts";
+import { blogTopics } from "@/data/blogTopics";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, ArrowRight } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Search, ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+import * as LucideIcons from "lucide-react";
+
+const getIcon = (iconName: string | null) => {
+  if (!iconName) return BookOpen;
+  const icon = (LucideIcons as any)[iconName];
+  return icon || BookOpen;
+};
 
 const BlogSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Topics");
   const [searchQuery, setSearchQuery] = useState("");
+  const { data: supabasePosts = [], isLoading } = useBlogPosts();
 
-  const filteredTopics = blogTopics.filter((topic) => {
+  // Merge: Supabase posts first, then static topics not already present
+  const mergedTopics = (() => {
+    const dbItems = supabasePosts.map((p) => ({
+      id: p.slug || p.id,
+      title: p.title,
+      description: p.description || "",
+      icon: getIcon(p.icon_name),
+      category: p.category,
+      gradient: p.gradient || "from-green-500 to-emerald-700",
+      isFromDb: true,
+    }));
+
+    const dbTitles = new Set(dbItems.map((d) => d.title.toLowerCase().trim()));
+    const staticItems = blogTopics
+      .filter((t) => !dbTitles.has(t.title.toLowerCase().trim()))
+      .map((t) => ({
+        id: t.id,
+        title: t.title,
+        description: t.description,
+        icon: t.icon,
+        category: t.category,
+        gradient: t.gradient,
+        isFromDb: false,
+      }));
+
+    return [...dbItems, ...staticItems];
+  })();
+
+  const filteredTopics = mergedTopics.filter((topic) => {
     const matchesCategory = selectedCategory === "All Topics" || topic.category === selectedCategory;
     const matchesSearch = topic.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          topic.description.toLowerCase().includes(searchQuery.toLowerCase());
@@ -60,46 +98,67 @@ const BlogSection = () => {
           </Select>
         </div>
 
-        {/* Topics Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
-          {filteredTopics.map((topic) => {
-            const Icon = topic.icon;
-            return (
-              <Card 
-                key={topic.id}
-                className="glass-card group hover:shadow-lg transition-all duration-300 card-hover"
-              >
+        {/* Loading State */}
+        {isLoading && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <Card key={i} className="glass-card">
                 <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br ${topic.gradient} bg-opacity-10`}>
-                      <Icon className="h-6 w-6 text-white" />
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                    {topic.title}
-                  </CardTitle>
-                  <CardDescription className="line-clamp-2">
-                    {topic.description}
-                  </CardDescription>
+                  <Skeleton className="h-12 w-12 rounded-xl mb-4" />
+                  <Skeleton className="h-6 w-3/4 mb-2" />
+                  <Skeleton className="h-4 w-full" />
                 </CardHeader>
                 <CardContent>
-                  <Badge variant="outline" className="mb-4 text-xs">
-                    {topic.category}
-                  </Badge>
-                  <Link to={`/blog/${topic.id}`}>
-                    <Button variant="ghost" className="w-full group/btn">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
+                  <Skeleton className="h-5 w-20 mb-4" />
+                  <Skeleton className="h-9 w-full" />
                 </CardContent>
               </Card>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        )}
+
+        {/* Topics Grid */}
+        {!isLoading && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
+            {filteredTopics.map((topic) => {
+              const Icon = topic.icon;
+              return (
+                <Card 
+                  key={topic.id}
+                  className="glass-card group hover:shadow-lg transition-all duration-300 card-hover"
+                >
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`p-3 rounded-xl bg-gradient-to-br ${topic.gradient} bg-opacity-10`}>
+                        <Icon className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                      {topic.title}
+                    </CardTitle>
+                    <CardDescription className="line-clamp-2">
+                      {topic.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Badge variant="outline" className="mb-4 text-xs">
+                      {topic.category}
+                    </Badge>
+                    <Link to={`/blog/${topic.id}`}>
+                      <Button variant="ghost" className="w-full group/btn">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        )}
 
         {/* No Results */}
-        {filteredTopics.length === 0 && (
+        {!isLoading && filteredTopics.length === 0 && (
           <div className="text-center py-12">
             <p className="text-muted-foreground text-lg">
               No topics found. Try adjusting your search or filter.
