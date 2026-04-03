@@ -109,6 +109,45 @@
 - [x] Resources "Contact Our Team" button linked to `/contact`
 - [x] Contact page social links updated to match (X + Telegram)
 
+### Session 7: Backend Infrastructure & Security
+**User Request**: Create backend tables for resources content management.
+
+**Decision: Implementation Order**
+- Options: (1) One table at a time, (2) All 4 tables now
+- User chose: **All 4 tables now** — blog_posts, guides, videos, partners
+- Created Supabase migration with RLS policies, indexes, and triggers for all tables
+
+**Decision: Admin UI Structure**
+- Options: (1) Single admin page, (2) Separate pages per content type
+- User chose: **Separate pages** — cleaner UX for managing different content types
+
+**Security Fixes Applied**:
+- [x] Added RLS policies to all new tables (blog_posts, guides, videos, partners)
+- [x] Created `user_roles` table with `app_role` enum (admin, moderator, user)
+- [x] Created `has_role()` security definer function to prevent recursive RLS
+- [x] Applied admin-only write policies using `has_role()` function
+- [x] Public read access for published content only
+
+### Session 8: Admin Dashboard & Role Assignment
+**User Request**: Build admin dashboard for content management + assign admin role.
+
+**Admin Role Assignment**:
+- Assigned admin role to `versaprav@gmail.com` (user ID: `0611d7d8-a694-4376-a1c6-15b52ba29ecc`)
+- Inserted into `user_roles` table via migration
+
+**Admin Dashboard Implementation**:
+- Created `AdminLayout.tsx` with sidebar navigation
+- Created `AdminSidebar.tsx` with links to all content sections + sign out
+- Built 6 admin pages:
+  - `/admin` — Dashboard with content count statistics
+  - `/admin/news` — News articles CRUD
+  - `/admin/blog` — Blog posts CRUD
+  - `/admin/guides` — Guides CRUD
+  - `/admin/videos` — Videos CRUD
+  - `/admin/partners` — Partners CRUD
+- Each page features searchable lists, Dialog-based create/edit forms, and delete functionality
+- All routes protected with `ProtectedRoute` component
+
 ---
 
 ## Completed Work (Full List)
@@ -130,7 +169,7 @@
 - [x] Partners page with functional "Join Us" scroll-to-form
 - [x] Login page
 - [x] Password reset page
-- [x] Admin page (protected route)
+- [x] Admin dashboard (protected, sidebar layout, CRUD for all content types)
 - [x] 404 Not Found page
 
 ### Components Built
@@ -148,6 +187,15 @@
 - [x] MagneticButton (hover effects)
 - [x] SkeletonCard (loading states)
 - [x] ProtectedRoute (auth guard)
+- [x] AdminLayout + AdminSidebar (admin navigation)
+
+### Admin Pages
+- [x] AdminDashboard — content statistics overview
+- [x] AdminNews — news articles CRUD
+- [x] AdminBlog — blog posts CRUD
+- [x] AdminGuides — guides CRUD
+- [x] AdminVideos — videos CRUD
+- [x] AdminPartners — partners CRUD
 
 ### Service Pages (Dynamic Template)
 - [x] ServicePage.tsx — dynamic route `/services/:serviceId`
@@ -163,6 +211,18 @@
 - [x] Supabase auth provider (`useAuth` hook)
 - [x] Login, password reset, protected admin route
 - [x] Auth state in navbar (login/logout toggle)
+- [x] User roles table with `app_role` enum
+- [x] `has_role()` security definer function
+- [x] RLS policies on all content tables
+- [x] Admin role assigned to primary user
+
+### Database Tables (Supabase)
+- [x] `news_articles` — automated news content
+- [x] `blog_posts` — blog content with categories
+- [x] `guides` — downloadable guides and documents
+- [x] `videos` — video library entries
+- [x] `partners` — partner directory
+- [x] `user_roles` — role-based access control
 
 ### Deployment & Infrastructure
 - [x] GitHub Actions CI/CD → Hostinger (FTP)
@@ -179,11 +239,13 @@
 ## In Progress / Planned
 
 - [ ] German translations for service pages
+- [ ] Role-based access check on admin routes (currently any authenticated user can access)
 - [ ] Partner form submission to Supabase
 - [ ] SEO enhancements (JSON-LD, OG images)
 - [ ] Blog automation pipeline (n8n → AI → Supabase → website) — architecture planned
 - [ ] Resources page real content (placeholder sections built)
 - [ ] n8n instance setup for news + blog automation
+- [ ] Connect frontend Resources/Blog pages to Supabase data
 
 ---
 
@@ -198,11 +260,13 @@
 | Contact section outdated socials | ✅ Fixed | Updated to X + Telegram |
 | About section too narrow | ✅ Fixed | Expanded to all 5 verticals |
 | doc.md references old content | ⚠️ Outdated | Content pivoted to sustainable ecosystem |
+| Admin routes not role-checked | ⚠️ Open | Any authenticated user can access /admin |
 
 ---
 
 ## Pending Decisions
 
+- Admin routes: add role-based guard or keep auth-only?
 - Partner form: what fields to collect?
 - Blog: n8n instance setup (self-hosted vs cloud)
 - Marketplace features: scope and timeline?
@@ -212,4 +276,4 @@
 
 ---
 
-*Last Updated*: March 2026
+*Last Updated*: April 2026
