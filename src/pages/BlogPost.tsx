@@ -1,25 +1,58 @@
 import { useParams, Link } from "react-router-dom";
-import { blogTopics } from "@/data/blogTopics";
+import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPosts";
 import Navbar from "@/components/Navbar";
 import { CommandPalette } from "@/components/CommandPalette";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { ArrowLeft, ArrowRight, CheckCircle2, BookOpen } from "lucide-react";
+import * as LucideIcons from "lucide-react";
 import NotFound from "./NotFound";
+
+const getIcon = (iconName: string | null) => {
+  if (!iconName) return BookOpen;
+  const icon = (LucideIcons as any)[iconName];
+  return icon || BookOpen;
+};
 
 const BlogPost = () => {
   const { id } = useParams();
-  const topic = blogTopics.find((t) => t.id === id);
+  const { data: post, isLoading } = useBlogPost(id);
+  const { data: allPosts = [] } = useBlogPosts();
 
-  if (!topic) {
+  if (isLoading) {
+    return (
+      <div className="min-h-screen">
+        <Navbar />
+        <main className="py-20 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <Skeleton className="h-10 w-40 mb-6" />
+            <div className="rounded-3xl p-8 md:p-12 mb-8 border">
+              <Skeleton className="h-16 w-16 rounded-2xl mb-6" />
+              <Skeleton className="h-6 w-24 mb-4" />
+              <Skeleton className="h-12 w-3/4 mb-4" />
+              <Skeleton className="h-6 w-full" />
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!post) {
     return <NotFound />;
   }
 
-  const Icon = topic.icon;
-  const relatedTopics = blogTopics
-    .filter((t) => t.category === topic.category && t.id !== topic.id)
+  const Icon = getIcon(post.icon_name);
+  const content = post.content as { overview?: string; benefits?: string[]; approaches?: string[] } | null;
+  const gradient = post.gradient || "from-green-500 to-emerald-700";
+
+  // Related posts from Supabase
+  const relatedPosts = allPosts
+    .filter((p) => p.category === post.category && p.id !== post.id)
     .slice(0, 3);
 
   return (
@@ -32,7 +65,6 @@ const BlogPost = () => {
       
       <main id="main-content" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          {/* Back Button */}
           <Link to="/blog">
             <Button variant="ghost" className="mb-6">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -42,66 +74,67 @@ const BlogPost = () => {
 
           {/* Header */}
           <div className="glass-container rounded-3xl p-8 md:p-12 mb-8">
-            <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${topic.gradient} mb-6`}>
+            <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} mb-6`}>
               <Icon className="h-12 w-12 text-white" />
             </div>
-            <Badge className="mb-4">{topic.category}</Badge>
+            <Badge className="mb-4">{post.category}</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
-              {topic.title}
+              {post.title}
             </h1>
             <p className="text-xl text-muted-foreground">
-              {topic.description}
+              {post.description}
             </p>
           </div>
 
           {/* Content */}
-          {topic.content ? (
+          {content && (content.overview || content.benefits || content.approaches) ? (
             <div className="space-y-8">
-              {/* Overview */}
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Overview</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {topic.content.overview}
-                  </p>
-                </CardContent>
-              </Card>
+              {content.overview && (
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-2xl">Overview</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">{content.overview}</p>
+                  </CardContent>
+                </Card>
+              )}
 
-              {/* Benefits */}
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Key Benefits</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {topic.content.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              {content.benefits && content.benefits.length > 0 && (
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-2xl">Key Benefits</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3">
+                      {content.benefits.map((benefit, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-muted-foreground">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              )}
 
-              {/* How To / Approaches */}
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-2xl">How To Get Started</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {topic.content.approaches.map((approach, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground">{approach}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              {content.approaches && content.approaches.length > 0 && (
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-2xl">How To Get Started</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3">
+                      {content.approaches.map((approach, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
+                          <span className="text-muted-foreground">{approach}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              )}
             </div>
           ) : (
             <Card className="glass-card">
@@ -114,27 +147,28 @@ const BlogPost = () => {
           )}
 
           {/* Related Topics */}
-          {relatedTopics.length > 0 && (
+          {relatedPosts.length > 0 && (
             <div className="mt-16">
               <h2 className="text-3xl font-bold mb-8">Related Topics</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {relatedTopics.map((relatedTopic) => {
-                  const RelatedIcon = relatedTopic.icon;
+                {relatedPosts.map((related) => {
+                  const RelatedIcon = getIcon(related.icon_name);
+                  const relatedGradient = related.gradient || "from-green-500 to-emerald-700";
                   return (
-                    <Card key={relatedTopic.id} className="glass-card group card-hover">
+                    <Card key={related.id} className="glass-card group card-hover">
                       <CardHeader>
-                        <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${relatedTopic.gradient} mb-3`}>
+                        <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${relatedGradient} mb-3`}>
                           <RelatedIcon className="h-6 w-6 text-white" />
                         </div>
                         <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                          {relatedTopic.title}
+                          {related.title}
                         </CardTitle>
                         <CardDescription className="line-clamp-2">
-                          {relatedTopic.description}
+                          {related.description}
                         </CardDescription>
                       </CardHeader>
                       <CardContent>
-                        <Link to={`/blog/${relatedTopic.id}`}>
+                        <Link to={`/blog/${related.slug || related.id}`}>
                           <Button variant="ghost" size="sm" className="w-full group/btn">
                             Read More
                             <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
