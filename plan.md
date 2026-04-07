@@ -163,7 +163,21 @@ This section captures every key discussion, options considered, and rationale fo
 ### Decision 15: Admin Role Assignment
 **Context**: User needed admin access to manage content via the dashboard.  
 **Action**: Assigned admin role to `versaprav@gmail.com` (ID: `0611d7d8-a694-4376-a1c6-15b52ba29ecc`) via migration insert into `user_roles` table.  
-**Note**: Admin routes currently use auth-only protection (any authenticated user). Role-based guard to be added as a future enhancement.
+**Note**: Admin routes currently use auth-only protection (any authenticated user). Navbar Dashboard link now restricted to admin role via `has_role` RPC. ProtectedRoute server-side guard still pending.
+
+### Decision 16: Frontend-Supabase Data Integration
+**Context**: Blog and Resources pages were reading from static files only.
+**Decision**: Created hybrid React Query hooks that prioritize Supabase data and merge with static fallbacks.
+**Implementation**: `useBlogPosts`, `useBlogPost`, `useGuides`, `usePartners`, `useVideos` hooks. Blog and Resources components updated to use these hooks with skeleton loaders and empty states.
+**Rationale**: Enables admin-managed content to appear immediately while preserving static content as fallback during the transition period.
+
+### Decision 17: Navbar Dashboard Link — Admin-Only Visibility
+**Context**: Dashboard link in navbar was visible to all authenticated users.
+**Options Discussed**:
+1. Keep visible to all authenticated users
+2. Check admin role via `has_role` RPC and only show to admins
+**Decision**: **Option 2 — Admin-only**. Added `useEffect` in Navbar that calls `has_role` RPC when user changes.
+**Rationale**: Non-admin users shouldn't see admin navigation. Defense-in-depth alongside ProtectedRoute.
 
 ---
 
@@ -177,9 +191,10 @@ See progress.md for detailed completion history.
 ## Upcoming Work
 
 ### High Priority
-- [ ] Role-based access guard on admin routes (not just auth)
+- [x] Role-based access guard on navbar Dashboard link (admin-only)
+- [ ] Role-based guard on ProtectedRoute (server-side admin check)
 - [ ] Complete German translations for service pages
-- [ ] Connect frontend Blog/Resources pages to Supabase data
+- [x] Connect frontend Blog/Resources pages to Supabase data (hybrid hooks)
 - [ ] Partner application form → Supabase database
 - [x] Fix navigation issues (Learn More button — fixed)
 - [ ] SEO optimization (JSON-LD, canonical tags, OG images)

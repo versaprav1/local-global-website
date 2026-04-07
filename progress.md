@@ -148,6 +148,22 @@
 - Each page features searchable lists, Dialog-based create/edit forms, and delete functionality
 - All routes protected with `ProtectedRoute` component
 
+### Session 9: Frontend-Supabase Integration & Access Control
+**User Request**: Connect frontend Blog and Resources pages to Supabase data instead of static files.
+
+**Changes Implemented**:
+- [x] Created `useBlogPosts.ts` hook — fetches from `blog_posts` table, merges with static `blogTopics.ts` fallback
+- [x] Created `useResources.ts` hook — `useGuides()`, `usePartners()`, `useVideos()` fetching from Supabase
+- [x] Updated `BlogSection.tsx` to render merged DB + static posts
+- [x] Updated `BlogPost.tsx` to fetch by slug/id from Supabase with static fallback
+- [x] Updated `ResourcesSection.tsx` with live data, skeleton loaders, and empty states
+
+**Decision: Navbar Dashboard Link Visibility**
+- **Issue**: Dashboard link visible to all authenticated users, not just admins.
+- **Options**: (1) Show to all users, (2) Show only to admins via role check
+- **Decision**: **Option 2 — Admin-only**. Added `has_role` RPC check in Navbar; Dashboard link only appears for users with `admin` role.
+- **Rationale**: Prevents non-admin users from seeing admin navigation. Combined with ProtectedRoute for defense-in-depth.
+
 ---
 
 ## Completed Work (Full List)
@@ -239,13 +255,14 @@
 ## In Progress / Planned
 
 - [ ] German translations for service pages
-- [ ] Role-based access check on admin routes (currently any authenticated user can access)
+- [x] Role-based access check on navbar Dashboard link (admin-only via `has_role` RPC)
+- [ ] Role-based guard on ProtectedRoute (server-side admin check)
 - [ ] Partner form submission to Supabase
 - [ ] SEO enhancements (JSON-LD, OG images)
 - [ ] Blog automation pipeline (n8n → AI → Supabase → website) — architecture planned
-- [ ] Resources page real content (placeholder sections built)
+- [x] Connect frontend Blog/Resources pages to Supabase data (hybrid hooks created)
 - [ ] n8n instance setup for news + blog automation
-- [ ] Connect frontend Resources/Blog pages to Supabase data
+- [ ] M&A vertical — full ecosystem build-out (planning phase)
 
 ---
 
