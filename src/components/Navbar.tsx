@@ -396,10 +396,16 @@ const Navbar = () => {
 
             <div className="mt-4 px-4 space-y-3">
               {user ? (
-                <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); signOut(); }}>
-                  <LogOut className="mr-2 h-4 w-4" />
-                  {language === 'de' ? 'Abmelden' : 'Logout'}
-                </Button>
+                <>
+                  <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); navigate('/admin'); }}>
+                    <LayoutDashboard className="mr-2 h-4 w-4" />
+                    Dashboard
+                  </Button>
+                  <Button variant="ghost" className="w-full rounded-xl" onClick={() => { setIsOpen(false); signOut(); }}>
+                    <LogOut className="mr-2 h-4 w-4" />
+                    {language === 'de' ? 'Abmelden' : 'Logout'}
+                  </Button>
+                </>
               ) : (
                 <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); navigate('/login'); }}>
                   <LogIn className="mr-2 h-4 w-4" />
