@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { 
   Menu, X, ChevronDown, Globe, ArrowRight, LogIn, LogOut,
   Store, Sprout, Repeat, Briefcase, TrendingUp,
-  Home, BookOpen, Users, Info, MessageCircle, HelpCircle, Lightbulb
+  Home, BookOpen, Users, Info, MessageCircle, HelpCircle, Lightbulb, LayoutDashboard
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
