@@ -255,13 +255,14 @@
 ## In Progress / Planned
 
 - [ ] German translations for service pages
-- [ ] Role-based access check on admin routes (currently any authenticated user can access)
+- [x] Role-based access check on navbar Dashboard link (admin-only via `has_role` RPC)
+- [ ] Role-based guard on ProtectedRoute (server-side admin check)
 - [ ] Partner form submission to Supabase
 - [ ] SEO enhancements (JSON-LD, OG images)
 - [ ] Blog automation pipeline (n8n → AI → Supabase → website) — architecture planned
-- [ ] Resources page real content (placeholder sections built)
+- [x] Connect frontend Blog/Resources pages to Supabase data (hybrid hooks created)
 - [ ] n8n instance setup for news + blog automation
-- [ ] Connect frontend Resources/Blog pages to Supabase data
+- [ ] M&A vertical — full ecosystem build-out (planning phase)
 
 ---
 

@@ -191,9 +191,10 @@ See progress.md for detailed completion history.
 ## Upcoming Work
 
 ### High Priority
-- [ ] Role-based access guard on admin routes (not just auth)
+- [x] Role-based access guard on navbar Dashboard link (admin-only)
+- [ ] Role-based guard on ProtectedRoute (server-side admin check)
 - [ ] Complete German translations for service pages
-- [ ] Connect frontend Blog/Resources pages to Supabase data
+- [x] Connect frontend Blog/Resources pages to Supabase data (hybrid hooks)
 - [ ] Partner application form → Supabase database
 - [x] Fix navigation issues (Learn More button — fixed)
 - [ ] SEO optimization (JSON-LD, canonical tags, OG images)
