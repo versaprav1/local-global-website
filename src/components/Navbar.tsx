@@ -148,7 +148,7 @@ const Navbar = () => {
                     <Link
                       to={link.href}
                       className={cn(
-                        "flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                        "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                         location.pathname === link.href
                           ? "text-foreground"
                           : "text-muted-foreground hover:text-foreground"
