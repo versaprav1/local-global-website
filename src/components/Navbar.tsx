@@ -10,11 +10,13 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
   const { user, signOut } = useAuth();
   const location = useLocation();
@@ -32,6 +34,15 @@ const Navbar = () => {
     setIsOpen(false);
     setActiveDropdown(null);
   }, [location]);
+
+  useEffect(() => {
+    const checkAdmin = async () => {
+      if (!user) { setIsAdmin(false); return; }
+      const { data } = await supabase.rpc('has_role', { _user_id: user.id, _role: 'admin' });
+      setIsAdmin(!!data);
+    };
+    checkAdmin();
+  }, [user]);
 
   const verticals = [
     { 
@@ -239,10 +250,12 @@ const Navbar = () => {
               {/* Auth Button */}
               {user ? (
                 <div className="flex items-center gap-1">
-                  <Button variant="ghost" size="sm" className="text-sm" onClick={() => navigate('/admin')}>
-                    <LayoutDashboard className="h-4 w-4 mr-1" />
-                    Dashboard
-                  </Button>
+                  {isAdmin && (
+                    <Button variant="ghost" size="sm" className="text-sm" onClick={() => navigate('/admin')}>
+                      <LayoutDashboard className="h-4 w-4 mr-1" />
+                      Dashboard
+                    </Button>
+                  )}
                   <Button variant="ghost" size="sm" className="text-sm" onClick={() => signOut()}>
                     <LogOut className="h-4 w-4 mr-1" />
                     {language === 'de' ? 'Abmelden' : 'Logout'}
@@ -397,10 +410,12 @@ const Navbar = () => {
             <div className="mt-4 px-4 space-y-3">
               {user ? (
                 <>
-                  <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); navigate('/admin'); }}>
-                    <LayoutDashboard className="mr-2 h-4 w-4" />
-                    Dashboard
-                  </Button>
+                  {isAdmin && (
+                    <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); navigate('/admin'); }}>
+                      <LayoutDashboard className="mr-2 h-4 w-4" />
+                      Dashboard
+                    </Button>
+                  )}
                   <Button variant="ghost" className="w-full rounded-xl" onClick={() => { setIsOpen(false); signOut(); }}>
                     <LogOut className="mr-2 h-4 w-4" />
                     {language === 'de' ? 'Abmelden' : 'Logout'}
