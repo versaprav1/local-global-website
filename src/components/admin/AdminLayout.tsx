@@ -11,7 +11,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
             <SidebarTrigger className="mr-4" />
             <span className="text-sm font-semibold text-foreground">LocalGlobal Admin</span>
           </header>
-          <main className="flex-1 p-6 overflow-auto">
+          <main className="flex-1 p-4 md:p-6 overflow-auto">
             {children}
           </main>
         </div>

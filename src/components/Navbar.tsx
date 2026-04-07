@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { 
   Menu, X, ChevronDown, Globe, ArrowRight, LogIn, LogOut,
   Store, Sprout, Repeat, Briefcase, TrendingUp,
-  Home, BookOpen, Users, Info, MessageCircle, HelpCircle, Lightbulb
+  Home, BookOpen, Users, Info, MessageCircle, HelpCircle, Lightbulb, LayoutDashboard
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
@@ -121,7 +121,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-0.5">
               {navLinks.map((link) => (
                 <div 
                   key={link.name}
@@ -132,7 +132,7 @@ const Navbar = () => {
                   {link.hasDropdown ? (
                     <button
                       className={cn(
-                        "flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                      "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                         activeDropdown === link.name 
                           ? "text-foreground" 
                           : "text-muted-foreground hover:text-foreground"
@@ -148,7 +148,7 @@ const Navbar = () => {
                     <Link
                       to={link.href}
                       className={cn(
-                        "flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                        "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                         location.pathname === link.href
                           ? "text-foreground"
                           : "text-muted-foreground hover:text-foreground"
@@ -162,7 +162,7 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={link.href}
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200"
+                      className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200"
                     >
                       {link.name}
                     </a>
@@ -238,10 +238,16 @@ const Navbar = () => {
 
               {/* Auth Button */}
               {user ? (
-                <Button variant="ghost" size="sm" className="text-sm" onClick={() => signOut()}>
-                  <LogOut className="h-4 w-4 mr-1" />
-                  {language === 'de' ? 'Abmelden' : 'Logout'}
-                </Button>
+                <div className="flex items-center gap-1">
+                  <Button variant="ghost" size="sm" className="text-sm" onClick={() => navigate('/admin')}>
+                    <LayoutDashboard className="h-4 w-4 mr-1" />
+                    Dashboard
+                  </Button>
+                  <Button variant="ghost" size="sm" className="text-sm" onClick={() => signOut()}>
+                    <LogOut className="h-4 w-4 mr-1" />
+                    {language === 'de' ? 'Abmelden' : 'Logout'}
+                  </Button>
+                </div>
               ) : (
                 <Button variant="ghost" size="sm" className="text-sm" onClick={() => navigate('/login')}>
                   <LogIn className="h-4 w-4 mr-1" />
@@ -390,10 +396,16 @@ const Navbar = () => {
 
             <div className="mt-4 px-4 space-y-3">
               {user ? (
-                <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); signOut(); }}>
-                  <LogOut className="mr-2 h-4 w-4" />
-                  {language === 'de' ? 'Abmelden' : 'Logout'}
-                </Button>
+                <>
+                  <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); navigate('/admin'); }}>
+                    <LayoutDashboard className="mr-2 h-4 w-4" />
+                    Dashboard
+                  </Button>
+                  <Button variant="ghost" className="w-full rounded-xl" onClick={() => { setIsOpen(false); signOut(); }}>
+                    <LogOut className="mr-2 h-4 w-4" />
+                    {language === 'de' ? 'Abmelden' : 'Logout'}
+                  </Button>
+                </>
               ) : (
                 <Button variant="outline" className="w-full rounded-xl" onClick={() => { setIsOpen(false); navigate('/login'); }}>
                   <LogIn className="mr-2 h-4 w-4" />
