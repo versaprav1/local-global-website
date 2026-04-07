@@ -162,7 +162,7 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={link.href}
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200"
+                      className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200"
                     >
                       {link.name}
                     </a>
