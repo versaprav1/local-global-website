@@ -250,10 +250,12 @@ const Navbar = () => {
               {/* Auth Button */}
               {user ? (
                 <div className="flex items-center gap-1">
-                  <Button variant="ghost" size="sm" className="text-sm" onClick={() => navigate('/admin')}>
-                    <LayoutDashboard className="h-4 w-4 mr-1" />
-                    Dashboard
-                  </Button>
+                  {isAdmin && (
+                    <Button variant="ghost" size="sm" className="text-sm" onClick={() => navigate('/admin')}>
+                      <LayoutDashboard className="h-4 w-4 mr-1" />
+                      Dashboard
+                    </Button>
+                  )}
                   <Button variant="ghost" size="sm" className="text-sm" onClick={() => signOut()}>
                     <LogOut className="h-4 w-4 mr-1" />
                     {language === 'de' ? 'Abmelden' : 'Logout'}
