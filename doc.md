@@ -15,9 +15,6 @@ Sports medicine, recovery, and performance optimization platform with multilingu
 - Made Hero component fully dynamic with translation keys
 - Ensured language preference persists across page reloads
 
-**Files Modified**:
-- `src/contexts/LanguageContext.tsx`
-- `src/components/Hero.tsx`
 
 ---
 
@@ -30,10 +27,6 @@ Sports medicine, recovery, and performance optimization platform with multilingu
 - Implemented prominent CTAs: "Book Free Consultation" & "View Recovery Programs"
 - Simplified trust indicators (50,000+ Athletes, 10,000+ Specialists, 96% Success Rate)
 - Reduced visual distractions above the fold
-
-**Files Modified**:
-- `src/components/Hero.tsx`
-- `src/contexts/LanguageContext.tsx` (added new translation keys)
 
 **Translation Keys Added**:
 - `hero.badge`, `hero.title`, `hero.subtitle`
