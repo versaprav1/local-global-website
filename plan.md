@@ -179,6 +179,28 @@ This section captures every key discussion, options considered, and rationale fo
 **Decision**: **Option 2 — Admin-only**. Added `useEffect` in Navbar that calls `has_role` RPC when user changes.
 **Rationale**: Non-admin users shouldn't see admin navigation. Defense-in-depth alongside ProtectedRoute.
 
+### Decision 18: M&A Vertical Implementation Strategy
+**Context**: User wanted to start building out the M&A Ecosystem vertical. Web research was conducted on platforms like Flippa, ClearlyAcquired, and Axial to understand M&A marketplace patterns.
+**Options Discussed**:
+1. **Option A — Content/Directory (Phase 1)**: Use existing `guides`, `blog_posts`, and `partners` tables to provide informational content, advisor directory, and related resources. No new backend tables needed.
+2. **Option B — Listing Marketplace (Phase 2)**: Create a new `business_listings` table with revenue, EBITDA, asking price, industry fields. Add buyer browsing and inquiry system.
+3. **Option C — Full Platform (Phase 3)**: Add secure document sharing via Supabase Storage, NDA signing workflows, AI-powered business matching, and deal tracking.
+**Decision**: **Option A now**, keep B and C as future phases.
+**Rationale**: Option A leverages existing infrastructure (tables already created in Session 7). Gets the M&A vertical live with meaningful content immediately — advisor profiles, due diligence guides, market insights blog posts — while Option B/C can be built incrementally as user demand grows.
+
+### Decision 19: Documentation Inventory
+**Context**: User asked what documentation files exist in the project.
+**Inventory**: 7 markdown files found:
+- `plan.md` — roadmap, architecture, decision log (actively maintained)
+- `progress.md` — implementation timeline, completed work, pending items (actively maintained)
+- `must_do.md` — mandatory 4-step agent workflow protocol (actively maintained)
+- `doc.md` — ⚠️ **OUTDATED** — still references sports medicine from the original project. Content pivoted to sustainable ecosystem.
+- `architecture-blueprint.md` — reusable architecture patterns from the original platform
+- `deployment-setup.md` — deployment configuration notes
+- `website-development.md` — development guidelines
+- `website-replication-blueprint.md` — blueprint for replicating the platform
+**Action**: Flagged `doc.md` as outdated. All active documentation consolidated in `plan.md` and `progress.md`.
+
 ---
 
 ## Roadmap
@@ -218,6 +240,11 @@ See progress.md for detailed completion history.
 - [ ] Marketplace functionality (listings, payments)
 - [ ] Community forums
 - [ ] Mobile app (React Native)
+
+### M&A Vertical Phases
+- [x] **Phase A (Content/Directory)**: Enriched service page with advisor directory, guides, blog posts from existing Supabase tables
+- [ ] **Phase B (Listing Marketplace)**: `business_listings` table, buyer browsing, inquiry system
+- [ ] **Phase C (Full Platform)**: Document sharing, NDA workflows, AI matching, deal tracking
 
 ---
 
