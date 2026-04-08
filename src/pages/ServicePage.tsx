@@ -26,7 +26,7 @@ const verticalCategoryMap: Record<string, string[]> = {
 
 const ServicePage = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
-  const { t } = useLanguage();
+  const { t, getTranslation } = useLanguage();
   const { data: partners } = usePartners();
   const { data: guides } = useGuides();
   const { data: blogPosts } = useBlogPosts();
@@ -42,7 +42,7 @@ const ServicePage = () => {
 
   const getServiceObject = (key: string) => {
     try {
-      return t(`services.${serviceId}.${key}` as any) as any;
+      return getTranslation<any>(`services.${serviceId}.${key}`);
     } catch {
       return null;
     }
