@@ -164,6 +164,28 @@
 - **Decision**: **Option 2 — Admin-only**. Added `has_role` RPC check in Navbar; Dashboard link only appears for users with `admin` role.
 - **Rationale**: Prevents non-admin users from seeing admin navigation. Combined with ProtectedRoute for defense-in-depth.
 
+### Session 10: M&A Vertical — Option A Build
+**User Request**: Build out the M&A Ecosystem vertical starting with content/directory approach.
+
+**Decision: M&A Implementation Strategy**
+- **Options researched** (web search on Flippa, ClearlyAcquired, Axial):
+  - Option A — Content/Directory: Use existing tables for guides, advisors, blog content
+  - Option B — Listing Marketplace: New `business_listings` table with financials, buyer browsing
+  - Option C — Full Platform: Document sharing, NDA, AI matching, deal tracking
+- **User chose**: **Option A now**, keep B and C as future phases
+- **Rationale**: Leverages existing infrastructure without new backend tables. Gets M&A live immediately with meaningful content.
+
+**Documentation Inventory Discovered**:
+- 7 markdown files exist: `plan.md`, `progress.md`, `must_do.md`, `doc.md` (⚠️ outdated — sports medicine), `architecture-blueprint.md`, `deployment-setup.md`, `website-development.md`, `website-replication-blueprint.md`
+- `doc.md` flagged as stale — still references the original sports medicine platform
+
+**Changes Implemented**:
+- [x] Enriched M&A service translations — added outcomes (4 items), process steps (4 steps), expanded FAQ (5 Q&As), improved hero copy
+- [x] Enhanced ServicePage.tsx — added dynamic sections for Advisor/Partner Directory, Guides & Resources, and Related Blog Posts (pulled from Supabase via existing hooks)
+- [x] All service pages now show relevant partners, guides, and blog content when available in the database
+- [x] Updated plan.md with Decision 18 (M&A strategy) and Decision 19 (documentation inventory)
+- [x] Updated progress.md with Session 10 details
+
 ---
 
 ## Completed Work (Full List)
@@ -262,7 +284,9 @@
 - [ ] Blog automation pipeline (n8n → AI → Supabase → website) — architecture planned
 - [x] Connect frontend Blog/Resources pages to Supabase data (hybrid hooks created)
 - [ ] n8n instance setup for news + blog automation
-- [ ] M&A vertical — full ecosystem build-out (planning phase)
+- [ ] M&A vertical — Phase B: business listings marketplace
+- [ ] M&A vertical — Phase C: full platform (documents, NDA, AI matching)
+- [x] M&A vertical — Phase A: content/directory with advisors, guides, blog (Option A)
 
 ---
 
