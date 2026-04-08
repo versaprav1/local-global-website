@@ -348,6 +348,64 @@
         }
       ]
     },
+    "testimonials": {
+      "title": "Success Stories",
+      "items": [
+        {
+          "name": "Maria Schneider",
+          "role": "Founder, GreenHarvest Co.",
+          "quote": "LocalGlobal connected us with the right investor who shared our vision. We went from a local farm brand to exporting to 12 countries in 18 months.",
+          "rating": 5
+        },
+        {
+          "name": "Thomas Berger",
+          "role": "CEO, EcoTech Solutions",
+          "quote": "The due diligence guides saved us months of work. Their advisor network is genuinely world-class.",
+          "rating": 5
+        },
+        {
+          "name": "Aisha Patel",
+          "role": "Director, Fair Trade Collective",
+          "quote": "As a cooperative, scaling felt impossible. LocalGlobal helped us structure partnerships that preserved our values while tripling our reach.",
+          "rating": 5
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Real Results",
+      "items": [
+        {
+          "title": "Farm Brand → Global Exporter",
+          "metric": "12x",
+          "metricLabel": "Market Expansion",
+          "description": "A small organic farm in Bavaria grew from local farmers' markets to exporting premium products to 12 countries through strategic partnerships.",
+          "tags": ["Agriculture", "Export", "Organic"]
+        },
+        {
+          "title": "Tech Startup → Enterprise Partner",
+          "metric": "€2.4M",
+          "metricLabel": "Investment Secured",
+          "description": "A clean-tech startup secured Series A funding and landed enterprise contracts through our investor matching network.",
+          "tags": ["CleanTech", "Funding", "B2B"]
+        },
+        {
+          "title": "Cooperative → Distribution Network",
+          "metric": "340%",
+          "metricLabel": "Revenue Growth",
+          "description": "A fair-trade coffee collective expanded from regional to national distribution, growing revenue 3.4x in two years.",
+          "tags": ["Fair Trade", "Distribution", "Coffee"]
+        }
+      ]
+    },
+    "keyMetrics": {
+      "title": "Platform Impact",
+      "items": [
+        { "value": "5,000+", "label": "Businesses Supported", "icon": "briefcase" },
+        { "value": "€50M+", "label": "Capital Connected", "icon": "trending" },
+        { "value": "45+", "label": "Countries Reached", "icon": "globe" },
+        { "value": "92%", "label": "Success Rate", "icon": "target" }
+      ]
+    },
     "cta": {
       "title": "Scale Your Impact",
       "subtitle": "Take your sustainable business to the next level with expert guidance and global connections.",

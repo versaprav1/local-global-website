@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, CheckCircle, Users, HelpCircle, ExternalLink, FileText, BookOpen } from "lucide-react";
+import { ArrowLeft, CheckCircle, Users, HelpCircle, ExternalLink, FileText, BookOpen, Star, TrendingUp, Target, Globe, Shield, BarChart3 } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -26,7 +26,7 @@ const verticalCategoryMap: Record<string, string[]> = {
 
 const ServicePage = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
-  const { t } = useLanguage();
+  const { t, getTranslation } = useLanguage();
   const { data: partners } = usePartners();
   const { data: guides } = useGuides();
   const { data: blogPosts } = useBlogPosts();
@@ -42,7 +42,7 @@ const ServicePage = () => {
 
   const getServiceObject = (key: string) => {
     try {
-      return t(`services.${serviceId}.${key}` as any) as any;
+      return getTranslation<any>(`services.${serviceId}.${key}`);
     } catch {
       return null;
     }
@@ -75,6 +75,9 @@ const ServicePage = () => {
   const process = getServiceObject("process");
   const faq = getServiceObject("faq");
   const cta = getServiceObject("cta");
+  const testimonials = getServiceObject("testimonials");
+  const caseStudies = getServiceObject("caseStudies");
+  const keyMetrics = getServiceObject("keyMetrics");
   const Icon = vertical.icon;
 
   return (
@@ -366,6 +369,95 @@ const ServicePage = () => {
         </section>
       )}
 
+
+      {/* Key Metrics Section */}
+      {keyMetrics?.items && (
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">
+              {keyMetrics.title}
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {keyMetrics.items.map((item: any, index: number) => {
+                const icons: Record<string, any> = { briefcase: TrendingUp, trending: BarChart3, globe: Globe, target: Target };
+                const MetricIcon = icons[item.icon] || TrendingUp;
+                return (
+                  <Card key={index} className="text-center border-primary/10 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-8">
+                      <MetricIcon className="w-8 h-8 mx-auto mb-3 text-primary" />
+                      <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                        {item.value}
+                      </div>
+                      <div className="text-sm text-muted-foreground font-medium">{item.label}</div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Case Studies Section */}
+      {caseStudies?.items && (
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">
+              {caseStudies.title}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {caseStudies.items.map((study: any, index: number) => (
+                <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow border-primary/10">
+                  <CardContent className="p-0">
+                    <div className="bg-gradient-to-br from-primary to-secondary p-6 text-center">
+                      <div className="text-4xl font-bold text-primary-foreground">{study.metric}</div>
+                      <div className="text-sm text-primary-foreground/80">{study.metricLabel}</div>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold mb-2">{study.title}</h3>
+                      <p className="text-muted-foreground text-sm mb-4">{study.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {study.tags?.map((tag: string, i: number) => (
+                          <Badge key={i} variant="outline" className="text-xs">{tag}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Testimonials Section */}
+      {testimonials?.items && (
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">
+              {testimonials.title}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.items.map((item: any, index: number) => (
+                <Card key={index} className="hover:shadow-lg transition-shadow border-primary/10">
+                  <CardContent className="p-6">
+                    <div className="flex gap-1 mb-4">
+                      {Array.from({ length: item.rating }).map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic leading-relaxed">"{item.quote}"</p>
+                    <div className="border-t pt-4">
+                      <div className="font-semibold">{item.name}</div>
+                      <div className="text-sm text-muted-foreground">{item.role}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {faq?.items && (
         <section className="py-20 bg-muted/30">
