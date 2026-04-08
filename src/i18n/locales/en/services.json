@@ -253,27 +253,73 @@
     "hero": {
       "badge": "Business Growth",
       "title": "Local-to-Global Commerce",
-      "subtitle": "Scale your sustainable business from local markets to global reach with our network and expertise.",
-      "cta": "Learn More"
+      "subtitle": "Scale your sustainable business from local markets to global reach. Access expert advisors, due diligence guides, market insights, and a network of impact investors.",
+      "cta": "Explore Opportunities"
     },
     "audience": {
       "title": "Who is this for?",
       "items": [
         {
           "title": "Small Producers",
-          "description": "Local businesses ready to expand their reach."
+          "description": "Local businesses ready to expand their reach beyond regional markets."
         },
         {
           "title": "Sustainable Brands",
-          "description": "Eco-friendly companies seeking growth opportunities."
+          "description": "Eco-friendly companies seeking strategic growth and partnership opportunities."
         },
         {
-          "title": "Investors",
-          "description": "Impact investors looking for sustainable ventures."
+          "title": "Impact Investors",
+          "description": "Investors looking for sustainable ventures with measurable social impact."
         },
         {
-          "title": "Cooperatives",
-          "description": "Producer groups wanting to scale collectively."
+          "title": "Cooperatives & Collectives",
+          "description": "Producer groups wanting to scale collectively while maintaining values."
+        }
+      ]
+    },
+    "outcomes": {
+      "title": "What You Get",
+      "items": [
+        {
+          "title": "Market Analysis",
+          "description": "Data-driven insights into target markets, competitors, and growth potential"
+        },
+        {
+          "title": "Expert Advisors",
+          "description": "Connect with M&A specialists, legal consultants, and industry mentors"
+        },
+        {
+          "title": "Due Diligence",
+          "description": "Comprehensive guides and templates for business evaluation and risk assessment"
+        },
+        {
+          "title": "Growth Network",
+          "description": "Access to investors, partners, and distribution channels worldwide"
+        }
+      ]
+    },
+    "process": {
+      "title": "How It Works",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Discovery Call",
+          "description": "Share your business goals, challenges, and vision for growth"
+        },
+        {
+          "step": "2",
+          "title": "Market Assessment",
+          "description": "We analyze your market position and identify scaling opportunities"
+        },
+        {
+          "step": "3",
+          "title": "Strategy & Matching",
+          "description": "Get paired with advisors, investors, or partners aligned with your mission"
+        },
+        {
+          "step": "4",
+          "title": "Scale & Grow",
+          "description": "Execute your growth plan with ongoing support and resource access"
         }
       ]
     },
@@ -282,22 +328,30 @@
       "items": [
         {
           "question": "What support do you provide?",
-          "answer": "Business consulting, market analysis, partnership facilitation, and funding connections."
+          "answer": "Business consulting, market analysis, partnership facilitation, funding connections, and access to our expert advisor network."
         },
         {
           "question": "Is this only for large businesses?",
-          "answer": "No! We specialize in helping small sustainable businesses scale thoughtfully."
+          "answer": "No! We specialize in helping small sustainable businesses scale thoughtfully. Our tools and guides are designed for businesses at every stage."
         },
         {
           "question": "How long does the process take?",
-          "answer": "Timelines vary based on goals. Initial consultations help establish realistic expectations."
+          "answer": "Timelines vary based on goals. Initial discovery calls help establish realistic expectations — typically 3-6 months for meaningful progress."
+        },
+        {
+          "question": "What industries do you focus on?",
+          "answer": "Sustainable agriculture, clean tech, fair trade, eco-commerce, and social enterprises. Any business with positive community impact is welcome."
+        },
+        {
+          "question": "Are there fees involved?",
+          "answer": "Initial consultations are free. Advisory services and premium features are available on flexible plans tailored to your business size."
         }
       ]
     },
     "cta": {
       "title": "Scale Your Impact",
-      "subtitle": "Take your sustainable business to the next level.",
-      "button": "Schedule Consultation"
+      "subtitle": "Take your sustainable business to the next level with expert guidance and global connections.",
+      "button": "Schedule Free Consultation"
     }
   }
 }
