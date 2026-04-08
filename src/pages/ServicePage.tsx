@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, CheckCircle, Users, HelpCircle, ExternalLink, FileText, BookOpen } from "lucide-react";
+import { ArrowLeft, CheckCircle, Users, HelpCircle, ExternalLink, FileText, BookOpen, Star, TrendingUp, Target, Globe, Shield, BarChart3 } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
