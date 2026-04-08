@@ -15,10 +15,22 @@ import {
 } from "@/components/ui/accordion";
 import { usePartners, useGuides } from "@/hooks/useResources";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
+// Map vertical IDs to relevant content categories
+const verticalCategoryMap: Record<string, string[]> = {
+  "merger-acquisitions": ["business", "sustainability", "commerce"],
+  "farm-to-home": ["agriculture", "food", "sustainability"],
+  "urban-gardening": ["gardening", "sustainability", "community"],
+  "barter-exchange": ["community", "exchange", "sustainability"],
+  "youth-freelancing": ["freelancing", "education", "youth"],
+};
 
 const ServicePage = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const { t } = useLanguage();
+  const { data: partners } = usePartners();
+  const { data: guides } = useGuides();
+  const { data: blogPosts } = useBlogPosts();
+
 
   // Find the vertical data
   const vertical = verticals.find((v) => v.id === serviceId);
