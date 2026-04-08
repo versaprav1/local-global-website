@@ -284,7 +284,9 @@
 - [ ] Blog automation pipeline (n8n → AI → Supabase → website) — architecture planned
 - [x] Connect frontend Blog/Resources pages to Supabase data (hybrid hooks created)
 - [ ] n8n instance setup for news + blog automation
-- [ ] M&A vertical — full ecosystem build-out (planning phase)
+- [ ] M&A vertical — Phase B: business listings marketplace
+- [ ] M&A vertical — Phase C: full platform (documents, NDA, AI matching)
+- [x] M&A vertical — Phase A: content/directory with advisors, guides, blog (Option A)
 
 ---
 
