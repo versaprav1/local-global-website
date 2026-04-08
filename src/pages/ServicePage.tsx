@@ -75,6 +75,9 @@ const ServicePage = () => {
   const process = getServiceObject("process");
   const faq = getServiceObject("faq");
   const cta = getServiceObject("cta");
+  const testimonials = getServiceObject("testimonials");
+  const caseStudies = getServiceObject("caseStudies");
+  const keyMetrics = getServiceObject("keyMetrics");
   const Icon = vertical.icon;
 
   return (
