@@ -182,6 +182,24 @@
         }
       ]
     },
+    "outcomes": {
+      "title": "What You Achieve",
+      "items": [
+        { "title": "Fresh Herbs & Greens", "description": "Harvest your own herbs, salads, and vegetables year-round from your balcony or windowsill." },
+        { "title": "Reduced Food Miles", "description": "Cut your carbon footprint by growing food right where you live — zero transport needed." },
+        { "title": "Mental Wellbeing", "description": "Gardening reduces stress and brings a calming routine to busy urban life." },
+        { "title": "Community Connection", "description": "Share tips, seeds, and harvests with neighbors through our local grower network." }
+      ]
+    },
+    "process": {
+      "title": "How It Works",
+      "steps": [
+        { "step": 1, "title": "Choose Your Kit", "description": "Pick a starter kit matched to your space — windowsill, balcony, or rooftop." },
+        { "step": 2, "title": "Set Up & Plant", "description": "Follow our step-by-step guide to prepare your soil, pots, and seeds." },
+        { "step": 3, "title": "Grow & Learn", "description": "Track your plants' progress with seasonal care tips from our community." },
+        { "step": 4, "title": "Harvest & Share", "description": "Enjoy your homegrown produce and swap extras with fellow growers nearby." }
+      ]
+    },
     "faq": {
       "title": "Frequently Asked Questions",
       "items": [
@@ -291,6 +309,24 @@
         }
       ]
     },
+    "outcomes": {
+      "title": "What You Gain",
+      "items": [
+        { "title": "Access Without Cash", "description": "Get what you need by offering what you have — skills, goods, or time." },
+        { "title": "Waste Reduction", "description": "Give unused items a second life instead of throwing them away." },
+        { "title": "New Connections", "description": "Meet people in your area who share your interests and values." },
+        { "title": "Skill Development", "description": "Learn new things by trading your expertise for someone else's." }
+      ]
+    },
+    "process": {
+      "title": "How It Works",
+      "steps": [
+        { "step": 1, "title": "Create Your Profile", "description": "List your skills, goods, or services you're willing to trade." },
+        { "step": 2, "title": "Browse & Match", "description": "Search offers in your area and find trades that interest you." },
+        { "step": 3, "title": "Propose a Trade", "description": "Send a trade request and agree on terms with the other person." },
+        { "step": 4, "title": "Exchange & Rate", "description": "Complete the exchange and leave a review to build community trust." }
+      ]
+    },
     "faq": {
       "title": "Frequently Asked Questions",
       "items": [
@@ -398,6 +434,24 @@
           "title": "Career Starters",
           "description": "Recent graduates gaining real-world experience."
         }
+      ]
+    },
+    "outcomes": {
+      "title": "What You Build",
+      "items": [
+        { "title": "Real-World Portfolio", "description": "Complete actual projects that showcase your abilities to future employers or clients." },
+        { "title": "Income While Learning", "description": "Earn money doing meaningful work that fits around your study schedule." },
+        { "title": "Professional Skills", "description": "Develop communication, time management, and client relations early on." },
+        { "title": "Mentorship Access", "description": "Connect with experienced professionals who guide your growth." }
+      ]
+    },
+    "process": {
+      "title": "How It Works",
+      "steps": [
+        { "step": 1, "title": "Sign Up & Verify", "description": "Create your profile with skills, interests, and availability. Under-16s need parental consent." },
+        { "step": 2, "title": "Build Your Profile", "description": "Add portfolio samples, set your rates, and choose your service categories." },
+        { "step": 3, "title": "Get Matched", "description": "Our platform suggests suitable gigs based on your skills and location." },
+        { "step": 4, "title": "Deliver & Grow", "description": "Complete projects, collect reviews, and unlock higher-tier opportunities." }
       ]
     },
     "faq": {

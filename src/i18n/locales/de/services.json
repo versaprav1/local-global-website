@@ -182,6 +182,24 @@
         }
       ]
     },
+    "outcomes": {
+      "title": "Was Sie erreichen",
+      "items": [
+        { "title": "Frische Kräuter & Grün", "description": "Ernten Sie ganzjährig eigene Kräuter, Salate und Gemüse von Ihrem Balkon oder Fensterbrett." },
+        { "title": "Weniger Lebensmittelkilometer", "description": "Reduzieren Sie Ihren CO₂-Fußabdruck, indem Sie direkt dort anbauen, wo Sie leben." },
+        { "title": "Mentales Wohlbefinden", "description": "Gärtnern reduziert Stress und bringt eine beruhigende Routine in den hektischen Stadtalltag." },
+        { "title": "Gemeinschaftsverbindung", "description": "Teilen Sie Tipps, Saatgut und Ernten mit Nachbarn über unser lokales Netzwerk." }
+      ]
+    },
+    "process": {
+      "title": "So funktioniert's",
+      "steps": [
+        { "step": 1, "title": "Kit auswählen", "description": "Wählen Sie ein Starter-Kit passend zu Ihrem Platz — Fensterbank, Balkon oder Dach." },
+        { "step": 2, "title": "Aufbauen & Pflanzen", "description": "Folgen Sie unserer Schritt-für-Schritt-Anleitung für Erde, Töpfe und Samen." },
+        { "step": 3, "title": "Wachsen & Lernen", "description": "Verfolgen Sie den Fortschritt Ihrer Pflanzen mit saisonalen Pflegetipps." },
+        { "step": 4, "title": "Ernten & Teilen", "description": "Genießen Sie Ihre eigene Ernte und tauschen Sie Überschüsse mit Nachbarn." }
+      ]
+    },
     "faq": {
       "title": "Häufig gestellte Fragen",
       "items": [
@@ -291,6 +309,24 @@
         }
       ]
     },
+    "outcomes": {
+      "title": "Was Sie gewinnen",
+      "items": [
+        { "title": "Zugang ohne Bargeld", "description": "Bekommen Sie, was Sie brauchen, indem Sie anbieten, was Sie haben — Fähigkeiten, Waren oder Zeit." },
+        { "title": "Abfallreduzierung", "description": "Geben Sie ungenutzten Gegenständen ein zweites Leben, statt sie wegzuwerfen." },
+        { "title": "Neue Verbindungen", "description": "Lernen Sie Menschen in Ihrer Nähe kennen, die Ihre Interessen und Werte teilen." },
+        { "title": "Kompetenzentwicklung", "description": "Lernen Sie Neues, indem Sie Ihr Wissen gegen das anderer tauschen." }
+      ]
+    },
+    "process": {
+      "title": "So funktioniert's",
+      "steps": [
+        { "step": 1, "title": "Profil erstellen", "description": "Listen Sie Ihre Fähigkeiten, Waren oder Dienstleistungen auf, die Sie tauschen möchten." },
+        { "step": 2, "title": "Durchsuchen & Finden", "description": "Suchen Sie Angebote in Ihrer Nähe und finden Sie passende Tauschgeschäfte." },
+        { "step": 3, "title": "Tausch vorschlagen", "description": "Senden Sie eine Tauschanfrage und einigen Sie sich auf die Bedingungen." },
+        { "step": 4, "title": "Tauschen & Bewerten", "description": "Schließen Sie den Tausch ab und hinterlassen Sie eine Bewertung." }
+      ]
+    },
     "faq": {
       "title": "Häufig gestellte Fragen",
       "items": [
@@ -398,6 +434,24 @@
           "title": "Berufseinsteiger",
           "description": "Frischgebackene Absolventen, die praktische Erfahrungen sammeln."
         }
+      ]
+    },
+    "outcomes": {
+      "title": "Was Sie aufbauen",
+      "items": [
+        { "title": "Echtes Portfolio", "description": "Schließen Sie reale Projekte ab, die Ihre Fähigkeiten gegenüber zukünftigen Arbeitgebern zeigen." },
+        { "title": "Verdienen beim Lernen", "description": "Verdienen Sie Geld mit sinnvoller Arbeit, die zu Ihrem Studienplan passt." },
+        { "title": "Professionelle Fähigkeiten", "description": "Entwickeln Sie früh Kommunikation, Zeitmanagement und Kundenbeziehungen." },
+        { "title": "Mentoring-Zugang", "description": "Verbinden Sie sich mit erfahrenen Fachleuten, die Ihr Wachstum begleiten." }
+      ]
+    },
+    "process": {
+      "title": "So funktioniert's",
+      "steps": [
+        { "step": 1, "title": "Anmelden & Verifizieren", "description": "Erstellen Sie Ihr Profil mit Fähigkeiten und Verfügbarkeit. Unter 16 mit elterlicher Zustimmung." },
+        { "step": 2, "title": "Profil aufbauen", "description": "Fügen Sie Portfolio-Beispiele hinzu, legen Sie Ihre Preise fest und wählen Sie Kategorien." },
+        { "step": 3, "title": "Vermittlung erhalten", "description": "Unsere Plattform schlägt passende Aufträge basierend auf Ihren Fähigkeiten vor." },
+        { "step": 4, "title": "Liefern & Wachsen", "description": "Schließen Sie Projekte ab, sammeln Sie Bewertungen und schalten Sie höhere Aufträge frei." }
       ]
     },
     "faq": {
