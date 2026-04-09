@@ -90,6 +90,64 @@
         }
       ]
     },
+    "testimonials": {
+      "title": "Was unsere Community sagt",
+      "items": [
+        {
+          "name": "Julia Hoffmann",
+          "role": "Mutter von 3, München",
+          "quote": "Wir sind vor 6 Monaten auf Farm-to-Home umgestiegen und der Unterschied in Geschmack und Frische ist unglaublich. Meine Kinder essen jetzt tatsächlich mehr Gemüse!",
+          "rating": 5
+        },
+        {
+          "name": "Marco Rossi",
+          "role": "Koch, Trattoria Verde",
+          "quote": "Der direkte Einkauf bei lokalen Bauern hat unsere Menüqualität gesteigert. Unsere Kunden bemerken den Unterschied und kommen immer wieder.",
+          "rating": 5
+        },
+        {
+          "name": "Anna Weber",
+          "role": "Gemeinschaftsgarten-Organisatorin",
+          "quote": "Diese Plattform hat unsere Nachbarschaft mit tollen lokalen Produzenten verbunden. Wir führen jetzt eine wöchentliche Sammelbestellung für 30 Familien durch.",
+          "rating": 5
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Echte Ergebnisse",
+      "items": [
+        {
+          "title": "Nachbarschafts-Lebensmittel-Kooperative",
+          "metric": "30",
+          "metricLabel": "Familien wöchentlich versorgt",
+          "description": "Eine Münchner Nachbarschaft organisierte kollektive Hofbestellungen und senkte die Lebensmittelkosten um 35%, während 4 lokale Höfe unterstützt wurden.",
+          "tags": ["Gemeinschaft", "Kosteneinsparung", "Lokal"]
+        },
+        {
+          "title": "Restaurant-Lieferkette",
+          "metric": "60%",
+          "metricLabel": "Frischere Zutaten",
+          "description": "Eine Kette von 5 Restaurants stellte auf direkte Hofbeschaffung um und reduzierte Lieferkosten bei tagesfrischer Ernte.",
+          "tags": ["Restaurant", "Lieferkette", "Frische"]
+        },
+        {
+          "title": "Zero-Waste Familien-Challenge",
+          "metric": "85%",
+          "metricLabel": "Abfallreduzierung",
+          "description": "50 Familien nahmen an einer Zero-Waste-Produkt-Challenge teil und reduzierten Lebensmittelverpackungsabfall in 3 Monaten um 85%.",
+          "tags": ["Zero Waste", "Familien", "Nachhaltigkeit"]
+        }
+      ]
+    },
+    "keyMetrics": {
+      "title": "Plattform-Wirkung",
+      "items": [
+        { "value": "2.500+", "label": "Lokale Höfe verbunden", "icon": "briefcase" },
+        { "value": "50.000+", "label": "Familien bedient", "icon": "trending" },
+        { "value": "40%", "label": "CO₂-Reduktion", "icon": "globe" },
+        { "value": "98%", "label": "Frische-Bewertung", "icon": "target" }
+      ]
+    },
     "cta": {
       "title": "Heute frisch essen",
       "subtitle": "Schließen Sie sich Tausenden von Familien an, die frische Produkte vom Bauernhof genießen.",
@@ -139,6 +197,64 @@
           "question": "Bieten Sie laufende Unterstützung?",
           "answer": "Ja! Unser Community-Forum und erfahrene Gärtner stehen Ihnen zur Verfügung."
         }
+      ]
+    },
+    "testimonials": {
+      "title": "Gärtner-Geschichten",
+      "items": [
+        {
+          "name": "Lena Fischer",
+          "role": "Balkongärtnerin, Berlin",
+          "quote": "Ich hätte nie gedacht, dass ich auf meinem 2m² Balkon Tomaten anbauen kann. Das Starter-Kit hat es so einfach gemacht — ich habe letzten Sommer 8kg geerntet!",
+          "rating": 5
+        },
+        {
+          "name": "David Schulz",
+          "role": "Lehrer & Vater",
+          "quote": "Meine Tochter hat von unserem Balkongarten mehr über Biologie gelernt als in einem Semester Schule. Sie ist so stolz auf ihre Basilikumpflanzen.",
+          "rating": 5
+        },
+        {
+          "name": "Sophie Braun",
+          "role": "Erstgärtnerin",
+          "quote": "Das Community-Forum hat meine Paprikapflanzen zweimal gerettet. Expertenrat nur eine Nachricht entfernt zu haben, ist unbezahlbar.",
+          "rating": 5
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Echte Ergebnisse",
+      "items": [
+        {
+          "title": "Vom Balkon zur Ernte",
+          "metric": "8kg",
+          "metricLabel": "Tomaten von 2m²",
+          "description": "Eine Berliner Wohnungsbewohnerin baute mit vertikalen Pflanzgefäßen genug Tomaten auf einem kleinen Balkon für den ganzen Sommer an.",
+          "tags": ["Balkon", "Tomaten", "Vertikal"]
+        },
+        {
+          "title": "Schul-Dachgarten",
+          "metric": "200",
+          "metricLabel": "Beteiligte Schüler",
+          "description": "Eine Hamburger Schule verwandelte ihr Dach in einen produktiven Garten und lehrte Schüler über Lebensmittelsysteme.",
+          "tags": ["Bildung", "Dachgarten", "Gemeinschaft"]
+        },
+        {
+          "title": "Gemeinschafts-Saatgutbibliothek",
+          "metric": "500+",
+          "metricLabel": "Geteilte Saatgutsorten",
+          "description": "Stadtgärtner in Frankfurt bauten ein Saatgut-Tauschnetzwerk auf, das alte Sorten bewahrt.",
+          "tags": ["Saatgut", "Erbe", "Teilen"]
+        }
+      ]
+    },
+    "keyMetrics": {
+      "title": "Wachsende Wirkung",
+      "items": [
+        { "value": "15.000+", "label": "Stadtgärten angelegt", "icon": "briefcase" },
+        { "value": "500+", "label": "Pflanzensorten", "icon": "trending" },
+        { "value": "94%", "label": "Erfolgsrate", "icon": "target" },
+        { "value": "12 Tonnen", "label": "Jährlich angebaut", "icon": "globe" }
       ]
     },
     "cta": {
@@ -192,6 +308,64 @@
         }
       ]
     },
+    "testimonials": {
+      "title": "Tauscher-Erfahrungen",
+      "items": [
+        {
+          "name": "Felix Müller",
+          "role": "Holzarbeiter, Stuttgart",
+          "quote": "Ich habe handgefertigte Regale gegen professionelle Fotografie meiner Werkstatt getauscht. Wir beide bekamen genau, was wir brauchten.",
+          "rating": 5
+        },
+        {
+          "name": "Carla Neumann",
+          "role": "Freiberufliche Übersetzerin",
+          "quote": "Ich habe Übersetzungsdienste gegen hausgemachte Marmelade und frische Eier getauscht. Es fühlt sich persönlicher und bedeutungsvoller an.",
+          "rating": 5
+        },
+        {
+          "name": "Yusuf Demir",
+          "role": "Student, Köln",
+          "quote": "Als Student mit knappem Budget war es genial, meine Nachhilfefähigkeiten gegen eine Fahrradreparatur zu tauschen.",
+          "rating": 5
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Echte Ergebnisse",
+      "items": [
+        {
+          "title": "Nachbarschafts-Fähigkeitentausch",
+          "metric": "150+",
+          "metricLabel": "Monatliche Tauschaktionen",
+          "description": "Eine Düsseldorfer Nachbarschaft veranstaltet wöchentliche Tauschevents — von Kochkursen bis Fahrradreparatur.",
+          "tags": ["Fähigkeiten", "Nachbarschaft", "Wöchentlich"]
+        },
+        {
+          "title": "Bargeldloser Weihnachtsmarkt",
+          "metric": "12.000€",
+          "metricLabel": "Getauschter Wert",
+          "description": "Ein Gemeinschafts-Weihnachtsmarkt, auf dem alle 80 Stände ausschließlich durch Tausch handelten.",
+          "tags": ["Markt", "Weihnachten", "Bargeldlos"]
+        },
+        {
+          "title": "Studenten-Tauschnetzwerk",
+          "metric": "500",
+          "metricLabel": "Aktive studentische Händler",
+          "description": "Universitätsstudenten in 3 Städten bauten ein campusübergreifendes Tauschnetzwerk für Lehrbücher und Kreativdienste auf.",
+          "tags": ["Studenten", "Universität", "Netzwerk"]
+        }
+      ]
+    },
+    "keyMetrics": {
+      "title": "Tausch-Wirkung",
+      "items": [
+        { "value": "25.000+", "label": "Aktive Tauscher", "icon": "briefcase" },
+        { "value": "100.000+", "label": "Erfolgreiche Tausche", "icon": "trending" },
+        { "value": "65%", "label": "Ressourcen gespart", "icon": "globe" },
+        { "value": "2 Mio.€+", "label": "Getauschter Wert", "icon": "target" }
+      ]
+    },
     "cta": {
       "title": "Heute mit dem Tauschen beginnen",
       "subtitle": "Treten Sie einer Gemeinschaft von Tauschern in Ihrer Nähe bei.",
@@ -241,6 +415,64 @@
           "question": "Wie funktionieren Zahlungen?",
           "answer": "Sichere Zahlungen über unsere Plattform mit Optionen für Banküberweisung oder elternverwaltete Konten."
         }
+      ]
+    },
+    "testimonials": {
+      "title": "Junge Freelancer-Geschichten",
+      "items": [
+        {
+          "name": "Emma Richter",
+          "role": "Schülerin & Designerin, 17 Jahre",
+          "quote": "Ich habe über diese Plattform Logos für 3 lokale Unternehmen gestaltet. Jetzt habe ich ein echtes Portfolio und 1.200€ verdient — noch vor dem Schulabschluss!",
+          "rating": 5
+        },
+        {
+          "name": "Kai Tanaka",
+          "role": "Student & Entwickler, 19 Jahre",
+          "quote": "Das Mentoring-Programm hat mich mit einem Senior-Entwickler zusammengebracht. Ich habe meine erste echte App gebaut und ein bezahltes Praktikum bekommen.",
+          "rating": 5
+        },
+        {
+          "name": "Mia Becker",
+          "role": "Content Creatorin, 16 Jahre",
+          "quote": "Ich habe angefangen, Blogbeiträge für lokale Geschäfte zu schreiben. Das sichere Zahlungssystem hat meine Eltern beruhigt.",
+          "rating": 5
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Echte Ergebnisse",
+      "items": [
+        {
+          "title": "Schüler-Design-Agentur",
+          "metric": "15.000€",
+          "metricLabel": "Umsatz im 1. Jahr",
+          "description": "Drei Oberstufenschüler gründeten über die Plattform ein Design-Kollektiv und bedienten 25 lokale Unternehmen im ersten Jahr.",
+          "tags": ["Design", "Kollektiv", "Jugend"]
+        },
+        {
+          "title": "Nachhilfe-Netzwerk",
+          "metric": "300",
+          "metricLabel": "Betreute Schüler",
+          "description": "Ein Universitätsstudent baute ein Peer-Nachhilfe-Netzwerk auf, das 50 Tutoren mit 300 Schülern in 5 Fächern verbindet.",
+          "tags": ["Nachhilfe", "Bildung", "Peer"]
+        },
+        {
+          "title": "Tech-Skills-Bootcamp",
+          "metric": "89%",
+          "metricLabel": "Beschäftigungsrate",
+          "description": "Ein Jugend-Coding-Bootcamp kooperierte mit der Plattform — 89% der Absolventen fanden innerhalb von 6 Monaten Freelance- oder Festanstellungen.",
+          "tags": ["Programmieren", "Bootcamp", "Beschäftigung"]
+        }
+      ]
+    },
+    "keyMetrics": {
+      "title": "Jugend-Wirkung",
+      "items": [
+        { "value": "30.000+", "label": "Junge Freelancer", "icon": "briefcase" },
+        { "value": "75.000+", "label": "Abgeschlossene Projekte", "icon": "trending" },
+        { "value": "500€/Mo.", "label": "Durchschn. Verdienst", "icon": "target" },
+        { "value": "89%", "label": "Kompetenzwachstum", "icon": "globe" }
       ]
     },
     "cta": {
