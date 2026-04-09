@@ -90,6 +90,64 @@
         }
       ]
     },
+    "testimonials": {
+      "title": "What Our Community Says",
+      "items": [
+        {
+          "name": "Julia Hoffmann",
+          "role": "Mother of 3, Munich",
+          "quote": "We switched to Farm-to-Home 6 months ago and the difference in taste and freshness is incredible. My kids actually eat more vegetables now!",
+          "rating": 5
+        },
+        {
+          "name": "Marco Rossi",
+          "role": "Chef, Trattoria Verde",
+          "quote": "Sourcing directly from local farms has elevated our menu quality. Our customers notice the difference and keep coming back.",
+          "rating": 5
+        },
+        {
+          "name": "Anna Weber",
+          "role": "Community Garden Organizer",
+          "quote": "This platform connected our neighborhood with amazing local producers. We now run a weekly collective order for 30 families.",
+          "rating": 5
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Real Results",
+      "items": [
+        {
+          "title": "Neighborhood Food Co-op",
+          "metric": "30",
+          "metricLabel": "Families Fed Weekly",
+          "description": "A Munich neighborhood organized collective farm orders, cutting food costs by 35% while supporting 4 local farms.",
+          "tags": ["Community", "Cost Savings", "Local"]
+        },
+        {
+          "title": "Restaurant Supply Chain",
+          "metric": "60%",
+          "metricLabel": "Fresher Ingredients",
+          "description": "A chain of 5 restaurants switched to direct farm sourcing, reducing supply costs and receiving produce harvested the same day.",
+          "tags": ["Restaurant", "Supply Chain", "Freshness"]
+        },
+        {
+          "title": "Zero-Waste Family Challenge",
+          "metric": "85%",
+          "metricLabel": "Waste Reduction",
+          "description": "50 families participated in a zero-waste produce challenge, cutting food packaging waste by 85% over 3 months.",
+          "tags": ["Zero Waste", "Families", "Sustainability"]
+        }
+      ]
+    },
+    "keyMetrics": {
+      "title": "Platform Impact",
+      "items": [
+        { "value": "2,500+", "label": "Local Farms Connected", "icon": "briefcase" },
+        { "value": "50,000+", "label": "Families Served", "icon": "trending" },
+        { "value": "40%", "label": "CO₂ Reduction", "icon": "globe" },
+        { "value": "98%", "label": "Freshness Rating", "icon": "target" }
+      ]
+    },
     "cta": {
       "title": "Start Eating Fresh Today",
       "subtitle": "Join thousands of families enjoying farm-fresh produce.",
@@ -139,6 +197,64 @@
           "question": "Do you provide ongoing support?",
           "answer": "Yes! Our community forum and expert gardeners are available to help you succeed."
         }
+      ]
+    },
+    "testimonials": {
+      "title": "Grower Stories",
+      "items": [
+        {
+          "name": "Lena Fischer",
+          "role": "Apartment Gardener, Berlin",
+          "quote": "I never thought I could grow tomatoes on my 2m² balcony. The starter kit made it so easy — I harvested 8kg last summer!",
+          "rating": 5
+        },
+        {
+          "name": "David Schulz",
+          "role": "Teacher & Father",
+          "quote": "My daughter learned more about biology from our balcony garden than a semester of school. She's so proud of her basil plants.",
+          "rating": 5
+        },
+        {
+          "name": "Sophie Braun",
+          "role": "First-Time Gardener",
+          "quote": "The community forum saved my pepper plants twice. Having expert advice just a message away is invaluable.",
+          "rating": 5
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Real Results",
+      "items": [
+        {
+          "title": "Balcony to Harvest",
+          "metric": "8kg",
+          "metricLabel": "Tomatoes from 2m²",
+          "description": "A Berlin apartment dweller grew enough tomatoes on a small balcony to supply her family all summer using vertical planters.",
+          "tags": ["Balcony", "Tomatoes", "Vertical"]
+        },
+        {
+          "title": "School Rooftop Garden",
+          "metric": "200",
+          "metricLabel": "Students Involved",
+          "description": "A Hamburg school transformed its rooftop into a productive garden, teaching students about food systems and sustainability.",
+          "tags": ["Education", "Rooftop", "Community"]
+        },
+        {
+          "title": "Community Seed Library",
+          "metric": "500+",
+          "metricLabel": "Seed Varieties Shared",
+          "description": "Urban gardeners in Frankfurt built a seed exchange network preserving heirloom varieties and reducing dependence on commercial seeds.",
+          "tags": ["Seeds", "Heritage", "Sharing"]
+        }
+      ]
+    },
+    "keyMetrics": {
+      "title": "Growing Impact",
+      "items": [
+        { "value": "15,000+", "label": "Urban Gardens Created", "icon": "briefcase" },
+        { "value": "500+", "label": "Plant Varieties", "icon": "trending" },
+        { "value": "94%", "label": "Success Rate", "icon": "target" },
+        { "value": "12 tons", "label": "Food Grown Yearly", "icon": "globe" }
       ]
     },
     "cta": {
@@ -192,6 +308,64 @@
         }
       ]
     },
+    "testimonials": {
+      "title": "Trader Experiences",
+      "items": [
+        {
+          "name": "Felix Müller",
+          "role": "Woodworker, Stuttgart",
+          "quote": "I traded handmade shelves for professional photography of my workshop. Both of us got exactly what we needed — no money changed hands.",
+          "rating": 5
+        },
+        {
+          "name": "Carla Neumann",
+          "role": "Freelance Translator",
+          "quote": "I exchanged translation services for homemade preserves and fresh eggs. It feels more personal and meaningful than just buying things.",
+          "rating": 5
+        },
+        {
+          "name": "Yusuf Demir",
+          "role": "Student, Cologne",
+          "quote": "As a student on a tight budget, bartering my tutoring skills for a bicycle repair was a game-changer. This platform is brilliant.",
+          "rating": 5
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Real Results",
+      "items": [
+        {
+          "title": "Neighborhood Skill Swap",
+          "metric": "150+",
+          "metricLabel": "Skills Exchanged Monthly",
+          "description": "A Düsseldorf neighborhood runs weekly skill-swap events — from cooking classes to bike repair — all coordinated through the platform.",
+          "tags": ["Skills", "Neighborhood", "Weekly"]
+        },
+        {
+          "title": "Zero-Cash Holiday Market",
+          "metric": "€12K",
+          "metricLabel": "Value Exchanged",
+          "description": "A community holiday market where all 80 stalls traded goods exclusively through barter, totaling €12K in exchanged value.",
+          "tags": ["Market", "Holiday", "Zero Cash"]
+        },
+        {
+          "title": "Student Exchange Network",
+          "metric": "500",
+          "metricLabel": "Active Student Traders",
+          "description": "University students across 3 cities built a cross-campus barter network for textbooks, tutoring, and creative services.",
+          "tags": ["Students", "University", "Network"]
+        }
+      ]
+    },
+    "keyMetrics": {
+      "title": "Exchange Impact",
+      "items": [
+        { "value": "25,000+", "label": "Active Traders", "icon": "briefcase" },
+        { "value": "100,000+", "label": "Successful Trades", "icon": "trending" },
+        { "value": "65%", "label": "Resources Saved", "icon": "globe" },
+        { "value": "€2M+", "label": "Value Exchanged", "icon": "target" }
+      ]
+    },
     "cta": {
       "title": "Start Trading Today",
       "subtitle": "Join a community of exchangers in your area.",
@@ -241,6 +415,64 @@
           "question": "How do payments work?",
           "answer": "Secure payments through our platform with options for bank transfer or parent-managed accounts."
         }
+      ]
+    },
+    "testimonials": {
+      "title": "Young Freelancer Stories",
+      "items": [
+        {
+          "name": "Emma Richter",
+          "role": "Student Designer, Age 17",
+          "quote": "I designed logos for 3 local businesses through this platform. Now I have a real portfolio and earned €1,200 before finishing school!",
+          "rating": 5
+        },
+        {
+          "name": "Kai Tanaka",
+          "role": "Student Developer, Age 19",
+          "quote": "The mentorship program paired me with a senior developer. I built my first real app and got a paid internship through the connection.",
+          "rating": 5
+        },
+        {
+          "name": "Mia Becker",
+          "role": "Content Creator, Age 16",
+          "quote": "I started writing blog posts for local shops. The safe payment system meant my parents were comfortable letting me freelance.",
+          "rating": 5
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Real Results",
+      "items": [
+        {
+          "title": "Student Design Agency",
+          "metric": "€15K",
+          "metricLabel": "Revenue in Year 1",
+          "description": "Three high school students formed a design collective through the platform, serving 25 local businesses in their first year.",
+          "tags": ["Design", "Collective", "Youth"]
+        },
+        {
+          "title": "Tutoring Network",
+          "metric": "300",
+          "metricLabel": "Students Helped",
+          "description": "A university student built a peer tutoring network that now connects 50 tutors with 300 students across 5 subjects.",
+          "tags": ["Tutoring", "Education", "Peer"]
+        },
+        {
+          "title": "Tech Skills Bootcamp",
+          "metric": "89%",
+          "metricLabel": "Employment Rate",
+          "description": "A youth coding bootcamp partnered with the platform — 89% of graduates landed freelance or full-time tech roles within 6 months.",
+          "tags": ["Coding", "Bootcamp", "Employment"]
+        }
+      ]
+    },
+    "keyMetrics": {
+      "title": "Youth Impact",
+      "items": [
+        { "value": "30,000+", "label": "Young Freelancers", "icon": "briefcase" },
+        { "value": "75,000+", "label": "Projects Completed", "icon": "trending" },
+        { "value": "€500/mo", "label": "Avg Earnings", "icon": "target" },
+        { "value": "89%", "label": "Skill Growth Rate", "icon": "globe" }
       ]
     },
     "cta": {
