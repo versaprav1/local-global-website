@@ -537,77 +537,10 @@
   },
   "merger-acquisitions": {
     "hero": {
-      "badge": "Business Growth",
-      "title": "Local-to-Global Commerce",
-      "subtitle": "Scale your sustainable business from local markets to global reach. Access expert advisors, due diligence guides, market insights, and a network of impact investors.",
+      "badge": "M&A Ecosystem",
+      "title": "Mergers & Acquisitions",
+      "subtitle": "Connecting sustainable businesses with strategic growth opportunities. Expert advisors, due diligence support, and a global network of impact-driven partners.",
       "cta": "Explore Opportunities"
-    },
-    "audience": {
-      "title": "Who is this for?",
-      "items": [
-        {
-          "title": "Small Producers",
-          "description": "Local businesses ready to expand their reach beyond regional markets."
-        },
-        {
-          "title": "Sustainable Brands",
-          "description": "Eco-friendly companies seeking strategic growth and partnership opportunities."
-        },
-        {
-          "title": "Impact Investors",
-          "description": "Investors looking for sustainable ventures with measurable social impact."
-        },
-        {
-          "title": "Cooperatives & Collectives",
-          "description": "Producer groups wanting to scale collectively while maintaining values."
-        }
-      ]
-    },
-    "outcomes": {
-      "title": "What You Get",
-      "items": [
-        {
-          "title": "Market Analysis",
-          "description": "Data-driven insights into target markets, competitors, and growth potential"
-        },
-        {
-          "title": "Expert Advisors",
-          "description": "Connect with M&A specialists, legal consultants, and industry mentors"
-        },
-        {
-          "title": "Due Diligence",
-          "description": "Comprehensive guides and templates for business evaluation and risk assessment"
-        },
-        {
-          "title": "Growth Network",
-          "description": "Access to investors, partners, and distribution channels worldwide"
-        }
-      ]
-    },
-    "process": {
-      "title": "How It Works",
-      "steps": [
-        {
-          "step": "1",
-          "title": "Discovery Call",
-          "description": "Share your business goals, challenges, and vision for growth"
-        },
-        {
-          "step": "2",
-          "title": "Market Assessment",
-          "description": "We analyze your market position and identify scaling opportunities"
-        },
-        {
-          "step": "3",
-          "title": "Strategy & Matching",
-          "description": "Get paired with advisors, investors, or partners aligned with your mission"
-        },
-        {
-          "step": "4",
-          "title": "Scale & Grow",
-          "description": "Execute your growth plan with ongoing support and resource access"
-        }
-      ]
     },
     "faq": {
       "title": "Frequently Asked Questions",
