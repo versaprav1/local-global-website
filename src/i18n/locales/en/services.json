@@ -683,15 +683,6 @@
         }
       ]
     },
-    "keyMetrics": {
-      "title": "Platform Impact",
-      "items": [
-        { "value": "5,000+", "label": "Businesses Supported", "icon": "briefcase" },
-        { "value": "€50M+", "label": "Capital Connected", "icon": "trending" },
-        { "value": "45+", "label": "Countries Reached", "icon": "globe" },
-        { "value": "92%", "label": "Success Rate", "icon": "target" }
-      ]
-    },
     "cta": {
       "title": "Scale Your Impact",
       "subtitle": "Take your sustainable business to the next level with expert guidance and global connections.",

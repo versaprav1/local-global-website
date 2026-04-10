@@ -231,28 +231,30 @@ const ServicePage = () => {
         </section>
       )}
 
-      {/* Features from vertical data */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">
-            {t("common.keyFeatures")}
-          </h2>
+      {/* Features from vertical data (skip for M&A - has dedicated sections) */}
+      {serviceId !== "merger-acquisitions" && (
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">
+              {t("common.keyFeatures")}
+            </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {vertical.features.map((feature, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow border-secondary/20"
-              >
-                <CardContent className="p-6 flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
-                  <span className="font-medium">{feature}</span>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {vertical.features.map((feature, index) => (
+                <Card
+                  key={index}
+                  className="hover:shadow-lg transition-shadow border-secondary/20"
+                >
+                  <CardContent className="p-6 flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="font-medium">{feature}</span>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Advisor / Partner Directory Section */}
       {partners && partners.length > 0 && (
