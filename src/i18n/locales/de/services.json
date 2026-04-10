@@ -537,31 +537,10 @@
   },
   "merger-acquisitions": {
     "hero": {
-      "badge": "Geschäftswachstum",
-      "title": "Lokal-zu-Global Handel",
-      "subtitle": "Skalieren Sie Ihr nachhaltiges Unternehmen von lokalen Märkten zu globaler Reichweite mit unserem Netzwerk und unserer Expertise.",
-      "cta": "Mehr erfahren"
-    },
-    "audience": {
-      "title": "Für wen ist das?",
-      "items": [
-        {
-          "title": "Kleine Produzenten",
-          "description": "Lokale Unternehmen, die bereit sind, ihre Reichweite zu erweitern."
-        },
-        {
-          "title": "Nachhaltige Marken",
-          "description": "Umweltfreundliche Unternehmen, die Wachstumsmöglichkeiten suchen."
-        },
-        {
-          "title": "Investoren",
-          "description": "Impact-Investoren auf der Suche nach nachhaltigen Unternehmungen."
-        },
-        {
-          "title": "Genossenschaften",
-          "description": "Produzentengruppen, die gemeinsam skalieren möchten."
-        }
-      ]
+      "badge": "M&A Ökosystem",
+      "title": "Fusionen & Übernahmen",
+      "subtitle": "Nachhaltige Unternehmen mit strategischen Wachstumsmöglichkeiten verbinden. Experten-Berater, Due-Diligence-Unterstützung und ein globales Netzwerk wirkungsorientierter Partner.",
+      "cta": "Möglichkeiten erkunden"
     },
     "faq": {
       "title": "Häufig gestellte Fragen",
