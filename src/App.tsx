@@ -16,6 +16,7 @@ import HowItWorks from "./pages/HowItWorks";
 import FAQ from "./pages/FAQ";
 import Partners from "./pages/Partners";
 import ServicePage from "./pages/ServicePage";
+import MAndA from "./pages/MAndA";
 import Login from "./pages/Login";
 import ResetPassword from "./pages/ResetPassword";
 import NotFound from "./pages/NotFound";
@@ -46,6 +47,7 @@ const App = () => (
               <Route path="/how-it-works" element={<HowItWorks />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/partners" element={<Partners />} />
+              <Route path="/m-and-a" element={<MAndA />} />
               <Route path="/services/:serviceId" element={<ServicePage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/reset-password" element={<ResetPassword />} />

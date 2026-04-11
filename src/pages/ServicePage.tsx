@@ -109,12 +109,25 @@ const ServicePage = () => {
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 {hero?.subtitle || vertical.description}
               </p>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90"
-              >
-                {hero?.cta || t("common.learnMore")}
-              </Button>
+              {serviceId === "merger-acquisitions" ? (
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <Link to="/m-and-a#intake">
+                    <Button size="lg" className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 sm:w-auto">
+                      Start confidential intake
+                    </Button>
+                  </Link>
+                  <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
+                    <a href="#mna-advisors">{hero?.cta || "Explore advisor directory"}</a>
+                  </Button>
+                </div>
+              ) : (
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-primary to-secondary hover:opacity-90"
+                >
+                  {hero?.cta || t("common.learnMore")}
+                </Button>
+              )}
             </div>
 
             <div className="relative">
@@ -258,7 +271,10 @@ const ServicePage = () => {
 
       {/* Advisor / Partner Directory Section */}
       {partners && partners.length > 0 && (
-        <section className="py-20 bg-muted/30">
+        <section
+          id={serviceId === "merger-acquisitions" ? "mna-advisors" : undefined}
+          className="py-20 bg-muted/30"
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <Users className="w-12 h-12 mx-auto mb-4 text-primary" />

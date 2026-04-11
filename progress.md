@@ -287,6 +287,27 @@
 - [ ] M&A vertical — Phase B: business listings marketplace
 - [ ] M&A vertical — Phase C: full platform (documents, NDA, AI matching)
 - [x] M&A vertical — Phase A: content/directory with advisors, guides, blog (Option A)
+- [x] M&A vertical — Phase A+: dedicated marketing landing at **`/m-and-a`** (`mna` sections) — **implemented** (see Session 13; plan.md Decisions 20–21)
+
+### Session 12: M&A marketing landing — design captured from Lovable (not yet built in repo)
+**Context**: User stopped implementation in Lovable and shared a Next.js-style component map for a high-trust M&A marketing funnel.
+
+**Documented in plan.md**: Decision 20 — same architecture **adapted to Vite + React Router** (`src/pages/…` + `src/components/mna/`), declarative page composition, local `content.ts`, build order, finance-grade styling, light interactions.
+
+**Decision (April 2026)**: **Primary funnel** = `/m-and-a`; **directory / depth** = `/services/merger-acquisitions` (plan.md Decision 21). Landing CTAs: intake primary, service page secondary; service page links back to landing for intake where useful.
+
+**Status**: Superseded by Session 13 (implementation complete).
+
+### Session 13: M&A Phase A+ marketing landing (implemented)
+**User request**: Proceed with the recommended approach — build `/m-and-a` and `mna` sections; keep plan/progress updated.
+
+**Shipped**:
+- [x] Route `/m-and-a` in `App.tsx` → `src/pages/MAndA.tsx` (Navbar + Footer + section stack per Decision 20)
+- [x] `src/components/mna/`: `content.ts`, `SectionShell`, `Hero`, `TrustStrip`, `ProcessPipeline`, `PipelineStep`, `ListingsPreview`, `ListingCard`, `AudienceSplit`, `SecuritySection`, `ConfidentialIntake` (client-side validation + Sonner toast; copy notes Supabase not wired), `MnaFaq`, `FinalCta`
+- [x] Stone/neutral styling for funnel vs coral-heavy service pages
+- [x] `ServicePage` (merger-acquisitions): dual CTAs — “Start confidential intake” → `/m-and-a#intake`, secondary scroll to `#mna-advisors` on advisor section
+
+**Follow-ups (not done)**: Persist intake to Supabase; optional Navbar / homepage “Learn more” pointing M&A to `/m-and-a`; German copy for `mna` content; SectorFocus section if needed.
 
 ### Session 11: All Verticals Content Completion
 **User Request**: Add testimonials, case studies, key metrics, outcomes, and process sections to all remaining verticals.

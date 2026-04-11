@@ -201,6 +201,37 @@ This section captures every key discussion, options considered, and rationale fo
 - `website-replication-blueprint.md` — blueprint for replicating the platform
 **Action**: Flagged `doc.md` as outdated. All active documentation consolidated in `plan.md` and `progress.md`.
 
+### Decision 20: M&A Marketing Landing — Component Architecture (concept from Lovable)
+**Context**: User paused M&A work in Lovable and captured a Next.js-oriented marketing-page pattern: focused route, declarative page composition, section components, local typed content, finance-grade Tailwind styling, light interaction.
+
+**Stack note**: This repository uses **React + Vite + React Router**, not Next.js App Router. The same pattern maps as:
+- **Route**: e.g. `/m-and-a` → `src/pages/MAndA.tsx` (or similar), registered in `App.tsx`; optional thin `layout` = shared wrapper (Navbar/Footer) like other pages.
+- **Components**: `src/components/mna/` (Hero, TrustStrip, ProcessPipeline, ListingsPreview, AudienceSplit, SectorFocus, SecuritySection, ConfidentialIntake, Faq, FinalCta, plus SectionShell, Badge, ListingCard, PipelineStep).
+- **Content**: `src/components/mna/content.ts` (or co-located typed arrays) for hero copy, pipeline steps, listing mocks, sectors, FAQs until Supabase wiring.
+
+**Relationship to existing M&A vertical**: See **Decision 21** for canonical URLs. The landing and service page work as a pair: funnel first, directory depth second.
+
+**Principles adopted from the concept**:
+- Page file stays **declarative** (section composition only).
+- **Trust-first** sections (TrustStrip, SecuritySection, FAQ) support confidentiality objections.
+- **Dual audience** (Hero + AudienceSplit) aligned with seller/buyer CTAs.
+- **ListingsPreview**: mock teaser cards first (`codename`, sector, location, revenue/EBITDA ranges, dealType, verified).
+- **ConfidentialIntake**: short form, static v1, architect for future Supabase or API route.
+- **Styling**: discreet, neutral palette, restrained accent, strong typography, minimal motion (hover on cards, subtle pipeline progression, accordion FAQ).
+
+**Build order** (when implemented): Hero → TrustStrip → ProcessPipeline → ListingsPreview → AudienceSplit → SecuritySection → ConfidentialIntake → Faq → FinalCta; SectorFocus optional if strategically needed.
+
+### Decision 21: M&A Canonical URLs (funnel vs directory)
+**Context**: Needed a single primary entry for campaigns and nav without duplicating “home” stories for M&A.
+
+**Decision**:
+- **`/m-and-a`** — **Primary marketing funnel** (short URL, campaign-friendly). Implement as `src/pages/MAndA.tsx` + `src/components/mna/*`.
+- **`/services/merger-acquisitions`** — **Ecosystem / directory depth** (Phase A: advisors, guides, blog from Supabase). Unchanged role.
+
+**CTA continuity**: On the landing, **primary** actions point to the confidential intake (same next step throughout hero → final CTA). **Secondary** action: link to **`/services/merger-acquisitions`** (e.g. “Explore directory” / ecosystem). The service page should link back to **`/m-and-a`** where it helps (e.g. “Start confidential intake”) once the landing exists.
+
+**Rationale**: Keeps Decision 18’s Phase A page valuable while giving marketing a dedicated, composable landing without merging two mental models into one URL.
+
 ---
 
 ## Roadmap
@@ -246,6 +277,7 @@ See progress.md for detailed completion history.
 
 ### M&A Vertical Phases
 - [x] **Phase A (Content/Directory)**: Enriched service page with advisor directory, guides, blog posts from existing Supabase tables
+- [x] **Phase A+ (Marketing landing)**: Dedicated `/m-and-a` route, `src/pages/MAndA.tsx`, and `src/components/mna/*` (Hero → TrustStrip → ProcessPipeline → ListingsPreview → AudienceSplit → SecuritySection → ConfidentialIntake → FAQ → FinalCta); intake form is static with toast (Supabase wiring deferred); service page links to `/m-and-a#intake` and anchors advisor block `#mna-advisors`
 - [ ] **Phase B (Listing Marketplace)**: `business_listings` table, buyer browsing, inquiry system
 - [ ] **Phase C (Full Platform)**: Document sharing, NDA workflows, AI matching, deal tracking
 
@@ -330,6 +362,8 @@ Automated blog content pipeline: n8n cron → AI content generation → Supabase
 | FAQ | `/faq` | ✅ |
 | Partners | `/partners` | ✅ |
 | Service Pages | `/services/:serviceId` | ✅ |
+| M&A marketing landing (primary funnel) | `/m-and-a` | ☐ — Decisions 20–21 |
+| M&A ecosystem / directory | `/services/merger-acquisitions` | ✅ — Decision 18 Phase A |
 | Login | `/login` | ✅ |
 | Reset Password | `/reset-password` | ✅ |
 | Admin Dashboard | `/admin` | ✅ (protected) |
