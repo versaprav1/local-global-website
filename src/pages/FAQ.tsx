@@ -79,7 +79,7 @@ const FAQ = () => {
           questions: [
             {
               q: "What age group is the youth freelancing for?",
-              a: "Our youth freelancing platform is designed for students and young people aged 16-25. Users under 18 need parental consent and have additional safety protections in place."
+              a: "Young people aged 14+ can join with parental consent; full access is available from 16+. The program is aimed at students and young people up to around 25. Users under 18 have additional safety protections—aligned with our Youth Freelancing service page."
             },
             {
               q: "What kinds of services can young people offer?",
@@ -168,7 +168,7 @@ const FAQ = () => {
           questions: [
             {
               q: "Für welche Altersgruppe ist das Jugend-Freelancing?",
-              a: "Unsere Jugend-Freelancing-Plattform ist für Schüler und junge Menschen im Alter von 16-25 Jahren konzipiert. Nutzer unter 18 Jahren benötigen die Zustimmung der Eltern und haben zusätzliche Sicherheitsschutzmaßnahmen."
+              a: "Junge Menschen ab 14 Jahren können mit elterlicher Zustimmung beitreten; voller Zugang ist ab 16 möglich. Das Angebot richtet sich an Schüler und junge Erwachsene bis etwa 25 Jahre. Nutzer unter 18 erhalten zusätzliche Sicherheitsvorkehrungen—wie auf der Jugend-Freelancing-Servicepage beschrieben."
             },
             {
               q: "Welche Arten von Dienstleistungen können junge Menschen anbieten?",

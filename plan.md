@@ -163,7 +163,7 @@ This section captures every key discussion, options considered, and rationale fo
 ### Decision 15: Admin Role Assignment
 **Context**: User needed admin access to manage content via the dashboard.  
 **Action**: Assigned admin role to `versaprav@gmail.com` (ID: `0611d7d8-a694-4376-a1c6-15b52ba29ecc`) via migration insert into `user_roles` table.  
-**Note**: Admin routes currently use auth-only protection (any authenticated user). Navbar Dashboard link now restricted to admin role via `has_role` RPC. ProtectedRoute server-side guard still pending.
+**Note**: Admin routes use `ProtectedRoute requireAdmin`, which calls the same `has_role` RPC as the navbar. Non-admins are redirected to `/access-denied`. Database RLS remains the authoritative backstop for mutations.
 
 ### Decision 16: Frontend-Supabase Data Integration
 **Context**: Blog and Resources pages were reading from static files only.
@@ -232,6 +232,17 @@ This section captures every key discussion, options considered, and rationale fo
 
 **Rationale**: Keeps Decision 18’s Phase A page valuable while giving marketing a dedicated, composable landing without merging two mental models into one URL.
 
+### Decision 22: Login Redirect by Role + M&A Funnel Brand Alignment
+**Context**: After sign-in, all users were sent to `/admin`, so non-admins hit `ProtectedRoute` and were redirected to `/access-denied`. The M&A landing (`/m-and-a`) had been styled with a separate neutral/stone palette (Decision 20) and felt disconnected from the rest of the site.
+
+**Login / OAuth**:
+- **`PostAuthRedirect`** on `/login`: after session exists, call `has_role` for `admin` → **`/admin`** if true, else **`/`**.
+- Password sign-in relies on auth state update + `PostAuthRedirect` (no direct `navigate("/admin")`).
+- **OAuth** `redirectTo` = **`{origin}/login`** so the same redirect runs after provider return.
+
+**M&A styling**:
+- **`MAndA.tsx`** and **`src/components/mna/*`** use shared primitives: `editorial-section`, `gradient-bg`, `tag-primary` / `tag-accent`, `btn-primary`, `feature-card`, `editorial-divider`, `font-display`, theme colors (`primary`, `secondary`, `accent`, `muted`), gradient hero title and final CTA band—aligned with the coral/warm design system while keeping Decision 20 section structure and copy.
+
 ---
 
 ## Roadmap
@@ -245,7 +256,9 @@ See progress.md for detailed completion history.
 
 ### High Priority
 - [x] Role-based access guard on navbar Dashboard link (admin-only)
-- [ ] Role-based guard on ProtectedRoute (server-side admin check)
+- [x] Role-based guard on ProtectedRoute (`requireAdmin` + `has_role` RPC; non-admins → `/access-denied`)
+- [x] Post-login redirect by role (`PostAuthRedirect` on `/login`: admin → `/admin`, else `/`; OAuth → `/login`)
+- [x] M&A `/m-and-a` funnel restyled to match site design tokens (Decision 22)
 - [ ] Complete German translations for service pages
 - [x] Connect frontend Blog/Resources pages to Supabase data (hybrid hooks)
 - [ ] Partner application form → Supabase database
@@ -341,6 +354,7 @@ Automated blog content pipeline: n8n cron → AI content generation → Supabase
 | `/admin/guides` | Guides Manager | CRUD for guides |
 | `/admin/videos` | Videos Manager | CRUD for videos |
 | `/admin/partners` | Partners Manager | CRUD for partners |
+| `/access-denied` | Access denied | Logged-in non-admins blocked from admin |
 
 ### Components
 - `AdminLayout.tsx` — sidebar + header wrapper
@@ -362,16 +376,17 @@ Automated blog content pipeline: n8n cron → AI content generation → Supabase
 | FAQ | `/faq` | ✅ |
 | Partners | `/partners` | ✅ |
 | Service Pages | `/services/:serviceId` | ✅ |
-| M&A marketing landing (primary funnel) | `/m-and-a` | ☐ — Decisions 20–21 |
+| M&A marketing landing (primary funnel) | `/m-and-a` | ✅ — Decision 20–21 Phase A+ |
 | M&A ecosystem / directory | `/services/merger-acquisitions` | ✅ — Decision 18 Phase A |
 | Login | `/login` | ✅ |
 | Reset Password | `/reset-password` | ✅ |
-| Admin Dashboard | `/admin` | ✅ (protected) |
-| Admin News | `/admin/news` | ✅ (protected) |
-| Admin Blog | `/admin/blog` | ✅ (protected) |
-| Admin Guides | `/admin/guides` | ✅ (protected) |
-| Admin Videos | `/admin/videos` | ✅ (protected) |
-| Admin Partners | `/admin/partners` | ✅ (protected) |
+| Access denied | `/access-denied` | ✅ (signed-in non-admin) |
+| Admin Dashboard | `/admin` | ✅ (admin only) |
+| Admin News | `/admin/news` | ✅ (admin only) |
+| Admin Blog | `/admin/blog` | ✅ (admin only) |
+| Admin Guides | `/admin/guides` | ✅ (admin only) |
+| Admin Videos | `/admin/videos` | ✅ (admin only) |
+| Admin Partners | `/admin/partners` | ✅ (admin only) |
 
 ---
 

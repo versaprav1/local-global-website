@@ -12,7 +12,7 @@ import { FinalCta } from "@/components/mna/FinalCta";
 
 const MAndA = () => {
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-50">
+    <div className="min-h-screen bg-background text-foreground antialiased">
       <a href="#intake" className="skip-to-content">
         Skip to intake form
       </a>

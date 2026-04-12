@@ -278,7 +278,7 @@
 
 - [ ] German translations for service pages
 - [x] Role-based access check on navbar Dashboard link (admin-only via `has_role` RPC)
-- [ ] Role-based guard on ProtectedRoute (server-side admin check)
+- [x] Role-based guard on ProtectedRoute (`requireAdmin` + `has_role`; non-admins → `/access-denied`)
 - [ ] Partner form submission to Supabase
 - [ ] SEO enhancements (JSON-LD, OG images)
 - [ ] Blog automation pipeline (n8n → AI → Supabase → website) — architecture planned
@@ -287,7 +287,14 @@
 - [ ] M&A vertical — Phase B: business listings marketplace
 - [ ] M&A vertical — Phase C: full platform (documents, NDA, AI matching)
 - [x] M&A vertical — Phase A: content/directory with advisors, guides, blog (Option A)
-- [x] M&A vertical — Phase A+: dedicated marketing landing at **`/m-and-a`** (`mna` sections) — **implemented** (see Session 13; plan.md Decisions 20–21)
+- [x] M&A vertical — Phase A+: dedicated marketing landing at **`/m-and-a`** (`mna` sections) — **implemented** (see Session 13; styling refresh Session 15 / plan.md Decision 22)
+- [x] Login: post-auth redirect by role — admin → `/admin`, non-admin → `/` (`PostAuthRedirect`); OAuth returns to `/login` (see Session 15; plan.md Decision 22)
+
+### Session 15: Login redirect by role + M&A brand alignment
+**Shipped**:
+- [x] **`src/pages/Login.tsx`**: `PostAuthRedirect` uses `has_role` (admin); **`Navigate`** to `/admin` or `/`; OAuth **`redirectTo`** `{origin}/login`
+- [x] **`src/components/mna/*`** + **`MAndA.tsx`**: replace standalone stone palette with site tokens (`gradient-bg`, `editorial-section`, `tag-primary`, `btn-primary`, `feature-card`, primary/accent gradients, confidential intake card on warm gradient strip)
+- [x] **`plan.md`**: Decision 22; High Priority checkboxes updated
 
 ### Session 12: M&A marketing landing — design captured from Lovable (not yet built in repo)
 **Context**: User stopped implementation in Lovable and shared a Next.js-style component map for a high-trust M&A marketing funnel.
@@ -298,13 +305,20 @@
 
 **Status**: Superseded by Session 13 (implementation complete).
 
+### Session 14: Admin route guard + access denied page
+**Shipped**:
+- [x] `ProtectedRoute` optional `requireAdmin`: uses `has_role` RPC (same as navbar); non-admins navigate to `/access-denied`
+- [x] `src/pages/AccessDenied.tsx` — Navbar/Footer, message, link home; guests redirected to `/login`
+- [x] All `/admin/*` routes pass `requireAdmin`
+- [x] Synced `plan.md` / `progress.md` (Known Issues, Pending Decisions, High Priority)
+
 ### Session 13: M&A Phase A+ marketing landing (implemented)
 **User request**: Proceed with the recommended approach — build `/m-and-a` and `mna` sections; keep plan/progress updated.
 
 **Shipped**:
 - [x] Route `/m-and-a` in `App.tsx` → `src/pages/MAndA.tsx` (Navbar + Footer + section stack per Decision 20)
 - [x] `src/components/mna/`: `content.ts`, `SectionShell`, `Hero`, `TrustStrip`, `ProcessPipeline`, `PipelineStep`, `ListingsPreview`, `ListingCard`, `AudienceSplit`, `SecuritySection`, `ConfidentialIntake` (client-side validation + Sonner toast; copy notes Supabase not wired), `MnaFaq`, `FinalCta`
-- [x] Stone/neutral styling for funnel vs coral-heavy service pages
+- [x] ~~Stone/neutral-only styling~~ — superseded by **Session 15**: funnel aligned with shared design system (Decision 22)
 - [x] `ServicePage` (merger-acquisitions): dual CTAs — “Start confidential intake” → `/m-and-a#intake`, secondary scroll to `#mna-advisors` on advisor section
 
 **Follow-ups (not done)**: Persist intake to Supabase; optional Navbar / homepage “Learn more” pointing M&A to `/m-and-a`; German copy for `mna` content; SectorFocus section if needed.
@@ -331,13 +345,13 @@
 | Contact section outdated socials | ✅ Fixed | Updated to X + Telegram |
 | About section too narrow | ✅ Fixed | Expanded to all 5 verticals |
 | doc.md references old content | ⚠️ Outdated | Content pivoted to sustainable ecosystem |
-| Admin routes not role-checked | ⚠️ Open | Any authenticated user can access /admin |
+| Admin routes not role-checked | ✅ Fixed | `ProtectedRoute requireAdmin` + `/access-denied` |
 
 ---
 
 ## Pending Decisions
 
-- Admin routes: add role-based guard or keep auth-only?
+- ~~Admin routes: add role-based guard or keep auth-only?~~ **Resolved:** `requireAdmin` + `/access-denied`
 - Partner form: what fields to collect?
 - Blog: n8n instance setup (self-hosted vs cloud)
 - Marketplace features: scope and timeline?

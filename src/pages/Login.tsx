@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,15 +6,43 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { toast } from "@/hooks/use-toast";
 import { Mail, Lock, LogIn } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { Navigate } from "react-router-dom";
 
+/** After sign-in, admins go to /admin; everyone else to home (avoids access-denied flash). */
+function PostAuthRedirect() {
+  const { user } = useAuth();
+  const [dest, setDest] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    (async () => {
+      const { data } = await supabase.rpc("has_role", {
+        _user_id: user.id,
+        _role: "admin",
+      });
+      if (!cancelled) setDest(data ? "/admin" : "/");
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  if (dest === null) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full" />
+      </div>
+    );
+  }
+  return <Navigate to={dest} replace />;
+}
+
 const Login = () => {
   const { user, loading: authLoading } = useAuth();
-  const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +50,7 @@ const Login = () => {
   const [resetMode, setResetMode] = useState(false);
 
   if (authLoading) return null;
-  if (user) return <Navigate to="/admin" replace />;
+  if (user) return <PostAuthRedirect />;
 
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,9 +85,8 @@ const Login = () => {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) {
         toast({ title: "Login failed", description: error.message, variant: "destructive" });
-      } else {
-        navigate("/admin");
       }
+      // Session updates useAuth; PostAuthRedirect sends admin → /admin, else → /
     }
     setLoading(false);
   };
@@ -68,7 +94,7 @@ const Login = () => {
   const handleOAuth = async (provider: "google" | "github" | "discord") => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider,
-      options: { redirectTo: `${window.location.origin}/admin` },
+      options: { redirectTo: `${window.location.origin}/login` },
     });
     if (error) {
       toast({ title: "OAuth error", description: error.message, variant: "destructive" });

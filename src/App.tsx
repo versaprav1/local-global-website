@@ -20,6 +20,7 @@ import MAndA from "./pages/MAndA";
 import Login from "./pages/Login";
 import ResetPassword from "./pages/ResetPassword";
 import NotFound from "./pages/NotFound";
+import AccessDenied from "./pages/AccessDenied";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminNews from "./pages/admin/AdminNews";
 import AdminBlog from "./pages/admin/AdminBlog";
@@ -51,12 +52,13 @@ const App = () => (
               <Route path="/services/:serviceId" element={<ServicePage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/reset-password" element={<ResetPassword />} />
-              <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
-              <Route path="/admin/news" element={<ProtectedRoute><AdminNews /></ProtectedRoute>} />
-              <Route path="/admin/blog" element={<ProtectedRoute><AdminBlog /></ProtectedRoute>} />
-              <Route path="/admin/guides" element={<ProtectedRoute><AdminGuides /></ProtectedRoute>} />
-              <Route path="/admin/videos" element={<ProtectedRoute><AdminVideos /></ProtectedRoute>} />
-              <Route path="/admin/partners" element={<ProtectedRoute><AdminPartners /></ProtectedRoute>} />
+              <Route path="/access-denied" element={<AccessDenied />} />
+              <Route path="/admin" element={<ProtectedRoute requireAdmin><AdminDashboard /></ProtectedRoute>} />
+              <Route path="/admin/news" element={<ProtectedRoute requireAdmin><AdminNews /></ProtectedRoute>} />
+              <Route path="/admin/blog" element={<ProtectedRoute requireAdmin><AdminBlog /></ProtectedRoute>} />
+              <Route path="/admin/guides" element={<ProtectedRoute requireAdmin><AdminGuides /></ProtectedRoute>} />
+              <Route path="/admin/videos" element={<ProtectedRoute requireAdmin><AdminVideos /></ProtectedRoute>} />
+              <Route path="/admin/partners" element={<ProtectedRoute requireAdmin><AdminPartners /></ProtectedRoute>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
