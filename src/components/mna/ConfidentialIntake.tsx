@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useEffect } from "react";
 import { SectionShell } from "./SectionShell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,6 +17,22 @@ import { Lock } from "lucide-react";
 
 export function ConfidentialIntake() {
   const [role, setRole] = useState<string>("");
+
+  useEffect(() => {
+    const applyHash = () => {
+      const h = window.location.hash;
+      if (h === "#intake-seller") setRole("seller");
+      else if (h === "#intake-buyer") setRole("buyer");
+      if (h.startsWith("#intake")) {
+        // Smooth-scroll to the intake section for hash variants
+        const el = document.getElementById("intake");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, []);
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
