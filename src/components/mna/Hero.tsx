@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { mnaHero } from "./content";
-import { ArrowRight, Lock } from "lucide-react";
+import { ArrowRight, Lock, Building2, LineChart } from "lucide-react";
 
 export function Hero() {
   return (
@@ -22,17 +22,60 @@ export function Hero() {
             </span>
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{mnaHero.subtitle}</p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button asChild size="lg" className="btn-primary rounded-lg text-base">
-              <a href={mnaHero.primaryHref}>
-                {mnaHero.primaryCta}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-lg border-primary/25 bg-background/80 hover:bg-muted/50">
-              <Link to={mnaHero.secondaryHref}>{mnaHero.secondaryCta}</Link>
-            </Button>
-          </div>
+        </div>
+
+        {/* Split path CTAs */}
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          <a
+            href="#intake-seller"
+            className="group relative overflow-hidden rounded-xl border border-secondary/30 bg-card/80 p-7 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Building2 className="h-5 w-5" aria-hidden />
+                </div>
+                <h2 className="font-display text-xl font-semibold text-foreground">I'm selling or exiting</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Owners and operators exploring partial liquidity, full exit, or a strategic partner—confidentially.
+                </p>
+              </div>
+              <ArrowRight className="h-5 w-5 shrink-0 text-primary opacity-60 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
+            </div>
+            <span className="mt-5 inline-flex items-center text-sm font-medium text-primary">
+              Start seller intake
+            </span>
+          </a>
+
+          <a
+            href="#intake-buyer"
+            className="group relative overflow-hidden rounded-xl border border-primary/20 bg-card/80 p-7 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <LineChart className="h-5 w-5" aria-hidden />
+                </div>
+                <h2 className="font-display text-xl font-semibold text-foreground">I'm a buyer or investor</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Strategic and financial buyers sourcing durable, mission-aligned assets across regional markets.
+                </p>
+              </div>
+              <ArrowRight className="h-5 w-5 shrink-0 text-accent opacity-60 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
+            </div>
+            <span className="mt-5 inline-flex items-center text-sm font-medium text-accent">
+              Start buyer intake
+            </span>
+          </a>
+        </div>
+
+        <div className="mt-8">
+          <Button asChild variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
+            <Link to={mnaHero.secondaryHref}>
+              {mnaHero.secondaryCta}
+              <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
