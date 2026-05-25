@@ -19,10 +19,10 @@ const MAndA = () => {
       <Navbar />
       <main>
         <Hero />
+        <AudienceSplit />
         <TrustStrip />
         <ProcessPipeline />
         <ListingsPreview />
-        <AudienceSplit />
         <SecuritySection />
         <ConfidentialIntake />
         <MnaFaq />
